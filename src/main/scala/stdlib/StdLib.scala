@@ -10,6 +10,8 @@ package stdlib
   * @param name std_lib
   */
 object StdLib extends exercise.Library {
+  override def owner = "scala-exercises"
+  override def repository = "exercises-stdlib"
 
   override def color = Some("#dc322f")
 
