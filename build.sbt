@@ -11,7 +11,7 @@ lazy val stdlib = (project in file("."))
   ),
   libraryDependencies ++= Seq(
     "com.chuusai" %% "shapeless" % "2.2.5",
-    "org.scalatest" %% "scalatest" % "2.2.4",
+    "org.scalatest" %% "scalatest" % "3.0.0-RC1",
     "org.scala-exercises" %% "runtime" % "0.0.0-SNAPSHOT" changing(),
     "org.scala-exercises" %% "definitions" % "0.0.0-SNAPSHOT" changing(),
     "org.scalacheck" %% "scalacheck" % "1.12.5",
