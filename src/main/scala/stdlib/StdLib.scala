@@ -13,7 +13,7 @@ object StdLib extends exercise.Library {
   override def owner = "scala-exercises"
   override def repository = "exercises-stdlib"
 
-  override def color = Some("#dc322f")
+  override def color = Some("#26525B")
 
   override def sections = List(
     Asserts,
