@@ -13,8 +13,9 @@ class AssertsSpec extends Spec with Checkers {
     check(Test.testSuccess(Asserts.scalaTestAsserts _, true :: HNil))
   }
 
-  // FIXME: depends on #259
-  // check(testSuccess(Asserts.booleansAsserts _, HNil))
+  def `boolean asserts` = {
+    check(Test.testSuccess(Asserts.booleanAsserts _, 4 :: HNil))
+  }
 
   def `values asserts` = {
     check(Test.testSuccess(Asserts.valuesAsserts _, 2 :: HNil))
