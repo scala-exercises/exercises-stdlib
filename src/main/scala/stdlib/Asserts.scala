@@ -44,12 +44,11 @@ object Asserts extends FlatSpec with Matchers with exercise.Section {
 
   /** Booleans in asserts can test equality.
     */
-  def booleansAsserts(res0: String) {
+  def booleanAsserts(res0: Int) {
     val v1 = 4
-    val v2 = 4
-    v1 === res0
+    v1 shouldEqual res0
 
-    /** `===` is an assert. It is from ScalaTest, not from the Scala language. */
+    /** `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language. */
   }
 
   /** Sometimes we expect you to fill in the values
