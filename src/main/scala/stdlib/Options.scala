@@ -22,7 +22,15 @@ object Options extends FlatSpec with Matchers with exercise.Section {
     emptyValue should be(res1)
   }
 
-  /** Using `getOrElse` we can provide a default value ("No value") when the optional argument (`None`) does not exist:
+  /** Let's write a function that may or not give us a string, thus returning `Option[String]`:
+    *
+    * {{{
+    * def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
+    *   if (flag) Some("Found value") else None
+    * }
+    * }}}
+    *
+    * Using `getOrElse` we can provide a default value ("No value") when the optional argument (`None`) does not exist.
     */
   def getOrElseOptions(res0: String, res1: String, res2: String) {
     val value1 = maybeItWillReturnSomething(true)
