@@ -42,7 +42,7 @@ class OptionsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Options.matchOptions _,
-        20F :: 0F :: HNil
+        20D :: 0D :: HNil
       )
     )
   }
