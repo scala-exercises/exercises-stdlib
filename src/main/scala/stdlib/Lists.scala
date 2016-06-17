@@ -148,7 +148,7 @@ object Lists extends FlatSpec with Matchers with exercise.Section {
 
   /** Lists reuse their tails
     */
-  def reuseTailsLists(res0: Int, res1: Int, res2: Int, res3: String, res4: String, res5: String) {
+  def reuseTailsLists(res0: Int, res1: Int, res2: Int, res3: List[Int], res4: List[Int], res5: List[Int]) {
     val d = Nil
     val c = 3 :: d
     val b = 2 :: c
