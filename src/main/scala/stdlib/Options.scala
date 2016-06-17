@@ -56,7 +56,7 @@ object Options extends FlatSpec with Matchers with exercise.Section {
 
   /** Option can also be used with pattern matching:
     */
-  def matchOptions(res0: Float, res1: Float) {
+  def matchOptions(res0: Double, res1: Double) {
     val someValue: Option[Double] = Some(20.0)
     val value = someValue match {
       case Some(v) ⇒ v
