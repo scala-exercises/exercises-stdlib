@@ -16,7 +16,7 @@ object Classes extends FlatSpec with Matchers with exercise.Section {
     * }}}
     * The class defines two variables `x` and `y` and one method: `toString`.
     *
-    * Classes in Scala are parameterized with constructor arguments. The code above defines two constructor arguments, `x` and `y`; they are both visible in the whole body of the class. In our example they are used to implment `toString`.
+    * Classes in Scala are parameterized with constructor arguments. The code above defines two constructor arguments, `x` and `y`; they are both visible in the whole body of the class. In our example they are used to implement `toString`.
     *
     * Classes are instantiated with the `new` primitive, as the following example will show:
     *
