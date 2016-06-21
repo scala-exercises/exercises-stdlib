@@ -50,7 +50,7 @@ object TypeSignatures extends FlatSpec with Matchers with exercise.Section {
     */
   def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) {
     val zoom = "zoom"
-    zoom.getClass should be(classOf[String])
+    zoom.getClass.isInstanceOf[String] should be(res0)
     zoom.getClass.getCanonicalName should be(res1)
     zoom.getClass.getSimpleName should be(res2)
   }
