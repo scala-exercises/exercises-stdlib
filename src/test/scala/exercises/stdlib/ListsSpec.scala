@@ -130,7 +130,7 @@ class ListsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Lists.reuseTailsLists _,
-        List(2, 3) :: List(3) :: List[Int]() :: HNil
+        List(2, 3) ::: List(3) ::: List[Int]() ::: HNil
       )
     )
   }
