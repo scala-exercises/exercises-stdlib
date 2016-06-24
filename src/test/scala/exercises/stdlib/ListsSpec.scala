@@ -126,13 +126,12 @@ class ListsSpec extends Spec with Checkers {
     )
   }
 
-  // FIXME: depends on #259
-  // def `lists share tails` = {
-  //   check(
-  //     Test.testSuccess(
-  //       Lists.reuseTailsLists _,
-  //       HNil
-  //     )
-  //   )
-  // }
+  def `lists share tails` = {
+    check(
+      Test.testSuccess(
+        Lists.reuseTailsLists _,
+        List(2, 3) :: List(3) :: List[Int]() :: HNil
+      )
+    )
+  }
 }
