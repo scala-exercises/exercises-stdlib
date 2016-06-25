@@ -42,7 +42,7 @@ object Tuples extends FlatSpec with Matchers with exercise.Section {
 
   /** You can assign multiple variables at once using tuples:
     */
-  def assignVariablesTuples(res0: String, res1: Int, res2: Float) {
+  def assignVariablesTuples(res0: String, res1: Int, res2: Double) {
     val student = ("Sean Rogers", 21, 3.5)
     val (name, age, gpa) = student
 
