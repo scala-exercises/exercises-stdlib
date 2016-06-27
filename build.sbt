@@ -5,7 +5,7 @@ lazy val stdlib = (project in file("."))
   organization := "org.scala-exercises",
   name         := "exercises-stdlib",
   scalaVersion := "2.11.7",
-  version := "0.0.0-SNAPSHOT",
+  version := "0.1.0",
   resolvers ++= Seq(
     Resolver.sonatypeRepo("snapshots")
   ),
