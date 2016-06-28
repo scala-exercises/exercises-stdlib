@@ -78,6 +78,20 @@ object Maps extends FlatSpec with Matchers with exercise.Section {
     myMap("IA") should be(res1)
   }
 
+  /** If a map key is requested using myMap(missingKey) which does not exist a NoSuchElementException will be thrown.
+    * Default values may be provided using either getOrElse or withDefaultValue for the entire map
+    */
+  def defaultValuesMayBeProvidedMaps(res0: String, res1: String) {
+    val myMap = Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa")
+    intercept[NoSuchElementException] {
+      myMap("TX")
+    }
+    myMap.getOrElse("TX", "missing data") should be(res0)
+
+    val myMap2 = Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa") withDefaultValue "missing data"
+    myMap2("TX") should be(res1)
+  }
+
   /** Map elements can be removed easily:
     */
   def easilyRemovedMaps(res0: Boolean, res1: Boolean) {
