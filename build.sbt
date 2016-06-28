@@ -5,7 +5,7 @@ lazy val stdlib = (project in file("."))
   organization := "org.scala-exercises",
   name         := "exercises-stdlib",
   scalaVersion := "2.11.7",
-  version := "0.1.0",
+  version := "0.1.1",
   resolvers ++= Seq(
     Resolver.sonatypeRepo("snapshots"),
     Resolver.sonatypeRepo("releases")
@@ -13,7 +13,7 @@ lazy val stdlib = (project in file("."))
   libraryDependencies ++= Seq(
     "com.chuusai" %% "shapeless" % "2.2.5",
     "org.scalatest" %% "scalatest" % "2.2.4",
-    "org.scala-exercises" %% "runtime" % "0.1.+" changing(),
+    "org.scala-exercises" %% "exercise-compiler" % "0.1.+" changing(),
     "org.scala-exercises" %% "definitions" % "0.1.+" changing(),
     "org.scalacheck" %% "scalacheck" % "1.12.5",
     "com.github.alexarchambault" %% "scalacheck-shapeless_1.12" % "0.3.1"
