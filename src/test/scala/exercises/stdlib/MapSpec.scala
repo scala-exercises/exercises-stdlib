@@ -72,6 +72,15 @@ class MapsSpec extends Spec with Checkers {
     )
   }
 
+  def `map default value access` = {
+    check(
+      Test.testSuccess(
+        Maps.defaultValuesMayBeProvidedMaps _,
+        "missing data" :: "missing data" :: HNil
+      )
+    )
+  }
+
   def `map element removal` = {
     check(
       Test.testSuccess(
