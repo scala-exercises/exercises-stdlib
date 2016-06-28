@@ -130,7 +130,7 @@ class TraversablesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Traversables.toStreamFunctionTraversables _,
-        true :: List(4, 6, 7) :: HNil
+        true :: Stream(4, 6, 7) :: HNil
       )
     )
   }
