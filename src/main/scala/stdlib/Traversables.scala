@@ -146,7 +146,7 @@ object Traversables extends FlatSpec with Matchers with exercise.Section {
 
   /** `toStream` will convert any *Traversable* to a `Stream` which is a lazy list where elements are evaluated as they are needed.
     */
-  def toStreamFunctionTraversables(res0: Boolean, res1: List[Int]) {
+  def toStreamFunctionTraversables(res0: Boolean, res1: Stream[Int]) {
     val list = List(4, 6, 7, 8, 9, 13, 14)
     val result = list.toStream
     result.isInstanceOf[Stream[_]] should be(res0)
