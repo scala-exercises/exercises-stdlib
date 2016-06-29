@@ -454,7 +454,7 @@ object Traversables extends FlatSpec with Matchers with exercise.Section {
     }
     result should be(res0)
 
-    val result2 = (list :\ 0) {
+    val result2 = list.foldRight(0) {
       (`next element`, `running total`) ⇒ `next element` - `running total`
     }
     result2 should be(res1)
