@@ -4,8 +4,6 @@ scala:
 jdk:
   - oraclejdk8
 script:
-  - git clone https://github.com/scala-exercises/site.git site
-  - pushd site; sbt 'definitions/publishLocal' 'runtime/publishLocal' 'compiler/publishLocal' 'sbt-exercise/publishLocal' ; popd
   - sbt test
 after_success:
   - bash deploy.sh
