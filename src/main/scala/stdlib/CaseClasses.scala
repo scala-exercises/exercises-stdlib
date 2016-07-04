@@ -6,7 +6,7 @@ import org.scalatest._
   */
 object CaseClasses extends FlatSpec with Matchers with exercise.Section {
 
-  /** Scala supports the notion of _case classes_. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
+  /** Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
     *
     * Here is an example for a class hierarchy which consists of an abstract super class `Term` and three concrete case classes `Var`, `Fun`, and `App`.
     *
