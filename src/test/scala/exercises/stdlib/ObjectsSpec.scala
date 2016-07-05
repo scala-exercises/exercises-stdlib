@@ -31,7 +31,7 @@ class ObjectsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Objects.companionObjectObjects _,
-        "Grand Hotel" :: HNil
+        Option("Grand Hotel") :: HNil
       )
     )
   }

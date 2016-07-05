@@ -51,7 +51,7 @@ object Objects extends FlatSpec with Matchers with exercise.Section {
 
   /** An object that has the same name as a class is called a companion object of the class, and it is often used to contain factory methods for the class that it complements.
     */
-  def companionObjectObjects(res0: String) {
+  def companionObjectObjects(res0: Option[String]) {
     class Movie(val name: String, val year: Short)
 
     object Movie {
@@ -66,7 +66,7 @@ object Objects extends FlatSpec with Matchers with exercise.Section {
       }
     }
 
-    Movie.academyAwardBestMoviesForYear(1932).get.name should be(res0)
+    Movie.academyAwardBestMoviesForYear(1932).map(_.name) should be(res0)
   }
 
   /** A companion object can also see private values and variables of the instantiated objects:
