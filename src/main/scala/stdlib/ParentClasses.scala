@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name parent_classes
   *
   */
-object ParentClasses extends FlatSpec with Matchers with exercise.Section {
+object ParentClasses extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** In contrast to Java, all values in Scala are objects (including numerical values and functions). Since Scala is class-based, all values are instances of a class.
     *

@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name pattern_matching
   *
   */
-object PatternMatching extends FlatSpec with Matchers with exercise.Section {
+object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala has a built-in general pattern matching mechanism. It allows to match on any sort of data with a first-match policy.
     * Here is a small example which shows how to match against an integer value:

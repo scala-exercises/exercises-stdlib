@@ -7,7 +7,7 @@ import Stream.cons
 
 /** @param name traversables
   */
-object Traversables extends FlatSpec with Matchers with exercise.Section {
+object Traversables extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** At the top of the collection hierarchy is trait *Traversable*. Its only abstract operation is `foreach`:
     *

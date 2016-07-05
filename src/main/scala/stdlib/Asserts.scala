@@ -4,7 +4,7 @@ import org.scalatest._
 
 /** @param name asserts
   */
-object Asserts extends FlatSpec with Matchers with exercise.Section {
+object Asserts extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** ScalaTest makes three assertions available by default in any style trait. You can use:
     *

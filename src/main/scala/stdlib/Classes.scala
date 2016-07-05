@@ -4,7 +4,7 @@ import org.scalatest._
 
 /** @param name classes
   */
-object Classes extends FlatSpec with Matchers with exercise.Section {
+object Classes extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Classes in Scala are static templates that can be instantiated into many objects at runtime.
     * Here is a class definition which defines a class Point:

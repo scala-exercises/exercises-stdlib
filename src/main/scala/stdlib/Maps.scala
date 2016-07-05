@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name maps
   *
   */
-object Maps extends FlatSpec with Matchers with exercise.Section {
+object Maps extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A `Map` is an `Iterable` consisting of pairs of keys and values (also named mappings or associations). Scala's Predef class offers an implicit conversion that lets you write `key -> value` as an alternate syntax for the pair `(key, value)`. For instance `Map("x" -> 24, "y" -> 25, "z" -> 26)` means exactly the same as `Map(("x", 24), ("y", 25), ("z", 26))`, but reads better.
     *

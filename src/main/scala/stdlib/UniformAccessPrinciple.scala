@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name uniform_access_principle
   *
   */
-object UniformAccessPrinciple extends FlatSpec with Matchers with exercise.Section {
+object UniformAccessPrinciple extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** The Scala language implements a programming concept known as the [Uniform Access Principle](http://en.wikipedia.org/wiki/Uniform_access_principle) which was first put forth by Bertrand Meyer, inventor of the Eiffel programming language.
     *

@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name lists
   *
   */
-object Lists extends FlatSpec with Matchers with exercise.Section {
+object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala Lists are quite similar to arrays which means, all the elements of a list have the same type but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
     *
