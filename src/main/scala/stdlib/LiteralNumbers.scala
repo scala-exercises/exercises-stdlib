@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name literal_numbers
   *
   */
-object LiteralNumbers extends FlatSpec with Matchers with exercise.Section {
+object LiteralNumbers extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Integer Literals are 32-bit and can be created from decimal, hexadecimal:
     */

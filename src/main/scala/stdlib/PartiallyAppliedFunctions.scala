@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name partially_applied_functions
   *
   */
-object PartiallyAppliedFunctions extends FlatSpec with Matchers with exercise.Section {
+object PartiallyAppliedFunctions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
     */

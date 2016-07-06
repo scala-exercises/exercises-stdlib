@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name formatting
   *
   */
-object Formatting extends FlatSpec with Matchers with exercise.Section {
+object Formatting extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** String can be placed in format:
     */

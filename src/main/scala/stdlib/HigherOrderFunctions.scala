@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name higher_order_functions
   *
   */
-object HigherOrderFunctions extends FlatSpec with Matchers with exercise.Section {
+object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions. Anonymous functions in source code are called function literals and at run time, function literals are instantiated into objects called function values.
     *

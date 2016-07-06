@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name extractors
   *
   */
-object Extractors extends FlatSpec with Matchers with exercise.Section {
+object Extractors extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
     *

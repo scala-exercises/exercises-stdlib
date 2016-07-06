@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name enumerations
   *
   */
-object Enumerations extends FlatSpec with Matchers with exercise.Section {
+object Enumerations extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
     *

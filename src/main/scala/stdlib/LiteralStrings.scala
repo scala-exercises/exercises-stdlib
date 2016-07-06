@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name literal_strings
   *
   */
-object LiteralStrings extends FlatSpec with Matchers with exercise.Section {
+object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Character Literals are quoted with single quotes:
     */

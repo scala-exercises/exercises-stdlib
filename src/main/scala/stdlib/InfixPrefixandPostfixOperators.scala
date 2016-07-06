@@ -6,7 +6,7 @@ import scala.language.postfixOps
 /** @param name infix_prefix_and_postfix_operators
   *
   */
-object InfixPrefixandPostfixOperators extends FlatSpec with Matchers with exercise.Section {
+object InfixPrefixandPostfixOperators extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Any method which takes a single parameter can be used as an infix operator: `a.m(b)` can be written `a m b`.
     */

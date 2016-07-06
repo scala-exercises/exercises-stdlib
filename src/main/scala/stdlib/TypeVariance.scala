@@ -5,7 +5,7 @@ import org.scalatest._
 
 /** @param name type_variance
   */
-object TypeVariance extends FlatSpec with Matchers with exercise.Section {
+object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A traditional objection to static typing is that it has much syntactic overhead. Scala alleviates this by providing *type inference*.
     *

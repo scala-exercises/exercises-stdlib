@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name iterables
   *
   */
-object Iterables extends FlatSpec with Matchers with exercise.Section {
+object Iterables extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** The next trait from the top in the collections hierarchy is `Iterable`. All methods in this trait are defined in terms of an abstract method, `iterator`, which yields the collection's elements one by one. The `foreach` method from trait `Traversable` is implemented in `Iterable` in terms of `iterator`. Here is the actual implementation:
     *

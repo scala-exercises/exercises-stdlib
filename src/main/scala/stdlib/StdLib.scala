@@ -9,7 +9,7 @@ package stdlib
   *
   * @param name std_lib
   */
-object StdLib extends exercise.Library {
+object StdLib extends org.scalaexercises.definitions.Library {
   override def owner = "scala-exercises"
   override def repository = "exercises-stdlib"
 

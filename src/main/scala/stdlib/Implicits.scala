@@ -6,7 +6,7 @@ import scala.language.implicitConversions
 /** @param name implicits
   *
   */
-object Implicits extends FlatSpec with Matchers with exercise.Section {
+object Implicits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** The actual arguments that are eligible to be passed to an implicit parameter fall into two categories: * First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter. * Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
     *

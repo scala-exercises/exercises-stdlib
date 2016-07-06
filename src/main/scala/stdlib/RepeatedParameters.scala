@@ -6,7 +6,7 @@ import org.scalatest._
 /** @param name repeated_parameters
   *
   */
-object RepeatedParameters extends FlatSpec with Matchers with exercise.Section {
+object RepeatedParameters extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A repeated parameter must be the last parameter and this will let you add as many extra parameters as needed.
     *

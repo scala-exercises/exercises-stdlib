@@ -4,7 +4,7 @@ import org.scalatest._
 
 /** @param name type_signatures
   */
-object TypeSignatures extends FlatSpec with Matchers with exercise.Section {
+object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A method's *type signature* comprises its name, the number, order, and types of its parameters, if any, and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
     *

@@ -6,7 +6,7 @@ import org.scalatest._
 /** @param name named_and_default_arguments
   *
   */
-object NamedandDefaultArguments extends FlatSpec with Matchers with exercise.Section {
+object NamedandDefaultArguments extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** When calling methods and functions, you can use the name of the variables explicitly in the call, like so:
     *

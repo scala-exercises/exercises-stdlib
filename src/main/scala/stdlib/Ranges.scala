@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name ranges
   *
   */
-object Ranges extends FlatSpec with Matchers with exercise.Section {
+object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A range's upper bound is not inclusive:
     */

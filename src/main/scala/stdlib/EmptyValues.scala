@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name empty_values
   *
   */
-object EmptyValues extends FlatSpec with Matchers with exercise.Section {
+object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** ==null==
     *

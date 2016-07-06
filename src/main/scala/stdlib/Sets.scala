@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name sets
   *
   */
-object Sets extends FlatSpec with Matchers with exercise.Section {
+object Sets extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** `Set`s are `Iterable`s that contain no duplicate elements. The operations on sets are summarized in the following table for general sets and in the table after that for mutable sets. They fall into the following categories:
     *

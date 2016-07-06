@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name sequences_and_arrays
   *
   */
-object SequencesandArrays extends FlatSpec with Matchers with exercise.Section {
+object SequencesandArrays extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.
     *

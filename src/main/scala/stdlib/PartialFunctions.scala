@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name partial_functions
   *
   */
-object PartialFunctions extends FlatSpec with Matchers with exercise.Section {
+object PartialFunctions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A partial function is a `trait` that when implemented can be used as building blocks to determine a solution.  The trait `PartialFunction` requires that the method `isDefinedAt` and `apply` be implemented.
     */

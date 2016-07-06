@@ -5,7 +5,7 @@ import org.scalatest._
 /** @param name for_expressions
   *
   */
-object ForExpressions extends FlatSpec with Matchers with exercise.Section {
+object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** For expressions can nest, with later generators varying more rapidly than earlier ones:
     */
