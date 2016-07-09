@@ -9,7 +9,7 @@ object UniformAccessPrinciple extends FlatSpec with Matchers with org.scalaexerc
 
   /** The Scala language implements a programming concept known as the [Uniform Access Principle](http://en.wikipedia.org/wiki/Uniform_access_principle) which was first put forth by Bertrand Meyer, inventor of the Eiffel programming language.
     *
-    * This principle states that variables and parameterless functions should be accessed using the same syntax. Scala supports this principle by not allowing parentheses to be placed at call sites of parameterless functions. As a result, a parameterless function definition can be changed to a val, or vice versa, without affecting client code.
+    * This principle states that variables and parameterless functions should be accessed using the same syntax. Scala supports this principle by allowing parentheses to not be placed at call sites of parameterless functions. As a result, a parameterless function definition can be changed to a val, or vice versa, without affecting client code.
     *
     */
   def uniformAccessPrincipleUniformAccessPrinciple(res0: Int, res1: Int) {
