@@ -1,11 +1,10 @@
 package exercises
 
-import stdlib._
+import stdlib.{_}
 import shapeless.HNil
-
 import org.scalatest.Spec
 import org.scalatest.prop.Checkers
-
+import org.scalaexercises.Test
 import org.scalacheck.Shapeless._
 
 class MapsSpec extends Spec with Checkers {

@@ -1,14 +1,13 @@
 package exercises
 
-import stdlib._
+import stdlib.{SequencesandArrays, _}
 import shapeless.HNil
-
 import org.scalatest.Spec
 import org.scalatest.prop.Checkers
-
+import org.scalaexercises.Test
 import org.scalacheck.Shapeless._
 
-class SequencesandArraysSpec extends Spec with Checkers {
+class SequencesAndArraysSpec extends Spec with Checkers {
   def `list to array` = {
     check(
       Test.testSuccess(

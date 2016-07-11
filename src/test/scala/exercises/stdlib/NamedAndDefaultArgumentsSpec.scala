@@ -1,14 +1,13 @@
 package exercises
 
-import stdlib._
+import stdlib.{NamedandDefaultArguments, _}
 import shapeless.HNil
-
 import org.scalatest.Spec
 import org.scalatest.prop.Checkers
-
+import org.scalaexercises.Test
 import org.scalacheck.Shapeless._
 
-class NamedandDefaultArgumentsSpec extends Spec with Checkers {
+class NamedAndDefaultArgumentsSpec extends Spec with Checkers {
   val Arguments = NamedandDefaultArguments
 
   def `class without parameters` = {

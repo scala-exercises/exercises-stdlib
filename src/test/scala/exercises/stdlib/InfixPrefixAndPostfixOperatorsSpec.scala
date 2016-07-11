@@ -5,11 +5,12 @@ import shapeless.HNil
 
 import org.scalatest.Spec
 import org.scalatest.prop.Checkers
+import org.scalaexercises.Test
 
 // FIXME: get rid of this if possible
 import org.scalacheck.Shapeless._
 
-class OperatorsSpec extends Spec with Checkers {
+class InfixPrefixAndPostfixOperatorsSpec extends Spec with Checkers {
   val Operators = InfixPrefixandPostfixOperators
 
   def `single parameter infix operators` = {
