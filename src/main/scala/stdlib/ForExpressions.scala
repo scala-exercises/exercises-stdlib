@@ -10,8 +10,8 @@ object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.def
   /** For expressions can nest, with later generators varying more rapidly than earlier ones:
     */
   def canBeNestedForExpressions(res0: Int, res1: Int) {
-    val xValues = Range(1, 5)
-    val yValues = Range(1, 3)
+    val xValues = 1 to 4
+    val yValues = 1 to 2
     val coordinates = for {
       x ← xValues
       y ← yValues
