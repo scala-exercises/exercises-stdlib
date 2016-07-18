@@ -35,8 +35,7 @@ class ImplicitsSpec extends Spec with Checkers {
   }
 
   def `implicits for default parameters` = {
-    val fstAnswer: Float = 1020.0f
-    val sndAnswer: Float = 9025.0f
+    val fstAnswer: BigDecimal = 1020.0f
 
     check(
       Test.testSuccess(
