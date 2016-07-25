@@ -29,7 +29,7 @@ object Iterables extends FlatSpec with Matchers with org.scalaexercises.definiti
     }
   }
 
-  /** `grouped` will return an fixed sized Iterable chucks of an Iterable
+  /** `grouped` will return fixed sized Iterable chucks of an Iterable
     */
   def groupedIterables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int, res6: Int, res7: Int, res8: Int) {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
