@@ -27,7 +27,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     *
     * [[http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Nil$ Nil]] is just an empty list, exactly like the result of `List()`. It is of type `List[Nothing]`. And since we know there are no instances of Nothing, we now have a list that is statically verifiable as empty. Nice to have.
     *
-    * An empty list can be represented by another nothing value: *Nil*
+    * An empty list can be represented by another nothing value: `Nil`
     */
   def emptyValuesEmptyValues(res0: Boolean) {
     List() === Nil shouldBe res0
@@ -65,7 +65,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     assert(None.isEmpty === res0)
   }
 
-  /** `None` can be cast `Any`, *AnyRef* or `AnyVal`
+  /** `None` can be cast `Any`, `AnyRef` or `AnyVal`
     */
   def noneToAnyEmptyValues(res0: Boolean, res1: Boolean, res2: Boolean) {
     None.asInstanceOf[Any] === None shouldBe res0
