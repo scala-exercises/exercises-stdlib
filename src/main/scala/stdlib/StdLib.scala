@@ -53,4 +53,5 @@ object StdLib extends org.scalaexercises.definitions.Library {
     TypeVariance,
     Enumerations
   )
+  override def logoPath = "std_lib"
 }
