@@ -69,7 +69,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
     Movie.academyAwardBestMoviesForYear(1932).get.name should be(res0)
   }
 
-  /** A companion object can also see private values and variables of the instantiated objects:
+  /** A companion object can also see private values and variables of the corresponding classes' instantiated objects:
     */
   def privateValuesObjects(res0: String, res1: String, res2: String, res3: String) {
     class Person(val name: String, private val superheroName: String) //The superhero name is private!
