@@ -24,7 +24,7 @@ lazy val stdlib = (project in file("."))
 
 // Distribution
 
-lazy val gpgFolder = sys.env.getOrElse("SE_GPG_FOLDER", ".")
+lazy val gpgFolder = sys.env.getOrElse("PGP_FOLDER", ".")
 
 lazy val publishSettings = Seq(
   organizationName := "Scala Exercises",
@@ -32,7 +32,7 @@ lazy val publishSettings = Seq(
   startYear := Some(2016),
   description := "Scala Exercises: The path to enlightenment",
   homepage := Some(url("http://scala-exercises.org")),
-  pgpPassphrase := Some(sys.env.getOrElse("SE_GPG_PASSPHRASE", "").toCharArray),
+  pgpPassphrase := Some(sys.env.getOrElse("PGP_PASSPHRASE", "").toCharArray),
   pgpPublicRing := file(s"$gpgFolder/pubring.gpg"),
   pgpSecretRing := file(s"$gpgFolder/secring.gpg"),
   credentials += Credentials("Sonatype Nexus Repository Manager",  "oss.sonatype.org",  sys.env.getOrElse("PUBLISH_USERNAME", ""),  sys.env.getOrElse("PUBLISH_PASSWORD", "")),
@@ -47,28 +47,5 @@ lazy val publishSettings = Seq(
       Some("Snapshots" at nexus + "content/repositories/snapshots")
     else
       Some("Releases" at nexus + "service/local/staging/deploy/maven2")
-  },
-  pomExtra :=
-      <developers>
-        <developer>
-          <id>raulraja</id>
-          <name>Raul Raja</name>
-          <email>raul@47deg.com</email>
-        </developer>
-        <developer>
-          <id>dialelo</id>
-          <name>Alejandro Gómez</name>
-          <email>al.g.g@47deg.com</email>
-        </developer>
-        <developer>
-          <id>rafaparadela</id>
-          <name>Rafa Paradela</name>
-          <email>rafa.p@47deg.com</email>
-        </developer>
-        <developer>
-          <id>MasseGuillaume</id>
-          <name>Guillaume Massé</name>
-          <email>masgui@gmail.com</email>
-        </developer>
-      </developers>
+  }
 )
