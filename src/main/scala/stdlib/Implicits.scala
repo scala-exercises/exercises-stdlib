@@ -81,9 +81,7 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     20.isOdd should be(res1)
   }
 
-  /** convertTypeImplicits
-    *
-    * Implicits can be used to automatically convert a value's type to another:
+  /** Implicits can be used to automatically convert a value's type to another:
     */
   def convertTypeImplicits(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean, res4: Boolean) {
     import java.math.BigInteger
