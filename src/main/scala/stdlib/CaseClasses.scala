@@ -29,7 +29,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     *
     * {{{
     * val x = Var("x")
-    * Console.println(x.name)
+    * println(x.name)
     * }}}
     *
     * For every case class the Scala compiler generates `equals` method which implements structural equality and a`toString` method. For instance:
@@ -61,7 +61,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     * print("^" + x + ".")
     * printTerm(b)
     * case App(f, v) =>
-    * Console.print("(")
+    * print("(")
     * printTerm(f)
     * print(" ")
     * printTerm(v)
