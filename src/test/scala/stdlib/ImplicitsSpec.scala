@@ -35,7 +35,7 @@ class ImplicitsSpec extends Spec with Checkers {
   }
 
   def `implicits for default parameters` = {
-    val fstAnswer: BigDecimal = 1020.0f
+    val fstAnswer: BigDecimal = 1020
 
     check(
       Test.testSuccess(
@@ -49,7 +49,7 @@ class ImplicitsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Implicits.listOfImplicitsImplicits _,
-        "1020.0 Dollars" :: HNil
+        "1020 Dollars" :: HNil
       )
     )
   }
