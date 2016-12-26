@@ -9,7 +9,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
 
   /** Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions. Anonymous functions in source code are called function literals and at run time, function literals are instantiated into objects called function values.
     *
-    * Scala supports first-class functions, which means you can express functions in function literal syntax, i.e.,` (x: Int) => x + 1`, and that functions can be represented by objects, which are called function values.
+    * Scala supports first-class functions, which means you can express functions in function literal syntax, i.e.,` (x: Int) => x + 1`, and those functions can be represented by objects, which are called function values.
     */
   def meetLambdaHigherOrderFunctions(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int) {
     def lambda = { x: Int ⇒ x + 1 }
@@ -68,7 +68,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     result2 should be(res1)
   }
 
-  /** We can take that closure and throw into a method and it will still hold the environment
+  /** We can take that closure and throw it into a method and it will still hold the environment
     */
   def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) {
     def summation(x: Int, y: Int ⇒ Int) = y(x)
@@ -113,7 +113,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     fiveAdder(5) should be(res2)
   }
 
-  /** `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter type are unknown at runtime.
+  /** `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
     */
   def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) {
     def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
@@ -121,7 +121,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     addWithSyntaxSugar(1).isInstanceOf[Function1[_, _]] should be(res0)
   }
 
-  /** Function taking another function as parameter. Helps in composing functions.
+  /** Function taking another function as a parameter. Helps in composing functions.
     *
     * Hint: a map method applies the function to each element of a list
     */

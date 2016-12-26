@@ -74,7 +74,7 @@ object Options extends FlatSpec with Matchers with org.scalaexercises.definition
   /** An alternative for pattern matching is performing collection style operations.
     * This is possible because an option could be looked at as a collection with either one or zero elements.
     *
-    * One of these operations is `map`. this operation allows to map the inner value to a different type while preserving the option
+    * One of these operations is `map`. This operation allows us to map the inner value to a different type while preserving the option
     */
   def mapOptions(res0: Option[Double], res1: Option[Double]) {
     val number: Option[Int] = Some(3)
@@ -88,7 +88,7 @@ object Options extends FlatSpec with Matchers with org.scalaexercises.definition
     /** Note that the type of result1 is now Option[Double], thanks to the scala type inference. */
   }
 
-  /** Another operation is `fold`. this operation will extract the value from the option, or provide a default if the value is `None`
+  /** Another operation is `fold`. This operation will extract the value from the option, or provide a default if the value is `None`
     */
   def foldOptions(res0: Int, res1: Int) {
     val number: Option[Int] = Some(3)
