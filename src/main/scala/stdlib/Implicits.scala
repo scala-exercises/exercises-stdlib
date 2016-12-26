@@ -103,7 +103,7 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
   def asDefaultImplicits(res0: BigDecimal) {
     def howMuchCanIMake_?(hours: Int)(implicit dollarsPerHour: BigDecimal) = dollarsPerHour * hours
 
-    implicit val hourlyRate = BigDecimal(34.00)
+    implicit val hourlyRate = BigDecimal(34)
 
     howMuchCanIMake_?(30) should be(res0)
   }
@@ -114,7 +114,7 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     def howMuchCanIMake_?(hours: Int)(implicit amount: BigDecimal, currencyName: String) =
       (amount * hours).toString() + " " + currencyName
 
-    implicit val hourlyRate = BigDecimal(34.00)
+    implicit val hourlyRate = BigDecimal(34)
     implicit val currencyName = "Dollars"
 
     howMuchCanIMake_?(30) should be(res0)
