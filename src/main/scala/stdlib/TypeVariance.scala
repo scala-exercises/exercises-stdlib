@@ -99,24 +99,25 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /** Declaring - indicates contravariance variance.  Using - you can apply any container with a certain type to a container with a superclass of that type.  This is reverse to covariant.  In our example, we can set a citrus basket to an orange or tangelo basket. Since an orange or tangelo basket are a citrus basket. Contravariance is the opposite of covariance:
-    * //TODO rework without mutability
-    *
-    * def contravarianceVarianceTypeVariance(res0: String, res1: String, res2: String, res3: String) {
-    * class MyContainer[-A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
-    * def contents = manifest.runtimeClass.getSimpleName
-    * }
-    *
-    * val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
-    * citrusBasket.contents should be(res0)
-    * val orangeBasket: MyContainer[Orange] = new MyContainer[Citrus](new Tangelo)
-    * orangeBasket.contents should be(res1)
-    * val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Citrus](new Orange)
-    * tangeloBasket.contents should be(res2)
-    *
-    * val orangeBasketReally: MyContainer[Orange] = tangeloBasket.asInstanceOf[MyContainer[Orange]]
-    * orangeBasketReally.contents should be(res3)
-    * }
     */
+
+  def contravarianceVarianceTypeVariance(res0: String, res1: String, res2: String, res3: String) {
+    class MyContainer[-A](a: A)(implicit manifest: scala.reflect.Manifest[A]) { //Can't receive a val because it would be in a covariant position
+       def contents = manifest.runtimeClass.getSimpleName
+    }
+
+    val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
+    citrusBasket.contents should be(res0)
+    val orangeBasket: MyContainer[Orange] = new MyContainer[Citrus](new Tangelo)
+    orangeBasket.contents should be(res1)
+    val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Citrus](new Orange)
+    tangeloBasket.contents should be(res2)
+    val bananaBasket: MyContainer[Banana] = new MyContainer[Fruit](new Apple)
+    bananaBasket.contents should be(res3)
+
+    //val fruitBasket: MyContainer[Fruit] = new MyContainer[Citrus](new Orange) //Bad!
+    //val wrongCitrusBasket: MyContainer[Citrus] = new MyContainer[Orange](new Orange) //Bad!
+  }
 
   /** Declaring neither `-`/`+`, indicates invariance variance. You cannot use a superclass variable reference (\"contravariant\" position) or a subclass variable reference (\"covariant\" position) of that type.  In our example, this means that if you create a citrus basket you can only reference that citrus basket with a citrus variable only.
     *

@@ -11,7 +11,7 @@ object ByNameParameter extends FlatSpec with Matchers with org.scalaexercises.de
   def takesUnitByNameParameter(res0: Either[Throwable, Int]) {
     def calc(x: () ⇒ Int): Either[Throwable, Int] = {
       try {
-        Right(x()) //An explicit call the x function
+        Right(x()) //An explicit call of the x function
       } catch {
         case b: Throwable ⇒ Left(b)
       }

@@ -31,6 +31,8 @@ object Classes extends FlatSpec with Matchers with org.scalaexercises.definition
     *
     * The program defines an executable application `Classes` in form of a top-level singleton object with a `main` method. The `main` method creates a new `Point` and stores it in value `pt`.
     *
+    * This also demonstrates the use of a value parameters in ClassWithValParameter(val name: String), which automatically creates an internal property (val name: String) in the class.
+    *
     */
   def classWithValParameterClasses(res0: String) {
     class ClassWithValParameter(val name: String)
