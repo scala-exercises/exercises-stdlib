@@ -109,7 +109,7 @@ object Iterables extends FlatSpec with Matchers with org.scalaexercises.definiti
 
   }
 
-  /** `zipWithIndex` will zip an Iterable with it's integer index
+  /** `zipWithIndex` will zip an Iterable with its integer index
     */
   def zipWithIndexIterables(res0: String, res1: String, res2: Int, res3: String) {
     val xs = List("Manny", "Moe", "Jack")
