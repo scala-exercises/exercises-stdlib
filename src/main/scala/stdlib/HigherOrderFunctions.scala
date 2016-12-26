@@ -87,7 +87,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
   /** Function returning another function:
     */
   def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
-    def addWithoutSyntaxSugar(x: Int) = {
+    def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
       new Function1[Int, Int]() {
         def apply(y: Int): Int = x + y
       }
@@ -97,7 +97,7 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
 
     addWithoutSyntaxSugar(2)(3) should be(res1)
 
-    def fiveAdder = addWithoutSyntaxSugar(5)
+    def fiveAdder: Function1[Int, Int] = addWithoutSyntaxSugar(5)
     fiveAdder(5) should be(res2)
   }
 
