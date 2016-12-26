@@ -128,9 +128,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     (d2 == d3) should be(res2)
   }
 
-  /** toStringMethodCaseClasses
-    *
-    * Case classes have a convenient toString method defined:
+  /** Case classes have a convenient toString method defined:
     */
   def toStringMethodCaseClasses(res0: String) {
     case class Dog(name: String, breed: String)
