@@ -7,7 +7,7 @@ import org.scalatest._
   */
 object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** For expressions can nest, with later generators varying more rapidly than earlier ones:
+  /** `for` expressions can nest, with later generators varying more rapidly than earlier ones:
     */
   def canBeNestedForExpressions(res0: Int, res1: Int) {
     val xValues = 1 to 4
@@ -19,7 +19,7 @@ object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.def
     coordinates(4) should be(res0, res1)
   }
 
-  /** Using `for` we can make more readable code
+  /** Using `for` we can make more readable code:
     */
   def readableCodeForExpressions(res0: List[Int]) {
     val nums = List(List(1), List(2), List(3), List(4), List(5))

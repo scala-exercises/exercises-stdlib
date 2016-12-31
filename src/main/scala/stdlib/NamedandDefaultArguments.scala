@@ -94,7 +94,7 @@ object NamedandDefaultArguments extends FlatSpec with Matchers with org.scalaexe
     myColor should equal(res0, res1, res2)
   }
 
-  /** Can access class parameters and default arguments if you leave them off
+  /** Can access class parameters and default arguments if you leave them off:
     */
   def accessClassParametersNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) {
     val me = new WithClassParameters(10, 20, 30)
@@ -103,7 +103,7 @@ object NamedandDefaultArguments extends FlatSpec with Matchers with org.scalaexe
     myColor should equal(res0, res1, res2)
   }
 
-  /** Can default class parameters and have default arguments too
+  /** Can default class parameters and have default arguments too:
     */
   def defaultClassArgumentsNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) {
     val me = new WithClassParametersInClassDefinition()
@@ -112,7 +112,7 @@ object NamedandDefaultArguments extends FlatSpec with Matchers with org.scalaexe
     myColor should equal(res0, res1, res2)
   }
 
-  /** Default parameters can be functional too
+  /** Default parameters can be functional too:
     */
   def functionalDefaulParametersNamedandDefaultArguments(res0: Int, res1: Int) {
     def reduce(a: Int, f: (Int, Int) ⇒ Int = _ + _): Int = f(a, a)

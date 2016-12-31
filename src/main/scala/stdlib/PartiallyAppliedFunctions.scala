@@ -25,7 +25,7 @@ object PartiallyAppliedFunctions extends FlatSpec with Matchers with org.scalaex
     sum(4, 5, 6) should be(res1)
   }
 
-  /** Currying is a technique to transform function with multiple parameters into multiple functions which each take one parameter
+  /** Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
     */
   def curryingPartiallyAppliedFunctions(res0: Boolean, res1: Int, res2: Int, res3: Int, res4: Int) {
     def multiply(x: Int, y: Int) = x * y
@@ -38,7 +38,7 @@ object PartiallyAppliedFunctions extends FlatSpec with Matchers with org.scalaex
     multiplyCurriedFour(4) should be(res4)
   }
 
-  /** Currying allows you to create specialized version of generalized function
+  /** Currying allows you to create specialized versions of generalized functions:
     */
   def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) {
     def customFilter(f: Int ⇒ Boolean)(xs: List[Int]) = {

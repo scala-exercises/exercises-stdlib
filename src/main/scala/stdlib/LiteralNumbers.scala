@@ -7,7 +7,7 @@ import org.scalatest._
   */
 object LiteralNumbers extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Integer Literals are 32-bit and can be created from decimal, hexadecimal:
+  /** Integer literals are 32-bit and can be created from decimals as well as hexadecimals:
     */
   def integerLiteralsLiteralNumbers(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int, res6: Int) {
     val a = 2
@@ -26,7 +26,7 @@ object LiteralNumbers extends FlatSpec with Matchers with org.scalaexercises.def
     h should be(res6) //Hint: 30F = 783
   }
 
-  /** Long Literals are 64 bit, are specified by appending an `L` or `l` at the end:
+  /** Long literals are 64-bit. They are specified by appending an `L` or `l` at the end of the declaration:
     */
   def longLiteralsLiteralNumbers(res0: Long, res1: Long, res2: Long, res3: Long, res4: Long, res5: Long, res6: Long) {
     val a = 2L
@@ -46,9 +46,9 @@ object LiteralNumbers extends FlatSpec with Matchers with org.scalaexercises.def
     h should be(res6) //Hint: 30F = 783
   }
 
-  /** Float and Double Literals are IEEE 754 for specific, Float are 32-bit length, Doubles are 64-bit.
-    * Floats can be coerced using a f or F suffix, and Doubles can be coerced using a d or D suffix.
-    * Exponent are specified using e or E.
+  /** Float and Double literals conform to [[https://en.wikipedia.org/wiki/IEEE_floating_point IEEE-754]]. Floats are 32-bit, while doubles are 64-bit.
+    * Floats can be defined using a f or F suffix, while doubles use a d or D suffix.
+    * Exponents are specified using e or E.
     */
   def floatsAndDoublesLiteralNumbers(res0: Double, res1: Double, res2: Double, res3: Double, res4: Double, res5: Double, res6: Double, res7: Double, res8: Double) {
     val a = 3.0

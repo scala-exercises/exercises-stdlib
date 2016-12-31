@@ -10,7 +10,7 @@ object InfixTypes extends FlatSpec with Matchers with org.scalaexercises.definit
   /** An infix type `T1 op T2` consists of an infix operator `op` which gets applied to two
     * type operands `T1` and `T2`. The type is equivalent to the type application `op[T1,T2]`.
     *
-    * The infix operator op may be an arbitrary identifier, except for `*`, which is reserved
+    * The infix operator `op` may be an arbitrary identifier, except for `*`, which is reserved
     * as a postfix modifier denoting a repeated parameter type.
     *
     * We can make a type infix, meaning that the type can be displayed in complement between two types in order to make a readable declaration:

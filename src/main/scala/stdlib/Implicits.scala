@@ -10,8 +10,8 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
 
   /** The actual arguments that are eligible to be passed to an implicit parameter fall into two categories: 
     *
-    * - First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter. 
-    * - Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
+    *  - First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter. 
+    *  - Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
     *
     * In the following example we define a method `sum` which computes the sum of a list of elements using the monoid's `add` and `unit` operations. Please note that implicit values can not be top-level, they have to be members of a template.
     *
@@ -46,7 +46,7 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     * abc
     * }}}
     *
-    * Implicits wrap around existing classes to provide extra functionality. This is similar to *monkey patching* in **Ruby**, and *Meta-Programming* in **Groovy**.
+    * Implicits wrap around existing classes to provide extra functionality. This is similar to monkey patching in Ruby and meta-programming in Groovy.
     *
     * Creating a method `isOdd` for `Int`, which doesn't exist:
     */

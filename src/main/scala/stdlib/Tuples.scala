@@ -9,7 +9,7 @@ import org.scalatest._
   */
 object Tuples extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Scala tuple combines a fixed number of items together so that they can be passed around as a whole. They are one indexed. Unlike an array or list, a tuple can hold objects with different types but they are also immutable. Here is an example of a tuple holding an integer, a string, and the console:
+  /** Scala tuple combines a fixed number of items together so that they can be passed around as a whole. They are one-indexed. Unlike an array or list, a tuple can hold objects with different types but they are also immutable. Here is an example of a tuple holding an integer, a string, and the console:
     *
     * {{{
     * val t = (1, "hello", Console)
@@ -51,7 +51,7 @@ object Tuples extends FlatSpec with Matchers with org.scalaexercises.definitions
     gpa should be(res2)
   }
 
-  /** Tuples items can be swapped on a Tuple 2
+  /** The `swap` method can be used to swap the elements of a Tuple2:
     */
   def swappedTuples(res0: Int, res1: String) {
     val tuple = ("apple", 3).swap
