@@ -7,7 +7,13 @@ import org.scalatest._
   */
 object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** A range's upper bound is not inclusive:
+  /** A Range is an ordered sequence of integers that are equally spaced apart. For example, "1, 2, 3" is a range, as is "5, 8, 11, 14". To create a range in Scala, use the predefined methods `to` and `by`. `1 to 3` generates `Range(1, 2, 3)` and `5 to 14 by 3` generates `Range(5, 8, 11, 14)`.
+    *
+    * If you want to create a range that is exclusive of its upper limit, then use the convenience method `until` instead of `to`: `1 until 3` generates `Range(1, 2)`.
+    *
+    * Ranges are represented in constant space, because they can be defined by just three numbers: their start, their end, and the stepping value. Because of this representation, most operations on ranges are extremely fast.
+	*
+    * A range's upper bound is not inclusive:
     */
   def upperNotInclusiveRangeExercises(res0: Int, res1: Int, res2: Int) {
     val someNumbers = Range(0, 10)
@@ -19,7 +25,7 @@ object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions
     last should be(res2)
   }
 
-  /** Ranges can be specified using 'until'.
+  /** Ranges can be specified using 'until':
     */
   def untilRangeExercises(res0: Boolean) {
     val someNumbers = Range(0, 10)
@@ -49,7 +55,7 @@ object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions
     someNumbers.contains(34) should be(res2)
   }
 
-  /** Range can specify to include its upper bound value
+  /** Range can specify to include its upper bound value:
     */
   def specifyUpperRangeExercises(res0: Boolean) {
     val someNumbers = Range(0, 34).inclusive
@@ -57,20 +63,13 @@ object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions
     someNumbers.contains(34) should be(res0)
   }
 
-  /** Inclusive ranges can be specified using 'to'.
+  /** Inclusive ranges can be specified using 'to':
     */
   def inclusiveWithToRangeExercises(res0: Boolean) {
     val someNumbers = Range(0, 34).inclusive
     val otherRange = 0 to 34
 
     (someNumbers == otherRange) should be(res0)
-
-    /** A Range is an ordered sequence of integers that are equally spaced apart. For example, "1, 2, 3," is a range, as is "5, 8, 11, 14." To create a range in Scala, use the predefined methods `to` and `by`. `1 to 3` generates `Range(1, 2, 3)` and `5 to 14 by 3` generates `Range(5, 8, 11, 14)`.
-      *
-      * If you want to create a range that is exclusive of its upper limit, then use the convenience method `until` instead of `to`: `1 until 3` generates `Range(1, 2)`.
-      *
-      * Ranges are represented in constant space, because they can be defined by just three numbers: their start, their end, and the stepping value. Because of this representation, most operations on ranges are extremely fast.
-      */
   }
 
 }

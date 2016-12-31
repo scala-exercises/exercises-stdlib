@@ -6,9 +6,9 @@ import org.scalatest._
   */
 object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** A method's *type signature* comprises its name, the number, order, and types of its parameters, if any, and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
+  /** A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
     *
-    * In Java you declare a generic type within a `<>`, in Scala it is `[]`
+    * In Java you declare a generic type within a `<>`, in Scala `[]` is used:
     *
     * {{{
     * val z: List[String] = "Do" :: "Re" :: "Mi" :: "Fa" :: "So" :: "La" :: "Te" :: "Do" :: Nil
@@ -39,14 +39,14 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
     (intRand.draw < Int.MaxValue) should be(res0)
   }
 
-  /** Class meta-information can be retrieved by class name by using `classOf[className]`
+  /** Class meta-information can be retrieved by class name by using `classOf[className]`:
     */
   def retrieveMetaInformationTypeSignatures(res0: String, res1: String) {
     classOf[String].getCanonicalName should be(res0)
     classOf[String].getSimpleName should be(res1)
   }
 
-  /** Class meta-information can be derived from an object reference using `getClass()`
+  /** Class meta-information can be derived from an object reference using `getClass()`:
     */
   def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) {
     val zoom = "zoom"

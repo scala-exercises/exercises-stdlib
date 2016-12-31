@@ -36,13 +36,13 @@ object Asserts extends FlatSpec with Matchers with org.scalaexercises.definition
     * result shouldBe 3       // cannot customize equality, so fastest to compile, no parentheses required
     * }}}
     *
-    * Come on, your turn: true and false values can be compared with should matchers
+    * Come on, your turn: true and false values can be compared with should matchers:
     */
   def scalaTestAsserts(res0: Boolean) {
     true should be(res0)
   }
 
-  /** Booleans in asserts can test equality.
+  /** Booleans in asserts can test equality:
     */
   def booleanAsserts(res0: Int) {
     val v1 = 4
@@ -51,7 +51,7 @@ object Asserts extends FlatSpec with Matchers with org.scalaexercises.definition
     /** `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language. */
   }
 
-  /** Sometimes we expect you to fill in the values
+  /** Sometimes we expect you to fill in the values:
     */
   def valuesAsserts(res0: Int) {
     assert(res0 == 1 + 1)

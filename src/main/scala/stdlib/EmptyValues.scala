@@ -17,7 +17,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     *
     * ==Nothing==
     *
-    * [[http://www.scala-lang.org/api/current/index.html#scala.Nothing Nothing]] is a trait that is guaranteed to have _zero_ instances. It is a subtype of all other types. It has two main reasons for existing: to provide a return type for methods that **never** return normally (i.e. a method that always throws an exception). The other reason is to provide a type for Nil (explained below).
+    * [[http://www.scala-lang.org/api/current/index.html#scala.Nothing Nothing]] is a trait that is guaranteed to have zero instances. It is a subtype of all other types. It has two main reasons for existing: to provide a return type for methods that never return normally (i.e. a method that always throws an exception). The other reason is to provide a type for Nil (explained below).
     *
     * ==Unit==
     *
@@ -47,25 +47,25 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     None eq None shouldBe res0
   }
 
-  /** `None` can be converted to a *String*:
+  /** `None` can be converted to a String:
     */
   def noneToStringEmptyValues(res0: String) {
     assert(None.toString === res0)
   }
 
-  /** `None` can be converted to an empty list
+  /** `None` can be converted to an empty list:
     */
   def noneToListEmptyValues(res0: Boolean) {
     None.toList === Nil shouldBe res0
   }
 
-  /** `None` is considered empty
+  /** `None` is considered empty:
     */
   def noneAsEmptyEmptyValues(res0: Boolean) {
     assert(None.isEmpty === res0)
   }
 
-  /** `None` can be cast `Any`, `AnyRef` or `AnyVal`
+  /** `None` can be cast to `Any`, `AnyRef` or `AnyVal`:
     */
   def noneToAnyEmptyValues(res0: Boolean, res1: Boolean, res2: Boolean) {
     None.asInstanceOf[Any] === None shouldBe res0
@@ -73,7 +73,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     None.asInstanceOf[AnyVal] === None shouldBe res2
   }
 
-  /** `None` can be used with `Option` instead of null references
+  /** `None` can be used with `Option` instead of null references:
     */
   def noneWithOptionEmptyValues(res0: Boolean, res1: Option[String]) {
     val optional: Option[String] = None
@@ -81,7 +81,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     assert(optional === res1)
   }
 
-  /** `Some` is the opposite of `None` for `Option` types
+  /** `Some` is the opposite of `None` for `Option` types:
     */
   def someAgainstNoneEmptyValues(res0: Boolean, res1: Boolean) {
     val optional: Option[String] = Some("Some Value")

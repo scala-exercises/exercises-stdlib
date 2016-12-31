@@ -8,7 +8,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
 
   /** Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
     *
-    * Here is an example for a class hierarchy which consists of an abstract super class `Term` and three concrete case classes `Var`, `Fun`, and `App`.
+    * Here is an example for a class hierarchy which consists of an abstract superclass `Term` and three concrete case classes `Var`, `Fun`, and `App`:
     *
     * {{{
     * abstract class Term
@@ -32,7 +32,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     * println(x.name)
     * }}}
     *
-    * For every case class the Scala compiler generates `equals` method which implements structural equality and a`toString` method. For instance:
+    * For every case class the Scala compiler generates an `equals` method which implements structural equality and a `toString` method. For instance,
     *
     * {{{
     * val x1 = Var("x")
@@ -218,7 +218,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     parts._4 should be(res3)
   }
 
-  /** Case classes, yet not normal classes, are automatically Serializable
+  /** Case classes are `Serializable`:
     */
   def serializableCaseClasses(res0: Boolean, res1: Boolean) {
     case class PersonCC(firstName: String, lastName: String)

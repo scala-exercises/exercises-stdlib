@@ -30,7 +30,7 @@ object RepeatedParameters extends FlatSpec with Matchers with org.scalaexercises
     repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol")) should be(res0)
   }
 
-  /** A repeated parameter can accept a collection,and if you want it expanded, add `:_*`
+  /** A repeated parameter can accept a collection - if you want it expanded, add `:_*`
     */
   def expandCollectionRepeatedParameters(res0: String) {
     repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol"): _*) should be(res0)

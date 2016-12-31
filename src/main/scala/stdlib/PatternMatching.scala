@@ -44,7 +44,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     myStuff should be(res0)
   }
 
-  /** Pattern matching can return complex somethings:
+  /** Pattern matching can return complex values:
     */
   def returnComplexPatternMatching(res0: Int, res1: Int, res2: Int) {
     val stuff = "blue"
@@ -122,7 +122,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   //    goldilocks("Sitting Alert: bear=Mama, source=chair") should be(res1)
   //  }
 
-  /** A backquote can be used to refer to a stable variable in scope to create a case statement. This prevents what is called "Variable Shadowing"
+  /** A backquote can be used to refer to a stable variable in scope to create a case statement - this prevents "variable shadowing":
     */
   def createCaseStatementPatternMatching(res0: String, res1: String, res2: String, res3: String) {
     val foodItem = "porridge"
@@ -152,7 +152,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     patternEquals(9, 9) should be(res2)
   }
 
-  /** To pattern match against a `List`, the list can be broken out into parts, in this case the head `x` and the tail `xs`. Since the case doesn't terminate in `Nil`, `xs` is interpreted as the rest of the list:
+  /** To pattern match against a `List`, the list can be split into parts, in this case the head `x` and the tail `xs`. Since the case doesn't terminate in `Nil`, `xs` is interpreted as the rest of the list:
     */
   def againstListsPatternMatching(res0: Int) {
     val secondElement = List(1, 2, 3) match {
