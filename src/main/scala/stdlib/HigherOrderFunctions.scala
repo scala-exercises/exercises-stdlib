@@ -46,11 +46,13 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     result should be(res0)
   }
 
-  /** {{{
+  /** Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a parameter to the function. 
+    *
+    *{{{
     * val multiplier = (i:Int) => i * 10
     * }}}
     *
-    * Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a parameter to the function.
+    * A closure is a function which maintains a reference to one or more variables outside of the function scope (it "closes over" the variables).  Scala will detect that you are using variables outside of scope and create an object instance to hold the shared variables.
     */
   def meetClosureHigherOrderFunctions(res0: Int, res1: Int) {
     var incrementer = 1
