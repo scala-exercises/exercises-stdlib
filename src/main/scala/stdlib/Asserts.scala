@@ -56,5 +56,11 @@ object Asserts extends FlatSpec with Matchers with org.scalaexercises.definition
   def valuesAsserts(res0: Int) {
     assert(res0 == 1 + 1)
   }
+  
+  /** Negtive must less than 0 */
+ def negtiveAsserts(res0: Int){
+  assert(reso0 < 0)
+ }
+  
 
 }
