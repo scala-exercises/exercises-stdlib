@@ -44,7 +44,7 @@ object ParentClasses extends FlatSpec with Matchers with org.scalaexercises.defi
     * //val soldier = new Soldier
     * }}}
     *
-    * A class can be placed inside an abstract class just like in java:
+    * A class can be placed inside an abstract class just like in Java:
     */
   def abstractClassParentClasses(res0: Int) {
     abstract class Soldier(val firstName: String, val lastName: String) {

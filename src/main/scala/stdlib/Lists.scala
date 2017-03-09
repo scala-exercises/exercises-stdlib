@@ -7,9 +7,9 @@ import org.scalatest._
   */
 object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Scala Lists are quite similar to arrays which means, all the elements of a list have the same type but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
+  /** Scala Lists are quite similar to arrays, which means all the elements of a list have the same type - but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
     *
-    * `eq` tests identity (same object)
+    * `eq` tests identity (same object):
     */
   def similarToArraysLists(res0: Boolean) {
     val a = List(1, 2, 3)
@@ -17,7 +17,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     (a eq b) should be(res0)
   }
 
-  /** `==` tests equality (same content)
+  /** `==` tests equality (same content):
     */
   def sameContentLists(res0: Boolean) {
     val a = List(1, 2, 3)
@@ -25,7 +25,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     (a == b) should be(res0)
   }
 
-  /** Nil lists are identical, even of different types
+  /** Nil lists are identical, even of different types:
     */
   def nilListsLists(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean, res4: Boolean, res5: Boolean) {
     val a: List[String] = Nil
@@ -41,15 +41,14 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     (a eq b) should be(res5)
   }
 
-  /** Lists are easily created
+  /** Lists can be easily created:
     */
   def easilyCreatedLists(res0: Int, res1: Int, res2: Int) {
     val a = List(1, 2, 3)
     a should equal(List(res0, res1, res2))
   }
 
-  /** Lists can be accessed via head, headOption and tail.
-    * Accessing List via `head` is unsafe and may result in a IndexOutOfBoundsException
+  /** Lists can be accessed via `head`, `headOption` and `tail`. Accessing a list via `head` is unsafe and may result in a `IndexOutOfBoundsException`.
     */
   def headAndTailLists(res0: Int, res1: Int, res2: Int) {
     val a = List(1, 2, 3)
@@ -57,7 +56,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.tail should equal(List(res1, res2))
   }
 
-  /** Lists can be accessed by position
+  /** Lists can be accessed by position:
     */
   def byPositionLists(res0: Int, res1: Int, res2: Int) {
     val a = List(1, 3, 5, 7, 9)
@@ -70,7 +69,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     }
   }
 
-  /** Lists are immutable
+  /** Lists are immutable:
     */
   def areImmutableLists(res0: Int, res1: Int, res2: Int, res3: Int) {
     val a = List(1, 3, 5, 7, 9)
@@ -80,7 +79,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     b should equal(List(res0, res1, res2, res3))
   }
 
-  /** Lists have many useful methods
+  /** Lists have many useful utility methods:
     */
   def usefulMethodsLists(res0: Int, res1: List[Int], res2: List[Int], res3: List[Int]) {
     val a = List(1, 3, 5, 7, 9)
@@ -98,7 +97,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.filter { v ⇒ v % 3 == 0 } should equal(res3)
   }
 
-  /** Functions over lists can use _ as shorthand
+  /** Functions over lists can use _ as shorthand:
     */
   def wildcardAsShorthandLists(res0: Int, res1: Int, res2: Int, res3: Int) {
     val a = List(1, 2, 3)
@@ -112,7 +111,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     } should equal(List(res3))
   }
 
-  /** Functions over lists can use `()` instead of `{}`
+  /** Functions over lists can use `()` instead of `{}`:
     */
   def functionsOverListsLists(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) {
     val a = List(1, 2, 3)
@@ -120,7 +119,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.filter(_ % 2 != 0) should equal(List(res3, res4))
   }
 
-  /** Lists can be *reduced* with a mathematical operation
+  /** Lists can be reduced with a mathematical operation:
     */
   def reducingListsLists(res0: Int, res1: Int) {
     val a = List(1, 3, 5, 7)
@@ -128,7 +127,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.reduceLeft(_ * _) should equal(res1)
   }
 
-  /** Foldleft is like reduce, but with an explicit starting value
+  /** `foldLeft` is like `reduce`, but with an explicit starting value:
     */
   def foldLeftLists(res0: Int, res1: Int, res2: Int, res3: Int) {
     val a = List(1, 3, 5, 7)
@@ -139,14 +138,14 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.foldLeft(0)(_ * _) should equal(res3)
   }
 
-  /** You can create a list from a range
+  /** You can create a list from a range:
     */
   def fromRangeLists(res0: List[Int]) {
     val a = (1 to 5).toList
     a should be(res0)
   }
 
-  /** Lists reuse their tails
+  /** Lists reuse their tails:
     */
   def reuseTailsLists(res0: Int, res1: Int, res2: Int, res3: List[Int], res4: List[Int], res5: List[Int]) {
     val d = Nil

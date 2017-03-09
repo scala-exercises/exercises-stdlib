@@ -25,8 +25,8 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     *
     * There are two syntactic conventions at work here:
     *
-    * - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to match even number; the return value of the `unapply` signals whether the argument has matched or not, and any sub-values that can be used for further matching. Here, the sub-value is `z/2`
-    * - The `apply` method is not necessary for pattern matching. It is only used to mimick a constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
+    *  - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to match even number; the return value of the `unapply` signals whether the argument has matched or not, and any sub-values that can be used for further matching. Here, the sub-value is `z/2`
+    *  - The `apply` method is not necessary for pattern matching. It is only used to mimick a constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
     *
     * The code in the preceding example would be expanded as follows:
     *
@@ -38,9 +38,9 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     * }}}
     * The return type of an `unapply` should be chosen as follows:
     *
-    * - If it is just a test, return a `Boolean`. For instance `case even()`
-    * - If it returns a single sub-value of type `T`, return a `Option[T]`
-    * - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
+    *  - If it is just a test, return a `Boolean`. For instance `case even()`
+    *  - If it returns a single sub-value of type `T`, return a `Option[T]`
+    *  - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
     *
     * Sometimes, the number of sub-values is fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
     *
@@ -76,7 +76,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     d should be(res3)
   }
 
-  /** Of course an extractor can be used in pattern matching...
+  /** An extractor can also be used in pattern matching:
     */
   def patternMatchingExtractors(res0: String, res1: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -94,7 +94,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     x._2 should be(res1)
   }
 
-  /** Since we aren't really using u and v in the previous pattern matching with can replace them with _.
+  /** Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
     */
   def withWildcardExtractors(res0: String, res1: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -132,7 +132,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     result should be(res0)
   }
 
-  /** An extractor can be any stable object, including instantiated classes with an unapply method.
+  /** An extractor can be any stable object, including instantiated classes with an unapply method:
     */
   def anyObjectExtractors(res0: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short) {
@@ -149,7 +149,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     result should be(res0)
   }
 
-  /** What is typical is to create a custom extractor in the companion object of the class. In this exercise, we use it as an assignment:
+  /** A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
     */
   def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) {
     class Employee(
@@ -174,7 +174,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     c should be(res2)
   }
 
-  /** In this exercise we use the unapply for pattern matching employee objects
+  /** In this exercise we use `unapply` for pattern matching employee objects:
     */
   def unapplyForPatternMatchingExtractors(res0: String) {
     class Employee(

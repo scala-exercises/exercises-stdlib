@@ -7,7 +7,7 @@ import org.scalatest._
   */
 object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Character Literals are quoted with single quotes:
+  /** Character literals are quoted with single quotes:
     */
   def characterLiteralsLiteralStrings(res0: String, res1: String) {
     val a = 'a'
@@ -17,7 +17,7 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
     b.toString should be(res1)
   }
 
-  /** Character Literals can use hexadecimal Unicode
+  /** Character literals can use hexadecimal Unicode:
     */
   def characterLiteralsUnicodeLiteralStrings(res0: String) {
     val c = '\u0061' //unicode for a
@@ -25,14 +25,14 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
     c.toString should be(res0)
   }
 
-  /** Character Literals can use octal as well
+  /** Character literals can use octal as well:
     */
   def characterLiteralsOctalLiteralStrings(res0: String) {
     val d = '\141' //octal for a
     d.toString should be(res0)
   }
 
-  /** Character Literals can use escape sequences
+  /** Character literals can use escape sequences:
     */
   def escapeSequenceLiteralStrings(res0: String, res1: String) {
     val e = '\"'
@@ -42,7 +42,7 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
     f.toString should be(res1)
   }
 
-  /** One-Line String Literals are surrounded by quotation marks.
+  /** One-line String literals are surrounded by quotation marks:
     */
   def oneLineLiteralStrings(res0: String) {
     val a = "To be or not to be"
