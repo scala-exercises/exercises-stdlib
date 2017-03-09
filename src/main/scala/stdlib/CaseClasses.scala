@@ -81,7 +81,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     * }
     * }}}
     *
-    * In our example, the function `print` is expressed as a pattern matching statement starting with the `match` keyword and consisting of sequences of `case Pattern => Body` clauses.
+    * In our example, the function `printTerm` is expressed as a pattern matching statement starting with the `match` keyword and consisting of sequences of `case Pattern => Body` clauses.
     *
     * The program above also defines a function `isIdentityFun` which checks if a given term corresponds to a simple identity function. This example uses deep patterns and guards. After matching a pattern with a given value, the guard (defined after the keyword `if`) is evaluated. If it returns `true`, the match succeeds; otherwise, it fails and the next pattern will be tried.
     *
