@@ -13,11 +13,11 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     */
   def meetLambdaHigherOrderFunctions(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int) {
     def lambda = { x: Int ⇒ x + 1 }
-    def lambda2 = (x: Int) ⇒ x + 1
-    val lambda3 = (x: Int) ⇒ x + 1
+    def lambda2 = (x: Int) ⇒ x + 2
+    val lambda3 = (x: Int) ⇒ x + 3
 
     val lambda4 = new Function1[Int, Int] {
-      def apply(v1: Int): Int = v1 + 1
+      def apply(v1: Int): Int = v1 - 1
     }
 
     def lambda5(x: Int) = x + 1
