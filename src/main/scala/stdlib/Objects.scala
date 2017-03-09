@@ -9,7 +9,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
 
   /** An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
     */
-  def singletonObjects(res0: String, res1: Stringg) {
+  def singletonObjects(res0: String, res1: String) {
     object Greeting {
       def english = "Hi"
 
