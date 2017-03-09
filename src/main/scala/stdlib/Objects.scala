@@ -9,21 +9,16 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
 
   /** An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way.
     */
-  def singletonObjects(res0: String, res1: String, res2: String, res3: String) {
+  def singletonObjects(res0: String, res1: Stringg) {
     object Greeting {
       def english = "Hi"
 
       def espanol = "Hola"
 
-      def deutsch = "Hallo"
-
-      def magyar = "Szia"
     }
 
     Greeting.english should be(res0)
     Greeting.espanol should be(res1)
-    Greeting.deutsch should be(res2)
-    Greeting.magyar should be(res3)
   }
 
   /** Here is a proof that an object is a singleton, and not a static method in a class
@@ -33,10 +28,6 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
       def english = "Hi"
 
       def espanol = "Hola"
-
-      def deutsch = "Hallo"
-
-      def magyar = "Szia"
     }
 
     val x = Greeting
@@ -71,7 +62,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
 
   /** A companion object can also see private values and variables of the corresponding classes' instantiated objects:
     */
-  def privateValuesObjects(res0: String, res1: String, res2: String, res3: String) {
+  def privateValuesObjects(res0: String, res1: String) {
     class Person(val name: String, private val superheroName: String) //The superhero name is private!
 
     object Person {
@@ -80,13 +71,9 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
 
     val clark = new Person("Clark Kent", "Superman")
     val peter = new Person("Peter Parker", "Spiderman")
-    val bruce = new Person("Bruce Wayne", "Batman")
-    val diana = new Person("Diana Prince", "Wonder Woman")
 
     Person.showMeInnerSecret(clark) should be(res0)
     Person.showMeInnerSecret(peter) should be(res1)
-    Person.showMeInnerSecret(bruce) should be(res2)
-    Person.showMeInnerSecret(diana) should be(res3)
   }
 
 }
