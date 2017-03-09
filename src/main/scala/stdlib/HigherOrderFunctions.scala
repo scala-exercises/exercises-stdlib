@@ -31,10 +31,10 @@ object HigherOrderFunctions extends FlatSpec with Matchers with org.scalaexercis
     val result5 = lambda5(3)
 
     result should be(res0)
-    result1andhalf should be(res1+1)
-    result2 should be(res2+2)
-    result3 should be(res3+3)
-    result4 should be(res4-1)
+    result1andhalf should be(res1)
+    result2 should be(res2)
+    result3 should be(res3)
+    result4 should be(res4)
     result5 should be(res5)
   }
 
