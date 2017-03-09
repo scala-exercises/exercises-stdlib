@@ -11,7 +11,7 @@ class HigherOrderFunctionsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         HigherOrderFunctions.meetLambdaHigherOrderFunctions _,
-        4 :: 4 :: 4 :: 4 :: 4 :: 4 :: HNil
+        4 :: 4 :: 5 :: 6 :: 2 :: 4 :: HNil
       )
     )
   }
