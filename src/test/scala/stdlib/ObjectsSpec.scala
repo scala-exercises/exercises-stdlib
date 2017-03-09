@@ -11,7 +11,7 @@ class ObjectsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Objects.singletonObjects _,
-        "Hi" :: "Hola" :: "Hallo" :: "Szia" :: HNil
+        "Hi" :: "Hola" :: HNil
       )
     )
   }
@@ -48,7 +48,7 @@ class ObjectsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Objects.privateValuesObjects _,
-        "Superman" :: "Spiderman" :: "Batman" :: "Wonder Woman" :: HNil
+        "Superman" :: "Spiderman" :: HNil
       )
     )
   }
