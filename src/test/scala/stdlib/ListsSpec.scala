@@ -119,7 +119,7 @@ class ListsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Lists.fromRangeLists _,
-        List(1, 2, 3, 4, 5) :: HNil
+        1 :: 2 :: 3 :: 4 :: 5 :: HNil
       )
     )
   }

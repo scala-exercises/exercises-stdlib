@@ -89,10 +89,10 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.length should equal(res0)
 
     // reverse the list
-    a.reverse should equal(res1)
+    a.reverse should equal(List(res1(0), res1(1), res1(2), res1(3), res1(4)))
 
     // map a function to double the numbers over the list
-    a.map { v ⇒ v * 2 } should equal(res2)
+    a.map { v ⇒ v * 2 } should equal(List(res2(0), res2(1), res2(2), res2(3), res2(4)))
 
     // filter any values divisible by 3 in the list
     a.filter { v ⇒ v % 3 == 0 } should equal(res3)
@@ -120,7 +120,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.filter(_ % 2 != 0) should equal(List(res3, res4))
   }
 
-  /** Lists can be *reduced* with a mathematical operation
+  /** Lists can be *reduced* with a mathematical operation, i.e. the operation is used to combine all entries
     */
   def reducingListsLists(res0: Int, res1: Int) {
     val a = List(1, 3, 5, 7)
@@ -141,9 +141,9 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
 
   /** You can create a list from a range
     */
-  def fromRangeLists(res0: List[Int]) {
+  def fromRangeLists(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) {
     val a = (1 to 5).toList
-    a should be(res0)
+    a should be(List(res0, res1, res2, res3, res4))
   }
 
   /** Lists reuse their tails
@@ -155,7 +155,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     val a = 1 :: b
 
     a should be(List(res0, res1, res2))
-    a.tail should be(res3)
+    a.tail should be(List(res3(0), res3(1)))
     b.tail should be(res4)
     c.tail should be(res5)
   }
