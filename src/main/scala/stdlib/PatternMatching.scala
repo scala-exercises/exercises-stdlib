@@ -15,7 +15,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     * def matchTest(x: Int): String = x match {
     * case 1 => "one"
     * case 2 => "two"
-    * case _ => "many"
+    * case _ => "many" // case _ will trigger if all other cases fail.
     * }
     * println(matchTest(3)) // prints "many"
     * }
@@ -38,7 +38,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
         println("BLUE"); 2
       case "green" ⇒
         println("GREEN"); 3
-      case _ ⇒ println(stuff); 0 //case _ will trigger if all other cases fail.
+      case _ ⇒ println(stuff); 0 // case _ will trigger if all other cases fail.
     }
 
     myStuff should be(res0)
