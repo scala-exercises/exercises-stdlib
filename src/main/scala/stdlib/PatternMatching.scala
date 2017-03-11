@@ -189,11 +189,22 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     */
   def againstListsIVPatternMatching(res0: Int) {
     val r = List(1, 2, 3) match {
-      case x :: y :: Nil ⇒ y
+      case x :: y :: Nil ⇒ y // only matches a list with exactly two items
       case _             ⇒ 0
     }
 
     r should be(res0)
+  }
+
+  /** If a pattern is exactly one element longer than a `List`, it extracts the final `Nil`:
+    */
+  def againstListsVPatternMatching(res0: Boolean) {
+    val r = List(1, 2, 3) match {
+      case x :: y :: z :: tail ⇒ tail
+      case _             ⇒ 0
+    }
+
+    r == Nil should be(res0)
   }
 
 }
