@@ -17,7 +17,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     * case 2 => "two"
     * case _ => "many"
     * }
-    * println(matchTest(3))
+    * println(matchTest(3)) // prints "many"
     * }
     * }}}
     *
