@@ -178,7 +178,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     */
   def againstListsIIIPatternMatching(res0: Int) {
     val secondElement = List(1) match {
-      case x :: y :: xs ⇒ y
+      case x :: y :: xs ⇒ y // only matches a list with two or more items
       case _            ⇒ 0
     }
 
