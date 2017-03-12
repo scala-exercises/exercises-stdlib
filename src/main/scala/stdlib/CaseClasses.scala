@@ -128,7 +128,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     (d2 == d3) should be(res2)
   }
 
-  /** Case classes have a convenient toString method defined:
+  /** Case classes have a convenient toString method defined, which follows the pattern Classname(ParameterValue1,ParameterValue2,...).
     */
   def toStringMethodCaseClasses(res0: String) {
     case class Dog(name: String, breed: String)
@@ -218,7 +218,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     parts._4 should be(res3)
   }
 
-  /** Case classes are Serializable
+  /** Case classes, yet not normal classes, are automatically Serializable
     */
   def serializableCaseClasses(res0: Boolean, res1: Boolean) {
     case class PersonCC(firstName: String, lastName: String)
