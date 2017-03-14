@@ -442,7 +442,7 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
     (((((0 - 5) - 4) - 3) - 2) - 1) should be(res4)
   }
 
-  /** `:\` or foldRight` will combine an operation starting with a seed and combining from the right.  Fold right is defined as (list :\ seed), where seed is the initial value.  Once the fold is established, you  provide a function that takes two elements.  The first is the next element of the list, and the second element is the running total of the operation.
+  /** `:\` or `foldRight` will combine an operation starting with a seed and combining from the right.  Fold right is defined as (list :\ seed), where seed is the initial value.  Once the fold is established, you  provide a function that takes two elements.  The first is the next element of the list, and the second element is the running total of the operation.
     *
     * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`, `foldRight` is defined as: `x1 op (x2 op (x3 op (x4 op init)))`
     */
