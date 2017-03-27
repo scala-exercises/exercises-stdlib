@@ -15,9 +15,9 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     * def matchTest(x: Int): String = x match {
     * case 1 => "one"
     * case 2 => "two"
-    * case _ => "many"
+    * case _ => "many" // case _ will trigger if all other cases fail.
     * }
-    * println(matchTest(3))
+    * println(matchTest(3)) // prints "many"
     * }
     * }}}
     *
@@ -38,7 +38,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
         println("BLUE"); 2
       case "green" ⇒
         println("GREEN"); 3
-      case _ ⇒ println(stuff); 0 //case _ will trigger if all other cases fail.
+      case _ ⇒ println(stuff); 0 // case _ will trigger if all other cases fail.
     }
 
     myStuff should be(res0)
@@ -178,7 +178,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     */
   def againstListsIIIPatternMatching(res0: Int) {
     val secondElement = List(1) match {
-      case x :: y :: xs ⇒ y
+      case x :: y :: xs ⇒ y // only matches a list with two or more items
       case _            ⇒ 0
     }
 
@@ -189,11 +189,22 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
     */
   def againstListsIVPatternMatching(res0: Int) {
     val r = List(1, 2, 3) match {
-      case x :: y :: Nil ⇒ y
+      case x :: y :: Nil ⇒ y // only matches a list with exactly two items
       case _             ⇒ 0
     }
 
     r should be(res0)
+  }
+
+  /** If a pattern is exactly one element longer than a `List`, it extracts the final `Nil`:
+    */
+  def againstListsVPatternMatching(res0: Boolean) {
+    val r = List(1, 2, 3) match {
+      case x :: y :: z :: tail ⇒ tail
+      case _             ⇒ 0
+    }
+
+    r == Nil should be(res0)
   }
 
 }

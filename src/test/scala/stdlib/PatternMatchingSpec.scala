@@ -105,4 +105,14 @@ class PatternMatchingSpec extends Spec with Checkers {
       )
     )
   }
+
+  def `pattern matching lists part five` = {
+    check(
+      Test.testSuccess(
+        PatternMatching.againstListsVPatternMatching _,
+        true :: HNil
+      )
+    )
+  }
+
 }
