@@ -218,7 +218,6 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
     parts._4 should be(res3)
   }
 
-
   /** Case classes, yet not normal classes, are automatically Serializable
     */
   def serializableCaseClasses(res0: Boolean, res1: Boolean) {
