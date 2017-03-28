@@ -24,7 +24,7 @@ object Maps extends FlatSpec with Matchers with org.scalaexercises.definitions.S
     myMap.size should be(res0)
   }
 
-  /** Maps contain distinct pairings:
+  /** Maps do not contain multiple identical pairs:
     */
   def distinctPairingsMaps(res0: Int) {
     val myMap = Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "MI" → "Michigan")
@@ -50,6 +50,15 @@ object Maps extends FlatSpec with Matchers with org.scalaexercises.definitions.S
 
     val lastElement = mapValues.last
     lastElement should be(res2) //Failed presumption: The order in maps is not guaranteed
+
+  }
+
+    /** Maps may be accessed:
+    */
+  def mayBeAccessedMaps(res0: String, res1: String) {
+    val myMap = Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa")
+    myMap("MI") should be(res0)
+    myMap("IA") should be(res1)
   }
 
   /** Maps insertion with duplicate key updates previous entry with subsequent value:
@@ -68,14 +77,6 @@ object Maps extends FlatSpec with Matchers with org.scalaexercises.definitions.S
     val myMap = Map("Ann Arbor" → "MI", 49931 → "MI")
     myMap("Ann Arbor") should be(res0)
     myMap(49931) should be(res1)
-  }
-
-  /** Maps may be accessed:
-    */
-  def mayBeAccessedMaps(res0: String, res1: String) {
-    val myMap = Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa")
-    myMap("MI") should be(res0)
-    myMap("IA") should be(res1)
   }
 
   /** If a nonexistent map key is requested using `myMap(missingKey)`, a `NoSuchElementException` will be thrown.

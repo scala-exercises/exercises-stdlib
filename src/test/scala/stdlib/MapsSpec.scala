@@ -43,6 +43,15 @@ class MapsSpec extends Spec with Checkers {
     )
   }
 
+  def `map key access` = {
+    check(
+      Test.testSuccess(
+        Maps.mayBeAccessedMaps _,
+        "Michigan" :: "Iowa" :: HNil
+      )
+    )
+  }
+
   def `duplicate keys` = {
     check(
       Test.testSuccess(
@@ -57,15 +66,6 @@ class MapsSpec extends Spec with Checkers {
       Test.testSuccess(
         Maps.mixedTypeKeysMaps _,
         "MI" :: "MI" :: HNil
-      )
-    )
-  }
-
-  def `map key access` = {
-    check(
-      Test.testSuccess(
-        Maps.mayBeAccessedMaps _,
-        "Michigan" :: "Iowa" :: HNil
       )
     )
   }
