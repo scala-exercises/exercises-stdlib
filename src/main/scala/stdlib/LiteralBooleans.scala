@@ -1,15 +1,26 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name literal_booleans
-  *
-  */
+ *
+ */
 object LiteralBooleans extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Boolean literals are either true or false, using the `true` or `false` keyword:
-    */
-  def literalBooleanLiteralBooleans(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean, res4: Boolean, res5: Boolean) {
+   */
+  def literalBooleanLiteralBooleans(
+      res0: Boolean,
+      res1: Boolean,
+      res2: Boolean,
+      res3: Boolean,
+      res4: Boolean,
+      res5: Boolean) {
     val a = true
     val b = false
     val c = 1 > 2

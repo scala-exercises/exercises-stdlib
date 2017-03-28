@@ -1,14 +1,19 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name objects
-  *
-  */
+ *
+ */
 object Objects extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
-    */
+   */
   def singletonObjects(res0: String, res1: String) {
     object Greeting {
       def english = "Hi"
@@ -22,7 +27,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
   }
 
   /** Here is a proof that an object is a singleton, and not a static method in a class:
-    */
+   */
   def notStaticMethodObjects(res0: Boolean, res1: Boolean) {
     object Greeting {
       def english = "Hi"
@@ -41,7 +46,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
   }
 
   /** An object that has the same name as a class is called a companion object of the class, and it is often used to contain factory methods for the class that it complements:
-    */
+   */
   def companionObjectObjects(res0: String) {
     class Movie(val name: String, val year: Short)
 
@@ -61,7 +66,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
   }
 
   /** A companion object can also see private values and variables of the corresponding classes' instantiated objects:
-    */
+   */
   def privateValuesObjects(res0: String, res1: String) {
     class Person(val name: String, private val superheroName: String) //The superhero name is private!
 

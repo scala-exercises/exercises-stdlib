@@ -1,23 +1,31 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 import scala.language.postfixOps
 
 /** @param name infix_prefix_and_postfix_operators
-  *
-  */
-object InfixPrefixandPostfixOperators extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+ *
+ */
+object InfixPrefixandPostfixOperators
+    extends FlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** Any method which takes a single parameter can be used as an infix operator: `a.m(b)` can also be written as `a m b`.
-    */
+   */
   def singleParameterInfixPrefixandPostfixOperators(res0: Int, res1: Int) {
     val g: Int = 3
     (g + 4) should be(res0) // + is an infix operator
-    g.+(4) should be(res1) // same result but not using the infix operator
+    g.+(4) should be(res1)  // same result but not using the infix operator
   }
 
   /** Infix operators do NOT work if an object has a method that takes two parameters:
-    */
+   */
   def notWithTwoInfixPrefixandPostfixOperators(res0: Int, res1: Int) {
     val g: String = "Check out the big brains on Brad!"
 
@@ -29,14 +37,14 @@ object InfixPrefixandPostfixOperators extends FlatSpec with Matchers with org.sc
   }
 
   /** Any method which does not require a parameter can be used as a postfix operator: `a.m` can be written as `a m`.
-    *
-    * For instance, `a.+(b)` is equivalent to `a + b` and `a.!` is the same as `a!`.
-    *
-    * Postfix operators have lower precedence than infix operators, so:
-    *  - `foo bar baz` means `foo.bar(baz)`.
-    *  - `foo bar baz bam` means `(foo.bar(baz)).bam`
-    *  - `foo bar baz bam bim` means `(foo.bar(baz)).bam(bim)`.
-    */
+   *
+   * For instance, `a.+(b)` is equivalent to `a + b` and `a.!` is the same as `a!`.
+   *
+   * Postfix operators have lower precedence than infix operators, so:
+   *  - `foo bar baz` means `foo.bar(baz)`.
+   *  - `foo bar baz bam` means `(foo.bar(baz)).bam`
+   *  - `foo bar baz bam bim` means `(foo.bar(baz)).bam(bim)`.
+   */
   def postfixOperatorInfixPrefixandPostfixOperators(res0: String) {
     val g: Int = 31
     (g toHexString) should be(res0) //toHexString takes no params therefore can be called as a postfix operator.
@@ -44,14 +52,14 @@ object InfixPrefixandPostfixOperators extends FlatSpec with Matchers with org.sc
   }
 
   /** Prefix operators work if an object has a method name that starts with `unary_` :
-    */
+   */
   def startsWithUnaryInfixPrefixandPostfixOperators(res0: Int) {
     val g: Int = 31
     (-g) should be(res0)
   }
 
   /** Here's how to create a prefix operator for our own class. The only identifiers that can be used as prefix operators are `+`, `-`, `!`, and `~`:
-    */
+   */
   def ourOwnOperatorInfixPrefixandPostfixOperators(res0: String, res1: String) {
     class Stereo {
       def unary_+ = "on"

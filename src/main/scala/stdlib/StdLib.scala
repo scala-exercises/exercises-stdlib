@@ -1,16 +1,16 @@
 /*
- * scala-exercises-content
+ * scala-exercises - exercises-stdlib
  * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
  */
 
 package stdlib
 
 /** Scala fuses object-oriented and functional programming in a statically typed programming language.
-  *
-  * @param name std_lib
-  */
+ *
+ * @param name std_lib
+ */
 object StdLib extends org.scalaexercises.definitions.Library {
-  override def owner = "scala-exercises"
+  override def owner      = "scala-exercises"
   override def repository = "exercises-stdlib"
 
   override def color = Some("#26525B")

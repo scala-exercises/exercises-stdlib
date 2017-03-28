@@ -1,33 +1,38 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name pattern_matching
-  *
-  */
+ *
+ */
 object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala has a built-in general pattern matching mechanism. It allows to match on any sort of data with a first-match policy.
-    * Here is a small example which shows how to match against an integer value:
-    *
-    * {{{
-    * object MatchTest1 extends App {
-    * def matchTest(x: Int): String = x match {
-    * case 1 => "one"
-    * case 2 => "two"
-    * case _ => "many" // case _ will trigger if all other cases fail.
-    * }
-    * println(matchTest(3)) // prints "many"
-    * }
-    * }}}
-    *
-    * The block with the `case` statements defines a function which maps integers to strings. The `match` keyword provides a convenient way of applying a function (like the pattern matching function above) to an object.
-    *
-    * Scala's pattern matching statement is most useful for matching on algebraic types expressed via `case classes`.
-    * Scala also allows the definition of patterns independently of case classes, using `unapply` methods in extractor objects.
-    *
-    * Pattern matching returns something:
-    */
+   * Here is a small example which shows how to match against an integer value:
+   *
+   * {{{
+   * object MatchTest1 extends App {
+   * def matchTest(x: Int): String = x match {
+   * case 1 => "one"
+   * case 2 => "two"
+   * case _ => "many" // case _ will trigger if all other cases fail.
+   * }
+   * println(matchTest(3)) // prints "many"
+   * }
+   * }}}
+   *
+   * The block with the `case` statements defines a function which maps integers to strings. The `match` keyword provides a convenient way of applying a function (like the pattern matching function above) to an object.
+   *
+   * Scala's pattern matching statement is most useful for matching on algebraic types expressed via `case classes`.
+   * Scala also allows the definition of patterns independently of case classes, using `unapply` methods in extractor objects.
+   *
+   * Pattern matching returns something:
+   */
   def patternMatchingMechanismPatternMatching(res0: Int) {
     val stuff = "blue"
 
@@ -38,14 +43,15 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
         println("BLUE"); 2
       case "green" ⇒
         println("GREEN"); 3
-      case _ ⇒ println(stuff); 0 // case _ will trigger if all other cases fail.
+      case _ ⇒
+        println(stuff); 0 // case _ will trigger if all other cases fail.
     }
 
     myStuff should be(res0)
   }
 
   /** Pattern matching can return complex values:
-    */
+   */
   def returnComplexPatternMatching(res0: Int, res1: Int, res2: Int) {
     val stuff = "blue"
 
@@ -60,7 +66,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** Pattern matching can match complex expressions:
-    */
+   */
   def complexExpressionsPatternMatching(res0: String) {
     def goldilocks(expr: Any) = expr match {
       case ("porridge", "Papa") ⇒ "Papa eating porridge"
@@ -73,7 +79,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** Pattern matching can wildcard parts of expressions:
-    */
+   */
   def wildcardParsPatternMatching(res0: String, res1: String) {
     def goldilocks(expr: Any) = expr match {
       case ("porridge", _)   ⇒ "eating"
@@ -87,13 +93,14 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** Pattern matching can substitute parts of expressions:
-    */
+   */
   def substitutePartsPatternMatching(res0: String, res1: String) {
     def goldilocks(expr: Any) = expr match {
-      case ("porridge", bear) ⇒ bear + " said someone's been eating my porridge"
-      case ("chair", bear)    ⇒ bear + " said someone's been sitting in my chair"
-      case ("bed", bear)      ⇒ bear + " said someone's been sleeping in my bed"
-      case _                  ⇒ "what?"
+      case ("porridge", bear) ⇒
+        bear + " said someone's been eating my porridge"
+      case ("chair", bear) ⇒ bear + " said someone's been sitting in my chair"
+      case ("bed", bear)   ⇒ bear + " said someone's been sleeping in my bed"
+      case _               ⇒ "what?"
     }
 
     goldilocks(("porridge", "Papa")) should be(res0)
@@ -123,7 +130,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   //  }
 
   /** A backquote can be used to refer to a stable variable in scope to create a case statement - this prevents "variable shadowing":
-    */
+   */
   def createCaseStatementPatternMatching(res0: String, res1: String, res2: String, res3: String) {
     val foodItem = "porridge"
 
@@ -141,7 +148,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** A backquote can be used to refer to a method parameter as a stable variable to create a case statement:
-    */
+   */
   def stableVariablePatternMatching(res0: Boolean, res1: Boolean, res2: Boolean) {
     def patternEquals(i: Int, j: Int) = j match {
       case `i` ⇒ true
@@ -153,7 +160,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** To pattern match against a `List`, the list can be split into parts, in this case the head `x` and the tail `xs`. Since the case doesn't terminate in `Nil`, `xs` is interpreted as the rest of the list:
-    */
+   */
   def againstListsPatternMatching(res0: Int) {
     val secondElement = List(1, 2, 3) match {
       case x :: xs ⇒ xs.head
@@ -164,7 +171,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** To obtain the second element you can expand on the pattern. Where `x` is the first element, `y` is the second element, and `xs` is the rest:
-    */
+   */
   def againstListsIIPatternMatching(res0: Int) {
     val secondElement = List(1, 2, 3) match {
       case x :: y :: xs ⇒ y
@@ -175,7 +182,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** Same koan as above, but we are pattern matching a list with only one item!
-    */
+   */
   def againstListsIIIPatternMatching(res0: Int) {
     val secondElement = List(1) match {
       case x :: y :: xs ⇒ y // only matches a list with two or more items
@@ -186,7 +193,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** To pattern match against `List`, you can also establish a pattern match if you know the exact number of elements in a `List`:
-    */
+   */
   def againstListsIVPatternMatching(res0: Int) {
     val r = List(1, 2, 3) match {
       case x :: y :: Nil ⇒ y // only matches a list with exactly two items
@@ -197,11 +204,11 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** If a pattern is exactly one element longer than a `List`, it extracts the final `Nil`:
-    */
+   */
   def againstListsVPatternMatching(res0: Boolean) {
     val r = List(1, 2, 3) match {
       case x :: y :: z :: tail ⇒ tail
-      case _             ⇒ 0
+      case _                   ⇒ 0
     }
 
     r == Nil should be(res0)

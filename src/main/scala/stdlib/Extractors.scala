@@ -1,52 +1,57 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name extractors
-  *
-  */
+ *
+ */
 object Extractors extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
-    *
-    * For instance, the following code defines an extractor object `Twice`.
-    *
-    * {{{
-    * object Twice {
-    * def apply(x: Int): Int = x * 2
-    * def unapply(z: Int): Option[Int] = if (z%2 == 0) Some(z/2) else None
-    * }
-    *
-    * object TwiceTest extends Application {
-    * val x = Twice(21)
-    * x match { case Twice(n) => Console.println(n) } // prints 21
-    * }
-    * }}}
-    *
-    * There are two syntactic conventions at work here:
-    *
-    *  - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to match even number; the return value of the `unapply` signals whether the argument has matched or not, and any sub-values that can be used for further matching. Here, the sub-value is `z/2`
-    *  - The `apply` method is not necessary for pattern matching. It is only used to mimick a constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
-    *
-    * The code in the preceding example would be expanded as follows:
-    *
-    * {{{
-    * object TwiceTest extends Application {
-    * val x = Twice.apply(21)
-    * Twice.unapply(x) match { case Some(n) => Console.println(n) } // prints 21
-    * }
-    * }}}
-    * The return type of an `unapply` should be chosen as follows:
-    *
-    *  - If it is just a test, return a `Boolean`. For instance `case even()`
-    *  - If it returns a single sub-value of type `T`, return a `Option[T]`
-    *  - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
-    *
-    * Sometimes, the number of sub-values is fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
-    *
-    * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
-    *
-    */
+   *
+   * For instance, the following code defines an extractor object `Twice`.
+   *
+   * {{{
+   * object Twice {
+   * def apply(x: Int): Int = x * 2
+   * def unapply(z: Int): Option[Int] = if (z%2 == 0) Some(z/2) else None
+   * }
+   *
+   * object TwiceTest extends Application {
+   * val x = Twice(21)
+   * x match { case Twice(n) => Console.println(n) } // prints 21
+   * }
+   * }}}
+   *
+   * There are two syntactic conventions at work here:
+   *
+   *  - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to match even number; the return value of the `unapply` signals whether the argument has matched or not, and any sub-values that can be used for further matching. Here, the sub-value is `z/2`
+   *  - The `apply` method is not necessary for pattern matching. It is only used to mimick a constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
+   *
+   * The code in the preceding example would be expanded as follows:
+   *
+   * {{{
+   * object TwiceTest extends Application {
+   * val x = Twice.apply(21)
+   * Twice.unapply(x) match { case Some(n) => Console.println(n) } // prints 21
+   * }
+   * }}}
+   * The return type of an `unapply` should be chosen as follows:
+   *
+   *  - If it is just a test, return a `Boolean`. For instance `case even()`
+   *  - If it returns a single sub-value of type `T`, return a `Option[T]`
+   *  - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
+   *
+   * Sometimes, the number of sub-values is fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
+   *
+   * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
+   *
+   */
   def extractorsExtractors(res0: String) {
     case class Employee(firstName: String, lastName: String)
 
@@ -60,7 +65,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used to assign values:
-    */
+   */
   def calledUnapplyExtractors(res0: String, res1: String, res2: Int, res3: Int) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
@@ -77,7 +82,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** An extractor can also be used in pattern matching:
-    */
+   */
   def patternMatchingExtractors(res0: String, res1: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
@@ -95,7 +100,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
-    */
+   */
   def withWildcardExtractors(res0: String, res1: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
@@ -113,7 +118,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** As long as the method signatures aren't the same, you can have as many unapply methods as you want:
-    */
+   */
   def multipleUnapplyExtractors(res0: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
     class Employee(val firstName: String, val middleName: Option[String], val lastName: String)
@@ -133,7 +138,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** An extractor can be any stable object, including instantiated classes with an unapply method:
-    */
+   */
   def anyObjectExtractors(res0: String) {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short) {
       def unapply(x: Car) = Some(x.make, x.model)
@@ -150,12 +155,12 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
-    */
+   */
   def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) {
     class Employee(
-      val firstName:  String,
-      val middleName: Option[String],
-      val lastName:   String
+        val firstName: String,
+        val middleName: Option[String],
+        val lastName: String
     )
 
     object Employee {
@@ -175,12 +180,12 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** In this exercise we use `unapply` for pattern matching employee objects:
-    */
+   */
   def unapplyForPatternMatchingExtractors(res0: String) {
     class Employee(
-      val firstName:  String,
-      val middleName: Option[String],
-      val lastName:   String
+        val firstName: String,
+        val middleName: Option[String],
+        val lastName: String
     )
 
     object Employee {
@@ -193,9 +198,11 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
     val singri = new Employee("Singri", None, "Keerthi")
 
     val result = singri match {
-      case Employee("Singri", None, x)    ⇒ "Yay, Singri %s! with no middle name!".format(x)
-      case Employee("Singri", Some(x), _) ⇒ "Yay, Singri with a middle name of %s".format(x)
-      case _                              ⇒ "I don't care, going on break"
+      case Employee("Singri", None, x) ⇒
+        "Yay, Singri %s! with no middle name!".format(x)
+      case Employee("Singri", Some(x), _) ⇒
+        "Yay, Singri with a middle name of %s".format(x)
+      case _ ⇒ "I don't care, going on break"
     }
 
     result should be(res0)

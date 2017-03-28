@@ -1,92 +1,97 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name case_classes
-  */
+ */
 object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
-    *
-    * Here is an example for a class hierarchy which consists of an abstract superclass `Term` and three concrete case classes `Var`, `Fun`, and `App`:
-    *
-    * {{{
-    * abstract class Term
-    * case class Var(name: String) extends Term
-    * case class Fun(arg: String, body: Term) extends Term
-    * case class App(f: Term, v: Term) extends Term
-    * }}}
-    *
-    * This class hierarchy can be used to represent terms of the untyped lambda calculus. To facilitate the construction of case class instances, Scala does not require that the `new` primitive is used. One can simply use the class name as a function.
-    *
-    * Here is an example:
-    *
-    * {{{
-    * Fun("x", Fun("y", App(Var("x"), Var("y"))))
-    * }}}
-    *
-    * The constructor parameters of case classes are treated as public values and can be accessed directly.
-    *
-    * {{{
-    * val x = Var("x")
-    * println(x.name)
-    * }}}
-    *
-    * For every case class the Scala compiler generates an `equals` method which implements structural equality and a `toString` method. For instance,
-    *
-    * {{{
-    * val x1 = Var("x")
-    * val x2 = Var("x")
-    * val y1 = Var("y")
-    * println("" + x1 + " == " + x2 + " => " + (x1 == x2))
-    * println("" + x1 + " == " + y1 + " => " + (x1 == y1))
-    * }}}
-    *
-    * will print
-    *
-    * {{{
-    * Var(x) == Var(x) => true
-    * Var(x) == Var(y) => false
-    * }}}
-    *
-    * It only makes sense to define case classes if pattern matching is used to decompose data structures. The following object defines a pretty printer function for our lambda calculus representation:
-    *
-    * {{{
-    * object TermTest extends Application {
-    * def printTerm(term: Term) {
-    * term match {
-    * case Var(n) =>
-    * print(n)
-    * case Fun(x, b) =>
-    * print("^" + x + ".")
-    * printTerm(b)
-    * case App(f, v) =>
-    * print("(")
-    * printTerm(f)
-    * print(" ")
-    * printTerm(v)
-    * print(")")
-    * }
-    * }
-    * def isIdentityFun(term: Term): Boolean = term match {
-    * case Fun(x, Var(y)) if x == y => true
-    * case _ => false
-    * }
-    * val id = Fun("x", Var("x"))
-    * val t = Fun("x", Fun("y", App(Var("x"), Var("y"))))
-    * printTerm(t)
-    * println
-    * println(isIdentityFun(id))
-    * println(isIdentityFun(t))
-    * }
-    * }}}
-    *
-    * In our example, the function `printTerm` is expressed as a pattern matching statement starting with the `match` keyword and consisting of sequences of `case Pattern => Body` clauses.
-    *
-    * The program above also defines a function `isIdentityFun` which checks if a given term corresponds to a simple identity function. This example uses deep patterns and guards. After matching a pattern with a given value, the guard (defined after the keyword `if`) is evaluated. If it returns `true`, the match succeeds; otherwise, it fails and the next pattern will be tried.
-    *
-    * Case classes have an automatic equals method that works:
-    */
+   *
+   * Here is an example for a class hierarchy which consists of an abstract superclass `Term` and three concrete case classes `Var`, `Fun`, and `App`:
+   *
+   * {{{
+   * abstract class Term
+   * case class Var(name: String) extends Term
+   * case class Fun(arg: String, body: Term) extends Term
+   * case class App(f: Term, v: Term) extends Term
+   * }}}
+   *
+   * This class hierarchy can be used to represent terms of the untyped lambda calculus. To facilitate the construction of case class instances, Scala does not require that the `new` primitive is used. One can simply use the class name as a function.
+   *
+   * Here is an example:
+   *
+   * {{{
+   * Fun("x", Fun("y", App(Var("x"), Var("y"))))
+   * }}}
+   *
+   * The constructor parameters of case classes are treated as public values and can be accessed directly.
+   *
+   * {{{
+   * val x = Var("x")
+   * println(x.name)
+   * }}}
+   *
+   * For every case class the Scala compiler generates an `equals` method which implements structural equality and a `toString` method. For instance,
+   *
+   * {{{
+   * val x1 = Var("x")
+   * val x2 = Var("x")
+   * val y1 = Var("y")
+   * println("" + x1 + " == " + x2 + " => " + (x1 == x2))
+   * println("" + x1 + " == " + y1 + " => " + (x1 == y1))
+   * }}}
+   *
+   * will print
+   *
+   * {{{
+   * Var(x) == Var(x) => true
+   * Var(x) == Var(y) => false
+   * }}}
+   *
+   * It only makes sense to define case classes if pattern matching is used to decompose data structures. The following object defines a pretty printer function for our lambda calculus representation:
+   *
+   * {{{
+   * object TermTest extends Application {
+   * def printTerm(term: Term) {
+   * term match {
+   * case Var(n) =>
+   * print(n)
+   * case Fun(x, b) =>
+   * print("^" + x + ".")
+   * printTerm(b)
+   * case App(f, v) =>
+   * print("(")
+   * printTerm(f)
+   * print(" ")
+   * printTerm(v)
+   * print(")")
+   * }
+   * }
+   * def isIdentityFun(term: Term): Boolean = term match {
+   * case Fun(x, Var(y)) if x == y => true
+   * case _ => false
+   * }
+   * val id = Fun("x", Var("x"))
+   * val t = Fun("x", Fun("y", App(Var("x"), Var("y"))))
+   * printTerm(t)
+   * println
+   * println(isIdentityFun(id))
+   * println(isIdentityFun(t))
+   * }
+   * }}}
+   *
+   * In our example, the function `printTerm` is expressed as a pattern matching statement starting with the `match` keyword and consisting of sequences of `case Pattern => Body` clauses.
+   *
+   * The program above also defines a function `isIdentityFun` which checks if a given term corresponds to a simple identity function. This example uses deep patterns and guards. After matching a pattern with a given value, the guard (defined after the keyword `if`) is evaluated. If it returns `true`, the match succeeds; otherwise, it fails and the next pattern will be tried.
+   *
+   * Case classes have an automatic equals method that works:
+   */
   def caseClassesSupportEquality(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) {
     case class Person(first: String, last: String)
 
@@ -102,7 +107,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes have an automatic hashcode method that works:
-    */
+   */
   def hashcodeMethodCaseClasses(res0: Boolean, res1: Boolean) {
     case class Person(first: String, last: String)
 
@@ -115,7 +120,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes can be created in a convenient way:
-    */
+   */
   def creationCaseClasses(res0: Boolean, res1: Boolean, res2: Boolean) {
     case class Dog(name: String, breed: String)
 
@@ -129,7 +134,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes have a convenient toString method defined:
-    */
+   */
   def toStringMethodCaseClasses(res0: String) {
     case class Dog(name: String, breed: String)
     val d1 = Dog("Scooby", "Doberman")
@@ -137,7 +142,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes have automatic properties:
-    */
+   */
   def propertiesCaseClasses(res0: String, res1: String) {
     case class Dog(name: String, breed: String)
 
@@ -147,7 +152,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes can have mutable properties:
-    */
+   */
   def mutablePropertiesCaseClasses(res0: String, res1: String, res2: String, res3: String) {
     case class Dog(var name: String, breed: String) // you can rename a dog, but change its breed? nah!
     val d1 = Dog("Scooby", "Doberman")
@@ -162,7 +167,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** There are safer alternatives for altering case classes:
-    */
+   */
   def alteringCaseClasses(res0: String, res1: String, res2: String, res3: String) {
     case class Dog(name: String, breed: String) // Doberman
 
@@ -178,8 +183,21 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes can have default and named parameters:
-    */
-  def parametersCaseClasses(res0: String, res1: String, res2: Int, res3: String, res4: String, res5: String, res6: Int, res7: String, res8: String, res9: String, res10: Int, res11: String, res12: Boolean) {
+   */
+  def parametersCaseClasses(
+      res0: String,
+      res1: String,
+      res2: Int,
+      res3: String,
+      res4: String,
+      res5: String,
+      res6: Int,
+      res7: String,
+      res8: String,
+      res9: String,
+      res10: Int,
+      res11: String,
+      res12: Boolean) {
     case class Person(first: String, last: String, age: Int = 0, ssn: String = "")
     val p1 = Person("Fred", "Jones", 23, "111-22-3333")
     val p2 = Person("Samantha", "Jones") // note missing age and ssn
@@ -205,7 +223,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes can be disassembled to their constituent parts as a tuple:
-    */
+   */
   def asTupleCaseClasses(res0: String, res1: String, res2: Int, res3: String) {
     case class Person(first: String, last: String, age: Int = 0, ssn: String = "")
     val p1 = Person("Fred", "Jones", 23, "111-22-3333")
@@ -219,7 +237,7 @@ object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.defini
   }
 
   /** Case classes are `Serializable`:
-    */
+   */
   def serializableCaseClasses(res0: Boolean, res1: Boolean) {
     case class PersonCC(firstName: String, lastName: String)
     val indy = PersonCC("Indiana", "Jones")

@@ -1,3 +1,8 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalacheck.Shapeless._
@@ -72,10 +77,11 @@ class HigherOrderFunctionsSpec extends Spec with Checkers {
 
   def `function as a parameter` = {
     check(
-      Test.testSuccess(
-        HigherOrderFunctions.functionAsParameterHigherOrderFunctions _,
-        List("ABC", "XYZ", "123") :: List("abc", "xyz", "123") :: List(5, 6, 7) :: HNil
-      )
+      Test
+        .testSuccess(
+          HigherOrderFunctions.functionAsParameterHigherOrderFunctions _,
+          List("ABC", "XYZ", "123") :: List("abc", "xyz", "123") :: List(5, 6, 7) :: HNil
+        )
     )
   }
 }
