@@ -1,21 +1,26 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name formatting
-  *
-  */
+ *
+ */
 object Formatting extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** String can be placed in format:
-    */
+   */
   def placedInFormatFormatting(res0: String) {
     val s = "Hello World"
     "Application %s".format(s) should be(res0)
   }
 
   /** Character Literals can be a single character:
-    */
+   */
   def characterFormatting(res0: String, res1: String) {
     val a = 'a'
     val b = 'B'
@@ -28,7 +33,7 @@ object Formatting extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** Character Literals can be an escape sequence, including octal or hexidecimal:
-    */
+   */
   def escapeSequenceFormatting(res0: String, res1: String, res2: String, res3: String) {
     val c = '\u0061' //unicode for a
     val d = '\141' //octal for a
@@ -42,14 +47,14 @@ object Formatting extends FlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /** Formatting can also include numbers:
-    */
+   */
   def includingNumbersFormatting(res0: String) {
     val j = 190
     "%d bottles of beer on the wall" format j - 100 should be(res0)
   }
 
   /** Formatting can be used for any number of items, like a string and a number:
-    */
+   */
   def anyNumberOfItemsFormatting(res0: String) {
     val j = 190
     val k = "vodka"

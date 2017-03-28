@@ -1,14 +1,19 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name literal_strings
-  *
-  */
+ *
+ */
 object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Character literals are quoted with single quotes:
-    */
+   */
   def characterLiteralsLiteralStrings(res0: String, res1: String) {
     val a = 'a'
     val b = 'B'
@@ -18,7 +23,7 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
   }
 
   /** Character literals can use hexadecimal Unicode:
-    */
+   */
   def characterLiteralsUnicodeLiteralStrings(res0: String) {
     val c = '\u0061' //unicode for a
 
@@ -26,14 +31,14 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
   }
 
   /** Character literals can use octal as well:
-    */
+   */
   def characterLiteralsOctalLiteralStrings(res0: String) {
     val d = '\141' //octal for a
     d.toString should be(res0)
   }
 
   /** Character literals can use escape sequences:
-    */
+   */
   def escapeSequenceLiteralStrings(res0: String, res1: String) {
     val e = '\"'
     val f = '\\'
@@ -43,16 +48,16 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
   }
 
   /** One-line String literals are surrounded by quotation marks:
-    */
+   */
   def oneLineLiteralStrings(res0: String) {
     val a = "To be or not to be"
     a should be(res0)
   }
-  /* TODO rework exercise compiler issue where multiline string literals are not 
+  /* TODO rework exercise compiler issue where multiline string literals are not
   /** multilineLiteralStrings
-    *
-    * Multiline String literals are surrounded by three quotation marks.
-    */
+ *
+ * Multiline String literals are surrounded by three quotation marks.
+ */
   def multilineLiteralStrings(res0: Int) {
     val a =
       """An apple a day
@@ -61,14 +66,14 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
   }
 
   /** stripMarginLiteralStrings
-    *
-    * Use stripMargin to prettify multi-line strings:
-    * Multiline String literals can use | to specify the starting position
-    * of subsequent lines, then use stripMargin to remove the surplus indentation.
-    */
+ *
+ * Use stripMargin to prettify multi-line strings:
+ * Multiline String literals can use | to specify the starting position
+ * of subsequent lines, then use stripMargin to remove the surplus indentation.
+ */
   def stripMarginLiteralStrings(res0: String) {
 
-    val a = """An apple a day keeps 
+    val a = """An apple a day keeps
 | the doctor away"""
     a.stripMargin.split('\n')(1).charAt(0) should be(res0)
 

@@ -1,13 +1,18 @@
+/*
+ * scala-exercises - exercises-stdlib
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package stdlib
 
 import org.scalatest._
 
 /** @param name byname_parameter
-  */
+ */
 object ByNameParameter extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can you use it as a block, but still it doesn't look quite right:
-    */
+   */
   def takesUnitByNameParameter(res0: Either[Throwable, Int]) {
     def calc(x: () ⇒ Int): Either[Throwable, Int] = {
       try {
@@ -25,7 +30,7 @@ object ByNameParameter extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** A by-name parameter does the same thing as the previous koan but there is no need to explicitly handle `Unit` or `()`. This is used extensively in Scala to create blocks:
-    */
+   */
   def byNameParameter(res0: Either[Throwable, Int]) {
     def calc(x: ⇒ Int): Either[Throwable, Int] = {
       //x is a call by name parameter
@@ -47,7 +52,7 @@ object ByNameParameter extends FlatSpec with Matchers with org.scalaexercises.de
   }
 
   /** By name parameters can also be used with `object` and `apply` to make interesting block-like calls:
-    */
+   */
   def withApplyByNameParameter(res0: String) {
     object PigLatinizer {
       def apply(x: ⇒ String) = x.tail + x.head + "ay"
