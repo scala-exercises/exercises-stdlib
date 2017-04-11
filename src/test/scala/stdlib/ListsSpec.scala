@@ -129,6 +129,24 @@ class ListsSpec extends Spec with Checkers {
     )
   }
 
+  def `add elements` = {
+    check(
+      Test.testSuccess(
+        Lists.addElementsLists _,
+        List(0, 1, 3, 5, 7) :: HNil
+      )
+    )
+  }
+
+  def `concatenate lists` = {
+    check(
+      Test.testSuccess(
+        Lists.concatenateLists _,
+        List(1, 3, 5, 7) :: List(1, 3) :: HNil
+      )
+    )
+  }
+
   def `lists share tails` = {
     check(
       Test.testSuccess(
