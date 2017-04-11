@@ -145,7 +145,8 @@ object HigherOrderFunctions
   def functionAsParameterHigherOrderFunctions(
       res0: List[String],
       res1: List[String],
-      res2: List[Int]) {
+      res2: List[String],
+      res3: List[Int]) {
     def makeUpper(xs: List[String]) = xs map {
       _.toUpperCase
     }
@@ -154,15 +155,17 @@ object HigherOrderFunctions
       xs map sideEffect
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
-
+      
     makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x ⇒
       x.toLowerCase
     }) should be(res1)
 
+      
     //using it inline
-    List("Scala", "Erlang", "Clojure") map {
-      _.length
-    } should be(res2)
+    val myName = (name: String) => s"My name is $name"
+    makeWhatEverYouLike(List("John", "Mark"), myName) should be(res2)
+      
+    List("Scala", "Erlang", "Clojure") map (_.length) should be(res3)
   }
 
 }
