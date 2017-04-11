@@ -160,7 +160,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a should be(res0)
   }
   
-  /** You can add elements to a List and get a new List:
+  /** You can prepend elements to a List to get a new List:
    */
   def addElementsLists(res0: List[Int]) {
     val a = List(1, 3, 5, 7)
