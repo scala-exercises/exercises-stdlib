@@ -80,7 +80,8 @@ class HigherOrderFunctionsSpec extends Spec with Checkers {
       Test
         .testSuccess(
           HigherOrderFunctions.functionAsParameterHigherOrderFunctions _,
-          List("ABC", "XYZ", "123") :: List("abc", "xyz", "123") :: List(5, 6, 7) :: HNil
+          List("ABC", "XYZ", "123") :: List("abc", "xyz", "123") ::
+            List("My name is John", "My name is Mark") :: List(5, 6, 7) :: HNil
         )
     )
   }

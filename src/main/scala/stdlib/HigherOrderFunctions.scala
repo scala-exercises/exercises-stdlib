@@ -155,16 +155,15 @@ object HigherOrderFunctions
       xs map sideEffect
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
-      
+
     makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x ⇒
       x.toLowerCase
     }) should be(res1)
 
-      
     //using it inline
     val myName = (name: String) => s"My name is $name"
     makeWhatEverYouLike(List("John", "Mark"), myName) should be(res2)
-      
+
     List("Scala", "Erlang", "Clojure") map (_.length) should be(res3)
   }
 
