@@ -159,6 +159,30 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     val a = (1 to 5).toList
     a should be(res0)
   }
+  
+  /** You can add elements to a List and get a new List:
+   */
+  def addElementsLists(
+      res0: List[Int],
+      res1: List[Int]) {
+    val a = List(1, 3, 5, 7)
+
+    0 :: a should be(res0)
+    a :: 9 should be(res1)
+  }
+
+  /** Lists can be concatened and Nil is an empty List:
+   */
+  def concatenateLists(
+      res0: List[Int],
+      res1: List[Int]) {
+    val head = List(1, 3)
+    val tail = List(5, 7)
+
+    head ::: tail should be(res0)
+    head ::: Nil should be(res1)
+  }
+
 
   /** Lists reuse their tails:
    */
@@ -179,5 +203,4 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     b.tail should be(res4)
     c.tail should be(res5)
   }
-
 }
