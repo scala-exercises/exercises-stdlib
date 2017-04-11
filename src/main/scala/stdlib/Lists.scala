@@ -165,7 +165,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
   def addElementsLists(res0: List[Int]) {
     val a = List(1, 3, 5, 7)
 
-    a :: 9 should be(res0)
+    0 :: a should be(res0)
   }
 
   /** Lists can be concatened and Nil is an empty List:
