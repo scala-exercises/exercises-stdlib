@@ -98,8 +98,8 @@ object Options extends FlatSpec with Matchers with org.scalaexercises.definition
   def foldOptions(res0: Int, res1: Int) {
     val number: Option[Int]   = Some(3)
     val noNumber: Option[Int] = None
-    val result1               = number.fold(0)(_ * 3)
-    val result2               = noNumber.fold(0)(_ * 3)
+    val result1               = number.fold(1)(_ * 3)
+    val result2               = noNumber.fold(1)(_ * 3)
 
     result1 should be(res0)
     result2 should be(res1)
