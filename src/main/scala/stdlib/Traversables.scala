@@ -24,7 +24,8 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
    *
    * The `foreach` method is meant to traverse all elements of the collection, and apply the given operation, `f`, to each element. The type of the operation is `Elem => U`, where `Elem` is the type of the collection's elements and `U` is an arbitrary result type. The invocation of `f` is done for its side effect only; in fact any function result of `f` is discarded by `foreach`.
    *
-   * Traversables are the superclass of `List`, `Array`, `Map`, `Set`, `Stream` and more.  The methods involved can be applied to each other in a different type. `++` appends two `Traversable`s together.
+   * Traversables are the superclass of `List`, `Array`, `Map`, `Set`, `Stream` and more.  The methods involved can be applied to each other in a different type. 
+   `++` appends two `Traversable`s together. The resulting `Traversable` is the same type of the first element.
    */
   def topOfCollectionTraversables(res0: Int, res1: Int) {
     val set    = Set(1, 9, 10, 22)
