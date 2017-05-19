@@ -86,7 +86,10 @@ object HigherOrderFunctions
     result2 should be(res1)
   }
 
-  /** We can take that closure and throw it into a method and it will still hold the environment:
+  /** And then we get to Higher Order Functions:
+    * Higher Order Functions are functions that take functions as arguments and/or return functions.
+    *
+    *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
    */
   def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) {
     def summation(x: Int, y: Int ⇒ Int) = y(x)
@@ -102,7 +105,7 @@ object HigherOrderFunctions
     result2 should be(res1)
   }
 
-  /** Function returning another function:
+  /** Higher Order Function returning another function:
    */
   def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
     def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
@@ -145,7 +148,8 @@ object HigherOrderFunctions
   def functionAsParameterHigherOrderFunctions(
       res0: List[String],
       res1: List[String],
-      res2: List[Int]) {
+      res2: List[String],
+      res3: List[Int]) {
     def makeUpper(xs: List[String]) = xs map {
       _.toUpperCase
     }
@@ -160,9 +164,10 @@ object HigherOrderFunctions
     }) should be(res1)
 
     //using it inline
-    List("Scala", "Erlang", "Clojure") map {
-      _.length
-    } should be(res2)
+    val myName = (name: String) => s"My name is $name"
+    makeWhatEverYouLike(List("John", "Mark"), myName) should be(res2)
+
+    List("Scala", "Erlang", "Clojure") map (_.length) should be(res3)
   }
 
 }
