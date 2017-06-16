@@ -43,7 +43,7 @@ class TypeSignaturesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         TypeSignatures.isInstanceOfFunctionTypeSignatures _,
-        true :: HNil
+        true :: true :: true :: HNil
       )
     )
   }
