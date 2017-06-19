@@ -62,7 +62,7 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
 
   /** `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
    */
-  def isInstanceOfFunctionTypeSignatures(res0: Boolean) {
+  def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) {
     trait Randomizer[A] {
       def draw(): A
     }
@@ -75,7 +75,9 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
     }
 
     val intRand = new IntRandomizer
-    intRand.draw.isInstanceOf[Int] should be(res0)
+    intRand.isInstanceOf[IntRandomizer] should be(res0)
+    intRand.isInstanceOf[Randomizer[Int]] should be(res1)
+    intRand.draw.isInstanceOf[Int] should be(res2)
   }
 
 }
