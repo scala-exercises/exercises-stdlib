@@ -60,7 +60,7 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
     zoom.getClass.getSimpleName should be(res2)
   }
 
-  /** `isInstanceOf[className]` is used to determine the if an object reference is an instance of given class:
+  /** `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
    */
   def isInstanceOfFunctionTypeSignatures(res0: Boolean) {
     trait Randomizer[A] {
