@@ -70,7 +70,7 @@ class SequencesAndArraysSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         SequencesandArrays.mapValuesSequencesandArrays _,
-        List("olleh", "dlrow") :: HNil
+        Seq("olleh", "dlrow") :: HNil
       )
     )
   }
