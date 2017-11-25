@@ -441,15 +441,14 @@ class TraversablesSpec extends Spec with Checkers {
     )
   }
 
-  // FIXME: this test depends on runtime timing of code
-  // def `performant traversals` = {
-  //   check(
-  //     Test.testSuccess(
-  //       Traversables.performantTraversables _,
-  //       false :: HNil
-  //     )
-  //   )
-  // }
+  def `reduceRight as reduceLeft` = {
+    check(
+      Test.testSuccess(
+        Traversables.reduceRightAsReduceLeft _,
+        3 :: 3 :: 3 :: HNil
+      )
+    )
+  }
 
   def `transpose function` = {
     check(
