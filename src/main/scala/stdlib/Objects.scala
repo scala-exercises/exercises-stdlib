@@ -75,7 +75,7 @@ object Objects extends FlatSpec with Matchers with org.scalaexercises.definition
     }
 
     val clark = new Person("Clark Kent", "Superman")
-    val peter = new Person("Peter Parker", "Spiderman")
+    val peter = new Person("Peter Parker", "Spider-Man")
 
     Person.showMeInnerSecret(clark) should be(res0)
     Person.showMeInnerSecret(peter) should be(res1)

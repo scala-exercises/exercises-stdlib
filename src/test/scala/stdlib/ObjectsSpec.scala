@@ -53,7 +53,7 @@ class ObjectsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Objects.privateValuesObjects _,
-        "Superman" :: "Spiderman" :: HNil
+        "Superman" :: "Spider-Man" :: HNil
       )
     )
   }
