@@ -69,7 +69,7 @@ object SequencesandArrays
 
   /** You can map values in a sequence through a function:
    */
-  def mapValuesSequencesandArrays(res0: List[String]) {
+  def mapValuesSequencesandArrays(res0: Seq[String]) {
     val s = Seq("hello", "world")
     val r = s map {
       _.reverse
