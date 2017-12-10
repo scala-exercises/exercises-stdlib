@@ -511,23 +511,19 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
     intList.min should be(res3)
   }
 
-  /** You would choose `foldLeft`/`reduceLeft` or `foldRight`/`reduceRight` based on your mathematical goal. One other reason for deciding is performance - `foldLeft` generally has better performance since it uses tail recursion. This exercise will either work fine or you will receive a `StackOverflowError`:
+  /** The naive recursive implementation of `reduceRight` is not tail recursive and would lead to a stack overflow if used on larger traversables.
+   * However, `reduceLeft` can be implemented with tail recursion.
+   *
+   * To avoid the potential stack overflow with the naive implementation of `reduceRight` we can easily implement it based on `reduceLeft` by reverting the list and the inverting the reduce function. 
+   * The same applies for folding operations. 
+   *
+   * There is also a `reduce` (and `fold`) available, which works exactly like `reduceLeft` (and `foldLeft`) and it should be the prefered method to call unless there is a strong reason to use `reduceRight` (or `foldRight`).
    */
-  def performantTraversables(res0: Boolean) {
-    val MAX_SIZE            = 1000000
-    val reduceLeftStartTime = new java.util.Date
-    (1 to MAX_SIZE) reduceLeft (_ + _)
-    val reduceLeftEndTime = new java.util.Date
-
-    val reduceRightStartTime = new java.util.Date
-    (1 to MAX_SIZE) reduceRight (_ + _)
-    val reduceRightEndTime = new java.util.Date
-
-    val totalReduceLeftTime = reduceLeftEndTime.getTime - reduceLeftStartTime.getTime
-    val totalReduceRightTime = reduceRightEndTime.getTime - reduceRightStartTime
-      .getTime
-
-    (totalReduceRightTime > totalReduceLeftTime) should be(res0)
+  def reduceRightAsReduceLeft(res0: Int, res1: Int, res2: Int) {
+    val intList = List(5, 4, 3, 2, 1)
+    intList.reduceRight((x, y) => x - y) should be(res0)
+    intList.reverse.reduceLeft((x, y) => y - x) should be(res1)
+    intList.reverse.reduce((x, y) => y - x) should be(res2)
   }
 
   /** `transpose` will take a traversable of traversables and group them by their position in it's own traversable, e.g.:
