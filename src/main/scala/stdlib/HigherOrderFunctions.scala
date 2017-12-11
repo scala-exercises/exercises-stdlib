@@ -29,17 +29,17 @@ object HigherOrderFunctions
     def lambda = { x: Int ⇒
       x + 1
     }
-    def lambda2 = (x: Int) ⇒ x + 2
-    val lambda3 = (x: Int) ⇒ x + 3
+    def lambda2 = (x: Int) => x + 2
+    val lambda3 = (x: Int) => x + 3
 
     val lambda4 = new Function1[Int, Int] {
       def apply(v1: Int): Int = v1 - 1
     }
 
-    def lambda5(x: Int) = x + 1
+    def lambda5(x: Int) => x + 1
 
     val result           = lambda(3)
-    val `result1andhalf` = lambda.apply(3)
+    val result1andhalf = lambda.apply(3)
 
     val result2 = lambda2(3)
     val result3 = lambda3(3)
@@ -57,7 +57,7 @@ object HigherOrderFunctions
   /** An anonymous function can also take on a different look by taking out the brackets:
    */
   def differentLookHigherOrderFunctions(res0: Int) {
-    def lambda = (x: Int) ⇒ x + 1
+    def lambda = (x: Int) => x + 1
     def result = lambda(5)
     result should be(res0)
   }
@@ -73,7 +73,7 @@ object HigherOrderFunctions
   def meetClosureHigherOrderFunctions(res0: Int, res1: Int) {
     var incrementer = 1
 
-    def closure = { x: Int ⇒
+    def closure = { x: Int=>
       x + incrementer
     }
 
@@ -136,7 +136,7 @@ object HigherOrderFunctions
   /** `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
    */
   def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) {
-    def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
+    def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
     addWithSyntaxSugar(1).isInstanceOf[Function1[_, _]] should be(res0)
   }
@@ -154,12 +154,12 @@ object HigherOrderFunctions
       _.toUpperCase
     }
 
-    def makeWhatEverYouLike(xs: List[String], sideEffect: String ⇒ String) =
+    def makeWhatEverYouLike(xs: List[String], sideEffect: String => String) =
       xs map sideEffect
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
 
-    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x ⇒
+    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x =>
       x.toLowerCase
     }) should be(res1)
 
