@@ -84,26 +84,13 @@ object Sets extends FlatSpec with Matchers with org.scalaexercises.definitions.S
 
   /** Multiple elements can be removed from a Set using the overloaded - method:
    */
-  def multiRemovingSets(
-      res0: Boolean,
-      res1: Boolean,
-      res2: Int,
-      res3: Boolean,
-      res4: Boolean,
-      res5: Boolean,
-      res6: Int) {
+  def multiRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
-    val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator can remove multiple elements
+    val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator can remove multiple elements, as many as you want because the method is varadiac
 
     aNewSet.contains("Michigan") should be(res0)
     aNewSet.contains("Wisconsin") should be(res1)
     aNewSet.size should be(res2)
-
-    val anotherNewSet = mySet - ("Michigan", "Ohio", "Iowa") // You can pass as 2 or more arguments, this method is varadiac!
-    anotherNewSet.contains("Michigan") should be(res3)
-    anotherNewSet.contains("Ohio") should be(res4)
-    anotherNewSet.contains("Iowa") should be(res5)
-    anotherNewSet.size should be(res6)
   }
 
   /** Attempted removal of nonexistent elements from a set is handled gracefully:

@@ -79,7 +79,7 @@ class SetsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Sets.multiRemovingSets _,
-        false :: true :: 2 :: false :: false :: false :: 1 :: HNil
+        false :: true :: 2 :: HNil
       )
     )
   }
