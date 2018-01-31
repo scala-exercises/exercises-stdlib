@@ -133,7 +133,7 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** You can extend the `Enumeration` by extending the `Value` class.
+  /** You can extend the `Enumeration` by extending the `Val` class.
    */
   def extendingValueEnumerations(res0: Double, res1: Double) {
     object Planets extends Enumeration {
