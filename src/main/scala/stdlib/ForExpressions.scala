@@ -38,10 +38,10 @@ object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.def
     result should be(res0)
 
     // Which is the same as
-    nums.flatMap(numList ⇒ numList).filter(_ % 2 == 0) should be(result)
+    nums.flatMap(numList ⇒ numList).filter(_ % 2 == 0) should be(res0)
 
     // or the same as
-    nums.flatten.filter(_ % 2 == 0) should be(result)
+    nums.flatten.filter(_ % 2 == 0) should be(res0)
 
   }
 
