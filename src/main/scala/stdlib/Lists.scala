@@ -136,7 +136,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
   
   /** Lists flatMap does a nice job of flattening a list that has values in it.
    */
-  def flatMapListsList() {
+  def flatMapListsList(res0: Int, res1: Int, res2: Int, res3: Int) {
     val a = List(1,2)    
     
     a.map { v =>
