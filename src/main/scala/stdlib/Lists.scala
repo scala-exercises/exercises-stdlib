@@ -133,7 +133,21 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     a.map(_ * 2) should equal(List(res0, res1, res2))
     a.filter(_ % 2 != 0) should equal(List(res3, res4))
   }
-
+  
+  /** Lists flatMap does a nice job of flattening a list that has values in it.
+   */
+  def flatMapListsList() {
+    val a = List(1,2)    
+    
+    a.map { v =>
+      List(v*v, v*v*v)
+    } should equal(List(List(res0, res1), List(res2, res3)))
+    
+    a.flatMap { v =>
+      List(v*v, v*v*v)
+    } should equal(List(res0, res1, res2, res3))
+  }
+  
   /** Lists can be reduced with a mathematical operation:
    */
   def reducingListsLists(res0: Int, res1: Int) {
