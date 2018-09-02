@@ -15,7 +15,7 @@ object PartialFunctions
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** A partial function is a `trait` that when implemented can be used as building blocks to determine a solution.  The trait `PartialFunction` requires that the method `isDefinedAt` and `apply` be implemented:
+  /** A partial function is a `trait` that when implemented can be used as building blocks to determine a solution. The term "partial function" comes from mathematics and refers to the function not being defined for all of it's input space as opposed to "total functions". The trait `PartialFunction` requires that the method `isDefinedAt` and `apply` be implemented:
    */
   def partialFunctionPartialFunctions(res0: Int, res1: Int) {
     val doubleEvens: PartialFunction[Int, Int] =
