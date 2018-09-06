@@ -35,7 +35,7 @@ object Options extends FlatSpec with Matchers with org.scalaexercises.definition
    * }
    * }}}
    *
-   * Using `getOrElse`, we can extract the value if it exists, or return a provided default value. If we have a `Some(x)` we return `x`, and for `None` we return the default value.
+   * A method named `getOrElse` is available on `None` and `Option` types. Using `getOrElse`, we can extract the value if it exists, or return a provided default value. If we have a `Some(x)` we return `x`, and for `None` we return the default value.
    */
   def getOrElseOptions(res0: String, res1: String, res2: String) {
     val value1 = maybeItWillReturnSomething(true)
