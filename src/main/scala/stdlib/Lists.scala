@@ -107,7 +107,7 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
   /** `filter` tests each element of the List by applying a function you supply:
     */
   def filterLists(res0: List[Int], res1: List[Int], res2: List[Int]) {
-    val a = List(1, 3, 5, 7, 9)
+    val a = List(1, 2, 3, 5, 7, 9)
 
     // filter any values divisible by 3 in the list
     a.filter { v ⇒
