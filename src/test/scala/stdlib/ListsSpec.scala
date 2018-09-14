@@ -88,7 +88,7 @@ class ListsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Lists.filterLists _,
-        List(3, 9) :: List() :: List(1, 3, 5, 7, 9) :: HNil
+        List(3, 9) :: List(2) :: List(1, 3, 5, 7, 9) :: HNil
       )
     )
   }
