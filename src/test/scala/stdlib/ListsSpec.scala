@@ -79,7 +79,7 @@ class ListsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Lists.reverseLists _,
-        5 :: List(9, 7, 5, 3, 1) :: HNil
+        List(9, 7, 5, 3, 1) :: HNil
       )
     )
   }
@@ -97,7 +97,7 @@ class ListsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Lists.mapLists _,
-        List(2, 6, 10, 14, 18) :: List(3, 5, 7, 9, 11) :: List(2, 6, 10, 14, 18) :: HNil
+        List(2, 6, 10, 14, 18) :: HNil
       )
     )
   }
