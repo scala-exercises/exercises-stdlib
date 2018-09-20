@@ -90,21 +90,16 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
     b should equal(List(res0, res1, res2, res3))
   }
 
-  /** Lists have many useful utility methods.
-    *
-    * `reverse` return a reversed copy of the list:
+  /** `reverse` return a reversed copy of the list:
     */
-  def reverseLists(res0: Int, res1: List[Int]) {
+  def reverseLists(res1: List[Int]) {
     val a = List(1, 3, 5, 7, 9)
-
-    // get the length of the list
-    a.length should equal(res0)
 
     // reverse the list
     a.reverse should equal(res1)
   }
 
-  /** `filter` tests each element of the List by applying a function you supply:
+  /** `filter` discards each element of the list that does not satisfy the provided filter condition:
     */
   def filterLists(res0: List[Int], res1: List[Int], res2: List[Int]) {
     val a = List(1, 2, 3, 5, 7, 9)
@@ -125,21 +120,13 @@ object Lists extends FlatSpec with Matchers with org.scalaexercises.definitions.
 
   /** `map` works by applying a function to each element in the list:
     */
-  def mapLists(res0: List[Int], res1: List[Int], res2: List[Int]) {
+  def mapLists(res0: List[Int]) {
     val a = List(1, 3, 5, 7, 9)
 
     // map a function to double the numbers over the list
     a.map { v ⇒
       v * 2
     } should equal(res0)
-
-    // Functions over lists can use _ as shorthand
-    a.map {
-      _ + 2
-    } should equal(res1)
-
-    // Functions over lists can use () instead of {}
-    a.map(_ * 2) should equal(res2)
   }
 
   /** `flatten` The flatten method takes a list of lists and flattens it out to a single list:
