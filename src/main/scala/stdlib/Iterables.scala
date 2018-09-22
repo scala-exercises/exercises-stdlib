@@ -157,26 +157,4 @@ object Iterables extends FlatSpec with Matchers with org.scalaexercises.definiti
     val xs = List("Manny", "Moe", "Jack")
     xs.zipWithIndex should be(List((res0, 0), (res1, res2), (res3, 2)))
   }
-
-  /** `sameElements` will return true if the two `Iterables` produce the same elements in the same order:
-   */
-  def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) {
-    val xs = List("Manny", "Moe", "Jack")
-    val ys = List("Manny", "Moe", "Jack")
-    (xs sameElements ys) should be(res0)
-
-    val xt = List("Manny", "Moe", "Jack")
-    val yt = List("Manny", "Jack", "Moe")
-    (xt sameElements yt) should be(res1)
-
-    val xs1 = Set(3, 2, 1, 4, 5, 6, 7)
-    val ys1 = Set(7, 2, 1, 4, 5, 6, 3)
-    (xs1 sameElements ys1) should be(res2)
-
-    val xt1 = Set(1, 2, 3)
-    val yt1 = Set(3, 2, 1)
-    (xt1 sameElements yt1) should be(res3) // Caution - see below!
-    /** Note that very small Sets (containing up to 4 elements) are implemented differently to larger Sets; as a result, their iterators produce the elements in the order that they were originally added. This causes the surprising (and arguably incorrect) behaviour in the final example above. */
-  }
-
 }
