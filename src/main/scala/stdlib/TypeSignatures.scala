@@ -41,7 +41,7 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
     }
 
     val intRand = new IntRandomizer
-    (intRand.draw < Int.MaxValue) should be(res0)
+    (intRand.draw <= Int.MaxValue) should be(res0)
   }
 
   /** Class meta-information can be retrieved by class name by using `classOf[className]`:
