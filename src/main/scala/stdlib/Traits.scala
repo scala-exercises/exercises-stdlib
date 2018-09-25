@@ -11,7 +11,7 @@ import org.scalatest._
  */
 object Traits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. Unlike Java, Scala allows traits to be partially implemented; i.e. it is possible to define default implementations for some methods. In contrast to classes, traits may not have constructor parameters.
+  /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. Similar to Java default methods in interfaces, Scala allows traits to be partially implemented. In contrast to classes, traits may not have constructor parameters.
    *
    * Here is an example:
    *
@@ -103,21 +103,43 @@ object Traits extends FlatSpec with Matchers with org.scalaexercises.definitions
   
   /** Traits also can use self-types.  A self-type lists the required dependencies for mixing in the trait.  When mixing in the main trait, all self-type dependencies of that trait must also be mixed in, otherwise a compile-time error is thrown.
    *  
-   * Also, the dependencies can't have identical method/property names or else you'll get an `illegal inheritance` error.
+   * Also, the dependencies can't have identical method/property names, as well as all default methods should be implemented on instantiation or else you'll get an `illegal inheritance` error
    */
-  def selfTypeTraits(res0: Int){
-    trait B {
-      def bId = 2
-    }      
-    
-    trait A {
-      self: B =>
-      
-      def aId = 1
+  def selfTypeTraits(res0: String, res1: String, res2: String, res3: String) {
+    case class Event(name: String)
+
+    trait EventListener {
+      def listen(event: Event): String
     }
+
+    trait MyListener extends EventListener {
+      def listen(event: Event): String = {
+        event match {
+          case Event("Moose Stampede") ⇒
+            "An unfortunate moose stampede occurred"
+          case _ ⇒ "Nothing of importance occurred"
+        }
+      }
+    }
+
+    trait CrucialEventListener { self: MyListener =>
+      def listenCrucial(event: Event): String = {
+        if (event.name contains "Wildebeest") "The king is dead, long live the king!"
+        else self listen event
+      }
+    }
+
+
+    //val crucialEvent = new CrucialEventListener //***does not compile!!!***
+    //val crucialEvent = new CrucialEventListener with EventListener //***does not compile!!!***
+    val listener = new CrucialEventListener with MyListener
+    val event = Event("Moose Stampede")
+    val crucialEvent = Event("Wildebeest Stampede")
     
-    //val a = new A  //***does not compile!!!***
-    val obj = new A with B
-    (obj.aId + obj.bId) should be(res0)
+    listener.listen(event) should be(res0)
+    listener.listen(crucialEvent) should be(res1)
+
+    listener.listenCrucial(event) should be(res2)
+    listener.listenCrucial(crucialEvent) should be(res3)
   }
 }
