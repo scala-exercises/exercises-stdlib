@@ -29,6 +29,7 @@ object StdLib extends org.scalaexercises.definitions.Library {
     PatternMatching,
     CaseClasses,
     Ranges,
+    Composition,
     PartiallyAppliedFunctions,
     PartialFunctions,
     Implicits,
