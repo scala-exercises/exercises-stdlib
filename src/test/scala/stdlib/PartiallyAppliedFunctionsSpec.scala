@@ -47,4 +47,13 @@ class PartiallyAppliedFunctionsSpec extends Spec with Checkers {
       )
     )
   }
+
+  def `composing` = {
+    check(
+      Test.testSuccess(
+        PartiallyAppliedFunctions.curriedForComposition _,
+        7 :: 9 :: HNil
+      )
+    )
+  }
 }
