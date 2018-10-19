@@ -51,7 +51,8 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
    * abc
    * }}}
    *
-   * Implicits wrap around existing classes to provide extra functionality. This is similar to monkey patching in Ruby and meta-programming in Groovy.
+   * Another type of implicit are the implicit classes:
+   * This kind of implicits wrap around existing classes to provide extra functionality. This is similar to monkey patching in Ruby, meta-programming in Groovy and extension methods in Kotlin.
    *
    * Creating a method `isOdd` for `Int`, which doesn't exist:
    */
@@ -88,7 +89,8 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     20.isOdd should be(res1)
   }
 
-  /** Implicits can be used to automatically convert a value's type to another:
+  /** Another kind of implicit are the implicit conversions:
+   * Implicits conversions can be used to automatically convert a value's type to another:
    */
   def convertTypeImplicits(
       res0: Boolean,
