@@ -120,7 +120,7 @@ object NamedandDefaultArguments
     myColor should equal(res0, res1, res2)
   }
 
-  /** Default parameters can be functional too:
+  /** Default parameters can be functions too:
    */
   def functionalDefaulParametersNamedandDefaultArguments(res0: Int, res1: Int) {
     def reduce(a: Int, f: (Int, Int) ⇒ Int = _ + _): Int = f(a, a)
