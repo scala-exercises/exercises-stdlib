@@ -11,7 +11,7 @@ import org.scalatest._
  */
 object Traits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. Unlike Java, Scala allows traits to be partially implemented; i.e. it is possible to define default implementations for some methods. In contrast to classes, traits may not have constructor parameters.
+  /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. In traits methods can have default implementations. In contrast to classes, traits may not have constructor parameters.
    *
    * Here is an example:
    *
