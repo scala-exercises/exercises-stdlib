@@ -34,7 +34,7 @@ object Iterables extends FlatSpec with Matchers with org.scalaexercises.definiti
     }
   }
 
-  /** `grouped` will return fixed-size `Iterable` chucks of an `Iterable`:
+  /** `grouped` will return fixed-size `Iterable` chunks of an `Iterable`:
    */
   def groupedIterables(
       res0: Int,
