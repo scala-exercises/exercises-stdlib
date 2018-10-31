@@ -167,7 +167,7 @@ object HigherOrderFunctions
     val myName = (name: String) => s"My name is $name"
     makeWhatEverYouLike(List("John", "Mark"), myName) should be(res2)
 
-    List("Scala", "Erlang", "Clojure") map (_.length) should be(res3)
+    List("Scala", "Erlang", "Closure") map (_.length) should be(res3)
   }
 
 }
