@@ -167,7 +167,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
       //factory methods, extractors, apply
       //Extractor: Create tokens that represent your object
       def unapply(x: Employee) =
-        Some(x.lastName, x.middleName, x.firstName)
+        Some(x.firstName, x.middleName, x.lastName)
     }
 
     val singri = new Employee("Singri", None, "Keerthi")
@@ -192,7 +192,7 @@ object Extractors extends FlatSpec with Matchers with org.scalaexercises.definit
       //factory methods, extractors, apply
       //Extractor: Create tokens that represent your object
       def unapply(x: Employee) =
-        Some(x.lastName, x.middleName, x.firstName)
+        Some(x.firstName, x.middleName, x.lastName)
     }
 
     val singri = new Employee("Singri", None, "Keerthi")
