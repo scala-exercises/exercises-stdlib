@@ -364,39 +364,41 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
 
   /** `groupBy` will categorize a `Traversable` according to a given function and return a map with the results.  This exercise uses partial function chaining:
    */
-  def groupByFunctionTraversables(res0: Int, res1: Int) {
-    val array = Array(87, 44, 5, 4, 200, 10, 39, 100)
+  def groupByFunctionTraversables(res0: Int, res1: Int, res2: Int, res3: Int) {
+    val array = Array(87, 44, 5, 4, 200, 10, 39, 100, -5, 0)
 
-    val oddAndSmallPartial: PartialFunction[Int, String] = {
-      case x: Int if x % 2 != 0 && x < 100 ⇒ "Odd and less than 100"
-    }
-
-    val evenAndSmallPartial: PartialFunction[Int, String] = {
-      case x: Int if x != 0 && x % 2 == 0 && x < 100 ⇒ "Even and less than 100"
-    }
-
-    val negativePartial: PartialFunction[Int, String] = {
-      case x: Int if x < 0 ⇒ "Negative Number"
+    val zeroPartial: PartialFunction[Int, String] = {
+      case x: Int if x == 0 ⇒ "Zero"
     }
 
     val largePartial: PartialFunction[Int, String] = {
       case x: Int if x > 99 ⇒ "Large Number"
     }
 
-    val zeroPartial: PartialFunction[Int, String] = {
-      case x: Int if x == 0 ⇒ "Zero"
+    val negativePartial: PartialFunction[Int, String] = {
+      case x: Int if x < 0 ⇒ "Negative Number"
+    }
+
+    val oddPartial: PartialFunction[Int, String] = {
+      case x: Int if x % 2 != 0 ⇒ "Odd"
+    }
+
+    val evenPartial: PartialFunction[Int, String] = {
+      case x: Int if x % 2 == 0 ⇒ "Even"
     }
 
     val result = array groupBy {
-      oddAndSmallPartial orElse
-        evenAndSmallPartial orElse
-        negativePartial orElse
-        largePartial orElse
-        zeroPartial
+      zeroPartial orElse
+      largePartial orElse
+      negativePartial orElse
+      oddPartial orElse
+      evenPartial
     }
 
-    (result("Even and less than 100") size) should be(res0)
+    (result("Zero") size) should be (res0)
     (result("Large Number") size) should be(res1)
+    (result("Negative Number") size) should be(res2)
+    (result("Even") size) should be(res3)
   }
 
   /** `forall` will determine if a predicate is valid for all members of a `Traversable`:
