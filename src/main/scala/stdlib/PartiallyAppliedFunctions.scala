@@ -54,7 +54,7 @@ object PartiallyAppliedFunctions
   /** Currying allows you to create specialized versions of generalized functions:
    */
   def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) {
-    def customFilter(f: Int ⇒ Boolean)(xs: List[Int]) =
+    def customFilter(f: Int => Boolean)(xs: List[Int]) =
       xs filter f
     def onlyEven(x: Int) = x % 2 == 0
     val xs               = List(12, 11, 5, 20, 3, 13, 2)
