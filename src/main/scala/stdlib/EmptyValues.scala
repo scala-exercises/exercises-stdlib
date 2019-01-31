@@ -18,19 +18,19 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
    *
    * ==Null==
    *
-   * [[http://www.scala-lang.org/api/current/index.html#scala.Null Null]] is a trait whose only instance is `null`. It is a subtype of all reference types, but not of value types. It purpose in existing is to make it so reference types can be assigned `null` and value types can't.
+   * [[https://www.scala-lang.org/api/current/scala/Null.html Null]] is a trait whose only instance is `null`. It is a subtype of all reference types, but not of value types. It purpose in existing is to make it so reference types can be assigned `null` and value types can't.
    *
    * ==Nothing==
    *
-   * [[http://www.scala-lang.org/api/current/index.html#scala.Nothing Nothing]] is a trait that is guaranteed to have zero instances. It is a subtype of all other types. It has two main reasons for existing: to provide a return type for methods that never return normally (i.e. a method that always throws an exception). The other reason is to provide a type for Nil (explained below).
+   * [[https://www.scala-lang.org/api/current/scala/Nothing.html Nothing]] is a trait that is guaranteed to have zero instances. It is a subtype of all other types. It has two main reasons for existing: to provide a return type for methods that never return normally (i.e. a method that always throws an exception). The other reason is to provide a type for Nil (explained below).
    *
    * ==Unit==
    *
-   * [[http://www.scala-lang.org/api/current/index.html#scala.Unit Unit]] in Scala is the equivalent of `void` in Java. It's used in a function's signature when that function doesn't return a value.
+   * [[https://www.scala-lang.org/api/current/scala/Unit.html Unit]] in Scala is the equivalent of `void` in Java. It's used in a function's signature when that function doesn't return a value.
    *
    * ==Nil==
    *
-   * [[http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Nil$ Nil]] is just an empty list, exactly like the result of `List()`. It is of type `List[Nothing]`. And since we know there are no instances of Nothing, we now have a list that is statically verifiable as empty. Nice to have.
+   * [[https://www.scala-lang.org/api/current/scala/collection/immutable/Nil$.html Nil]] is just an empty list, exactly like the result of `List()`. It is of type `List[Nothing]`. And since we know there are no instances of Nothing, we now have a list that is statically verifiable as empty. Nice to have.
    *
    * An empty list can be represented by another nothing value: `Nil`
    */
@@ -38,7 +38,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
     List() === Nil shouldBe res0
   }
 
-  /** [[http://www.scala-lang.org/api/current/index.html#scala.None None]] is the counterpart to [[http://www.scala-lang.org/api/current/index.html#scala.Some Some]], used when you're using Scala's [[http://www.scala-lang.org/api/current/index.html#scala.Option Option]] class to help avoid `null` references.
+  /** [[https://www.scala-lang.org/api/current/scala/None$.html None]] is the counterpart to [[https://www.scala-lang.org/api/current/scala/Some.html Some]], used when you're using Scala's [[https://www.scala-lang.org/api/current/scala/Option.html Option]] class to help avoid `null` references.
    *
    * `None` equals `None`:
    */
