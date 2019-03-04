@@ -211,7 +211,7 @@ object PatternMatching extends FlatSpec with Matchers with org.scalaexercises.de
       case _                   ⇒ 0
     }
 
-    r == Nil should be(res0)
+    r should be(res0)
   }
 
 }
