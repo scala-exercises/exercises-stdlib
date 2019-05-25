@@ -18,7 +18,7 @@ object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.defini
    *
    * ==Null==
    *
-   * [[http://www.scala-lang.org/api/current/index.html#scala.Null Null]] is a trait whose only instance is `null`. It is a subtype of all reference types, but not of value types. It purpose in existing is to make it so reference types can be assigned `null` and value types can't.
+   * [[http://www.scala-lang.org/api/current/index.html#scala.Null Null]] is a trait whose only instance is `null`. It is a subtype of all reference types, but not of value types. Its purpose in existing is to make it so reference types can be assigned `null` and value types can't.
    *
    * ==Nothing==
    *
