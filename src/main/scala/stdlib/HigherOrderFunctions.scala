@@ -58,7 +58,7 @@ object HigherOrderFunctions
    */
   def differentLookHigherOrderFunctions(res0: Int) {
     def lambda = (x: Int) ⇒ x + 1
-    def result = lambda(5)
+    val result = lambda(5)
     result should be(res0)
   }
 
