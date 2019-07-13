@@ -11,6 +11,11 @@ import org.scalatest._
  *
  */
 object Formatting extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+  
+  /** Formatting in Scala allows us to insert values into a given string based on parameters passed to the .format() method.
+   * For example, `"My name is %s, age %d".format(name, age)` would insert the String `name` and the Decimal number (base 10 integer) `age` into the given string.
+   * This is useful when you want to insert values into a string that can potenially change over time.
+   */
 
   /** String can be placed in format:
    */
