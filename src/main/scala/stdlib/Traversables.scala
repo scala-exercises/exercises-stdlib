@@ -155,7 +155,7 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
     val list   = List(4, 6, 7, 8, 9, 13, 14)
     val result = list.toStream
     result.isInstanceOf[Stream[_]] should be(res0)
-    (result take 3) should be(res1)
+    (result take 3 toList) should be(res1)
   }
 
   /** `toSet` will convert any `Traversable` to a `Set` which is a collection of unordered, unique values:
