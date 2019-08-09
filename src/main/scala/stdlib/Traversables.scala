@@ -277,7 +277,7 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
     list.init should be(res0)
   }
 
-  /** Given a `from` index, and a `to` index, `slice` will return the part of the collection including `from`, and excluding `to`:
+  /** Given a `from` index, and a `until` index, `slice` will return the part of the collection including `from`, and excluding `until`:
    */
   def sliceFunctionTraversables(res0: List[Int]) {
     val list = List(10, 19, 45, 1, 22)
