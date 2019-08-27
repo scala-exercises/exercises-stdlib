@@ -127,11 +127,12 @@ object Maps extends FlatSpec with Matchers with org.scalaexercises.definitions.S
   }
 
   /** Map elements can be removed with a tuple:
+   *  '-' Operator is deprecated on MapOps from scala 2.13.0
    */
   def removedWithTupleMaps(res0: Boolean, res1: Boolean, res2: Boolean, res3: Int, res4: Int) {
     val myMap =
       Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa")
-    val aNewMap = myMap - ("MI", "WI") // Notice: single '-' operator for tuples
+    val aNewMap = myMap - ("MI", "WI") // Notice: single '-' operator for tuples; works, but deprecated starting scala 2.13.0
 
     aNewMap.contains("MI") should be(res0)
     myMap.contains("MI") should be(res1)
