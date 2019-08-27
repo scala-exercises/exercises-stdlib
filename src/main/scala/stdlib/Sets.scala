@@ -83,10 +83,13 @@ object Sets extends FlatSpec with Matchers with org.scalaexercises.definitions.S
   }
 
   /** Set elements can be removed with a tuple:
+   *  (note -- unary '-' on a tuple with more than one value is deprecated from scala 2.13.0)
    */
   def tupleRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator for tuples
+    // the above operation will work, but result in a warning:
+    // warning: method - in trait SetOps is deprecated (since 2.13.0): Use &- with an explicit collection argument instead of - with varargs
 
     aNewSet.contains("Michigan") should be(res0)
     aNewSet.contains("Wisconsin") should be(res1)
