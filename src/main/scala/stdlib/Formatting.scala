@@ -36,8 +36,8 @@ object Formatting extends FlatSpec with Matchers with org.scalaexercises.definit
    */
   def escapeSequenceFormatting(res0: String, res1: String, res2: String, res3: String) {
     val c = '\u0061' //unicode for a
-    val d = '\141' //octal for a
-    val e = '\"'
+    val d = '\141' //octal for a; not supported in scala 2.13.0, use '\u0061' instead
+    val e = '\"' // can also be specified as '"' (there is no need to escape the double quote)
     val f = '\\'
 
     "%c".format(c) should be(res0)
