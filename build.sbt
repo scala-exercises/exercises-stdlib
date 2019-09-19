@@ -1,6 +1,6 @@
 val scalaExercisesV = "0.4.0-SNAPSHOT"
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV
+def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV excludeAll(ExclusionRule("io.monix"))
 
 lazy val stdlib = (project in file("."))
 .enablePlugins(ExerciseCompilerPlugin)
