@@ -12,6 +12,16 @@ object ProjectPlugin extends AutoPlugin {
 
   override def requires: Plugins = plugins.JvmPlugin && OrgPoliciesPlugin
 
+  object autoImport {
+
+    lazy val V = new {
+      val scala211: String = "2.11.12"
+    }
+  }
+
+  import autoImport._
+
+
   override def projectSettings: Seq[Def.Setting[_]] =
     Seq(
       description := "Scala Exercises: The path to enlightenment",
@@ -25,9 +35,9 @@ object ProjectPlugin extends AutoPlugin {
         organizationEmail = "hello@47deg.com"
       ),
       orgLicenseSetting := ApacheLicense,
-      scalaVersion := "2.11.11",
+      scalaVersion := V.scala211,
       scalaOrganization := "org.scala-lang",
-      crossScalaVersions := Seq("2.11.11"),
+      crossScalaVersions := Seq(V.scala211),
       resolvers ++= Seq(
         Resolver.mavenLocal,
         Resolver.sonatypeRepo("snapshots"),
@@ -41,7 +51,7 @@ object ProjectPlugin extends AutoPlugin {
               | * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
               | */
               |
-            |""".stripMargin)
+              |""".stripMargin)
       )
     )
 }

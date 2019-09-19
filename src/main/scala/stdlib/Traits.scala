@@ -100,22 +100,21 @@ object Traits extends FlatSpec with Matchers with org.scalaexercises.definitions
     myListener.isInstanceOf[Any] should be(res2)
     myListener.isInstanceOf[AnyRef] should be(res3)
   }
-  
+
   /** Traits also can use self-types.  A self-type lists the required dependencies for mixing in the trait.  When mixing in the main trait, all self-type dependencies of that trait must also be mixed in, otherwise a compile-time error is thrown.
-   *  
+   *
    * Also, the dependencies can't have identical method/property names or else you'll get an `illegal inheritance` error.
    */
-  def selfTypeTraits(res0: Int){
+  def selfTypeTraits(res0: Int) {
     trait B {
       def bId = 2
-    }      
-    
-    trait A {
-      self: B =>
-      
+    }
+
+    trait A { self: B =>
+
       def aId = 1
     }
-    
+
     //val a = new A  //***does not compile!!!***
     val obj = new A with B
     (obj.aId + obj.bId) should be(res0)

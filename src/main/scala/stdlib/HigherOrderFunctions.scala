@@ -87,9 +87,9 @@ object HigherOrderFunctions
   }
 
   /** And then we get to Higher Order Functions:
-    * Higher Order Functions are functions that take functions as arguments and/or return functions.
-    *
-    *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
+   * Higher Order Functions are functions that take functions as arguments and/or return functions.
+   *
+   *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
    */
   def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) {
     def summation(x: Int, y: Int ⇒ Int) = y(x)
