@@ -1,20 +1,21 @@
-val scalaExercisesV = "0.4.0-SNAPSHOT"
+val scalaExercisesV = "0.5.0-SNAPSHOT"
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV excludeAll(ExclusionRule("io.monix"))
+def dep(artifactId: String) =
+  "org.scala-exercises" %% artifactId % scalaExercisesV excludeAll (ExclusionRule("io.monix"))
 
 lazy val stdlib = (project in file("."))
-.enablePlugins(ExerciseCompilerPlugin)
-.settings(
-  name         := "exercises-stdlib",
-  libraryDependencies ++= Seq(
-    dep("exercise-compiler"),
-    dep("definitions"),
-    %%("shapeless"),
-    %%("scalatest"),
-    %%("scalacheck"),
-    %%("scheckShapeless")
+  .enablePlugins(ExerciseCompilerPlugin)
+  .settings(
+    name := "exercises-stdlib",
+    libraryDependencies ++= Seq(
+      dep("exercise-compiler"),
+      dep("definitions"),
+      %%("shapeless"),
+      %%("scalatest"),
+      %%("scalacheck"),
+      %%("scheckShapeless")
+    )
   )
-)
 
 // Distribution
 

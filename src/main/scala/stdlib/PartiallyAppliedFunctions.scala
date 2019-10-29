@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-stdlib
+ *  Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package stdlib
@@ -35,12 +36,7 @@ object PartiallyAppliedFunctions
 
   /** Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
    */
-  def curryingPartiallyAppliedFunctions(
-      res0: Boolean,
-      res1: Int,
-      res2: Int,
-      res3: Int,
-      res4: Int) {
+  def curryingPartiallyAppliedFunctions(res0: Boolean, res1: Int, res2: Int, res3: Int, res4: Int) {
     def multiply(x: Int, y: Int) = x * y
     (multiply _).isInstanceOf[Function2[_, _, _]] should be(res0)
     val multiplyCurried = (multiply _).curried
