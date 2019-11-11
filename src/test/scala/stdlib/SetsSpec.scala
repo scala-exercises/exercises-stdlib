@@ -75,10 +75,10 @@ class SetsSpec extends Spec with Checkers {
     )
   }
 
-  def `we can remove multiple members with tuples` = {
+  def `we can remove multiple members with the overloaded - method` = {
     check(
       Test.testSuccess(
-        Sets.tupleRemovingSets _,
+        Sets.multiRemovingSets _,
         false :: true :: 2 :: HNil
       )
     )

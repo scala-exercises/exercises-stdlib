@@ -82,11 +82,11 @@ object Sets extends FlatSpec with Matchers with org.scalaexercises.definitions.S
     aNewSet.size should be(res2)
   }
 
-  /** Set elements can be removed with a tuple:
+  /** Multiple elements can be removed from a Set using the overloaded - method:
    */
-  def tupleRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
+  def multiRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
-    val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator for tuples
+    val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator can remove multiple elements, as many as you want because the method is varadiac
 
     aNewSet.contains("Michigan") should be(res0)
     aNewSet.contains("Wisconsin") should be(res1)
