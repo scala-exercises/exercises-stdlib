@@ -1,5 +1,6 @@
-import de.heikoseeberger.sbtheader.HeaderPattern
+//import de.heikoseeberger.sbtheader.HeaderPattern
 import de.heikoseeberger.sbtheader.HeaderPlugin.autoImport._
+import de.heikoseeberger.sbtheader.License._
 import sbt.Keys._
 import sbt._
 import sbtorgpolicies._
@@ -15,12 +16,11 @@ object ProjectPlugin extends AutoPlugin {
   object autoImport {
 
     lazy val V = new {
-      val scala211: String = "2.11.12"
+      val scala212: String = "2.12.10"
     }
   }
 
   import autoImport._
-
 
   override def projectSettings: Seq[Def.Setting[_]] =
     Seq(
@@ -35,23 +35,17 @@ object ProjectPlugin extends AutoPlugin {
         organizationEmail = "hello@47deg.com"
       ),
       orgLicenseSetting := ApacheLicense,
-      scalaVersion := V.scala211,
+      scalaVersion := V.scala212,
       scalaOrganization := "org.scala-lang",
-      crossScalaVersions := Seq(V.scala211),
       resolvers ++= Seq(
         Resolver.mavenLocal,
         Resolver.sonatypeRepo("snapshots"),
         Resolver.sonatypeRepo("releases")
       ),
       scalacOptions := sbtorgpolicies.model.scalacCommonOptions,
-      headers := Map(
-        "scala" -> (HeaderPattern.cStyleBlockComment,
-          s"""|/*
-              | * scala-exercises - ${name.value}
-              | * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
-              | */
-              |
-              |""".stripMargin)
-      )
+      headerLicense := Some(Custom(s"""| scala-exercises - ${name.value}
+                                       | Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+                                       |
+                                       |""".stripMargin))
     )
 }
