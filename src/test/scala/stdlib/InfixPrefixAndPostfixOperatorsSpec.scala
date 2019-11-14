@@ -7,14 +7,14 @@
 package stdlib
 
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
 // FIXME: get rid of this if possible
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 
-class InfixPrefixAndPostfixOperatorsSpec extends Spec with Checkers {
+class InfixPrefixAndPostfixOperatorsSpec extends RefSpec with Checkers {
   val Operators = InfixPrefixandPostfixOperators
 
   def `single parameter infix operators` = {

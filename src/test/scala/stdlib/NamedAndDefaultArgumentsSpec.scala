@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class NamedAndDefaultArgumentsSpec extends Spec with Checkers {
+class NamedAndDefaultArgumentsSpec extends RefSpec with Checkers {
   val Arguments = NamedandDefaultArguments
 
   def `class without parameters` = {

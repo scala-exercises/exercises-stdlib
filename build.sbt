@@ -10,10 +10,10 @@ lazy val stdlib = (project in file("."))
     libraryDependencies ++= Seq(
       dep("exercise-compiler"),
       dep("definitions"),
-      %%("shapeless"),
-      %%("scalatest"),
-      %%("scalacheck"),
-      %%("scheckShapeless")
+      "com.chuusai"                %% "shapeless"                 % "2.3.3",
+      "org.scalatest"              %% "scalatest"                 % V.scalatest,
+      "org.scalacheck"             %% "scalacheck"                % V.scalacheck,
+      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % V.scalacheckShapeless
     )
   )
 

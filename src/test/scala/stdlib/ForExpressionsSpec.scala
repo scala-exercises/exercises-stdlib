@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class ForExpressionsSpec extends Spec with Checkers {
+class ForExpressionsSpec extends RefSpec with Checkers {
 
   def `nested for expressions` = {
     check(

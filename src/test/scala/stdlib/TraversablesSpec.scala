@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class TraversablesSpec extends Spec with Checkers {
+class TraversablesSpec extends RefSpec with Checkers {
   def `are at the top of collection hierarchy` = {
     check(
       Test.testSuccess(
@@ -401,7 +401,7 @@ class TraversablesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Traversables.foldLeftFunctionTraversables _,
-        -15 :: -15 :: -15 :: -15 :: -15 :: HNil
+        -15 :: -15 :: -15 :: HNil
       )
     )
   }
@@ -410,7 +410,7 @@ class TraversablesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Traversables.foldRightFunctionTraversables _,
-        3 :: 3 :: 3 :: 3 :: 3 :: HNil
+        3 :: 3 :: 3 :: HNil
       )
     )
   }

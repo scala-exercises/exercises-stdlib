@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class LiteralBooleansSpec extends Spec with Checkers {
+class LiteralBooleansSpec extends RefSpec with Checkers {
   def `are either true or false` = {
     check(
       Test.testSuccess(

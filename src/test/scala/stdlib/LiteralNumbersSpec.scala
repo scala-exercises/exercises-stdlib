@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class LiteralNumbersSpec extends Spec with Checkers {
+class LiteralNumbersSpec extends RefSpec with Checkers {
   def `integer literals` = {
     check(
       Test.testSuccess(

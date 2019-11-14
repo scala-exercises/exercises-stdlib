@@ -33,18 +33,16 @@ object Formatting extends FlatSpec with Matchers with org.scalaexercises.definit
     "%c".format(b) should be(res1)
   }
 
-  /** Character Literals can be an escape sequence, including octal or hexidecimal:
+  /** Character Literals can be an escape sequence, including hexidecimal:
    */
-  def escapeSequenceFormatting(res0: String, res1: String, res2: String, res3: String) {
+  def escapeSequenceFormatting(res0: String, res1: String, res2: String) {
     val c = '\u0061' //unicode for a
-    val d = '\141' //octal for a
     val e = '\"'
     val f = '\\'
 
     "%c".format(c) should be(res0)
-    "%c".format(d) should be(res1)
-    "%c".format(e) should be(res2)
-    "%c".format(f) should be(res3)
+    "%c".format(e) should be(res1)
+    "%c".format(f) should be(res2)
   }
 
   /** Formatting can also include numbers:

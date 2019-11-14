@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class SetsSpec extends Spec with Checkers {
+class SetsSpec extends RefSpec with Checkers {
   def `have no duplicates` = {
     check(
       Test.testSuccess(

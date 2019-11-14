@@ -424,54 +424,38 @@ object Traversables extends FlatSpec with Matchers with org.scalaexercises.defin
     result should be(res0)
   }
 
-  /** `/:` or `foldLeft` will combine an operation starting with a seed and combining from the left.  `foldLeft` is defined as (seed /: list), where seed is the initial value.  Once the fold is established, you provide a function that takes two arguments.  The first argument is the running total of the operation, and the second element is the next element of the list.
+  /** `foldLeft` will combine an operation starting with a seed and combining from the left.  `foldLeft` takes as a first parameter the initial value of the fold.  Once the fold is established, you provide a function that takes two arguments.  The first argument is the running total of the operation, and the second element is the next element of the list.
    *
    * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`, `foldLeft` is defined as: `(((init op x1) op x2) op x3) op x4)`
    */
-  def foldLeftFunctionTraversables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) {
+  def foldLeftFunctionTraversables(res0: Int, res1: Int, res2: Int) {
     val list = List(5, 4, 3, 2, 1)
-    val result = (0 /: list) { (`running total`, `next element`) ⇒
+    val result = list.foldLeft(0) { (`running total`, `next element`) ⇒
       `running total` - `next element`
     }
     result should be(res0)
 
-    val result2 = list.foldLeft(0) { (`running total`, `next element`) ⇒
-      `running total` - `next element`
-    }
+    val result2 = list.foldLeft(0)(_ - _) //Short hand
     result2 should be(res1)
 
-    val result3 = (0 /: list)(_ - _) //Short hand
-    result3 should be(res2)
-
-    val result4 = list.foldLeft(0)(_ - _)
-    result4 should be(res3)
-
-    (((((0 - 5) - 4) - 3) - 2) - 1) should be(res4)
+    (((((0 - 5) - 4) - 3) - 2) - 1) should be(res2)
   }
 
-  /** `:\` or `foldRight` will combine an operation starting with a seed and combining from the right.  Fold right is defined as (list :\ seed), where seed is the initial value.  Once the fold is established, you  provide a function that takes two elements.  The first is the next element of the list, and the second element is the running total of the operation.
+  /** `foldRight` will combine an operation starting with a seed and combining from the right.  `foldRight` takes as a first parameter the initial value of the fold.  Once the fold is established, you  provide a function that takes two elements.  The first is the next element of the list, and the second element is the running total of the operation.
    *
    * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`, `foldRight` is defined as: `x1 op (x2 op (x3 op (x4 op init)))`
    */
-  def foldRightFunctionTraversables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) {
+  def foldRightFunctionTraversables(res0: Int, res1: Int, res2: Int) {
     val list = List(5, 4, 3, 2, 1)
-    val result = (list :\ 0) { (`next element`, `running total`) ⇒
+    val result = list.foldRight(0) { (`next element`, `running total`) ⇒
       `next element` - `running total`
     }
     result should be(res0)
 
-    val result2 = list.foldRight(0) { (`next element`, `running total`) ⇒
-      `next element` - `running total`
-    }
+    val result2 = list.foldRight(0)(_ - _) //Short hand
     result2 should be(res1)
 
-    val result3 = (list :\ 0)(_ - _) //Short hand
-    result3 should be(res2)
-
-    val result4 = list.foldRight(0)(_ - _)
-    result4 should be(res3)
-
-    (5 - (4 - (3 - (2 - (1 - 0))))) should be(res4)
+    (5 - (4 - (3 - (2 - (1 - 0))))) should be(res2)
   }
 
   /** `reduceLeft` is similar to `foldLeft`, except that the seed is the head value:

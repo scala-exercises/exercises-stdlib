@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class ClassesSpec extends Spec with Checkers {
+class ClassesSpec extends RefSpec with Checkers {
   def `classes with val parameters` = {
     check(
       Test.testSuccess(

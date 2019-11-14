@@ -6,13 +6,13 @@
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
+import org.scalatest.refspec.RefSpec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class ByNameParameterSpec extends Spec with Checkers {
+class ByNameParameterSpec extends RefSpec with Checkers {
   def `takes unit by name parameter` = {
     val right: Either[Throwable, Int] = Right(29)
 
