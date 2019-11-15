@@ -16,7 +16,11 @@ object ProjectPlugin extends AutoPlugin {
   object autoImport {
 
     lazy val V = new {
-      val scala212: String = "2.12.10"
+      val scala212: String            = "2.12.10"
+      val shapeless: String           = "2.3.3"
+      val scalatest: String           = "3.0.8"
+      val scalacheck: String          = "1.14.2"
+      val scalacheckShapeless: String = "1.2.3"
     }
   }
 
@@ -44,7 +48,7 @@ object ProjectPlugin extends AutoPlugin {
       ),
       scalacOptions := sbtorgpolicies.model.scalacCommonOptions,
       headerLicense := Some(Custom(s"""| scala-exercises - ${name.value}
-                                       | Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+                                       | Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
                                        |
                                        |""".stripMargin))
     )

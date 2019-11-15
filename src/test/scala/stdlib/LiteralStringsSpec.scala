@@ -1,18 +1,18 @@
 /*
  *  scala-exercises - exercises-stdlib
- *  Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
  *
  */
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class LiteralStringsSpec extends Spec with Checkers {
+class LiteralStringsSpec extends RefSpec with Checkers {
   def `character literals` = {
     check(
       Test.testSuccess(
@@ -26,15 +26,6 @@ class LiteralStringsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         LiteralStrings.characterLiteralsUnicodeLiteralStrings _,
-        "a" :: HNil
-      )
-    )
-  }
-
-  def `octal character literals` = {
-    check(
-      Test.testSuccess(
-        LiteralStrings.characterLiteralsOctalLiteralStrings _,
         "a" :: HNil
       )
     )

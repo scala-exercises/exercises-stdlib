@@ -1,6 +1,6 @@
 /*
  *  scala-exercises - exercises-stdlib
- *  Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
  *
  */
 

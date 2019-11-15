@@ -1,6 +1,6 @@
 /*
  *  scala-exercises - exercises-stdlib
- *  Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
  *
  */
 
@@ -29,13 +29,6 @@ object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.def
     val c = '\u0061' //unicode for a
 
     c.toString should be(res0)
-  }
-
-  /** Character literals can use octal as well:
-   */
-  def characterLiteralsOctalLiteralStrings(res0: String) {
-    val d = '\141' //octal for a
-    d.toString should be(res0)
   }
 
   /** Character literals can use escape sequences:
