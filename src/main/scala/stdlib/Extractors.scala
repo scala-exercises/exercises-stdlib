@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name extractors
  *
  */
-object Extractors extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
    *

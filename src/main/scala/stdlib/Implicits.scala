@@ -6,13 +6,14 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import scala.language.implicitConversions
 
 /** @param name implicits
  *
  */
-object Implicits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** The actual arguments that are eligible to be passed to an implicit parameter fall into two categories:
    *

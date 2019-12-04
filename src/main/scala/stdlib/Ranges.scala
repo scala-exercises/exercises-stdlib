@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name ranges
  *
  */
-object Ranges extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** A Range is an ordered sequence of integers that are equally spaced apart. For example, "1, 2, 3" is a range, as is "5, 8, 11, 14". To create a range in Scala, use the predefined methods `to`, `until`, and `by`. `1 to 3` generates "1, 2, 3" and `5 to 14 by 3` generates "5, 8, 11, 14".
    *

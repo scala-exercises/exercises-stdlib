@@ -6,12 +6,16 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name literal_strings
  *
  */
-object LiteralStrings extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object LiteralStrings
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** Character literals are quoted with single quotes:
    */

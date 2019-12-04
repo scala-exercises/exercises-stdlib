@@ -6,11 +6,12 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name classes
  */
-object Classes extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Classes in Scala are static templates that can be instantiated into many objects at runtime.
    * Here is a class definition which defines a class Point:

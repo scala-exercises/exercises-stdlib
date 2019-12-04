@@ -6,14 +6,15 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import scala.language.postfixOps
 
 /** @param name infix_prefix_and_postfix_operators
  *
  */
 object InfixPrefixandPostfixOperators
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 

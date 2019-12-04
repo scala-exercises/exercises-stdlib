@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name sets
  *
  */
-object Sets extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** `Set`s are `Iterable`s that contain no duplicate elements. The operations on sets are summarized in the following table for general sets and in the table after that for mutable sets. They fall into the following categories:
    *

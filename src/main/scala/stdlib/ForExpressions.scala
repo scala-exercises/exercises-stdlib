@@ -6,12 +6,16 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name for_expressions
  *
  */
-object ForExpressions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object ForExpressions
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** `for` expressions can nest, with later generators varying more rapidly than earlier ones:
    */

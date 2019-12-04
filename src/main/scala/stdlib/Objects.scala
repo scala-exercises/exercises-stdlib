@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name objects
  *
  */
-object Objects extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
    */

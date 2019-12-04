@@ -6,11 +6,12 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name traits
  */
-object Traits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. In traits methods can have default implementations. In contrast to classes, traits may not have constructor parameters.
    *

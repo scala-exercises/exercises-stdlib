@@ -6,14 +6,15 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import scala.language.postfixOps
 
 import Stream.cons
 
 /** @param name traversables
  */
-object Traversables extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** At the top of the collection hierarchy is the trait `Traversable`. Its only abstract operation is `foreach`:
    *
