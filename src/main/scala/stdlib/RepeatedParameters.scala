@@ -7,13 +7,14 @@
 package stdlib
 
 import RepeatedParametersHelper._
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name repeated_parameters
  *
  */
 object RepeatedParameters
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 

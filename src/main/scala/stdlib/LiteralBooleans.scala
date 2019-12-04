@@ -6,12 +6,16 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name literal_booleans
  *
  */
-object LiteralBooleans extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object LiteralBooleans
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** Boolean literals are either true or false, using the `true` or `false` keyword:
    */

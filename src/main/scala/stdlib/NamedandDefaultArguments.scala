@@ -7,13 +7,14 @@
 package stdlib
 
 import NamedandDefaultArgumentsHelper._
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name named_and_default_arguments
  *
  */
 object NamedandDefaultArguments
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 

@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name parent_classes
  *
  */
-object ParentClasses extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** In contrast to Java, all values in Scala are objects (including numerical values and functions). Since Scala is class-based, all values are instances of a class.
    *

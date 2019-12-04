@@ -6,11 +6,12 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name asserts
  */
-object Asserts extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** ScalaTest makes three assertions available by default in any style trait. You can use:
    *

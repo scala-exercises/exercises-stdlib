@@ -6,11 +6,15 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name byname_parameter
  */
-object ByNameParameter extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object ByNameParameter
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can you use it as a block, but still it doesn't look quite right:
    */

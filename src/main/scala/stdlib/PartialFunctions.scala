@@ -6,12 +6,16 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name partial_functions
  *
  */
-object PartialFunctions extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object PartialFunctions
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** A partial function is a `trait` that when implemented can be used as building blocks to determine a solution.  The trait `PartialFunction` requires that the method `isDefinedAt` and `apply` be implemented:
    */

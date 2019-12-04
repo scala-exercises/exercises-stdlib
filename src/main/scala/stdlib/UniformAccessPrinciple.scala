@@ -6,13 +6,14 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name uniform_access_principle
  *
  */
 object UniformAccessPrinciple
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 

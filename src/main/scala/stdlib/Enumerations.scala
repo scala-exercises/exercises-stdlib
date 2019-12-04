@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name enumerations
  *
  */
-object Enumerations extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
    *

@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name empty_values
  *
  */
-object EmptyValues extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** ==null==
    *

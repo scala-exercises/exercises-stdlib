@@ -6,12 +6,16 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name literal_numbers
  *
  */
-object LiteralNumbers extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object LiteralNumbers
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
   /** Integer literals are 32-bit and can be created from decimals as well as hexadecimals:
    */

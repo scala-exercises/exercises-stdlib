@@ -6,11 +6,12 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name case_classes
  */
-object CaseClasses extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
    *

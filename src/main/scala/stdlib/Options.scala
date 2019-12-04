@@ -7,12 +7,13 @@
 package stdlib
 
 import OptionsHelper._
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name options
  *
  */
-object Options extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** If you have worked with Java at all in the past, it is very likely that you have come across a `NullPointerException` at some time (other languages will throw similarly named errors in such a case). Usually this happens because some method returns null when you were not expecting it and thus not dealing with that possibility in your client code. A value of `null` is often abused to represent an absent optional value.
    *

@@ -6,12 +6,13 @@
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /** @param name formatting
  *
  */
-object Formatting extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /** String can be placed in format:
    */
