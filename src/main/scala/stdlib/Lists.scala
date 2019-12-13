@@ -92,50 +92,80 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     b should equal(List(res0, res1, res2, res3))
   }
 
-  /** Lists have many useful utility methods:
-   */
-  def usefulMethodsLists(res0: Int, res1: List[Int], res2: List[Int], res3: List[Int]) {
+  /** `reverse` return a reversed copy of the list:
+    */
+  def reverseLists(res1: List[Int]) {
     val a = List(1, 3, 5, 7, 9)
-
-    // get the length of the list
-    a.length should equal(res0)
 
     // reverse the list
     a.reverse should equal(res1)
+  }
 
-    // map a function to double the numbers over the list
-    a.map { v ⇒
-      v * 2
-    } should equal(res2)
+  /** `filter` discards each element of the list that does not satisfy the provided filter condition:
+    */
+  def filterLists(res0: List[Int], res1: List[Int], res2: List[Int]) {
+    val a = List(1, 2, 3, 5, 7, 9)
 
     // filter any values divisible by 3 in the list
     a.filter { v ⇒
       v % 3 == 0
-    } should equal(res3)
-  }
+    } should equal(res0)
 
-  /** Functions over lists can use _ as shorthand:
-   */
-  def wildcardAsShorthandLists(res0: Int, res1: Int, res2: Int, res3: Int) {
-    val a = List(1, 2, 3)
-
-    a.map {
-      _ * 2
-    } should equal(List(res0, res1, res2))
-
+    // Functions over lists can use _ as shorthand
     a.filter {
       _ % 2 == 0
-    } should equal(List(res3))
+    } should equal(res1)
+
+    // Functions over lists can use () instead of {}
+    a.filter(_ % 2 != 0) should equal(res2)
   }
 
-  /** Functions over lists can use `()` instead of `{}`:
-   */
-  def functionsOverListsLists(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) {
-    val a = List(1, 2, 3)
-    a.map(_ * 2) should equal(List(res0, res1, res2))
-    a.filter(_ % 2 != 0) should equal(List(res3, res4))
+  /** `map` works by applying a function to each element in the list:
+    */
+  def mapLists(res0: List[Int]) {
+    val a = List(1, 3, 5, 7, 9)
+
+    // map a function to double the numbers over the list
+    a.map { v ⇒
+      v * 2
+    } should equal(res0)
   }
 
+  /** `flatten` The flatten method takes a list of lists and flattens it out to a single list:
+    */
+  def flattenLists(res0: List[Int], res1: List[Int]) {
+    val a = List(List(1,2), List(3,4))
+    val b = List(1,2)
+
+    a.flatten should equal(res0)
+
+    b.map { v =>
+      List(v*v, v*v*v)
+    }.flatten should equal(res1)
+  }
+
+  /** `flatMap` works by applying a function which returns a sequence of each element in the list:
+    */
+  def flatMapLists(res0: List[Int], res1: Boolean) {
+    val a = List(1,2)
+
+    // The flatMap operator is similar to map, but it takes a function returning a list of elements
+    a.flatMap { v =>
+      List(v*v, v*v*v)
+    } should equal(res0)
+
+    // flatMap is same as you apply map first and then flatten
+    val b = a.flatMap { v =>
+              List(v*v, v*v*v)
+            }
+
+    val c = a.map { v =>
+              List(v*v, v*v*v)
+            }.flatten
+
+    (b == c) should be(res1)
+  }
+  
   /** Lists can be reduced with a mathematical operation:
    */
   def reducingListsLists(res0: Int, res1: Int) {

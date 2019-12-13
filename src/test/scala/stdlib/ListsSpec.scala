@@ -75,30 +75,48 @@ class ListsSpec extends RefSpec with Checkers {
       )
     )
   }
-
-  def `useful list methods` = {
+  
+  def `reverse lists` = {
     check(
       Test.testSuccess(
-        Lists.usefulMethodsLists _,
-        5 :: List(9, 7, 5, 3, 1) :: List(2, 6, 10, 14, 18) :: List(3, 9) :: HNil
+        Lists.reverseLists _,
+        List(9, 7, 5, 3, 1) :: HNil
       )
     )
   }
 
-  def `wildcard for anonymous functions` = {
+  def `filter lists` = {
     check(
       Test.testSuccess(
-        Lists.wildcardAsShorthandLists _,
-        2 :: 4 :: 6 :: 2 :: HNil
+        Lists.filterLists _,
+        List(3, 9) :: List(2) :: List(1, 3, 5, 7, 9) :: HNil
       )
     )
   }
 
-  def `functions over lists` = {
+  def `map lists` = {
     check(
       Test.testSuccess(
-        Lists.functionsOverListsLists _,
-        2 :: 4 :: 6 :: 1 :: 3 :: HNil
+        Lists.mapLists _,
+        List(2, 6, 10, 14, 18) :: HNil
+      )
+    )
+  }
+
+  def `flatten lists` = {
+    check(
+      Test.testSuccess(
+        Lists.flattenLists _,
+        List(1, 2, 3, 4) :: List(1, 1, 4, 8) :: HNil
+      )
+    )
+  }
+
+  def `flatMap lists` = {
+    check(
+      Test.testSuccess(
+        Lists.flatMapLists _,
+        List(1, 1, 4, 8) :: true :: HNil
       )
     )
   }
