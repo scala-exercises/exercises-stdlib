@@ -27,12 +27,12 @@ object HigherOrderFunctions
       res2: Int,
       res3: Int,
       res4: Int,
-      res5: Int) {
-    def lambda = { x: Int ⇒
+      res5: Int) = {
+    def lambda = { x: Int =>
       x + 1
     }
-    def lambda2 = (x: Int) ⇒ x + 2
-    val lambda3 = (x: Int) ⇒ x + 3
+    def lambda2 = (x: Int) => x + 2
+    val lambda3 = (x: Int) => x + 3
 
     val lambda4 = new Function1[Int, Int] {
       def apply(v1: Int): Int = v1 - 1
@@ -58,8 +58,8 @@ object HigherOrderFunctions
 
   /** An anonymous function can also take on a different look by taking out the brackets:
    */
-  def differentLookHigherOrderFunctions(res0: Int) {
-    def lambda = (x: Int) ⇒ x + 1
+  def differentLookHigherOrderFunctions(res0: Int) = {
+    def lambda = (x: Int) => x + 1
     def result = lambda(5)
     result should be(res0)
   }
@@ -72,10 +72,10 @@ object HigherOrderFunctions
    *
    * A closure is a function which maintains a reference to one or more variables outside of the function scope (it "closes over" the variables).  Scala will detect that you are using variables outside of scope and create an object instance to hold the shared variables.
    */
-  def meetClosureHigherOrderFunctions(res0: Int, res1: Int) {
+  def meetClosureHigherOrderFunctions(res0: Int, res1: Int) = {
     var incrementer = 1
 
-    def closure = { x: Int ⇒
+    def closure = { x: Int =>
       x + incrementer
     }
 
@@ -93,11 +93,11 @@ object HigherOrderFunctions
    *
    *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
    */
-  def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) {
-    def summation(x: Int, y: Int ⇒ Int) = y(x)
+  def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) = {
+    def summation(x: Int, y: Int => Int) = y(x)
 
     var incrementer = 3
-    def closure     = (x: Int) ⇒ x + incrementer
+    def closure     = (x: Int) => x + incrementer
 
     val result = summation(10, closure)
     result should be(res0)
@@ -109,7 +109,7 @@ object HigherOrderFunctions
 
   /** Higher Order Function returning another function:
    */
-  def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
+  def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) = {
     def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
       new Function1[Int, Int]() {
         def apply(y: Int): Int = x + y
@@ -125,8 +125,8 @@ object HigherOrderFunctions
 
   /** Function returning another function using an anonymous function:
    */
-  def returningAnonymousFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
-    def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
+  def returningAnonymousFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) = {
+    def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
     addWithSyntaxSugar(1).isInstanceOf[Function1[Int, Int]] should be(res0)
     addWithSyntaxSugar(2)(3) should be(res1)
@@ -137,8 +137,8 @@ object HigherOrderFunctions
 
   /** `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
    */
-  def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) {
-    def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
+  def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) = {
+    def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
     addWithSyntaxSugar(1).isInstanceOf[Function1[_, _]] should be(res0)
   }
@@ -151,17 +151,17 @@ object HigherOrderFunctions
       res0: List[String],
       res1: List[String],
       res2: List[String],
-      res3: List[Int]) {
+      res3: List[Int]) = {
     def makeUpper(xs: List[String]) = xs map {
       _.toUpperCase
     }
 
-    def makeWhatEverYouLike(xs: List[String], sideEffect: String ⇒ String) =
+    def makeWhatEverYouLike(xs: List[String], sideEffect: String => String) =
       xs map sideEffect
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
 
-    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x ⇒
+    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x =>
       x.toLowerCase
     }) should be(res1)
 

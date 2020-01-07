@@ -22,7 +22,7 @@ object UniformAccessPrinciple
    * This principle states that variables and parameterless functions should be accessed using the same syntax. Scala supports this principle by allowing parentheses to not be placed at call sites of parameterless functions. As a result, a parameterless function definition can be changed to a `val`, or vice versa, without affecting client code:
    *
    */
-  def uniformAccessPrincipleUniformAccessPrinciple(res0: Int, res1: Int) {
+  def uniformAccessPrincipleUniformAccessPrinciple(res0: Int, res1: Int) = {
     class Test1(val age: Int = 10)
     class Test2(_age: Int) {
       def age: Int = _age

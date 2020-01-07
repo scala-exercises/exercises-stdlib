@@ -26,7 +26,7 @@ object LiteralNumbers
       res3: Int,
       res4: Int,
       res5: Int,
-      res6: Int) {
+      res6: Int) = {
     val a = 2
     val b = 31
     val c = 0x30F
@@ -43,7 +43,7 @@ object LiteralNumbers
     h should be(res6) //Hint: 30F = 783
   }
 
-  /** Long literals are 64-bit. They are specified by appending an `L` or `l` at the end of the declaration:
+  /** Long literals are 64-bit. They are specified by appending an `L` at the end of the declaration:
    */
   def longLiteralsLiteralNumbers(
       res0: Long,
@@ -52,12 +52,12 @@ object LiteralNumbers
       res3: Long,
       res4: Long,
       res5: Long,
-      res6: Long) {
+      res6: Long) = {
     val a = 2L
     val b = 31L
     val c = 0x30FL
     val e = 0L
-    val f = -2l
+    val f = -2L
     val g = -31L
     val h = -0x30FL
 
@@ -83,7 +83,7 @@ object LiteralNumbers
       res5: Double,
       res6: Double,
       res7: Double,
-      res8: Double) {
+      res8: Double) = {
     val a = 3.0
     val b = 3.00
     val c = 2.73

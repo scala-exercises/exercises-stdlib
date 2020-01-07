@@ -24,7 +24,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean) = {
     object Planets extends Enumeration {
       val Mercury = Value
       val Venus   = Value
@@ -55,7 +55,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean) = {
     object GreekPlanets extends Enumeration {
 
       val Mercury = Value(1, "Hermes")
@@ -88,7 +88,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean) = {
     object Planets extends Enumeration {
       val Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto = Value
     }
@@ -111,7 +111,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean) = {
     object GreekPlanets extends Enumeration {
 
       val Mercury = Value("Hermes")
@@ -137,7 +137,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
 
   /** You can extend the `Enumeration` by extending the `Value` class.
    */
-  def extendingValueEnumerations(res0: Double, res1: Double) {
+  def extendingValueEnumerations(res0: Double, res1: Double) = {
     object Planets extends Enumeration {
 
       val G = 6.67300E-11

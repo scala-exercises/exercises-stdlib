@@ -22,7 +22,7 @@ object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    *
    * We can make a type infix, meaning that the type can be displayed in complement between two types in order to make a readable declaration:
    */
-  def infixTypeInfixTypes(res0: String) {
+  def infixTypeInfixTypes(res0: String) = {
     case class Person(name: String)
     class Loves[A, B](val a: A, val b: B)
 
@@ -38,7 +38,7 @@ object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** Of course we can make this a bit more elegant by creating an infix operator method to use with our infix type:
    */
-  def infixOperatorInfixTypes(res0: String) {
+  def infixOperatorInfixTypes(res0: String) = {
     case class Person(name: String) {
       def loves(person: Person) = new Loves(this, person)
     }

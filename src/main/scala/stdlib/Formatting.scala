@@ -16,14 +16,14 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** String can be placed in format:
    */
-  def placedInFormatFormatting(res0: String) {
+  def placedInFormatFormatting(res0: String) = {
     val s = "Hello World"
     "Application %s".format(s) should be(res0)
   }
 
   /** Character Literals can be a single character:
    */
-  def characterFormatting(res0: String, res1: String) {
+  def characterFormatting(res0: String, res1: String) = {
     val a = 'a'
     val b = 'B'
 
@@ -36,7 +36,7 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** Character Literals can be an escape sequence, including hexidecimal:
    */
-  def escapeSequenceFormatting(res0: String, res1: String, res2: String) {
+  def escapeSequenceFormatting(res0: String, res1: String, res2: String) = {
     val c = '\u0061' //unicode for a
     val e = '\"'
     val f = '\\'
@@ -48,14 +48,14 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** Formatting can also include numbers:
    */
-  def includingNumbersFormatting(res0: String) {
+  def includingNumbersFormatting(res0: String) = {
     val j = 190
     "%d bottles of beer on the wall" format j - 100 should be(res0)
   }
 
   /** Formatting can be used for any number of items, like a string and a number:
    */
-  def anyNumberOfItemsFormatting(res0: String) {
+  def anyNumberOfItemsFormatting(res0: String) = {
     val j = 190
     val k = "vodka"
 

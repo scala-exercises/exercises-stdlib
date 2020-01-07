@@ -54,13 +54,13 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
    *
    */
-  def extractorsExtractors(res0: String) {
+  def extractorsExtractors(res0: String) = {
     case class Employee(firstName: String, lastName: String)
 
     val rob = new Employee("Robin", "Williams")
     val result = rob match {
-      case Employee("Robin", _) ⇒ "Where's Batman?"
-      case _                    ⇒ "No Batman Joke For You"
+      case Employee("Robin", _) => "Where's Batman?"
+      case _                    => "No Batman Joke For You"
     }
 
     result should be(res0)
@@ -68,7 +68,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used to assign values:
    */
-  def calledUnapplyExtractors(res0: String, res1: String, res2: Int, res3: Int) {
+  def calledUnapplyExtractors(res0: String, res1: String, res2: Int, res3: Int) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
     object ChopShop {
@@ -85,7 +85,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** An extractor can also be used in pattern matching:
    */
-  def patternMatchingExtractors(res0: String, res1: String) {
+  def patternMatchingExtractors(res0: String, res1: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
     object ChopShop {
@@ -93,8 +93,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     }
 
     val x = new Car("Chevy", "Camaro", 1978, 120) match {
-      case ChopShop(s, t, u, v) ⇒ (s, t)
-      case _                    ⇒ ("Ford", "Edsel")
+      case ChopShop(s, t, u, v) => (s, t)
+      case _                    => ("Ford", "Edsel")
     }
 
     x._1 should be(res0)
@@ -103,7 +103,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
    */
-  def withWildcardExtractors(res0: String, res1: String) {
+  def withWildcardExtractors(res0: String, res1: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
 
     object ChopShop {
@@ -111,8 +111,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     }
 
     val x = new Car("Chevy", "Camaro", 1978, 120) match {
-      case ChopShop(s, t, _, _) ⇒ (s, t)
-      case _                    ⇒ ("Ford", "Edsel")
+      case ChopShop(s, t, _, _) => (s, t)
+      case _                    => ("Ford", "Edsel")
     }
 
     x._1 should be(res0)
@@ -121,7 +121,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** As long as the method signatures aren't the same, you can have as many unapply methods as you want:
    */
-  def multipleUnapplyExtractors(res0: String) {
+  def multipleUnapplyExtractors(res0: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
     class Employee(val firstName: String, val middleName: Option[String], val lastName: String)
 
@@ -132,8 +132,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     }
 
     val result = new Employee("Kurt", None, "Vonnegut") match {
-      case Tokenizer(c, d) ⇒ "c: %s, d: %s".format(c, d)
-      case _               ⇒ "Not found"
+      case Tokenizer(c, d) => "c: %s, d: %s".format(c, d)
+      case _               => "Not found"
     }
 
     result should be(res0)
@@ -141,7 +141,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** An extractor can be any stable object, including instantiated classes with an unapply method:
    */
-  def anyObjectExtractors(res0: String) {
+  def anyObjectExtractors(res0: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short) {
       def unapply(x: Car) = Some((x.make, x.model))
     }
@@ -149,8 +149,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     val camaro = new Car("Chevy", "Camaro", 1978, 122)
 
     val result = camaro match {
-      case camaro(make, model) ⇒ "make: %s, model: %s".format(make, model)
-      case _                   ⇒ "unknown"
+      case camaro(make, model) => "make: %s, model: %s".format(make, model)
+      case _                   => "unknown"
     }
 
     result should be(res0)
@@ -158,7 +158,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
    */
-  def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) {
+  def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) = {
     class Employee(
         val firstName: String,
         val middleName: Option[String],
@@ -183,7 +183,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
 
   /** In this exercise we use `unapply` for pattern matching employee objects:
    */
-  def unapplyForPatternMatchingExtractors(res0: String) {
+  def unapplyForPatternMatchingExtractors(res0: String) = {
     class Employee(
         val firstName: String,
         val middleName: Option[String],
@@ -200,11 +200,11 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     val singri = new Employee("Singri", None, "Keerthi")
 
     val result = singri match {
-      case Employee("Singri", None, x) ⇒
+      case Employee("Singri", None, x) =>
         "Yay, Singri %s! with no middle name!".format(x)
-      case Employee("Singri", Some(x), _) ⇒
+      case Employee("Singri", Some(x), _) =>
         "Yay, Singri with a middle name of %s".format(x)
-      case _ ⇒ "I don't care, going on break"
+      case _ => "I don't care, going on break"
     }
 
     result should be(res0)

@@ -17,7 +17,7 @@ object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * Here is a class definition which defines a class Point:
    *
    * {{{
-   * class Point(x: Int, y: Int) {
+   * class Point(x: Int, y: Int) = {
    * override def toString(): String = "(" + x + ", " + y + ")"
    * }
    * }}}
@@ -29,7 +29,7 @@ object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    *
    * {{{
    * object Classes {
-   * def main(args: Array[String]) {
+   * def main(args: Array[String]) = {
    * val pt = new Point(1, 2)
    * println(pt)
    * }
@@ -41,7 +41,7 @@ object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * This also demonstrates the use of value parameters in `ClassWithValParameter(val name: String)`, which automatically creates an internal property `val name: String` in the class:
    *
    */
-  def classWithValParameterClasses(res0: String) {
+  def classWithValParameterClasses(res0: String) = {
     class ClassWithValParameter(val name: String)
     val aClass = new ClassWithValParameter("Gandalf")
     aClass.name should be(res0)
