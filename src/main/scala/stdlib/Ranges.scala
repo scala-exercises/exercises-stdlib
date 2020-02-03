@@ -24,7 +24,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 	*
    * A range's upper bound is not inclusive:
    */
-  def upperNotInclusiveRangeExercises(res0: Int, res1: Int, res2: Int) {
+  def upperNotInclusiveRangeExercises(res0: Int, res1: Int, res2: Int) = {
     val someNumbers = Range(0, 10)
     val second      = someNumbers(1)
     val last        = someNumbers.last
@@ -36,7 +36,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Ranges can be specified using 'until':
    */
-  def untilRangeExercises(res0: Boolean) {
+  def untilRangeExercises(res0: Boolean) = {
     val someNumbers = Range(0, 10)
     val otherRange  = 0 until 10
 
@@ -45,7 +45,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Range can specify a step for an increment:
    */
-  def incrementsRangeExercises(res0: Int, res1: Int, res2: Int) {
+  def incrementsRangeExercises(res0: Int, res1: Int, res2: Int) = {
     val someNumbers = Range(2, 10, 3)
     val second      = someNumbers(1)
     val last        = someNumbers.last
@@ -57,7 +57,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** A range does not include its upper bound, even in a step increment:
    */
-  def upperInIncrementRangeExercises(res0: Boolean, res1: Boolean, res2: Boolean) {
+  def upperInIncrementRangeExercises(res0: Boolean, res1: Boolean, res2: Boolean) = {
     val someNumbers = Range(0, 34, 2)
     someNumbers.contains(33) should be(res0)
     someNumbers.contains(32) should be(res1)
@@ -66,7 +66,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Range can specify to include its upper bound value:
    */
-  def specifyUpperRangeExercises(res0: Boolean) {
+  def specifyUpperRangeExercises(res0: Boolean) = {
     val someNumbers = Range(0, 34).inclusive
 
     someNumbers.contains(34) should be(res0)
@@ -74,7 +74,7 @@ object Ranges extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Inclusive ranges can be specified using 'to':
    */
-  def inclusiveWithToRangeExercises(res0: Boolean) {
+  def inclusiveWithToRangeExercises(res0: Boolean) = {
     val someNumbers = Range(0, 34).inclusive
     val otherRange  = 0 to 34
 

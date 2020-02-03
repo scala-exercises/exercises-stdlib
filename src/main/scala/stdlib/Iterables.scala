@@ -28,7 +28,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    * Some common iterables are `Set`, `List`, `Vector`, `Stacks` and `Stream`. Iterator has two important methods: `hasNext`, which answers whether the iterator has another element available, and `next` which returns the next element in the iterator.
    *
    */
-  def collectionIterablesIterables(res0: Int) {
+  def collectionIterablesIterables(res0: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21)
     val it   = list.iterator
     if (it.hasNext) {
@@ -47,7 +47,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) {
+      res8: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list grouped 3
     it.next() should be(List(res0, res1, res2))
@@ -66,7 +66,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) {
+      res8: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list sliding 3
     it.next() should be(List(res0, res1, res2))
@@ -85,7 +85,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) {
+      res8: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list sliding (3, 3)
     it.next() should be(List(res0, res1, res2))
@@ -95,14 +95,14 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** `takeRight` is the opposite of 'take' in `Traversable`. It retrieves the last elements of an `Iterable`:
    */
-  def takeRightIterables(res0: Int, res1: Int, res2: Int) {
+  def takeRightIterables(res0: Int, res1: Int, res2: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     (list takeRight 3) should be(List(res0, res1, res2))
   }
 
   /** `dropRight` will drop a specified number of elements from the right:
    */
-  def dropRightIterables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int) {
+  def dropRightIterables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     (list dropRight 3) should be(List(res0, res1, res2, res3, res4, res5))
   }
@@ -111,7 +111,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    *
    * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2, y3)` will return `((x1, y1), (x2, y2), (x3, y3))`:
    */
-  def zipIterables(res0: Int, res1: String, res2: Int, res3: String, res4: Int, res5: String) {
+  def zipIterables(res0: Int, res1: String, res2: Int, res3: String, res4: Int, res5: String) = {
     val xs = List(3, 5, 9)
     val ys = List("Bob", "Ann", "Stella")
     (xs zip ys) should be(List((res0, res1), (res2, res3), (res4, res5)))
@@ -122,7 +122,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2)` will return `((x1, y1), (x2, y2))`:
    *
    */
-  def sameSizeZipIterables(res0: Int, res1: String, res2: Int, res3: String) {
+  def sameSizeZipIterables(res0: Int, res1: String, res2: Int, res3: String) = {
     val xs = List(3, 5, 9)
     val ys = List("Bob", "Ann")
     (xs zip ys) should be(List((res0, res1), (res2, res3)))
@@ -142,7 +142,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res6: String,
       res7: Int,
       res8: String,
-      res9: String) {
+      res9: String) = {
     val xs = List(3, 5, 9)
     val ys = List("Bob", "Ann")
     (xs zipAll (ys, -1, "?")) should be(List((res0, res1), (res2, res3), (res4, "?")))
@@ -155,29 +155,29 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** `zipWithIndex` will zip an `Iterable` with its integer index:
    */
-  def zipWithIndexIterables(res0: String, res1: String, res2: Int, res3: String) {
+  def zipWithIndexIterables(res0: String, res1: String, res2: Int, res3: String) = {
     val xs = List("Manny", "Moe", "Jack")
     xs.zipWithIndex should be(List((res0, 0), (res1, res2), (res3, 2)))
   }
 
   /** `sameElements` will return true if the two `Iterables` produce the same elements in the same order:
    */
-  def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) {
+  def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     val xs = List("Manny", "Moe", "Jack")
     val ys = List("Manny", "Moe", "Jack")
-    (xs sameElements ys) should be(res0)
+    xs.iterator.sameElements(ys) should be(res0)
 
     val xt = List("Manny", "Moe", "Jack")
     val yt = List("Manny", "Jack", "Moe")
-    (xt sameElements yt) should be(res1)
+    xt.iterator.sameElements(yt) should be(res1)
 
     val xs1 = Set(3, 2, 1, 4, 5, 6, 7)
     val ys1 = Set(7, 2, 1, 4, 5, 6, 3)
-    (xs1 sameElements ys1) should be(res2)
+    xs1.iterator.sameElements(ys1) should be(res2)
 
     val xt1 = Set(1, 2, 3)
     val yt1 = Set(3, 2, 1)
-    (xt1 sameElements yt1) should be(res3) // Caution - see below!
+    xt1.iterator.sameElements(yt1) should be(res3) // Caution - see below!
     /** Note that very small Sets (containing up to 4 elements) are implemented differently to larger Sets; as a result, their iterators produce the elements in the order that they were originally added. This causes the surprising (and arguably incorrect) behaviour in the final example above. */
   }
 

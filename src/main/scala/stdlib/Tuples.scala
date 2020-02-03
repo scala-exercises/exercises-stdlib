@@ -29,7 +29,7 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
    * }}}
    * As you can see, tuples can be created easily:
    */
-  def oneIndexedTuples(res0: String, res1: String) {
+  def oneIndexedTuples(res0: String, res1: String) = {
     val tuple  = ("apple", "dog")
     val fruit  = tuple._1
     val animal = tuple._2
@@ -40,7 +40,7 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Tuples may be of mixed type:
    */
-  def mixedTypeTuples(res0: Int, res1: String) {
+  def mixedTypeTuples(res0: Int, res1: String) = {
     val tuple5 = ("a", 1, 2.2, new Date(), "five")
 
     tuple5._2 should be(res0)
@@ -49,7 +49,7 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** You can assign multiple variables at once using tuples:
    */
-  def assignVariablesTuples(res0: String, res1: Int, res2: Double) {
+  def assignVariablesTuples(res0: String, res1: Int, res2: Double) = {
     val student          = ("Sean Rogers", 21, 3.5)
     val (name, age, gpa) = student
 
@@ -60,7 +60,7 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** The `swap` method can be used to swap the elements of a Tuple2:
    */
-  def swappedTuples(res0: Int, res1: String) {
+  def swappedTuples(res0: Int, res1: String) = {
     val tuple = ("apple", 3).swap
     tuple._1 should be(res0)
     tuple._2 should be(res1)

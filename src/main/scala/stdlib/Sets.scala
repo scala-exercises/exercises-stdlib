@@ -23,21 +23,21 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
    *
    * Sets can be created easily:
    */
-  def noDuplicatesSets(res0: Int) {
+  def noDuplicatesSets(res0: Int) = {
     val mySet = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     mySet.size should be(res0)
   }
 
   /** Sets contain distinct values:
    */
-  def distinctValuesSets(res0: Int) {
+  def distinctValuesSets(res0: Int) = {
     val mySet = Set("Michigan", "Ohio", "Wisconsin", "Michigan")
     mySet.size should be(res0)
   }
 
   /** Sets can be added to easily:
    */
-  def easilyAddedSets(res0: Boolean, res1: Boolean) {
+  def easilyAddedSets(res0: Boolean, res1: Boolean) = {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val aNewSet = mySet + "Illinois"
 
@@ -47,7 +47,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Sets may be of mixed type:
    */
-  def mixedTypeSets(res0: Boolean, res1: Boolean) {
+  def mixedTypeSets(res0: Boolean, res1: Boolean) = {
     val mySet = Set("Michigan", "Ohio", 12)
 
     mySet.contains(12) should be(res0)
@@ -56,7 +56,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Sets can be checked for member existence:
    */
-  def checkExistenceSets(res0: Boolean, res1: Boolean) {
+  def checkExistenceSets(res0: Boolean, res1: Boolean) = {
     val mySet = Set("Michigan", "Ohio", 12)
 
     mySet(12) should be(res0)
@@ -65,7 +65,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Set elements can be removed easily:
    */
-  def easilyRemovedSets(res0: Boolean, res1: Boolean) {
+  def easilyRemovedSets(res0: Boolean, res1: Boolean) = {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val aNewSet = mySet - "Michigan"
 
@@ -75,7 +75,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Set elements can be removed in multiple:
    */
-  def multipleRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
+  def multipleRemovingSets(res0: Boolean, res1: Boolean, res2: Int) = {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val aNewSet = mySet -- List("Michigan", "Ohio")
 
@@ -84,20 +84,9 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     aNewSet.size should be(res2)
   }
 
-  /** Set elements can be removed with a tuple:
-   */
-  def tupleRemovingSets(res0: Boolean, res1: Boolean, res2: Int) {
-    val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
-    val aNewSet = mySet - ("Michigan", "Ohio") // Notice: single '-' operator for tuples
-
-    aNewSet.contains("Michigan") should be(res0)
-    aNewSet.contains("Wisconsin") should be(res1)
-    aNewSet.size should be(res2)
-  }
-
   /** Attempted removal of nonexistent elements from a set is handled gracefully:
    */
-  def nonexistentRemovalSets(res0: Boolean) {
+  def nonexistentRemovalSets(res0: Boolean) = {
     val mySet   = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val aNewSet = mySet - "Minnesota"
 
@@ -106,18 +95,17 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Two sets can be intersected easily:
    */
-  def easilyIntersectedSets(res0: Boolean) {
+  def easilyIntersectedSets(res0: Boolean) = {
     val mySet1  = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2  = Set("Wisconsin", "Michigan", "Minnesota")
-    val aNewSet = mySet1 intersect mySet2
-    // NOTE: Scala 2.7 used **, deprecated for & or intersect in Scala 2.8
+    val aNewSet = mySet1 intersect mySet2 // NOTE: You can use the "&" operator
 
     aNewSet.equals(Set("Michigan", "Wisconsin")) should be(res0)
   }
 
   /** Two sets can be joined as their union easily:
    */
-  def easilyJoinedSets(res0: Boolean) {
+  def easilyJoinedSets(res0: Boolean) = {
     val mySet1  = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2  = Set("Wisconsin", "Michigan", "Minnesota")
     val aNewSet = mySet1 union mySet2 // NOTE: You can also use the "|" operator
@@ -127,7 +115,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** A set is either a subset of another set or it isn't:
    */
-  def subsetSets(res0: Boolean, res1: Boolean) {
+  def subsetSets(res0: Boolean, res1: Boolean) = {
     val mySet1 = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2 = Set("Wisconsin", "Michigan", "Minnesota")
     val mySet3 = Set("Wisconsin", "Michigan")
@@ -138,7 +126,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** The difference between two sets can be obtained easily:
    */
-  def easilyObtainedDifferencesSets(res0: Boolean) {
+  def easilyObtainedDifferencesSets(res0: Boolean) = {
     val mySet1  = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2  = Set("Wisconsin", "Michigan")
     val aNewSet = mySet1 diff mySet2 // Note: you can use the "&~" operator if you *really* want to.
@@ -148,7 +136,7 @@ object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   /** Set equivalency is independent of order:
    */
-  def equivalencySets(res0: Boolean) {
+  def equivalencySets(res0: Boolean) = {
     val mySet1 = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2 = Set("Wisconsin", "Michigan", "Ohio", "Iowa")
 

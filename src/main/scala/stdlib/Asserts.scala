@@ -45,13 +45,12 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    *
    * Come on, your turn: true and false values can be compared with should matchers:
    */
-  def scalaTestAsserts(res0: Boolean) {
+  def scalaTestAsserts(res0: Boolean) =
     true should be(res0)
-  }
 
   /** Booleans in asserts can test equality:
    */
-  def booleanAsserts(res0: Int) {
+  def booleanAsserts(res0: Int) = {
     val v1 = 4
     v1 shouldEqual res0
 
@@ -60,8 +59,7 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
   /** Sometimes we expect you to fill in the values:
    */
-  def valuesAsserts(res0: Int) {
+  def valuesAsserts(res0: Int) =
     assert(res0 == 1 + 1)
-  }
 
 }

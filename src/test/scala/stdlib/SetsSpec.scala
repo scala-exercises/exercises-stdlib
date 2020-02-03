@@ -76,15 +76,6 @@ class SetsSpec extends RefSpec with Checkers {
     )
   }
 
-  def `we can remove multiple members with tuples` = {
-    check(
-      Test.testSuccess(
-        Sets.tupleRemovingSets _,
-        false :: true :: 2 :: HNil
-      )
-    )
-  }
-
   def `we can remove values that are not part of the set` = {
     check(
       Test.testSuccess(

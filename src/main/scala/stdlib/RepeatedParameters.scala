@@ -30,21 +30,19 @@ object RepeatedParameters
    * Resolve:
    *
    */
-  def theLastParameterRepeatedParameters(res0: String) {
+  def theLastParameterRepeatedParameters(res0: String) =
     repeatedParameterMethod(3, "egg", "a delicious sandwich", "protein", "high cholesterol") should be(
       res0)
-  }
 
   /** A repeated parameter can accept a collection as the last parameter but will be considered a single object:
    */
-  def acceptCollectionRepeatedParameters(res0: String) {
+  def acceptCollectionRepeatedParameters(res0: String) =
     repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol")) should be(
       res0)
-  }
 
   /** A repeated parameter can accept a collection - if you want it expanded, add `:_*`
    */
-  def expandCollectionRepeatedParameters(res0: String) {
+  def expandCollectionRepeatedParameters(res0: String) = {
     repeatedParameterMethod(
       3,
       "egg",

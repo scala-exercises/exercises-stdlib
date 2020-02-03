@@ -21,7 +21,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    *
    * `Option[A]` is a container for an optional value of type `A`. If the value of type `A` is present, the `Option[A]` is an instance of `Some[A]`, containing the present value of type `A.` If the value is absent, the `Option[A]` is the object `None`.
    */
-  def conceptOptions(res0: Option[String], res1: Option[String]) {
+  def conceptOptions(res0: Option[String], res1: Option[String]) = {
     val someValue: Option[String] = Some("I am wrapped in something")
     someValue should be(res0)
 
@@ -39,7 +39,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    *
    * Using `getOrElse`, we can extract the value if it exists, or return a provided default value. If we have a `Some(x)` we return `x`, and for `None` we return the default value.
    */
-  def getOrElseOptions(res0: String, res1: String, res2: String) {
+  def getOrElseOptions(res0: String, res1: String, res2: String) = {
     val value1 = maybeItWillReturnSomething(true)
     val value2 = maybeItWillReturnSomething(false)
 
@@ -53,7 +53,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
   /** Checking whether option has value:
    */
-  def isEmptyOptions(res0: Boolean, res1: Boolean) {
+  def isEmptyOptions(res0: Boolean, res1: Boolean) = {
     val value1 = maybeItWillReturnSomething(true)
     val value2 = maybeItWillReturnSomething(false)
 
@@ -63,17 +63,17 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
   /** Option can also be used with pattern matching:
    */
-  def matchOptions(res0: Double, res1: Double) {
+  def matchOptions(res0: Double, res1: Double) = {
     val someValue: Option[Double] = Some(20.0)
     val value = someValue match {
-      case Some(v) ⇒ v
-      case None    ⇒ 0.0
+      case Some(v) => v
+      case None    => 0.0
     }
     value should be(res0)
     val noValue: Option[Double] = None
     val value1 = noValue match {
-      case Some(v) ⇒ v
-      case None    ⇒ 0.0
+      case Some(v) => v
+      case None    => 0.0
     }
     value1 should be(res1)
   }
@@ -83,7 +83,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    *
    * One of these operations is `map`. This operation allows us to map the inner value to a different type while preserving the option:
    */
-  def mapOptions(res0: Option[Double], res1: Option[Double]) {
+  def mapOptions(res0: Option[Double], res1: Option[Double]) = {
     val number: Option[Int]   = Some(3)
     val noNumber: Option[Int] = None
     val result1               = number.map(_ * 1.5)
@@ -97,7 +97,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
   /** Another operation is `fold`. This operation will extract the value from the option, or provide a default if the value is `None`
    */
-  def foldOptions(res0: Int, res1: Int) {
+  def foldOptions(res0: Int, res1: Int) = {
     val number: Option[Int]   = Some(3)
     val noNumber: Option[Int] = None
     val result1               = number.fold(1)(_ * 3)

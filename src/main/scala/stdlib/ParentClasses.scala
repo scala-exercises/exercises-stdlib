@@ -19,7 +19,7 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
    * Class hierarchy is linear, a class can only extend from one parent class:
    *
    */
-  def allValuesAreObjectsParentClasses(res0: String, res1: String) {
+  def allValuesAreObjectsParentClasses(res0: String, res1: String) = {
     class Soldier(val firstName: String, val lastName: String) {}
     class Pilot(override val firstName: String, override val lastName: String, val squadron: Long)
         extends Soldier(firstName, lastName)
@@ -30,7 +30,7 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
 
   /** A class that extends from another is polymorphic:
    */
-  def polymorphicParentClasses(res0: String, res1: String) {
+  def polymorphicParentClasses(res0: String, res1: String) = {
     class Soldier(val firstName: String, val lastName: String) {}
     class Pilot(override val firstName: String, override val lastName: String, val squadron: Long)
         extends Soldier(firstName, lastName)
@@ -53,7 +53,7 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
    *
    * A class can be placed inside an abstract class just like in Java:
    */
-  def abstractClassParentClasses(res0: Int) {
+  def abstractClassParentClasses(res0: Int) = {
     abstract class Soldier(val firstName: String, val lastName: String) {
 
       class Catch(val number: Long) {

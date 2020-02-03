@@ -18,16 +18,16 @@ object ByNameParameter
 
   /** `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can you use it as a block, but still it doesn't look quite right:
    */
-  def takesUnitByNameParameter(res0: Either[Throwable, Int]) {
-    def calc(x: () ⇒ Int): Either[Throwable, Int] = {
+  def takesUnitByNameParameter(res0: Either[Throwable, Int]) = {
+    def calc(x: () => Int): Either[Throwable, Int] = {
       try {
         Right(x()) //An explicit call of the x function
       } catch {
-        case b: Throwable ⇒ Left(b)
+        case b: Throwable => Left(b)
       }
     }
 
-    val y = calc { () ⇒ //Having explicitly declaring that Unit is a parameter with ()
+    val y = calc { () => //Having explicitly declaring that Unit is a parameter with ()
       14 + 15
     }
 
@@ -36,13 +36,13 @@ object ByNameParameter
 
   /** A by-name parameter does the same thing as the previous koan but there is no need to explicitly handle `Unit` or `()`. This is used extensively in Scala to create blocks:
    */
-  def byNameParameter(res0: Either[Throwable, Int]) {
-    def calc(x: ⇒ Int): Either[Throwable, Int] = {
+  def byNameParameter(res0: Either[Throwable, Int]) = {
+    def calc(x: => Int): Either[Throwable, Int] = {
       //x is a call by name parameter
       try {
         Right(x)
       } catch {
-        case b: Throwable ⇒ Left(b)
+        case b: Throwable => Left(b)
       }
     }
 
@@ -58,9 +58,9 @@ object ByNameParameter
 
   /** By name parameters can also be used with `object` and `apply` to make interesting block-like calls:
    */
-  def withApplyByNameParameter(res0: String) {
+  def withApplyByNameParameter(res0: String) = {
     object PigLatinizer {
-      def apply(x: ⇒ String) = x.tail + x.head + "ay"
+      def apply(x: => String) = x.tail + x.head + "ay"
     }
 
     val result = PigLatinizer {

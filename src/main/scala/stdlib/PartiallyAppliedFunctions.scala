@@ -19,7 +19,7 @@ object PartiallyAppliedFunctions
 
   /** A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
    */
-  def partiallyAppliedPartiallyAppliedFunctions(res0: Int, res1: Int) {
+  def partiallyAppliedPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
     val sum3                        = sum _
     sum3(1, 9, 7) should be(res0)
@@ -28,7 +28,7 @@ object PartiallyAppliedFunctions
 
   /** Partially applied functions can replace any number of arguments:
    */
-  def anyNumberArgumentsPartiallyAppliedFunctions(res0: Int, res1: Int) {
+  def anyNumberArgumentsPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
     val sumC                        = sum(1, 10, _: Int)
     sumC(4) should be(res0)
@@ -37,7 +37,12 @@ object PartiallyAppliedFunctions
 
   /** Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
    */
-  def curryingPartiallyAppliedFunctions(res0: Boolean, res1: Int, res2: Int, res3: Int, res4: Int) {
+  def curryingPartiallyAppliedFunctions(
+      res0: Boolean,
+      res1: Int,
+      res2: Int,
+      res3: Int,
+      res4: Int) = {
     def multiply(x: Int, y: Int) = x * y
     (multiply _).isInstanceOf[Function2[_, _, _]] should be(res0)
     val multiplyCurried = (multiply _).curried
@@ -50,8 +55,8 @@ object PartiallyAppliedFunctions
 
   /** Currying allows you to create specialized versions of generalized functions:
    */
-  def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) {
-    def customFilter(f: Int ⇒ Boolean)(xs: List[Int]) =
+  def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) = {
+    def customFilter(f: Int => Boolean)(xs: List[Int]) =
       xs filter f
     def onlyEven(x: Int) = x % 2 == 0
     val xs               = List(12, 11, 5, 20, 3, 13, 2)

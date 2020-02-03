@@ -57,7 +57,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    *
    * Creating a method `isOdd` for `Int`, which doesn't exist:
    */
-  def implicitsParametersImplicits(res0: Boolean, res1: Boolean) {
+  def implicitsParametersImplicits(res0: Boolean, res1: Boolean) = {
     class KoanIntWrapper(val original: Int) {
       def isOdd = original % 2 != 0
     }
@@ -71,7 +71,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** Implicits rules can be imported into your scope with an import:
    */
-  def importedImplicits(res0: Boolean, res1: Boolean) {
+  def importedImplicits(res0: Boolean, res1: Boolean) = {
     object MyPredef {
 
       class KoanIntWrapper(val original: Int) {
@@ -97,7 +97,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res1: Boolean,
       res2: Boolean,
       res3: Boolean,
-      res4: Boolean) {
+      res4: Boolean) = {
     import java.math.BigInteger
     implicit def Int2BigIntegerConvert(value: Int): BigInteger =
       new BigInteger(value.toString)
@@ -116,7 +116,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** Implicits can be used to declare a value to be provided as a default as long as an implicit value is set with in the scope.  These are called Implicit Function Parameters:
    */
-  def asDefaultImplicits(res0: BigDecimal) {
+  def asDefaultImplicits(res0: BigDecimal) = {
     def howMuchCanIMake_?(hours: Int)(implicit dollarsPerHour: BigDecimal) =
       dollarsPerHour * hours
 
@@ -127,7 +127,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** Implicit Function Parameters can contain a list of implicits:
    */
-  def listOfImplicitsImplicits(res0: String) {
+  def listOfImplicitsImplicits(res0: String) = {
     def howMuchCanIMake_?(hours: Int)(implicit amount: BigDecimal, currencyName: String) =
       (amount * hours).toString() + " " + currencyName
 
@@ -139,7 +139,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   /** Default arguments, though, are preferred to Implicit Function Parameters:
    */
-  def defaultArgumentsImplicits(res0: String, res1: String) {
+  def defaultArgumentsImplicits(res0: String, res1: String) = {
     def howMuchCanIMake_?(hours: Int, amount: BigDecimal = 34, currencyName: String = "Dollars") =
       (amount * hours).toString() + " " + currencyName
 

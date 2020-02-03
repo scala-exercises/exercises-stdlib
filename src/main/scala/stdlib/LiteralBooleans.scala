@@ -25,7 +25,7 @@ object LiteralBooleans
       res2: Boolean,
       res3: Boolean,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean) = {
     val a = true
     val b = false
     val c = 1 > 2
