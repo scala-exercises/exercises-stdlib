@@ -28,7 +28,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
    *
    * A class uses the `extends` keyword to mixin a trait if it is the only relationship the class inherits:
    */
-  def similarToInterfacesTraits(res0: String) {
+  def similarToInterfacesTraits(res0: String) = {
     case class Event(name: String)
 
     trait EventListener {
@@ -38,9 +38,9 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     class MyListener extends EventListener {
       def listen(event: Event): String = {
         event match {
-          case Event("Moose Stampede") ⇒
+          case Event("Moose Stampede") =>
             "An unfortunate moose stampede occurred"
-          case _ ⇒ "Nothing of importance occurred"
+          case _ => "Nothing of importance occurred"
         }
       }
     }
@@ -52,7 +52,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** A class can only extend from one class or trait, any subsequent extension should use the keyword `with`:
    */
-  def extendsFromOneTraits(res0: String) {
+  def extendsFromOneTraits(res0: String) = {
     case class Event(name: String)
 
     trait EventListener {
@@ -64,9 +64,9 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     class MyListener extends OurListener with EventListener {
       def listen(event: Event): String = {
         event match {
-          case Event("Woodchuck Stampede") ⇒
+          case Event("Woodchuck Stampede") =>
             "An unfortunate woodchuck stampede occurred"
-          case _ ⇒ "Nothing of importance occurred"
+          case _ => "Nothing of importance occurred"
         }
       }
     }
@@ -78,7 +78,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
 
   /** Traits are polymorphic. Any type can be referred to by another type if related by extension:
    */
-  def polymorphicTraits(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) {
+  def polymorphicTraits(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     case class Event(name: String)
 
     trait EventListener {
@@ -88,9 +88,9 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     class MyListener extends EventListener {
       def listen(event: Event): String = {
         event match {
-          case Event("Moose Stampede") ⇒
+          case Event("Moose Stampede") =>
             "An unfortunate moose stampede occurred"
-          case _ ⇒ "Nothing of importance occurred"
+          case _ => "Nothing of importance occurred"
         }
       }
     }
@@ -107,7 +107,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
    *
    * Also, the dependencies can't have identical method/property names or else you'll get an `illegal inheritance` error.
    */
-  def selfTypeTraits(res0: Int) {
+  def selfTypeTraits(res0: Int) = {
     trait B {
       def bId = 2
     }

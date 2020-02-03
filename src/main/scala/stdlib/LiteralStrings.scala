@@ -19,7 +19,7 @@ object LiteralStrings
 
   /** Character literals are quoted with single quotes:
    */
-  def characterLiteralsLiteralStrings(res0: String, res1: String) {
+  def characterLiteralsLiteralStrings(res0: String, res1: String) = {
     val a = 'a'
     val b = 'B'
 
@@ -29,7 +29,7 @@ object LiteralStrings
 
   /** Character literals can use hexadecimal Unicode:
    */
-  def characterLiteralsUnicodeLiteralStrings(res0: String) {
+  def characterLiteralsUnicodeLiteralStrings(res0: String) = {
     val c = '\u0061' //unicode for a
 
     c.toString should be(res0)
@@ -37,7 +37,7 @@ object LiteralStrings
 
   /** Character literals can use escape sequences:
    */
-  def escapeSequenceLiteralStrings(res0: String, res1: String) {
+  def escapeSequenceLiteralStrings(res0: String, res1: String) = {
     val e = '\"'
     val f = '\\'
 
@@ -47,7 +47,7 @@ object LiteralStrings
 
   /** One-line String literals are surrounded by quotation marks:
    */
-  def oneLineLiteralStrings(res0: String) {
+  def oneLineLiteralStrings(res0: String) = {
     val a = "To be or not to be"
     a should be(res0)
   }
@@ -56,7 +56,7 @@ object LiteralStrings
  *
  * Multiline String literals are surrounded by three quotation marks.
  */
-  def multilineLiteralStrings(res0: Int) {
+  def multilineLiteralStrings(res0: Int) = {
     val a =
       """An apple a day
   keeps the doctor away"""
@@ -69,7 +69,7 @@ object LiteralStrings
  * Multiline String literals can use | to specify the starting position
  * of subsequent lines, then use stripMargin to remove the surplus indentation.
  */
-  def stripMarginLiteralStrings(res0: String) {
+  def stripMarginLiteralStrings(res0: String) = {
 
     val a = """An apple a day keeps
 | the doctor away"""

@@ -103,15 +103,6 @@ class MapsSpec extends RefSpec with Checkers {
     )
   }
 
-  def `key removal with tuples` = {
-    check(
-      Test.testSuccess(
-        Maps.removedWithTupleMaps _,
-        false :: true :: true :: 2 :: 4 :: HNil
-      )
-    )
-  }
-
   def `non-existent element removal` = {
     check(
       Test.testSuccess(

@@ -33,7 +33,7 @@ object TypeSignatures
    * A trait can be declared containing a type, where a concrete implementer will satisfy the type:
    *
    */
-  def typeSignatureTypeSignatures(res0: Boolean) {
+  def typeSignatureTypeSignatures(res0: Boolean) = {
     trait Randomizer[A] {
       def draw(): A
     }
@@ -51,14 +51,14 @@ object TypeSignatures
 
   /** Class meta-information can be retrieved by class name by using `classOf[className]`:
    */
-  def retrieveMetaInformationTypeSignatures(res0: String, res1: String) {
+  def retrieveMetaInformationTypeSignatures(res0: String, res1: String) = {
     classOf[String].getCanonicalName should be(res0)
     classOf[String].getSimpleName should be(res1)
   }
 
   /** Class meta-information can be derived from an object reference using `getClass()`:
    */
-  def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) {
+  def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) = {
     val zoom = "zoom"
     zoom.isInstanceOf[String] should be(res0)
     zoom.getClass.getCanonicalName should be(res1)
@@ -67,7 +67,7 @@ object TypeSignatures
 
   /** `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
    */
-  def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) {
+  def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) = {
     trait Randomizer[A] {
       def draw(): A
     }

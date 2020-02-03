@@ -36,45 +36,39 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
    *
    * An empty list can be represented by another nothing value: `Nil`
    */
-  def emptyValuesEmptyValues(res0: Boolean) {
+  def emptyValuesEmptyValues(res0: Boolean) =
     List() === Nil shouldBe res0
-  }
 
   /** [[http://www.scala-lang.org/api/current/index.html#scala.None None]] is the counterpart to [[http://www.scala-lang.org/api/current/index.html#scala.Some Some]], used when you're using Scala's [[http://www.scala-lang.org/api/current/index.html#scala.Option Option]] class to help avoid `null` references.
    *
    * `None` equals `None`:
    */
-  def avoidingNullEmptyValues(res0: Boolean) {
+  def avoidingNullEmptyValues(res0: Boolean) =
     None === None shouldBe res0
-  }
 
   /** `None` should be identical to `None`:
    */
-  def identicalNoneEmptyValues(res0: Boolean) {
+  def identicalNoneEmptyValues(res0: Boolean) =
     None eq None shouldBe res0
-  }
 
   /** `None` can be converted to a String:
    */
-  def noneToStringEmptyValues(res0: String) {
+  def noneToStringEmptyValues(res0: String) =
     assert(None.toString === res0)
-  }
 
   /** `None` can be converted to an empty list:
    */
-  def noneToListEmptyValues(res0: Boolean) {
+  def noneToListEmptyValues(res0: Boolean) =
     None.toList === Nil shouldBe res0
-  }
 
   /** `None` is considered empty:
    */
-  def noneAsEmptyEmptyValues(res0: Boolean) {
+  def noneAsEmptyEmptyValues(res0: Boolean) =
     assert(None.isEmpty === res0)
-  }
 
   /** `None` can be cast to `Any`, `AnyRef` or `AnyVal`:
    */
-  def noneToAnyEmptyValues(res0: Boolean, res1: Boolean, res2: Boolean) {
+  def noneToAnyEmptyValues(res0: Boolean, res1: Boolean, res2: Boolean) = {
     None.asInstanceOf[Any] === None shouldBe res0
     None.asInstanceOf[AnyRef] === None shouldBe res1
     None.asInstanceOf[AnyVal] === None shouldBe res2
@@ -82,7 +76,7 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
 
   /** `None` can be used with `Option` instead of null references:
    */
-  def noneWithOptionEmptyValues(res0: Boolean, res1: Option[String]) {
+  def noneWithOptionEmptyValues(res0: Boolean, res1: Option[String]) = {
     val optional: Option[String] = None
     assert(optional.isEmpty === res0)
     assert(optional === res1)
@@ -90,7 +84,7 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
 
   /** `Some` is the opposite of `None` for `Option` types:
    */
-  def someAgainstNoneEmptyValues(res0: Boolean, res1: Boolean) {
+  def someAgainstNoneEmptyValues(res0: Boolean, res1: Boolean) = {
     val optional: Option[String] = Some("Some Value")
     assert((optional == None) === res0, "Some(value) should not equal None")
     assert(optional.isEmpty === res1, "Some(value) should not be empty")
@@ -98,7 +92,7 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
 
   /** `Option.getOrElse` can be used to provide a default in the case of `None`:
    */
-  def getOrElseEmptyValues(res0: String, res1: String) {
+  def getOrElseEmptyValues(res0: String, res1: String) = {
     val optional: Option[String]  = Some("Some Value")
     val optional2: Option[String] = None
     assert(optional.getOrElse("No Value") === res0, "Should return the value in the option")

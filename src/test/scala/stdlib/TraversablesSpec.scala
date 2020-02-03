@@ -133,8 +133,8 @@ class TraversablesSpec extends RefSpec with Checkers {
   def `to stream function` = {
     check(
       Test.testSuccess(
-        Traversables.toStreamFunctionTraversables _,
-        true :: Stream(4, 6, 7) :: HNil
+        Traversables.toLazyListFunctionTraversables _,
+        true :: LazyList(4, 6, 7) :: HNil
       )
     )
   }
@@ -184,11 +184,11 @@ class TraversablesSpec extends RefSpec with Checkers {
     )
   }
 
-  def `hasDefiniteSize function` = {
+  def `knownSize function` = {
     check(
       Test.testSuccess(
-        Traversables.hasDefiniteSizeFunctionTraversables _,
-        true :: false :: HNil
+        Traversables.knownSizeFunctionTraversables _,
+        2 :: -1 :: HNil
       )
     )
   }
