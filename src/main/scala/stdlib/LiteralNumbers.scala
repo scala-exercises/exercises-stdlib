@@ -26,7 +26,8 @@ object LiteralNumbers
       res3: Int,
       res4: Int,
       res5: Int,
-      res6: Int) = {
+      res6: Int
+  ) = {
     val a = 2
     val b = 31
     val c = 0x30F
@@ -52,7 +53,8 @@ object LiteralNumbers
       res3: Long,
       res4: Long,
       res5: Long,
-      res6: Long) = {
+      res6: Long
+  ) = {
     val a = 2L
     val b = 31L
     val c = 0x30FL
@@ -83,16 +85,17 @@ object LiteralNumbers
       res5: Double,
       res6: Double,
       res7: Double,
-      res8: Double) = {
+      res8: Double
+  ) = {
     val a = 3.0
     val b = 3.00
     val c = 2.73
     val d = 3f
     val e = 3.22d
     val f = 93e-9
-    val g = 93E-9
+    val g = 93e-9
     val h = 0.0
-    val i = 9.23E-9D
+    val i = 9.23e-9d
 
     a should be(res0)
     b should be(res1)

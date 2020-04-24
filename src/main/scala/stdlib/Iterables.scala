@@ -47,7 +47,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) = {
+      res8: Int
+  ) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list grouped 3
     it.next() should be(List(res0, res1, res2))
@@ -66,7 +67,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) = {
+      res8: Int
+  ) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list sliding 3
     it.next() should be(List(res0, res1, res2))
@@ -85,7 +87,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res5: Int,
       res6: Int,
       res7: Int,
-      res8: Int) = {
+      res8: Int
+  ) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it   = list sliding (3, 3)
     it.next() should be(List(res0, res1, res2))
@@ -142,7 +145,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res6: String,
       res7: Int,
       res8: String,
-      res9: String) = {
+      res9: String
+  ) = {
     val xs = List(3, 5, 9)
     val ys = List("Bob", "Ann")
     (xs zipAll (ys, -1, "?")) should be(List((res0, res1), (res2, res3), (res4, "?")))

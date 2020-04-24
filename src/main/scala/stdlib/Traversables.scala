@@ -520,7 +520,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
       res0: List[Int],
       res1: List[Int],
       res2: List[Int],
-      res3: List[Int]) = {
+      res3: List[Int]
+  ) = {
     val list = List(List(1, 2, 3), List(4, 5, 6), List(7, 8, 9))
     list.transpose should be(List(res0, res1, res2))
 

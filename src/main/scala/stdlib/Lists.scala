@@ -40,7 +40,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
       res2: Boolean,
       res3: Boolean,
       res4: Boolean,
-      res5: Boolean) = {
+      res5: Boolean
+  ) = {
     val a: List[String] = Nil
     val b: List[Int]    = Nil
 
@@ -188,7 +189,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
       res2: Int,
       res3: List[Int],
       res4: List[Int],
-      res5: List[Int]) = {
+      res5: List[Int]
+  ) = {
     val d = Nil
     val c = 3 :: d
     val b = 2 :: c

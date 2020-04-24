@@ -199,7 +199,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
       res9: String,
       res10: Int,
       res11: String,
-      res12: Boolean) = {
+      res12: Boolean
+  ) = {
     case class Person(first: String, last: String, age: Int = 0, ssn: String = "")
     val p1 = Person("Fred", "Jones", 23, "111-22-3333")
     val p2 = Person("Samantha", "Jones") // note missing age and ssn

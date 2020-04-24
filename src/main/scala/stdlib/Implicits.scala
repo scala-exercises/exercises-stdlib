@@ -97,7 +97,8 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
       res1: Boolean,
       res2: Boolean,
       res3: Boolean,
-      res4: Boolean) = {
+      res4: Boolean
+  ) = {
     import java.math.BigInteger
     implicit def Int2BigIntegerConvert(value: Int): BigInteger =
       new BigInteger(value.toString)
@@ -105,7 +106,8 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     def add(a: BigInteger, b: BigInteger) = a.add(b)
 
     add(Int2BigIntegerConvert(3), Int2BigIntegerConvert(6)) == Int2BigIntegerConvert(9) should be(
-      res0)
+      res0
+    )
 
     add(3, 6) == 9 should be(res1)
     add(3, 6) == Int2BigIntegerConvert(9) should be(res2)

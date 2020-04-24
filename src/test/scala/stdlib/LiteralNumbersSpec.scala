@@ -35,7 +35,7 @@ class LiteralNumbersSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         LiteralNumbers.floatsAndDoublesLiteralNumbers _,
-        3D :: 3D :: 2.73D :: 3D :: 3.22D :: 93e-9 :: 93E-9 :: 0D :: 9.23E-9 :: HNil
+        3d :: 3d :: 2.73d :: 3d :: 3.22d :: 93e-9 :: 93e-9 :: 0d :: 9.23e-9 :: HNil
       )
     )
   }
