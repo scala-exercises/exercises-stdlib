@@ -27,10 +27,9 @@ object HigherOrderFunctions
       res2: Int,
       res3: Int,
       res4: Int,
-      res5: Int) = {
-    def lambda = { x: Int =>
-      x + 1
-    }
+      res5: Int
+  ) = {
+    def lambda  = { x: Int => x + 1 }
     def lambda2 = (x: Int) => x + 2
     val lambda3 = (x: Int) => x + 3
 
@@ -75,9 +74,7 @@ object HigherOrderFunctions
   def meetClosureHigherOrderFunctions(res0: Int, res1: Int) = {
     var incrementer = 1
 
-    def closure = { x: Int =>
-      x + incrementer
-    }
+    def closure = { x: Int => x + incrementer }
 
     val result1 = closure(10)
     result1 should be(res0)
@@ -151,7 +148,8 @@ object HigherOrderFunctions
       res0: List[String],
       res1: List[String],
       res2: List[String],
-      res3: List[Int]) = {
+      res3: List[Int]
+  ) = {
     def makeUpper(xs: List[String]) = xs map {
       _.toUpperCase
     }
@@ -161,9 +159,7 @@ object HigherOrderFunctions
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
 
-    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x =>
-      x.toLowerCase
-    }) should be(res1)
+    makeWhatEverYouLike(List("ABC", "XYZ", "123"), x => x.toLowerCase) should be(res1)
 
     //using it inline
     val myName = (name: String) => s"My name is $name"

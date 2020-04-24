@@ -49,7 +49,9 @@ object InfixPrefixandPostfixOperators
    */
   def postfixOperatorInfixPrefixandPostfixOperators(res0: String) = {
     val g: Int = 31
-    (g toHexString) should be(res0) //toHexString takes no params therefore can be called as a postfix operator.
+    (g toHexString) should be(
+      res0
+    ) //toHexString takes no params therefore can be called as a postfix operator.
     //Hint: The answer is "1f"
   }
 

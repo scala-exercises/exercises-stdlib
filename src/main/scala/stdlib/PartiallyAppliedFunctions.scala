@@ -42,7 +42,8 @@ object PartiallyAppliedFunctions
       res1: Int,
       res2: Int,
       res3: Int,
-      res4: Int) = {
+      res4: Int
+  ) = {
     def multiply(x: Int, y: Int) = x * y
     (multiply _).isInstanceOf[Function2[_, _, _]] should be(res0)
     val multiplyCurried = (multiply _).curried

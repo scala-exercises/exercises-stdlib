@@ -46,7 +46,7 @@ class OptionsSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         Options.matchOptions _,
-        20D :: 0D :: HNil
+        20d :: 0d :: HNil
       )
     )
   }
@@ -57,7 +57,7 @@ class OptionsSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         Options.mapOptions _,
-        Option(4.5D) :: theNone :: HNil
+        Option(4.5d) :: theNone :: HNil
       )
     )
   }

@@ -35,7 +35,7 @@ class TuplesSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         Tuples.assignVariablesTuples _,
-        "Sean Rogers" :: 21 :: 3.5D :: HNil
+        "Sean Rogers" :: 21 :: 3.5d :: HNil
       )
     )
   }

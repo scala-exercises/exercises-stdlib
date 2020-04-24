@@ -99,7 +99,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     }
     myMap.getOrElse("TX", "missing data") should be(res0)
 
-    val myMap2 = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa") withDefaultValue "missing data"
+    val myMap2 =
+      Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa") withDefaultValue "missing data"
     myMap2("TX") should be(res1)
   }
 

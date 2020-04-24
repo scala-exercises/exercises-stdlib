@@ -68,8 +68,9 @@ object PartialFunctions
       case x if (x % 2) != 0 => x * 3
     }
 
-    val addFive  = (x: Int) => x + 5
-    val whatToDo = doubleEvens orElse tripleOdds andThen addFive //Here we chain the partial functions together
+    val addFive = (x: Int) => x + 5
+    val whatToDo =
+      doubleEvens orElse tripleOdds andThen addFive //Here we chain the partial functions together
     whatToDo(3) should be(res0)
     whatToDo(4) should be(res1)
   }
