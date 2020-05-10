@@ -35,7 +35,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    *
    * Quite a few subclasses of `Iterable` override this standard implementation of `foreach` in `Iterable`, because they can provide a more efficient implementation. Remember that `foreach` is the basis of the implementation of all operations in `Traversable`, so its performance matters.
    *
-   * Some common iterables are `Set`, `List`, `Vector`, `Stacks` and `Stream`. Iterator has two important methods: `hasNext`, which answers whether the iterator has another element available, and `next` which returns the next element in the iterator.
+   * Some common iterables are `Set`, `List`, `Vector`, `Stack` and `Stream`. Iterator has two important methods: `hasNext`, which answers whether the iterator has another element available, and `next` which returns the next element in the iterator.
    *
    */
   def collectionIterablesIterables(res0: Int) = {
