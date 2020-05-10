@@ -174,7 +174,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     xs.zipWithIndex should be(List((res0, 0), (res1, res2), (res3, 2)))
   }
 
-  /** `sameElements` will return true if the two `Iterables` produce the same elements in the same order:
+  /** `sameElements` will return true if the two `Iterables` produce the same elements in the same order. The iterator for a set created with less than 5 values will return elements in the order in which they were added, rather than the consistent, hash-based ordering used by iterators for larger Sets:
    */
   def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     val xs = List("Manny", "Moe", "Jack")
