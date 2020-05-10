@@ -10,7 +10,6 @@ The maintainers of the project are:
 
 - [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
 - [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **Ana Gómez González (angoglez)**](https://github.com/angoglez)
-- [![andyscott](https://avatars3.githubusercontent.com/u/310363?v=4&s=20) **Andy Scott (andyscott)**](https://github.com/andyscott)
 - [![dominv](https://avatars1.githubusercontent.com/u/3943031?v=4&s=20) **Domingo Valera (dominv)**](https://github.com/dominv)
 - [![kiroco12](https://avatars1.githubusercontent.com/u/48894338?v=4&s=20) **Enrique Nieto (kiroco12)**](https://github.com/kiroco12)
 - [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **Frank Rosner (FRosner)**](https://github.com/FRosner)
@@ -18,6 +17,7 @@ The maintainers of the project are:
 - [![juanpedromoreno](https://avatars2.githubusercontent.com/u/4879373?v=4&s=20) **Juan Pedro Moreno (juanpedromoreno)**](https://github.com/juanpedromoreno)
 - [![rafaparadela](https://avatars3.githubusercontent.com/u/315070?v=4&s=20) **Rafa Paradela (rafaparadela)**](https://github.com/rafaparadela)
 - [![raulraja](https://avatars3.githubusercontent.com/u/456796?v=4&s=20) **Raúl Raja Martínez (raulraja)**](https://github.com/raulraja)
+- [![andyscott](https://avatars3.githubusercontent.com/u/310363?v=4&s=20) **nAｽd?octt (andyscott)**](https://github.com/andyscott)
 
 ## Contributors
 
@@ -30,8 +30,8 @@ These are the people that have contributed to the _exercises-stdlib_ project:
 - [![Yaskier](https://avatars2.githubusercontent.com/u/1658525?v=4&s=20) **Yaskier**](https://github.com/Yaskier)
 - [![hellrich](https://avatars2.githubusercontent.com/u/11443632?v=4&s=20) **hellrich**](https://github.com/hellrich)
 - [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **FRosner**](https://github.com/FRosner)
-- [![idarlington](https://avatars1.githubusercontent.com/u/5803713?v=4&s=20) **idarlington**](https://github.com/idarlington)
 - [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![idarlington](https://avatars1.githubusercontent.com/u/5803713?v=4&s=20) **idarlington**](https://github.com/idarlington)
 - [![dominv](https://avatars1.githubusercontent.com/u/3943031?v=4&s=20) **dominv**](https://github.com/dominv)
 - [![jdesiloniz](https://avatars2.githubusercontent.com/u/2835739?v=4&s=20) **jdesiloniz**](https://github.com/jdesiloniz)
 - [![aseigneurin](https://avatars3.githubusercontent.com/u/4038960?v=4&s=20) **aseigneurin**](https://github.com/aseigneurin)
