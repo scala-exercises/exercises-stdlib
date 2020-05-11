@@ -72,7 +72,7 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
     result should be(res0)
   }
 
-  /** `flatMap` of `Options` will filter out all `None`s but keep the `Some`s:
+  /** `flatMap` of `Option`s will filter out all `None`s but keep the `Some`s:
    */
   def flatMapOfOptionsTraversables(res0: List[Int]) = {
     val list   = List(1, 2, 3, 4, 5)
