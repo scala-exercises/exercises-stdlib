@@ -49,7 +49,7 @@ object HigherOrderFunctions
 
     def lambda5(x: Int) = x + 1
 
-    val result           = lambda(3)
+    val result         = lambda(3)
     val result1andhalf = lambda.apply(3)
 
     val result2 = lambda2(3)
