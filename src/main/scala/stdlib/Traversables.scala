@@ -510,7 +510,7 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   /** The naive recursive implementation of `reduceRight` is not tail recursive and would lead to a stack overflow if used on larger traversables.
    * However, `reduceLeft` can be implemented with tail recursion.
    *
-   * To avoid the potential stack overflow with the naive implementation of `reduceRight` we can easily implement it based on `reduceLeft` by reverting the list and the inverting the reduce function.
+   * To avoid the potential stack overflow with the naive implementation of `reduceRight` we can easily implement it based on `reduceLeft` by reversing the list and the inverting the reduce function.
    * The same applies for folding operations.
    *
    * There is also a `reduce` (and `fold`) available, which works exactly like `reduceLeft` (and `foldLeft`) and it should be the prefered method to call unless there is a strong reason to use `reduceRight` (or `foldRight`).
