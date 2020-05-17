@@ -49,7 +49,7 @@ object NamedandDefaultArguments
    * printName(last = "Jones") // Prints "John Jones"
    * }}}
    *
-   * Given classes below:
+   * Given the classes below:
    *
    * {{{
    * class WithoutClassParameters() = {
@@ -84,19 +84,18 @@ object NamedandDefaultArguments
    *
    * }}}
    *
-   * Can specify arguments in any order if you use their names:
+   * You can specify arguments in any order if you use their names:
    */
   def classWithoutParametersNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me = new WithoutClassParameters()
 
-    // what happens if you change the order of these parameters (nothing)
+    // What happens if you change the order of these parameters? Nothing.
     val myColor = me.addColors(green = 0, red = 255, blue = 0)
 
-    // for koan, remove the values in the should equal
     myColor should equal((res0, res1, res2))
   }
 
-  /** Can default arguments if you leave them off:
+  /** You can default arguments if you leave them off:
    */
   def defaultArgumentsNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithoutClassParameters()
@@ -105,7 +104,7 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** Can access class parameters and specify arguments in any order if you use their names:
+  /** You can access class parameters and specify arguments in any order if you use their names:
    */
   def anyOrderNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParameters(40, 50, 60)
@@ -114,7 +113,7 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** Can access class parameters and default arguments if you leave them off:
+  /** You can access class parameters and default arguments if you leave them off:
    */
   def accessClassParametersNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParameters(10, 20, 30)
@@ -123,7 +122,7 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** Can default class parameters and have default arguments too:
+  /** You can default class parameters and have default arguments too:
    */
   def defaultClassArgumentsNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParametersInClassDefinition()
