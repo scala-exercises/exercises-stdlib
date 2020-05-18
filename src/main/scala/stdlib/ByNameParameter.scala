@@ -31,13 +31,13 @@ object ByNameParameter
   def takesUnitByNameParameter(res0: Either[Throwable, Int]) = {
     def calc(x: () => Int): Either[Throwable, Int] = {
       try {
-        Right(x()) //An explicit call of the x function
+        Right(x()) // An explicit call of the x function
       } catch {
         case b: Throwable => Left(b)
       }
     }
 
-    val y = calc { () => //Having explicitly declaring that Unit is a parameter with ()
+    val y = calc { () => // explicitly declaring that Unit is a parameter with ()
       14 + 15
     }
 
@@ -48,7 +48,7 @@ object ByNameParameter
    */
   def byNameParameter(res0: Either[Throwable, Int]) = {
     def calc(x: => Int): Either[Throwable, Int] = {
-      //x is a call by name parameter
+      // x is a call by-name parameter
       try {
         Right(x)
       } catch {
@@ -57,16 +57,16 @@ object ByNameParameter
     }
 
     val y = calc {
-      //This looks like a natural block
-      println("Here we go!") //Some superfluous call
-      val z = List(1, 2, 3, 4) //Another superfluous call
+      // This looks like a natural block
+      println("Here we go!") // Some superfluous call
+      val z = List(1, 2, 3, 4) // Another superfluous call
       49 + 20
     }
 
     y should be(res0)
   }
 
-  /** By name parameters can also be used with `object` and `apply` to make interesting block-like calls:
+  /** By-name parameters can also be used with `object` and `apply` to make interesting block-like calls:
    */
   def withApplyByNameParameter(res0: String) = {
     object PigLatinizer {
