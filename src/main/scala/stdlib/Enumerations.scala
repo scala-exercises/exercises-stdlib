@@ -26,7 +26,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
 
   /** To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
    *
-   * `Value` assigns a numerical value to fields:
+   * `Value` assigns a numerical value to fields, indexed from 0:
    */
   def createEnumerationEnumerations(
       res0: Int,
@@ -149,7 +149,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** You can extend the `Enumeration` by extending the `Value` class.
+  /** You can extend the `Enumeration` by extending the `Val` class.
    */
   def extendingValueEnumerations(res0: Double, res1: Double) = {
     object Planets extends Enumeration {
