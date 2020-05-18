@@ -59,7 +59,7 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    *  - If it returns a single sub-value of type `T`, return a `Option[T]`
    *  - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
    *
-   * Sometimes, the number of sub-values is fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
+   * Sometimes, the number of sub-values isn't fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
    *
    * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
    *
