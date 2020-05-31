@@ -64,6 +64,21 @@ object PartiallyAppliedFunctions
     multiplyCurriedFour(4) should be(res4)
   }
 
+  /**
+    * Currying also allows you to compose functions that have multiple parameter, since normally it's not possible:
+    */
+  def curriedForComposition(res0: Int, res1: Int) {
+    def multiply(x: Int, y: Int) = x * y
+    val multiplyCurried = (multiply _).curried
+    def addOne(x: Int) = x + 1
+
+    val composedFunction = addOne _ compose multiplyCurried(2)
+    composedFunction(3) should be(res0)
+
+    val andThenComposedFunction = multiplyCurried(2) andThen addOne
+    andThenComposedFunction(4) should be(res1)
+  }
+
   /** Currying allows you to create specialized versions of generalized functions:
    */
   def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) = {
