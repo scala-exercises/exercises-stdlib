@@ -59,6 +59,7 @@ These are the people that have contributed to the _exercises-stdlib_ project:
 - [![jsuarezb](https://avatars0.githubusercontent.com/u/4175044?v=4&s=20) **jsuarezb**](https://github.com/jsuarezb)
 - [![KevinGreene](https://avatars3.githubusercontent.com/u/320528?v=4&s=20) **KevinGreene**](https://github.com/KevinGreene)
 - [![lmreis89](https://avatars0.githubusercontent.com/u/10532763?v=4&s=20) **lmreis89**](https://github.com/lmreis89)
+- [![Czajnikowski](https://avatars0.githubusercontent.com/u/973682?v=4&s=20) **Czajnikowski**](https://github.com/Czajnikowski)
 - [![mcampagonzalez](https://avatars2.githubusercontent.com/u/19465448?v=4&s=20) **mcampagonzalez**](https://github.com/mcampagonzalez)
 - [![rohanurkude28](https://avatars0.githubusercontent.com/u/38035758?v=4&s=20) **rohanurkude28**](https://github.com/rohanurkude28)
 - [![RomanIakovlev](https://avatars1.githubusercontent.com/u/2363458?v=4&s=20) **RomanIakovlev**](https://github.com/RomanIakovlev)
