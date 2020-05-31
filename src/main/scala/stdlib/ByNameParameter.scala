@@ -26,7 +26,7 @@ object ByNameParameter
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can you use it as a block, but still it doesn't look quite right:
+  /** `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can use it as a block, but still it doesn't look quite right:
    */
   def takesUnitByNameParameter(res0: Either[Throwable, Int]) = {
     def calc(x: () => Int): Either[Throwable, Int] = {
