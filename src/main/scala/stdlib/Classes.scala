@@ -27,7 +27,7 @@ object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * Here is a class definition which defines a class Point:
    *
    * {{{
-   * class Point(x: Int, y: Int) = {
+   * class Point(x: Int, y: Int) {
    * override def toString(): String = "(" + x + ", " + y + ")"
    * }
    * }}}
