@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name asserts
+/**
+ * @param name asserts
  */
 object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** ScalaTest makes three assertions available by default in any style trait. You can use:
+  /**
+   * ScalaTest makes three assertions available by default in any style trait. You can use:
    *
    *  - `assert` for general assertions;
    *  - `assertResult` to differentiate expected from actual values;
@@ -41,7 +43,6 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * Scala's `assert` will complete abruptly with an `AssertionError`. This behavior is provided by
    * the `assert` method defined in object `Predef`, whose members are implicitly imported into every Scala source file.
    *
-   *
    * ScalaTest provides a domain specific language (DSL) for expressing assertions in tests
    * using the word `should`. ScalaTest matchers provides five different ways to check equality, each designed to address a different need. They are:
    *
@@ -58,16 +59,19 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   def scalaTestAsserts(res0: Boolean) =
     true should be(res0)
 
-  /** Booleans in asserts can test equality:
+  /**
+   * Booleans in asserts can test equality:
    */
   def booleanAsserts(res0: Int) = {
     val v1 = 4
     v1 shouldEqual res0
 
-    /** `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language. */
+    /**
+     * `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language. */
   }
 
-  /** Sometimes we expect you to fill in the values:
+  /**
+   * Sometimes we expect you to fill in the values:
    */
   def valuesAsserts(res0: Int) =
     assert(res0 == 1 + 1)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name infix_types
- *
+/**
+ * @param name infix_types
  */
 object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** An infix type `T1 op T2` consists of an infix operator `op` which gets applied to two
+  /**
+   * An infix type `T1 op T2` consists of an infix operator `op` which gets applied to two
    * type operands `T1` and `T2`. The type is equivalent to the type application `op[T1,T2]`.
    *
    * The infix operator `op` may be an arbitrary identifier, except for `*`, which is reserved
@@ -46,7 +47,8 @@ object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     announceCouple(new Loves(romeo, juliet)) should be(res0)
   }
 
-  /** Of course we can make this a bit more elegant by creating an infix operator method to use with our infix type:
+  /**
+   * Of course we can make this a bit more elegant by creating an infix operator method to use with our infix type:
    */
   def infixOperatorInfixTypes(res0: String) = {
     case class Person(name: String) {

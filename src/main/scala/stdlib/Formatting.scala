@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,21 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name formatting
- *
+/**
+ * @param name formatting
  */
 object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** String can be placed in format:
+  /**
+   * String can be placed in format:
    */
   def placedInFormatFormatting(res0: String) = {
     val s = "Hello World"
     "Application %s".format(s) should be(res0)
   }
 
-  /** Character Literals can be a single character:
+  /**
+   * Character Literals can be a single character:
    */
   def characterFormatting(res0: String, res1: String) = {
     val a = 'a'
@@ -44,7 +46,8 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     "%c".format(b) should be(res1)
   }
 
-  /** Character Literals can be an escape sequence, including hexidecimal:
+  /**
+   * Character Literals can be an escape sequence, including hexidecimal:
    */
   def escapeSequenceFormatting(res0: String, res1: String, res2: String) = {
     val c = '\u0061' //unicode for a
@@ -56,14 +59,16 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     "%c".format(f) should be(res2)
   }
 
-  /** Formatting can also include numbers:
+  /**
+   * Formatting can also include numbers:
    */
   def includingNumbersFormatting(res0: String) = {
     val j = 190
     "%d bottles of beer on the wall" format j - 100 should be(res0)
   }
 
-  /** Formatting can be used for any number of items, like a string and a number:
+  /**
+   * Formatting can be used for any number of items, like a string and a number:
    */
   def anyNumberOfItemsFormatting(res0: String) = {
     val j = 190

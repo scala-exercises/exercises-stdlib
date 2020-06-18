@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name empty_values
- *
+/**
+ * @param name empty_values
  */
 object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** ==null==
+  /**
+   * ==null==
    *
    * Scala's `null` is the same as in Java. Any reference type can be `null`, like Strings, Objects, or your own classes. Also just like Java, value types like Ints can't be `null`.
    *
@@ -49,34 +50,40 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
   def emptyValuesEmptyValues(res0: Boolean) =
     List() === Nil shouldBe res0
 
-  /** [[http://www.scala-lang.org/api/current/index.html#scala.None None]] is the counterpart to [[http://www.scala-lang.org/api/current/index.html#scala.Some Some]], used when you're using Scala's [[http://www.scala-lang.org/api/current/index.html#scala.Option Option]] class to help avoid `null` references.
+  /**
+   * [[http://www.scala-lang.org/api/current/index.html#scala.None None]] is the counterpart to [[http://www.scala-lang.org/api/current/index.html#scala.Some Some]], used when you're using Scala's [[http://www.scala-lang.org/api/current/index.html#scala.Option Option]] class to help avoid `null` references.
    *
    * `None` equals `None`:
    */
   def avoidingNullEmptyValues(res0: Boolean) =
     None === None shouldBe res0
 
-  /** `None` should be identical to `None`:
+  /**
+   * `None` should be identical to `None`:
    */
   def identicalNoneEmptyValues(res0: Boolean) =
     None eq None shouldBe res0
 
-  /** `None` can be converted to a String:
+  /**
+   * `None` can be converted to a String:
    */
   def noneToStringEmptyValues(res0: String) =
     assert(None.toString === res0)
 
-  /** `None` can be converted to an empty list:
+  /**
+   * `None` can be converted to an empty list:
    */
   def noneToListEmptyValues(res0: Boolean) =
     None.toList === Nil shouldBe res0
 
-  /** `None` is considered empty:
+  /**
+   * `None` is considered empty:
    */
   def noneAsEmptyEmptyValues(res0: Boolean) =
     assert(None.isEmpty === res0)
 
-  /** `None` can be cast to `Any`, `AnyRef` or `AnyVal`:
+  /**
+   * `None` can be cast to `Any`, `AnyRef` or `AnyVal`:
    */
   def noneToAnyEmptyValues(res0: Boolean, res1: Boolean, res2: Boolean) = {
     None.asInstanceOf[Any] === None shouldBe res0
@@ -84,7 +91,8 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
     None.asInstanceOf[AnyVal] === None shouldBe res2
   }
 
-  /** `None` can be used with `Option` instead of null references:
+  /**
+   * `None` can be used with `Option` instead of null references:
    */
   def noneWithOptionEmptyValues(res0: Boolean, res1: Option[String]) = {
     val optional: Option[String] = None
@@ -92,7 +100,8 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
     assert(optional === res1)
   }
 
-  /** `Some` is the opposite of `None` for `Option` types:
+  /**
+   * `Some` is the opposite of `None` for `Option` types:
    */
   def someAgainstNoneEmptyValues(res0: Boolean, res1: Boolean) = {
     val optional: Option[String] = Some("Some Value")
@@ -100,7 +109,8 @@ object EmptyValues extends AnyFlatSpec with Matchers with org.scalaexercises.def
     assert(optional.isEmpty === res1, "Some(value) should not be empty")
   }
 
-  /** `Option.getOrElse` can be used to provide a default in the case of `None`:
+  /**
+   * `Option.getOrElse` can be used to provide a default in the case of `None`:
    */
   def getOrElseEmptyValues(res0: String, res1: String) = {
     val optional: Option[String]  = Some("Some Value")

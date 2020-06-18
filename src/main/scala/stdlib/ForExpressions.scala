@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,16 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name for_expressions
- *
+/**
+ * @param name for_expressions
  */
 object ForExpressions
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** `for` expressions can nest, with later generators varying more rapidly than earlier ones:
+  /**
+   * `for` expressions can nest, with later generators varying more rapidly than earlier ones:
    */
   def canBeNestedForExpressions(res0: Int, res1: Int) = {
     val xValues = 1 to 4
@@ -39,7 +40,8 @@ object ForExpressions
     coordinates(4) should be((res0, res1))
   }
 
-  /** Using `for` we can make more readable code:
+  /**
+   * Using `for` we can make more readable code:
    */
   def readableCodeForExpressions(res0: List[Int]) = {
     val nums = List(List(1), List(2), List(3), List(4), List(5))

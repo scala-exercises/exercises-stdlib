@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name enumerations
- *
+/**
+ * @param name enumerations
  */
 object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
+  /**
+   * To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
    *
    * `Value` assigns a numerical value to fields, indexed from 0:
    */
@@ -58,7 +59,8 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     (Planets.Neptune == Planets.Jupiter) should be(res5)
   }
 
-  /** You can create an enumeration with your own index and your own Strings, in this exercise we will start with an index of one and use Greek names instead of Roman:
+  /**
+   * You can create an enumeration with your own index and your own Strings, in this exercise we will start with an index of one and use Greek names instead of Roman:
    */
   def ownIndexEnumerations(
       res0: Int,
@@ -92,7 +94,8 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** Enumerations can be declared in one line if you are merely setting variables to `Value`:
+  /**
+   * Enumerations can be declared in one line if you are merely setting variables to `Value`:
    */
   def oneLineEnumerations(
       res0: Int,
@@ -116,7 +119,8 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     (Planets.Neptune == Planets.Jupiter) should be(res5)
   }
 
-  /** Enumerations can be declared with a string value only:
+  /**
+   * Enumerations can be declared with a string value only:
    */
   def stringValueEnumerations(
       res0: Int,
@@ -149,7 +153,8 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** You can extend the `Enumeration` by extending the `Val` class.
+  /**
+   * You can extend the `Enumeration` by extending the `Val` class.
    */
   def extendingValueEnumerations(res0: Double, res1: Double) = {
     object Planets extends Enumeration {

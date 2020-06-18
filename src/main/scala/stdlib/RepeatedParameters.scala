@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,16 @@ import RepeatedParametersHelper._
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name repeated_parameters
- *
+/**
+ * @param name repeated_parameters
  */
 object RepeatedParameters
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** A repeated parameter must be the last parameter and this will let you add as many extra parameters as needed.
+  /**
+   * A repeated parameter must be the last parameter and this will let you add as many extra parameters as needed.
    *
    * Given:
    *
@@ -38,21 +39,32 @@ object RepeatedParameters
    * }
    * }}}
    * Resolve:
-   *
    */
   def theLastParameterRepeatedParameters(res0: String) =
-    repeatedParameterMethod(3, "egg", "a delicious sandwich", "protein", "high cholesterol") should be(
+    repeatedParameterMethod(
+      3,
+      "egg",
+      "a delicious sandwich",
+      "protein",
+      "high cholesterol"
+    ) should be(
       res0
     )
 
-  /** A repeated parameter can accept a collection as the last parameter but will be considered a single object:
+  /**
+   * A repeated parameter can accept a collection as the last parameter but will be considered a single object:
    */
   def acceptCollectionRepeatedParameters(res0: String) =
-    repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol")) should be(
+    repeatedParameterMethod(
+      3,
+      "egg",
+      List("a delicious sandwich", "protein", "high cholesterol")
+    ) should be(
       res0
     )
 
-  /** A repeated parameter can accept a collection - if you want it expanded, add `:_*`
+  /**
+   * A repeated parameter can accept a collection - if you want it expanded, add `:_*`
    */
   def expandCollectionRepeatedParameters(res0: String) = {
     repeatedParameterMethod(

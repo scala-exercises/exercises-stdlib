@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,16 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name literal_booleans
- *
+/**
+ * @param name literal_booleans
  */
 object LiteralBooleans
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** Boolean literals are either true or false, using the `true` or `false` keyword:
+  /**
+   * Boolean literals are either true or false, using the `true` or `false` keyword:
    */
   def literalBooleanLiteralBooleans(
       res0: Boolean,

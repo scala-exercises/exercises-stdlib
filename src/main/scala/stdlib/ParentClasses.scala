@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,15 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name parent_classes
- *
+/**
+ * @param name parent_classes
  */
 object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** In contrast to Java, all values in Scala are objects (including numerical values and functions). Since Scala is class-based, all values are instances of a class.
+  /**
+   * In contrast to Java, all values in Scala are objects (including numerical values and functions). Since Scala is class-based, all values are instances of a class.
    *
    * Class hierarchy is linear, a class can only extend from one parent class:
-   *
    */
   def allValuesAreObjectsParentClasses(res0: String, res1: String) = {
     class Soldier(val firstName: String, val lastName: String) {}
@@ -38,7 +38,8 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
     pilot.lastName should be(res1)
   }
 
-  /** A class that extends from another is polymorphic:
+  /**
+   * A class that extends from another is polymorphic:
    */
   def polymorphicParentClasses(res0: String, res1: String) = {
     class Soldier(val firstName: String, val lastName: String) {}
@@ -52,7 +53,8 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
     soldier.lastName should be(res1)
   }
 
-  /** An abstract class, as in Java, cannot be instantiated and only inherited:
+  /**
+   * An abstract class, as in Java, cannot be instantiated and only inherited:
    *
    * {{{
    * abstract class Soldier(val firstName: String, val lastName: String) {}
@@ -74,8 +76,9 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
     class Pilot(override val firstName: String, override val lastName: String, val squadron: Long)
         extends Soldier(firstName, lastName)
 
-    val pilot   = new Pilot("John", "Yossarian", 256)
-    val catchNo = new pilot.Catch(22) //using the pilot instance's path, create an catch object for it.
+    val pilot = new Pilot("John", "Yossarian", 256)
+    val catchNo =
+      new pilot.Catch(22) //using the pilot instance's path, create an catch object for it.
     catchNo.number should be(res0)
   }
 
