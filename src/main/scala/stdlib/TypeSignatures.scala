@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,16 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name type_signatures
+/**
+ * @param name type_signatures
  */
 object TypeSignatures
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
+  /**
+   * A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
    *
    * In Java you declare a generic type within a `<>`, in Scala `[]` is used:
    *
@@ -41,7 +43,6 @@ object TypeSignatures
    * }}}
    *
    * A trait can be declared containing a type, where a concrete implementer will satisfy the type:
-   *
    */
   def typeSignatureTypeSignatures(res0: Boolean) = {
     trait Randomizer[A] {
@@ -59,14 +60,16 @@ object TypeSignatures
     (intRand.draw <= Int.MaxValue) should be(res0)
   }
 
-  /** Class meta-information can be retrieved by class name by using `classOf[className]`:
+  /**
+   * Class meta-information can be retrieved by class name by using `classOf[className]`:
    */
   def retrieveMetaInformationTypeSignatures(res0: String, res1: String) = {
     classOf[String].getCanonicalName should be(res0)
     classOf[String].getSimpleName should be(res1)
   }
 
-  /** Class meta-information can be derived from an object reference using `getClass()`:
+  /**
+   * Class meta-information can be derived from an object reference using `getClass()`:
    */
   def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) = {
     val zoom = "zoom"
@@ -75,7 +78,8 @@ object TypeSignatures
     zoom.getClass.getSimpleName should be(res2)
   }
 
-  /** `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
+  /**
+   * `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
    */
   def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) = {
     trait Randomizer[A] {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name extractors
- *
+/**
+ * @param name extractors
  */
 object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
+  /**
+   * In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
    *
    * For instance, the following code defines an extractor object `Twice`.
    *
@@ -62,7 +63,6 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    * Sometimes, the number of sub-values isn't fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
    *
    * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
-   *
    */
   def extractorsExtractors(res0: String) = {
     case class Employee(firstName: String, lastName: String)
@@ -76,7 +76,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     result should be(res0)
   }
 
-  /** What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used to assign values:
+  /**
+   * What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used to assign values:
    */
   def calledUnapplyExtractors(res0: String, res1: String, res2: Int, res3: Int) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -93,7 +94,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     d should be(res3)
   }
 
-  /** An extractor can also be used in pattern matching:
+  /**
+   * An extractor can also be used in pattern matching:
    */
   def patternMatchingExtractors(res0: String, res1: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -111,7 +113,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     x._2 should be(res1)
   }
 
-  /** Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
+  /**
+   * Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
    */
   def withWildcardExtractors(res0: String, res1: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -129,7 +132,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     x._2 should be(res1)
   }
 
-  /** As long as the method signatures aren't the same, you can have as many unapply methods as you want:
+  /**
+   * As long as the method signatures aren't the same, you can have as many unapply methods as you want:
    */
   def multipleUnapplyExtractors(res0: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -149,7 +153,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     result should be(res0)
   }
 
-  /** An extractor can be any stable object, including instantiated classes with an unapply method:
+  /**
+   * An extractor can be any stable object, including instantiated classes with an unapply method:
    */
   def anyObjectExtractors(res0: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short) {
@@ -166,7 +171,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     result should be(res0)
   }
 
-  /** A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
+  /**
+   * A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
    */
   def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) = {
     class Employee(
@@ -191,7 +197,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     c should be(res2)
   }
 
-  /** In this exercise we use `unapply` for pattern matching employee objects:
+  /**
+   * In this exercise we use `unapply` for pattern matching employee objects:
    */
   def unapplyForPatternMatchingExtractors(res0: String) = {
     class Employee(

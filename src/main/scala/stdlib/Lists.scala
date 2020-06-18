@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name lists
- *
+/**
+ * @param name lists
  */
 object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Scala Lists are quite similar to arrays, which means all the elements of a list have the same type - but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
+  /**
+   * Scala Lists are quite similar to arrays, which means all the elements of a list have the same type - but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
    *
    * `eq` tests identity (same object):
    */
@@ -34,7 +35,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     (a eq b) should be(res0)
   }
 
-  /** `==` tests equality (same content):
+  /**
+   * `==` tests equality (same content):
    */
   def sameContentLists(res0: Boolean) = {
     val a = List(1, 2, 3)
@@ -42,7 +44,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     (a == b) should be(res0)
   }
 
-  /** Nil lists are identical, even of different types:
+  /**
+   * Nil lists are identical, even of different types:
    */
   def nilListsLists(
       res0: Boolean,
@@ -65,14 +68,16 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     (a eq b) should be(res5)
   }
 
-  /** Lists can be easily created:
+  /**
+   * Lists can be easily created:
    */
   def easilyCreatedLists(res0: Int, res1: Int, res2: Int) = {
     val a = List(1, 2, 3)
     a should equal(List(res0, res1, res2))
   }
 
-  /** Lists can be accessed via `head`, `headOption` and `tail`. Accessing a list via `head` is unsafe and may result in a `IndexOutOfBoundsException`.
+  /**
+   * Lists can be accessed via `head`, `headOption` and `tail`. Accessing a list via `head` is unsafe and may result in a `IndexOutOfBoundsException`.
    */
   def headAndTailLists(res0: Int, res1: Int, res2: Int) = {
     val a = List(1, 2, 3)
@@ -80,7 +85,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     a.tail should equal(List(res1, res2))
   }
 
-  /** Lists can be accessed by position:
+  /**
+   * Lists can be accessed by position:
    */
   def byPositionLists(res0: Int, res1: Int, res2: Int) = {
     val a = List(1, 3, 5, 7, 9)
@@ -93,7 +99,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     }
   }
 
-  /** Lists are immutable:
+  /**
+   * Lists are immutable:
    */
   def areImmutableLists(res0: Int, res1: Int, res2: Int, res3: Int) = {
     val a = List(1, 3, 5, 7, 9)
@@ -103,7 +110,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     b should equal(List(res0, res1, res2, res3))
   }
 
-  /** Lists have many useful utility methods:
+  /**
+   * Lists have many useful utility methods:
    */
   def usefulMethodsLists(res0: Int, res1: List[Int], res2: List[Int], res3: List[Int]) = {
     val a = List(1, 3, 5, 7, 9)
@@ -125,7 +133,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     } should equal(res3)
   }
 
-  /** Functions over lists can use _ as shorthand:
+  /**
+   * Functions over lists can use _ as shorthand:
    */
   def wildcardAsShorthandLists(res0: Int, res1: Int, res2: Int, res3: Int) = {
     val a = List(1, 2, 3)
@@ -139,7 +148,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     } should equal(List(res3))
   }
 
-  /** Functions over lists can use `()` instead of `{}`:
+  /**
+   * Functions over lists can use `()` instead of `{}`:
    */
   def functionsOverListsLists(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) = {
     val a = List(1, 2, 3)
@@ -147,7 +157,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     a.filter(_ % 2 != 0) should equal(List(res3, res4))
   }
 
-  /** Lists can be reduced with a mathematical operation:
+  /**
+   * Lists can be reduced with a mathematical operation:
    */
   def reducingListsLists(res0: Int, res1: Int) = {
     val a = List(1, 3, 5, 7)
@@ -155,7 +166,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     a.reduceLeft(_ * _) should equal(res1)
   }
 
-  /** `foldLeft` is like `reduce`, but with an explicit starting value:
+  /**
+   * `foldLeft` is like `reduce`, but with an explicit starting value:
    */
   def foldLeftLists(res0: Int, res1: Int, res2: Int, res3: Int) = {
     val a = List(1, 3, 5, 7)
@@ -166,14 +178,16 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     a.foldLeft(0)(_ * _) should equal(res3)
   }
 
-  /** You can create a list from a range:
+  /**
+   * You can create a list from a range:
    */
   def fromRangeLists(res0: List[Int]) = {
     val a = (1 to 5).toList
     a should be(res0)
   }
 
-  /** You can prepend elements to a List to get a new List:
+  /**
+   * You can prepend elements to a List to get a new List:
    */
   def addElementsLists(res0: List[Int]) = {
     val a = List(1, 3, 5, 7)
@@ -181,7 +195,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     0 :: a should be(res0)
   }
 
-  /** Lists can be concatened and Nil is an empty List:
+  /**
+   * Lists can be concatened and Nil is an empty List:
    */
   def concatenateLists(res0: List[Int], res1: List[Int]) = {
     val head = List(1, 3)
@@ -191,7 +206,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
     head ::: Nil should be(res1)
   }
 
-  /** Lists reuse their tails:
+  /**
+   * Lists reuse their tails:
    */
   def reuseTailsLists(
       res0: Int,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name traits
+/**
+ * @param name traits
  */
 object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. In traits methods can have default implementations. In contrast to classes, traits may not have constructor parameters.
+  /**
+   * Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. In traits methods can have default implementations. In contrast to classes, traits may not have constructor parameters.
    *
    * Here is an example:
    *
@@ -60,7 +62,8 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     myListener.listen(evt) should be(res0)
   }
 
-  /** A class can only extend from one class or trait, any subsequent extension should use the keyword `with`:
+  /**
+   * A class can only extend from one class or trait, any subsequent extension should use the keyword `with`:
    */
   def extendsFromOneTraits(res0: String) = {
     case class Event(name: String)
@@ -86,7 +89,8 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     myListener.listen(evt) should be(res0)
   }
 
-  /** Traits are polymorphic. Any type can be referred to by another type if related by extension:
+  /**
+   * Traits are polymorphic. Any type can be referred to by another type if related by extension:
    */
   def polymorphicTraits(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     case class Event(name: String)
@@ -113,7 +117,8 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     myListener.isInstanceOf[AnyRef] should be(res3)
   }
 
-  /** Traits also can use self-types.  A self-type lists the required dependencies for mixing in the trait.  When mixing in the main trait, all self-type dependencies of that trait must also be mixed in, otherwise a compile-time error is thrown.
+  /**
+   * Traits also can use self-types.  A self-type lists the required dependencies for mixing in the trait.  When mixing in the main trait, all self-type dependencies of that trait must also be mixed in, otherwise a compile-time error is thrown.
    *
    * Also, the dependencies can't have identical method/property names or else you'll get an `illegal inheritance` error.
    */

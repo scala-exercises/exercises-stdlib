@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name maps
- *
+/**
+ * @param name maps
  */
 object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** A `Map` is an `Iterable` consisting of pairs of keys and values (also named mappings or associations). Scala's Predef class offers an implicit conversion that lets you write `key -> value` as an alternate syntax for the pair `(key, value)`. For instance `Map("x" -> 24, "y" -> 25, "z" -> 26)` means exactly the same as `Map(("x", 24), ("y", 25), ("z", 26))`, but reads better.
+  /**
+   * A `Map` is an `Iterable` consisting of pairs of keys and values (also named mappings or associations). Scala's Predef class offers an implicit conversion that lets you write `key -> value` as an alternate syntax for the pair `(key, value)`. For instance `Map("x" -> 24, "y" -> 25, "z" -> 26)` means exactly the same as `Map(("x", 24), ("y", 25), ("z", 26))`, but reads better.
    *
    * The fundamental operations on maps are similar to those on sets. They are summarized in the following table and fall into the following categories:
    *
@@ -42,14 +43,16 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap.size should be(res0)
   }
 
-  /** Maps do not contain multiple identical pairs:
+  /**
+   * Maps do not contain multiple identical pairs:
    */
   def distinctPairingsMaps(res0: Int) = {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
     myMap.size should be(res0)
   }
 
-  /** Maps can be added to easily:
+  /**
+   * Maps can be added to easily:
    */
   def easilyAddedMaps(res0: Boolean) = {
     val myMap   = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
@@ -57,7 +60,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     aNewMap.contains("IL") should be(res0)
   }
 
-  /** Map values can be iterated:
+  /**
+   * Map values can be iterated:
    */
   def canBeIteratedMaps(res0: Int, res1: String, res2: String) = {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
@@ -71,7 +75,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   }
 
-  /** Maps may be accessed:
+  /**
+   * Maps may be accessed:
    */
   def mayBeAccessedMaps(res0: String, res1: String) = {
     val myMap =
@@ -80,7 +85,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap("IA") should be(res1)
   }
 
-  /** Maps insertion with duplicate key updates previous entry with subsequent value:
+  /**
+   * Maps insertion with duplicate key updates previous entry with subsequent value:
    */
   def duplicatedKeyInsertionMaps(res0: Int, res1: String) = {
     val myMap     = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
@@ -90,7 +96,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
   }
 
-  /** Map keys may be of mixed type:
+  /**
+   * Map keys may be of mixed type:
    */
   def mixedTypeKeysMaps(res0: String, res1: String) = {
     val myMap = Map("Ann Arbor" -> "MI", 49931 -> "MI")
@@ -98,7 +105,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap(49931) should be(res1)
   }
 
-  /** If a nonexistent map key is requested using `myMap(missingKey)`, a `NoSuchElementException` will be thrown.
+  /**
+   * If a nonexistent map key is requested using `myMap(missingKey)`, a `NoSuchElementException` will be thrown.
    * Default values may be provided using either `getOrElse` or `withDefaultValue` for the entire map:
    */
   def defaultValuesMayBeProvidedMaps(res0: String, res1: String) = {
@@ -110,11 +118,17 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap.getOrElse("TX", "missing data") should be(res0)
 
     val myMap2 =
-      Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa") withDefaultValue "missing data"
+      Map(
+        "MI" -> "Michigan",
+        "OH" -> "Ohio",
+        "WI" -> "Wisconsin",
+        "IA" -> "Iowa"
+      ) withDefaultValue "missing data"
     myMap2("TX") should be(res1)
   }
 
-  /** Map elements can be removed easily:
+  /**
+   * Map elements can be removed easily:
    */
   def easilyRemovedMaps(res0: Boolean, res1: Boolean) = {
     val myMap =
@@ -124,7 +138,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap.contains("MI") should be(res1)
   }
 
-  /** Map elements can be removed in multiple:
+  /**
+   * Map elements can be removed in multiple:
    */
   def removedInMultipleMaps(res0: Boolean, res1: Boolean, res2: Boolean, res3: Int, res4: Int) = {
     val myMap =
@@ -139,7 +154,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     myMap.size should be(res4)
   }
 
-  /** Attempted removal of nonexistent elements from a map is handled gracefully:
+  /**
+   * Attempted removal of nonexistent elements from a map is handled gracefully:
    */
   def attemptedRemovalMaps(res0: Boolean) = {
     val myMap =
@@ -149,7 +165,8 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     aNewMap.equals(myMap) should be(res0)
   }
 
-  /** Map equivalency is independent of order:
+  /**
+   * Map equivalency is independent of order:
    */
   def orderIndependentMaps(res0: Boolean) = {
     val myMap1 =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name iterables
- *
+/**
+ * @param name iterables
  */
 object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** The next trait from the top in the collections hierarchy is `Iterable`. All methods in this trait are defined in terms of an abstract method, `iterator`, which yields the collection's elements one by one. The `foreach` method from trait `Traversable` is implemented in `Iterable` in terms of `iterator`. Here is the actual implementation:
+  /**
+   * The next trait from the top in the collections hierarchy is `Iterable`. All methods in this trait are defined in terms of an abstract method, `iterator`, which yields the collection's elements one by one. The `foreach` method from trait `Traversable` is implemented in `Iterable` in terms of `iterator`. Here is the actual implementation:
    *
    * {{{
    * def foreach[U](f: Elem => U): Unit = {
@@ -36,17 +37,16 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    * Quite a few subclasses of `Iterable` override this standard implementation of `foreach` in `Iterable`, because they can provide a more efficient implementation. Remember that `foreach` is the basis of the implementation of all operations in `Traversable`, so its performance matters.
    *
    * Some common iterables are `Set`, `List`, `Vector`, `Stack` and `Stream`. Iterator has two important methods: `hasNext`, which answers whether the iterator has another element available, and `next` which returns the next element in the iterator.
-   *
    */
   def collectionIterablesIterables(res0: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21)
     val it   = list.iterator
-    if (it.hasNext) {
+    if (it.hasNext)
       it.next should be(res0)
-    }
   }
 
-  /** `grouped` will return fixed-size `Iterable` chunks of an `Iterable`:
+  /**
+   * `grouped` will return fixed-size `Iterable` chunks of an `Iterable`:
    */
   def groupedIterables(
       res0: Int,
@@ -66,7 +66,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     it.next() should be(List(res6, res7, res8))
   }
 
-  /** `sliding` will return an `Iterable` that shows a sliding window of an `Iterable`.
+  /**
+   * `sliding` will return an `Iterable` that shows a sliding window of an `Iterable`.
    */
   def slidingIterables(
       res0: Int,
@@ -86,7 +87,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     it.next() should be(List(res6, res7, res8))
   }
 
-  /** `sliding` can take the size of the window as well the size of the step during each iteration:
+  /**
+   * `sliding` can take the size of the window as well the size of the step during each iteration:
    */
   def slidingWindowIterables(
       res0: Int,
@@ -106,21 +108,24 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     it.next() should be(List(res6, res7, res8))
   }
 
-  /** `takeRight` is the opposite of 'take' in `Traversable`. It retrieves the last elements of an `Iterable`:
+  /**
+   * `takeRight` is the opposite of 'take' in `Traversable`. It retrieves the last elements of an `Iterable`:
    */
   def takeRightIterables(res0: Int, res1: Int, res2: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     (list takeRight 3) should be(List(res0, res1, res2))
   }
 
-  /** `dropRight` will drop a specified number of elements from the right:
+  /**
+   * `dropRight` will drop a specified number of elements from the right:
    */
   def dropRightIterables(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int, res5: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     (list dropRight 3) should be(List(res0, res1, res2, res3, res4, res5))
   }
 
-  /** `zip` will stitch two iterables into an iterable of pairs of corresponding elements from both iterables.
+  /**
+   * `zip` will stitch two iterables into an iterable of pairs of corresponding elements from both iterables.
    *
    * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2, y3)` will return `((x1, y1), (x2, y2), (x3, y3))`:
    */
@@ -130,10 +135,10 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     (xs zip ys) should be(List((res0, res1), (res2, res3), (res4, res5)))
   }
 
-  /** If two Iterables aren't the same size, then `zip` will only zip what can  be paired.
+  /**
+   * If two Iterables aren't the same size, then `zip` will only zip what can  be paired.
    *
    * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2)` will return `((x1, y1), (x2, y2))`:
-   *
    */
   def sameSizeZipIterables(res0: Int, res1: String, res2: Int, res3: String) = {
     val xs = List(3, 5, 9)
@@ -141,7 +146,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     (xs zip ys) should be(List((res0, res1), (res2, res3)))
   }
 
-  /** If two `Iterables` aren't the same size, then `zipAll` can provide fillers for what it couldn't find a complement for.
+  /**
+   * If two `Iterables` aren't the same size, then `zipAll` can provide fillers for what it couldn't find a complement for.
    *
    * e.g. `Iterable(x1, x2, x3) zipAll (Iterable(y1, y2), x, y)` will return `((x1,y1), (x2, y2), (x3, y)))`:
    */
@@ -167,14 +173,16 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
 
   }
 
-  /** `zipWithIndex` will zip an `Iterable` with its integer index:
+  /**
+   * `zipWithIndex` will zip an `Iterable` with its integer index:
    */
   def zipWithIndexIterables(res0: String, res1: String, res2: Int, res3: String) = {
     val xs = List("Manny", "Moe", "Jack")
     xs.zipWithIndex should be(List((res0, 0), (res1, res2), (res3, 2)))
   }
 
-  /** `sameElements` will return true if the two `Iterables` produce the same elements in the same order. The iterator for a set created with less than 5 values will return elements in the order in which they were added, rather than the consistent, hash-based ordering used by iterators for larger Sets:
+  /**
+   * `sameElements` will return true if the two `Iterables` produce the same elements in the same order. The iterator for a set created with less than 5 values will return elements in the order in which they were added, rather than the consistent, hash-based ordering used by iterators for larger Sets:
    */
   def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     val xs = List("Manny", "Moe", "Jack")
@@ -192,7 +200,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     val xt1 = Set(1, 2, 3)
     val yt1 = Set(3, 2, 1)
     xt1.iterator.sameElements(yt1) should be(res3) // Caution - see below!
-    /** Note that very small Sets (containing up to 4 elements) are implemented differently to larger Sets; as a result, their iterators produce the elements in the order that they were originally added. This causes the surprising (and arguably incorrect) behaviour in the final example above. */
+    /**
+     * Note that very small Sets (containing up to 4 elements) are implemented differently to larger Sets; as a result, their iterators produce the elements in the order that they were originally added. This causes the surprising (and arguably incorrect) behaviour in the final example above. */
   }
 
 }

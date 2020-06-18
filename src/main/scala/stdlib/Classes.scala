@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name classes
+/**
+ * @param name classes
  */
 object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Classes in Scala are static templates that can be instantiated into many objects at runtime.
+  /**
+   * Classes in Scala are static templates that can be instantiated into many objects at runtime.
    * Here is a class definition which defines a class Point:
    *
    * {{{
@@ -49,7 +51,6 @@ object Classes extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * The program defines an executable application `Classes` in the form of a top-level singleton object with a `main` method. The `main` method creates a new `Point` and stores it in value `pt`.
    *
    * This also demonstrates the use of value parameters in `ClassWithValParameter(val name: String)`, which automatically creates an internal property `val name: String` in the class:
-   *
    */
   def classWithValParameterClasses(res0: String) = {
     class ClassWithValParameter(val name: String)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,13 @@ import java.util.Date
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name tuples
- *
+/**
+ * @param name tuples
  */
 object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Scala tuple combines a fixed number of items together so that they can be passed around as a whole. They are one-indexed. Unlike an array or list, a tuple can hold objects with different types but they are also immutable. Here is an example of a tuple holding an integer, a string, and the console:
+  /**
+   * Scala tuple combines a fixed number of items together so that they can be passed around as a whole. They are one-indexed. Unlike an array or list, a tuple can hold objects with different types but they are also immutable. Here is an example of a tuple holding an integer, a string, and the console:
    *
    * {{{
    * val t = (1, "hello", Console)
@@ -48,7 +49,8 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     animal should be(res1)
   }
 
-  /** Tuples may be of mixed type:
+  /**
+   * Tuples may be of mixed type:
    */
   def mixedTypeTuples(res0: Int, res1: String) = {
     val tuple5 = ("a", 1, 2.2, new Date(), "five")
@@ -57,7 +59,8 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     tuple5._5 should be(res1)
   }
 
-  /** You can assign multiple variables at once using tuples:
+  /**
+   * You can assign multiple variables at once using tuples:
    */
   def assignVariablesTuples(res0: String, res1: Int, res2: Double) = {
     val student          = ("Sean Rogers", 21, 3.5)
@@ -68,7 +71,8 @@ object Tuples extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
     gpa should be(res2)
   }
 
-  /** The `swap` method can be used to swap the elements of a Tuple2:
+  /**
+   * The `swap` method can be used to swap the elements of a Tuple2:
    */
   def swappedTuples(res0: Int, res1: String) = {
     val tuple = ("apple", 3).swap

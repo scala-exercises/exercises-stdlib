@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,16 @@ import NamedandDefaultArgumentsHelper._
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name named_and_default_arguments
- *
+/**
+ * @param name named_and_default_arguments
  */
 object NamedandDefaultArguments
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** When calling methods and functions, you can use the name of the variables explicitly in the call, like so:
+  /**
+   * When calling methods and functions, you can use the name of the variables explicitly in the call, like so:
    *
    * {{{
    * def printName(first:String, last:String) = {
@@ -95,7 +96,8 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** You can default arguments if you leave them off:
+  /**
+   * You can default arguments if you leave them off:
    */
   def defaultArgumentsNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithoutClassParameters()
@@ -104,7 +106,8 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** You can access class parameters and specify arguments in any order if you use their names:
+  /**
+   * You can access class parameters and specify arguments in any order if you use their names:
    */
   def anyOrderNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParameters(40, 50, 60)
@@ -113,7 +116,8 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** You can access class parameters and default arguments if you leave them off:
+  /**
+   * You can access class parameters and default arguments if you leave them off:
    */
   def accessClassParametersNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParameters(10, 20, 30)
@@ -122,7 +126,8 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** You can default class parameters and have default arguments too:
+  /**
+   * You can default class parameters and have default arguments too:
    */
   def defaultClassArgumentsNamedandDefaultArguments(res0: Int, res1: Int, res2: Int) = {
     val me      = new WithClassParametersInClassDefinition()
@@ -131,7 +136,8 @@ object NamedandDefaultArguments
     myColor should equal((res0, res1, res2))
   }
 
-  /** Default parameters can be functions too:
+  /**
+   * Default parameters can be functions too:
    */
   def functionalDefaulParametersNamedandDefaultArguments(res0: Int, res1: Int) = {
     def reduce(a: Int, f: (Int, Int) => Int = _ + _): Int = f(a, a)

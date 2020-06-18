@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name case_classes
+/**
+ * @param name case_classes
  */
 object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
+  /**
+   * Scala supports the notion of ''case classes''. Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
    *
    * Here is an example for a class hierarchy which consists of an abstract superclass `Term` and three concrete case classes `Var`, `Fun`, and `App`:
    *
@@ -118,7 +120,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     (p1 eq p3) should be(res3) // not identical, merely equal
   }
 
-  /** Case classes have an automatic hashcode method that works:
+  /**
+   * Case classes have an automatic hashcode method that works:
    */
   def hashcodeMethodCaseClasses(res0: Boolean, res1: Boolean) = {
     case class Person(first: String, last: String)
@@ -131,7 +134,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     (p1.hashCode == p3.hashCode) should be(res1)
   }
 
-  /** Case classes can be created in a convenient way:
+  /**
+   * Case classes can be created in a convenient way:
    */
   def creationCaseClasses(res0: Boolean, res1: Boolean, res2: Boolean) = {
     case class Dog(name: String, breed: String)
@@ -145,7 +149,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     (d2 == d3) should be(res2)
   }
 
-  /** Case classes have a convenient toString method defined:
+  /**
+   * Case classes have a convenient toString method defined:
    */
   def toStringMethodCaseClasses(res0: String) = {
     case class Dog(name: String, breed: String)
@@ -153,7 +158,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     d1.toString should be(res0)
   }
 
-  /** Case classes have automatic properties:
+  /**
+   * Case classes have automatic properties:
    */
   def propertiesCaseClasses(res0: String, res1: String) = {
     case class Dog(name: String, breed: String)
@@ -163,10 +169,14 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     d1.breed should be(res1)
   }
 
-  /** Case classes can have mutable properties:
+  /**
+   * Case classes can have mutable properties:
    */
   def mutablePropertiesCaseClasses(res0: String, res1: String, res2: String, res3: String) = {
-    case class Dog(var name: String, breed: String) // you can rename a dog, but change its breed? nah!
+    case class Dog(
+        var name: String,
+        breed: String
+    ) // you can rename a dog, but change its breed? nah!
     val d1 = Dog("Scooby", "Doberman")
 
     d1.name should be(res0)
@@ -178,7 +188,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     d1.breed should be(res3)
   }
 
-  /** There are safer alternatives for altering case classes:
+  /**
+   * There are safer alternatives for altering case classes:
    */
   def alteringCaseClasses(res0: String, res1: String, res2: String, res3: String) = {
     case class Dog(name: String, breed: String) // Doberman
@@ -194,7 +205,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     d2.breed should be(res3) // copied from the original
   }
 
-  /** Case classes can have default and named parameters:
+  /**
+   * Case classes can have default and named parameters:
    */
   def parametersCaseClasses(
       res0: String,
@@ -214,7 +226,12 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     case class Person(first: String, last: String, age: Int = 0, ssn: String = "")
     val p1 = Person("Fred", "Jones", 23, "111-22-3333")
     val p2 = Person("Samantha", "Jones") // note missing age and ssn
-    val p3 = Person(last = "Jones", first = "Fred", ssn = "111-22-3333") // note the order can change, and missing age
+    val p3 =
+      Person(
+        last = "Jones",
+        first = "Fred",
+        ssn = "111-22-3333"
+      ) // note the order can change, and missing age
     val p4 = p3.copy(age = 23)
 
     p1.first should be(res0)
@@ -235,13 +252,15 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     (p1 == p4) should be(res12)
   }
 
-  /** Case classes can be disassembled to their constituent parts as a tuple:
+  /**
+   * Case classes can be disassembled to their constituent parts as a tuple:
    */
   def asTupleCaseClasses(res0: String, res1: String, res2: Int, res3: String) = {
     case class Person(first: String, last: String, age: Int = 0, ssn: String = "")
     val p1 = Person("Fred", "Jones", 23, "111-22-3333")
 
-    val parts = Person.unapply(p1).get // this seems weird, but it's critical to other features of Scala
+    val parts =
+      Person.unapply(p1).get // this seems weird, but it's critical to other features of Scala
 
     parts._1 should be(res0)
     parts._2 should be(res1)
@@ -249,7 +268,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
     parts._4 should be(res3)
   }
 
-  /** Case classes are `Serializable`:
+  /**
+   * Case classes are `Serializable`:
    */
   def serializableCaseClasses(res0: Boolean, res1: Boolean) = {
     case class PersonCC(firstName: String, lastName: String)

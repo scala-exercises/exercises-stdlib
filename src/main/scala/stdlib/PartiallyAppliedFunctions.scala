@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,16 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name partially_applied_functions
- *
+/**
+ * @param name partially_applied_functions
  */
 object PartiallyAppliedFunctions
     extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
+  /**
+   * A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
    */
   def partiallyAppliedPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
@@ -36,7 +37,8 @@ object PartiallyAppliedFunctions
     sum(4, 5, 6) should be(res1)
   }
 
-  /** Partially applied functions can replace any number of arguments:
+  /**
+   * Partially applied functions can replace any number of arguments:
    */
   def anyNumberArgumentsPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
@@ -45,7 +47,8 @@ object PartiallyAppliedFunctions
     sum(4, 5, 6) should be(res1)
   }
 
-  /** Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
+  /**
+   * Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
    */
   def curryingPartiallyAppliedFunctions(
       res0: Boolean,
@@ -64,7 +67,8 @@ object PartiallyAppliedFunctions
     multiplyCurriedFour(4) should be(res4)
   }
 
-  /** Currying allows you to create specialized versions of generalized functions:
+  /**
+   * Currying allows you to create specialized versions of generalized functions:
    */
   def specializedVersionPartiallyAppliedFunctions(res0: List[Int], res1: List[Int]) = {
     def customFilter(f: Int => Boolean)(xs: List[Int]) =

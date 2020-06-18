@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,13 @@ import OptionsHelper._
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name options
- *
+/**
+ * @param name options
  */
 object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** If you have worked with Java at all in the past, it is very likely that you have come across a `NullPointerException` at some time (other languages will throw similarly named errors in such a case). Usually this happens because some method returns null when you were not expecting it and thus not dealing with that possibility in your client code. A value of `null` is often abused to represent an absent optional value.
+  /**
+   * If you have worked with Java at all in the past, it is very likely that you have come across a `NullPointerException` at some time (other languages will throw similarly named errors in such a case). Usually this happens because some method returns null when you were not expecting it and thus not dealing with that possibility in your client code. A value of `null` is often abused to represent an absent optional value.
    *
    * Scala tries to solve the problem by getting rid of `null` values altogether and providing its own type for representing optional values, i.e. values that may be present or not: the `Option[A]` trait.
    *
@@ -39,7 +40,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     emptyValue should be(res1)
   }
 
-  /** Let's write a function that may or not give us a string, thus returning `Option[String]`:
+  /**
+   * Let's write a function that may or not give us a string, thus returning `Option[String]`:
    *
    * {{{
    * def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
@@ -61,7 +63,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
   }
 
-  /** Checking whether option has value:
+  /**
+   * Checking whether option has value:
    */
   def isEmptyOptions(res0: Boolean, res1: Boolean) = {
     val value1 = maybeItWillReturnSomething(true)
@@ -71,7 +74,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     value2.isEmpty should be(res1)
   }
 
-  /** Option can also be used with pattern matching:
+  /**
+   * Option can also be used with pattern matching:
    */
   def matchOptions(res0: Double, res1: Double) = {
     val someValue: Option[Double] = Some(20.0)
@@ -88,7 +92,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     value1 should be(res1)
   }
 
-  /** An alternative for pattern matching is performing collection style operations.
+  /**
+   * An alternative for pattern matching is performing collection style operations.
    * This is possible because an option could be looked at as a collection with either one or zero elements.
    *
    * One of these operations is `map`. This operation allows us to map the inner value to a different type while preserving the option:
@@ -102,10 +107,12 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     result1 should be(res0)
     result2 should be(res1)
 
-    /** Note that the type of result1 is now Option[Double], thanks to the scala type inference. */
+    /**
+     * Note that the type of result1 is now Option[Double], thanks to the scala type inference. */
   }
 
-  /** Another operation is `fold`. This operation will extract the value from the option, or provide a default if the value is `None`
+  /**
+   * Another operation is `fold`. This operation will extract the value from the option, or provide a default if the value is `None`
    */
   def foldOptions(res0: Int, res1: Int) = {
     val number: Option[Int]   = Some(3)

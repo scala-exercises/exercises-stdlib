@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,13 @@ package stdlib
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/** @param name objects
- *
+/**
+ * @param name objects
  */
 object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
+  /**
+   * An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
    */
   def singletonObjects(res0: String, res1: String) = {
     object Greeting {
@@ -38,7 +39,8 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     Greeting.espanol should be(res1)
   }
 
-  /** Here is a proof that an object is a singleton, and not a static method in a class:
+  /**
+   * Here is a proof that an object is a singleton, and not a static method in a class:
    */
   def notStaticMethodObjects(res0: Boolean, res1: Boolean) = {
     object Greeting {
@@ -57,7 +59,8 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     x eq z should be(res1)
   }
 
-  /** An object that has the same name as a class is called a companion object of the class, and it is often used to contain factory methods for the class that it complements:
+  /**
+   * An object that has the same name as a class is called a companion object of the class, and it is often used to contain factory methods for the class that it complements:
    */
   def companionObjectObjects(res0: String) = {
     class Movie(val name: String, val year: Short)
@@ -77,10 +80,14 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     Movie.academyAwardBestMoviesForYear(1932).get.name should be(res0)
   }
 
-  /** A companion object can also see private values and variables of the corresponding classes' instantiated objects:
+  /**
+   * A companion object can also see private values and variables of the corresponding classes' instantiated objects:
    */
   def privateValuesObjects(res0: String, res1: String) = {
-    class Person(val name: String, private val superheroName: String) //The superhero name is private!
+    class Person(
+        val name: String,
+        private val superheroName: String
+    ) //The superhero name is private!
 
     object Person {
       def showMeInnerSecret(x: Person) = x.superheroName
