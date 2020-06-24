@@ -108,7 +108,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     result2 should be(res1)
 
     /**
-     * Note that the type of result1 is now Option[Double], thanks to the scala type inference. */
+     * Note that the type of result1 is now Option[Double], thanks to the scala type inference.
+     */
   }
 
   /**
