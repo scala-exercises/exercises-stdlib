@@ -67,7 +67,8 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     v1 shouldEqual res0
 
     /**
-     * `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language. */
+     * `shouldEqual` is an assertion. It is from ScalaTest, not from the Scala language.
+     */
   }
 
   /**
