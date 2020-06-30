@@ -1,5 +1,39 @@
 # Changelog
 
+## [v0.6.4](https://github.com/scala-exercises/exercises-stdlib/tree/v0.6.4) (2020-06-30)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-stdlib/compare/v0.6.3...v0.6.4)
+
+## [v0.6.3](https://github.com/scala-exercises/exercises-stdlib/tree/v0.6.3) (2020-06-29)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-stdlib/compare/v0.6.2...v0.6.3)
+
+📈 **Dependency updates**
+
+- Update sbt to 1.3.13 [\#208](https://github.com/scala-exercises/exercises-stdlib/pull/208) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.3 [\#207](https://github.com/scala-exercises/exercises-stdlib/pull/207) ([scala-steward](https://github.com/scala-steward))
+- Update scalacheck-1-14 to 3.2.0.0 [\#204](https://github.com/scala-exercises/exercises-stdlib/pull/204) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.2.0 [\#203](https://github.com/scala-exercises/exercises-stdlib/pull/203) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.2 [\#201](https://github.com/scala-exercises/exercises-stdlib/pull/201) ([scala-steward](https://github.com/scala-steward))
+- Update sbt to 1.3.11 [\#197](https://github.com/scala-exercises/exercises-stdlib/pull/197) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.1.2 [\#179](https://github.com/scala-exercises/exercises-stdlib/pull/179) ([scala-steward](https://github.com/scala-steward))
+
+**Merged pull requests:**
+
+- Update definitions, exercise-compiler, ... to 0.6.3 [\#209](https://github.com/scala-exercises/exercises-stdlib/pull/209) ([scala-steward](https://github.com/scala-steward))
+- Update scalafmt-core to 2.6.1 [\#205](https://github.com/scala-exercises/exercises-stdlib/pull/205) ([BenFradet](https://github.com/BenFradet))
+- Prepare repository for next  release and SBT build improvements [\#200](https://github.com/scala-exercises/exercises-stdlib/pull/200) ([juanpedromoreno](https://github.com/juanpedromoreno))
+- Update Classes.scala [\#198](https://github.com/scala-exercises/exercises-stdlib/pull/198) ([Czajnikowski](https://github.com/Czajnikowski))
+- Update Enumerations.scala [\#190](https://github.com/scala-exercises/exercises-stdlib/pull/190) ([joelittlejohn](https://github.com/joelittlejohn))
+- Tidy comments in ByNameParameter.scala [\#189](https://github.com/scala-exercises/exercises-stdlib/pull/189) ([joelittlejohn](https://github.com/joelittlejohn))
+- unapplySeq is useful when number of subvalues ISN'T fixed [\#188](https://github.com/scala-exercises/exercises-stdlib/pull/188) ([joelittlejohn](https://github.com/joelittlejohn))
+- Fix wording in NamedandDefaultArguments.scala [\#187](https://github.com/scala-exercises/exercises-stdlib/pull/187) ([joelittlejohn](https://github.com/joelittlejohn))
+- Fix typo, reverse not revert [\#184](https://github.com/scala-exercises/exercises-stdlib/pull/184) ([joelittlejohn](https://github.com/joelittlejohn))
+- Explain that sameElements will work differently for a small set [\#183](https://github.com/scala-exercises/exercises-stdlib/pull/183) ([joelittlejohn](https://github.com/joelittlejohn))
+- Minor formatting: the code part is 'Option', not 'Options' [\#182](https://github.com/scala-exercises/exercises-stdlib/pull/182) ([joelittlejohn](https://github.com/joelittlejohn))
+- Fix typo: Stack not Stacks [\#178](https://github.com/scala-exercises/exercises-stdlib/pull/178) ([joelittlejohn](https://github.com/joelittlejohn))
+- changed variable name [\#150](https://github.com/scala-exercises/exercises-stdlib/pull/150) ([rohanurkude28](https://github.com/rohanurkude28))
+
 ## [v0.6.2](https://github.com/scala-exercises/exercises-stdlib/tree/v0.6.2) (2020-04-27)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-stdlib/compare/v0.6.1...v0.6.2)
