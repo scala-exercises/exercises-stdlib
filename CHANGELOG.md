@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.6.5](https://github.com/scala-exercises/exercises-stdlib/tree/v0.6.5) (2020-08-10)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-stdlib/compare/v0.6.4...v0.6.5)
+
+📈 **Dependency updates**
+
+- Update sbt-mdoc to 2.2.4 [\#217](https://github.com/scala-exercises/exercises-stdlib/pull/217) ([47erbot](https://github.com/47erbot))
+- Update scalacheck-1-14 to 3.2.1.0 [\#216](https://github.com/scala-exercises/exercises-stdlib/pull/216) ([47erbot](https://github.com/47erbot))
+- Update scalatest to 3.2.1 [\#215](https://github.com/scala-exercises/exercises-stdlib/pull/215) ([47erbot](https://github.com/47erbot))
+- Update sbt-scalafmt to 2.4.2 [\#214](https://github.com/scala-exercises/exercises-stdlib/pull/214) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.4 [\#213](https://github.com/scala-exercises/exercises-stdlib/pull/213) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.3 [\#212](https://github.com/scala-exercises/exercises-stdlib/pull/212) ([scala-steward](https://github.com/scala-steward))
+- Update scalafmt-core to 2.6.2 [\#211](https://github.com/scala-exercises/exercises-stdlib/pull/211) ([scala-steward](https://github.com/scala-steward))
+
 ## [v0.6.4](https://github.com/scala-exercises/exercises-stdlib/tree/v0.6.4) (2020-06-30)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-stdlib/compare/v0.6.3...v0.6.4)
@@ -93,6 +107,7 @@
 - Higher Order Functions better explanations [\#84](https://github.com/scala-exercises/exercises-stdlib/pull/84) ([Yaskier](https://github.com/Yaskier))
 - Concatenate and add elements examples for Lists.scala [\#83](https://github.com/scala-exercises/exercises-stdlib/pull/83) ([Yaskier](https://github.com/Yaskier))
 - Improved description of ++ on Traversable.scala [\#82](https://github.com/scala-exercises/exercises-stdlib/pull/82) ([amarrella](https://github.com/amarrella))
+- Removed superfluous repetition [\#74](https://github.com/scala-exercises/exercises-stdlib/pull/74) ([hellrich](https://github.com/hellrich))
 
 ## [v0.4.0](https://github.com/scala-exercises/exercises-stdlib/tree/v0.4.0) (2017-03-28)
 
@@ -122,7 +137,6 @@
 - Added another example and some comments [\#78](https://github.com/scala-exercises/exercises-stdlib/pull/78) ([hellrich](https://github.com/hellrich))
 - minor fixes in Maps [\#77](https://github.com/scala-exercises/exercises-stdlib/pull/77) ([hellrich](https://github.com/hellrich))
 - made meetLambdaHigherOrderFunctions more interesting [\#75](https://github.com/scala-exercises/exercises-stdlib/pull/75) ([hellrich](https://github.com/hellrich))
-- Removed superfluous repetition [\#74](https://github.com/scala-exercises/exercises-stdlib/pull/74) ([hellrich](https://github.com/hellrich))
 - Small typo fixed in Case Classes section [\#73](https://github.com/scala-exercises/exercises-stdlib/pull/73) ([fppden](https://github.com/fppden))
 - Adding closure documentation [\#71](https://github.com/scala-exercises/exercises-stdlib/pull/71) ([josephpconley](https://github.com/josephpconley))
 - Text tweaks covering most of the tutorial [\#69](https://github.com/scala-exercises/exercises-stdlib/pull/69) ([rzats](https://github.com/rzats))

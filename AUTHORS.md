@@ -9,6 +9,7 @@
 The maintainers of the project are:
 
 - [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![alejandrohdezma](https://avatars0.githubusercontent.com/u/9027541?v=4&s=20) **Alejandro Hernández (alejandrohdezma)**](https://github.com/alejandrohdezma)
 - [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **Ana Gómez González (angoglez)**](https://github.com/angoglez)
 - [![andyscott](https://avatars3.githubusercontent.com/u/310363?v=4&s=20) **Andy Scott (andyscott)**](https://github.com/andyscott)
 - [![BenFradet](https://avatars2.githubusercontent.com/u/1737211?v=4&s=20) **Ben Fradet (BenFradet)**](https://github.com/BenFradet)
@@ -66,4 +67,5 @@ These are the people that have contributed to the _exercises-stdlib_ project:
 - [![rzats](https://avatars3.githubusercontent.com/u/13783592?v=4&s=20) **rzats**](https://github.com/rzats)
 - [![FrogBomb](https://avatars2.githubusercontent.com/u/5280885?v=4&s=20) **FrogBomb**](https://github.com/FrogBomb)
 - [![kastoestoramadus](https://avatars2.githubusercontent.com/u/6271645?v=4&s=20) **kastoestoramadus**](https://github.com/kastoestoramadus)
+- [![alejandrohdezma](https://avatars0.githubusercontent.com/u/9027541?v=4&s=20) **alejandrohdezma**](https://github.com/alejandrohdezma)
 - [![Vages](https://avatars0.githubusercontent.com/u/3520744?v=4&s=20) **Vages**](https://github.com/Vages)
