@@ -1,23 +1,33 @@
-val scalaExercisesV = "0.4.0-SNAPSHOT"
+import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV
+ThisBuild / organization := "org.scala-exercises"
+ThisBuild / githubOrganization := "47degrees"
+ThisBuild / scalaVersion := "2.13.3"
 
-lazy val stdlib = (project in file("."))
-.enablePlugins(ExerciseCompilerPlugin)
-.settings(
-  name         := "exercises-stdlib",
-  libraryDependencies ++= Seq(
-    dep("exercise-compiler"),
-    dep("definitions"),
-    %%("shapeless"),
-    %%("scalatest"),
-    %%("scalacheck"),
-    %%("scheckShapeless")
+// This is required by the exercises compiler:
+publishLocal := (publishLocal dependsOn compile).value
+publishSigned := (publishSigned dependsOn compile).value
+
+addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; test")
+addCommandAlias("ci-docs", "github; documentation/mdoc; headerCreateAll")
+addCommandAlias("ci-publish", "github; ci-release")
+
+lazy val exercises = (project in file("."))
+  .settings(name := "exercises-stdlib")
+  .settings(
+    libraryDependencies ++= Seq(
+      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.3",
+      "org.scala-exercises"        %% "definitions"               % "0.6.3",
+      "com.chuusai"                %% "shapeless"                 % "2.3.3",
+      "org.scalatest"              %% "scalatest"                 % "3.2.1",
+      "org.scalacheck"             %% "scalacheck"                % "1.14.3",
+      "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.1.0",
+      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % "1.2.5"
+    )
   )
-)
+  .enablePlugins(ExerciseCompilerPlugin)
 
-// Distribution
-
-pgpPassphrase := Some(getEnvVar("PGP_PASSPHRASE").getOrElse("").toCharArray)
-pgpPublicRing := file(s"$gpgFolder/pubring.gpg")
-pgpSecretRing := file(s"$gpgFolder/secring.gpg")
+lazy val documentation = project
+  .settings(mdocOut := file("."))
+  .settings(publish / skip := true)
+  .enablePlugins(MdocPlugin)

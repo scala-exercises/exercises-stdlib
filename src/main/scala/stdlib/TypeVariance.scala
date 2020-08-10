@@ -1,18 +1,32 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
 import TypeVarianceHelper._
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-/** @param name type_variance
+/**
+ * @param name type_variance
  */
-object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object TypeVariance extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** A traditional objection to static typing is that it has much syntactic overhead. Scala alleviates this by providing type inference.
+  /**
+   * A traditional objection to static typing is that it has much syntactic overhead. Scala alleviates this by providing type inference.
    *
    * The classic method for type inference in functional programming languages is Hindley-Milner, and it was first employed in ML.
    *
@@ -20,7 +34,7 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
    *
    * Using type inference the type that you instantiate will be the val or var reference type:
    */
-  def syntacticOverheadTypeVariance(res0: String) {
+  def syntacticOverheadTypeVariance(res0: String) = {
     class MyContainer[A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -29,9 +43,10 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     fruitBasket.contents should be(res0)
   }
 
-  /** You can explicitly declare the type variable of the object during instantiation:
+  /**
+   * You can explicitly declare the type variable of the object during instantiation:
    */
-  def typeVariableTypeVariance(res0: String) {
+  def typeVariableTypeVariance(res0: String) = {
     class MyContainer[A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -40,9 +55,10 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     fruitBasket.contents should be(res0)
   }
 
-  /** You can coerce your object to a type:
+  /**
+   * You can coerce your object to a type:
    */
-  def coerceObjectTypeVariance(res0: String) {
+  def coerceObjectTypeVariance(res0: String) = {
     class MyContainer[A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -51,7 +67,8 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     fruitBasket.contents should be(res0)
   }
 
-  /** Scala's type system has to account for class hierarchies together with polymorphism. Class hierarchies allow the expression of subtype relationships. A central question that comes up when mixing OO with polymorphism is: if `T'` is a subclass of `T`, is `Container[T']` considered a subclass of `Container[T]`? Variance annotations allow you to express the following relationships between class hierarchies & polymorphic types:
+  /**
+   * Scala's type system has to account for class hierarchies together with polymorphism. Class hierarchies allow the expression of subtype relationships. A central question that comes up when mixing OO with polymorphism is: if `T'` is a subclass of `T`, is `Container[T']` considered a subclass of `Container[T]`? Variance annotations allow you to express the following relationships between class hierarchies & polymorphic types:
    *
    * ==Covariant==
    *  - `C[T']` is a subclass of `C[T]`
@@ -64,7 +81,6 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
    * ==Invariant==
    *  - `C[T]` and `C[T']` are not related
    *  - Scala notation: `[T]`
-   *
    *
    * That one probably blew your mind. Now if you assign a type to the instantiation that is different to the variable type, you'll have problems. You may want to take time after this koan to compare and contrast with the previous one.
    *
@@ -79,7 +95,7 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
    *
    * So, how do we get to set a Fruit basket to an Orange basket? You make it covariant using `+`. This will allow you to set the container to either a variable with the same type or parent type. In other words, you can assign `MyContainer[Fruit]` or `MyContainer[Citrus]`.
    */
-  def polymorphismTypeVariance(res0: String) {
+  def polymorphismTypeVariance(res0: String) = {
     class MyContainer[+A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -88,9 +104,10 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     fruitBasket.contents should be(res0)
   }
 
-  /** The problem with covariance is that you can't mutate, set or change the object since it has to guarantee that what you put into it is a valid type.  In other words the reference is a fruit basket, but we still have to make sure that no other fruit can be placed in our orange basket:
+  /**
+   * The problem with covariance is that you can't mutate, set or change the object since it has to guarantee that what you put into it is a valid type.  In other words the reference is a fruit basket, but we still have to make sure that no other fruit can be placed in our orange basket:
    */
-  def covarianceInmutableTypeVariance(res0: String) {
+  def covarianceInmutableTypeVariance(res0: String) = {
     class MyContainer[+A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -103,9 +120,10 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     //val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Orange](new Orange()) //Bad!
   }
 
-  /** Declaring `-` indicates contravariance variance.  Using `-` you can apply any container with a certain type to a container with a superclass of that type.  This is reverse to covariant.  In our example, we can set a citrus basket to an orange or tangelo basket. Since an orange or tangelo basket are a citrus basket. Contravariance is the opposite of covariance:
+  /**
+   * Declaring `-` indicates contravariance variance.  Using `-` you can apply any container with a certain type to a container with a superclass of that type.  This is reverse to covariant.  In our example, we can set a citrus basket to an orange or tangelo basket. Since an orange or tangelo basket are a citrus basket. Contravariance is the opposite of covariance:
    */
-  def contravarianceVarianceTypeVariance(res0: String, res1: String, res2: String, res3: String) {
+  def contravarianceVarianceTypeVariance(res0: String, res1: String, res2: String, res3: String) = {
     class MyContainer[-A](a: A)(implicit manifest: scala.reflect.Manifest[A]) { //Can't receive a val because it would be in a covariant position
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -125,11 +143,12 @@ object TypeVariance extends FlatSpec with Matchers with org.scalaexercises.defin
     //val wrongCitrusBasket: MyContainer[Citrus] = new MyContainer[Orange](new Orange) //Bad!
   }
 
-  /** Declaring neither `-` nor `+` indicates invariance. You cannot use a superclass variable reference (contravariant position) or a subclass variable reference (covariant position) of that type.  In our example, this means that if you create a citrus basket you can only reference that citrus basket with a citrus variable only.
+  /**
+   * Declaring neither `-` nor `+` indicates invariance. You cannot use a superclass variable reference (contravariant position) or a subclass variable reference (covariant position) of that type.  In our example, this means that if you create a citrus basket you can only reference that citrus basket with a citrus variable only.
    *
    * Invariance means you need to specify the type exactly:
    */
-  def invarianceVarianceTypeVariance(res0: String) {
+  def invarianceVarianceTypeVariance(res0: String) = {
     class MyContainer[A](val a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       def contents = manifest.runtimeClass.getSimpleName
     }

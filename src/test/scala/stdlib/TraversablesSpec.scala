@@ -1,17 +1,28 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class TraversablesSpec extends Spec with Checkers {
+class TraversablesSpec extends RefSpec with Checkers {
   def `are at the top of collection hierarchy` = {
     check(
       Test.testSuccess(
@@ -132,8 +143,8 @@ class TraversablesSpec extends Spec with Checkers {
   def `to stream function` = {
     check(
       Test.testSuccess(
-        Traversables.toStreamFunctionTraversables _,
-        true :: Stream(4, 6, 7) :: HNil
+        Traversables.toLazyListFunctionTraversables _,
+        true :: LazyList(4, 6, 7) :: HNil
       )
     )
   }
@@ -183,11 +194,11 @@ class TraversablesSpec extends Spec with Checkers {
     )
   }
 
-  def `hasDefiniteSize function` = {
+  def `knownSize function` = {
     check(
       Test.testSuccess(
-        Traversables.hasDefiniteSizeFunctionTraversables _,
-        true :: false :: HNil
+        Traversables.knownSizeFunctionTraversables _,
+        2 :: -1 :: HNil
       )
     )
   }
@@ -400,7 +411,7 @@ class TraversablesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Traversables.foldLeftFunctionTraversables _,
-        -15 :: -15 :: -15 :: -15 :: -15 :: HNil
+        -15 :: -15 :: -15 :: HNil
       )
     )
   }
@@ -409,7 +420,7 @@ class TraversablesSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Traversables.foldRightFunctionTraversables _,
-        3 :: 3 :: 3 :: 3 :: 3 :: HNil
+        3 :: 3 :: 3 :: HNil
       )
     )
   }

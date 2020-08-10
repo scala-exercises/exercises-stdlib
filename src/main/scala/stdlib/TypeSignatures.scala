@@ -1,17 +1,34 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-/** @param name type_signatures
+/**
+ * @param name type_signatures
  */
-object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object TypeSignatures
+    extends AnyFlatSpec
+    with Matchers
+    with org.scalaexercises.definitions.Section {
 
-  /** A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
+  /**
+   * A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
    *
    * In Java you declare a generic type within a `<>`, in Scala `[]` is used:
    *
@@ -26,9 +43,8 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
    * }}}
    *
    * A trait can be declared containing a type, where a concrete implementer will satisfy the type:
-   *
    */
-  def typeSignatureTypeSignatures(res0: Boolean) {
+  def typeSignatureTypeSignatures(res0: Boolean) = {
     trait Randomizer[A] {
       def draw(): A
     }
@@ -44,25 +60,28 @@ object TypeSignatures extends FlatSpec with Matchers with org.scalaexercises.def
     (intRand.draw <= Int.MaxValue) should be(res0)
   }
 
-  /** Class meta-information can be retrieved by class name by using `classOf[className]`:
+  /**
+   * Class meta-information can be retrieved by class name by using `classOf[className]`:
    */
-  def retrieveMetaInformationTypeSignatures(res0: String, res1: String) {
+  def retrieveMetaInformationTypeSignatures(res0: String, res1: String) = {
     classOf[String].getCanonicalName should be(res0)
     classOf[String].getSimpleName should be(res1)
   }
 
-  /** Class meta-information can be derived from an object reference using `getClass()`:
+  /**
+   * Class meta-information can be derived from an object reference using `getClass()`:
    */
-  def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) {
+  def deriveMetaInformationTypeSignatures(res0: Boolean, res1: String, res2: String) = {
     val zoom = "zoom"
     zoom.isInstanceOf[String] should be(res0)
     zoom.getClass.getCanonicalName should be(res1)
     zoom.getClass.getSimpleName should be(res2)
   }
 
-  /** `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
+  /**
+   * `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
    */
-  def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) {
+  def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) = {
     trait Randomizer[A] {
       def draw(): A
     }

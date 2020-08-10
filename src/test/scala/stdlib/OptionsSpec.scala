@@ -1,17 +1,28 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class OptionsSpec extends Spec with Checkers {
+class OptionsSpec extends RefSpec with Checkers {
   def `none and some` = {
     val theNone: Option[String] = None
 
@@ -45,7 +56,7 @@ class OptionsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Options.matchOptions _,
-        20D :: 0D :: HNil
+        20d :: 0d :: HNil
       )
     )
   }
@@ -56,7 +67,7 @@ class OptionsSpec extends Spec with Checkers {
     check(
       Test.testSuccess(
         Options.mapOptions _,
-        Option(4.5D) :: theNone :: HNil
+        Option(4.5d) :: theNone :: HNil
       )
     )
   }

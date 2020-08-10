@@ -1,19 +1,32 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import scala.language.implicitConversions
 
-/** @param name implicits
- *
+/**
+ * @param name implicits
  */
-object Implicits extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** The actual arguments that are eligible to be passed to an implicit parameter fall into two categories:
+  /**
+   * The actual arguments that are eligible to be passed to an implicit parameter fall into two categories:
    *
    *  - First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter.
    *  - Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
@@ -55,7 +68,7 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
    *
    * Creating a method `isOdd` for `Int`, which doesn't exist:
    */
-  def implicitsParametersImplicits(res0: Boolean, res1: Boolean) {
+  def implicitsParametersImplicits(res0: Boolean, res1: Boolean) = {
     class KoanIntWrapper(val original: Int) {
       def isOdd = original % 2 != 0
     }
@@ -67,9 +80,10 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     20.isOdd should be(res1)
   }
 
-  /** Implicits rules can be imported into your scope with an import:
+  /**
+   * Implicits rules can be imported into your scope with an import:
    */
-  def importedImplicits(res0: Boolean, res1: Boolean) {
+  def importedImplicits(res0: Boolean, res1: Boolean) = {
     object MyPredef {
 
       class KoanIntWrapper(val original: Int) {
@@ -88,14 +102,16 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     20.isOdd should be(res1)
   }
 
-  /** Implicits can be used to automatically convert a value's type to another:
+  /**
+   * Implicits can be used to automatically convert a value's type to another:
    */
   def convertTypeImplicits(
       res0: Boolean,
       res1: Boolean,
       res2: Boolean,
       res3: Boolean,
-      res4: Boolean) {
+      res4: Boolean
+  ) = {
     import java.math.BigInteger
     implicit def Int2BigIntegerConvert(value: Int): BigInteger =
       new BigInteger(value.toString)
@@ -103,7 +119,8 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     def add(a: BigInteger, b: BigInteger) = a.add(b)
 
     add(Int2BigIntegerConvert(3), Int2BigIntegerConvert(6)) == Int2BigIntegerConvert(9) should be(
-      res0)
+      res0
+    )
 
     add(3, 6) == 9 should be(res1)
     add(3, 6) == Int2BigIntegerConvert(9) should be(res2)
@@ -112,9 +129,10 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     add(3, 6).intValue == 9 should be(res4)
   }
 
-  /** Implicits can be used to declare a value to be provided as a default as long as an implicit value is set with in the scope.  These are called Implicit Function Parameters:
+  /**
+   * Implicits can be used to declare a value to be provided as a default as long as an implicit value is set with in the scope.  These are called Implicit Function Parameters:
    */
-  def asDefaultImplicits(res0: BigDecimal) {
+  def asDefaultImplicits(res0: BigDecimal) = {
     def howMuchCanIMake_?(hours: Int)(implicit dollarsPerHour: BigDecimal) =
       dollarsPerHour * hours
 
@@ -123,9 +141,10 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     howMuchCanIMake_?(30) should be(res0)
   }
 
-  /** Implicit Function Parameters can contain a list of implicits:
+  /**
+   * Implicit Function Parameters can contain a list of implicits:
    */
-  def listOfImplicitsImplicits(res0: String) {
+  def listOfImplicitsImplicits(res0: String) = {
     def howMuchCanIMake_?(hours: Int)(implicit amount: BigDecimal, currencyName: String) =
       (amount * hours).toString() + " " + currencyName
 
@@ -135,9 +154,10 @@ object Implicits extends FlatSpec with Matchers with org.scalaexercises.definiti
     howMuchCanIMake_?(30) should be(res0)
   }
 
-  /** Default arguments, though, are preferred to Implicit Function Parameters:
+  /**
+   * Default arguments, though, are preferred to Implicit Function Parameters:
    */
-  def defaultArgumentsImplicits(res0: String, res1: String) {
+  def defaultArgumentsImplicits(res0: String, res1: String) = {
     def howMuchCanIMake_?(hours: Int, amount: BigDecimal = 34, currencyName: String = "Dollars") =
       (amount * hours).toString() + " " + currencyName
 

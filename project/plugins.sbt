@@ -1,6 +1,9 @@
-resolvers ++= Seq(
-  Resolver.sonatypeRepo("snapshots")
-)
-
-addSbtPlugin("org.scala-exercises" % "sbt-exercise" % "0.4.0-SNAPSHOT", "0.13", "2.10")
-addSbtPlugin("com.47deg"         % "sbt-org-policies" % "0.5.13")
+addSbtPlugin("org.scala-exercises" % "sbt-exercise"             % "0.6.3")
+addSbtPlugin("com.geirsson"        % "sbt-ci-release"           % "1.5.3")
+addSbtPlugin("org.scalameta"       % "sbt-mdoc"                 % "2.2.4")
+addSbtPlugin("org.scalameta"       % "sbt-scalafmt"             % "2.4.2")
+addSbtPlugin("de.heikoseeberger"   % "sbt-header"               % "5.6.0")
+addSbtPlugin("com.alejandrohdezma" % "sbt-github"               % "0.8.2")
+addSbtPlugin("com.alejandrohdezma" % "sbt-github-header"        % "0.8.2")
+addSbtPlugin("com.alejandrohdezma" % "sbt-github-mdoc"          % "0.8.2")
+addSbtPlugin("com.alejandrohdezma" % "sbt-remove-test-from-pom" % "0.1.0")

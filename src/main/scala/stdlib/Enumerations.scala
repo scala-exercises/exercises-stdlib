@@ -1,20 +1,33 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-/** @param name enumerations
- *
+/**
+ * @param name enumerations
  */
-object Enumerations extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
+  /**
+   * To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
    *
-   * `Value` assigns a numerical value to fields:
+   * `Value` assigns a numerical value to fields, indexed from 0:
    */
   def createEnumerationEnumerations(
       res0: Int,
@@ -22,7 +35,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean
+  ) = {
     object Planets extends Enumeration {
       val Mercury = Value
       val Venus   = Value
@@ -45,7 +59,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
     (Planets.Neptune == Planets.Jupiter) should be(res5)
   }
 
-  /** You can create an enumeration with your own index and your own Strings, in this exercise we will start with an index of one and use Greek names instead of Roman:
+  /**
+   * You can create an enumeration with your own index and your own Strings, in this exercise we will start with an index of one and use Greek names instead of Roman:
    */
   def ownIndexEnumerations(
       res0: Int,
@@ -53,7 +68,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean
+  ) = {
     object GreekPlanets extends Enumeration {
 
       val Mercury = Value(1, "Hermes")
@@ -78,7 +94,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** Enumerations can be declared in one line if you are merely setting variables to `Value`:
+  /**
+   * Enumerations can be declared in one line if you are merely setting variables to `Value`:
    */
   def oneLineEnumerations(
       res0: Int,
@@ -86,7 +103,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean
+  ) = {
     object Planets extends Enumeration {
       val Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto = Value
     }
@@ -101,7 +119,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
     (Planets.Neptune == Planets.Jupiter) should be(res5)
   }
 
-  /** Enumerations can be declared with a string value only:
+  /**
+   * Enumerations can be declared with a string value only:
    */
   def stringValueEnumerations(
       res0: Int,
@@ -109,7 +128,8 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
       res2: String,
       res3: String,
       res4: Boolean,
-      res5: Boolean) {
+      res5: Boolean
+  ) = {
     object GreekPlanets extends Enumeration {
 
       val Mercury = Value("Hermes")
@@ -133,12 +153,13 @@ object Enumerations extends FlatSpec with Matchers with org.scalaexercises.defin
     (GreekPlanets.Neptune == GreekPlanets.Jupiter) should be(res5)
   }
 
-  /** You can extend the `Enumeration` by extending the `Value` class.
+  /**
+   * You can extend the `Enumeration` by extending the `Val` class.
    */
-  def extendingValueEnumerations(res0: Double, res1: Double) {
+  def extendingValueEnumerations(res0: Double, res1: Double) = {
     object Planets extends Enumeration {
 
-      val G = 6.67300E-11
+      val G = 6.67300e-11
 
       class PlanetValue(val i: Int, val name: String, val mass: Double, val radius: Double)
           extends Val(i: Int, name: String) {

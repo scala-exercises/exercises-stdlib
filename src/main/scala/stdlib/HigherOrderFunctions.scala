@@ -1,21 +1,34 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-/** @param name higher_order_functions
- *
+/**
+ * @param name higher_order_functions
  */
 object HigherOrderFunctions
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
-  /** Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions. Anonymous functions in source code are called function literals and at run time, function literals are instantiated into objects called function values.
+  /**
+   * Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions. Anonymous functions in source code are called function literals and at run time, function literals are instantiated into objects called function values.
    *
    * Scala supports first-class functions, which means you can express functions in function literal syntax, i.e. ` (x: Int) => x + 1`, and those functions can be represented by objects, which are called function values.
    */
@@ -25,12 +38,11 @@ object HigherOrderFunctions
       res2: Int,
       res3: Int,
       res4: Int,
-      res5: Int) {
-    def lambda = { x: Int ⇒
-      x + 1
-    }
-    def lambda2 = (x: Int) ⇒ x + 2
-    val lambda3 = (x: Int) ⇒ x + 3
+      res5: Int
+  ) = {
+    def lambda = { x: Int => x + 1 }
+    def lambda2 = (x: Int) => x + 2
+    val lambda3 = (x: Int) => x + 3
 
     val lambda4 = new Function1[Int, Int] {
       def apply(v1: Int): Int = v1 - 1
@@ -38,8 +50,8 @@ object HigherOrderFunctions
 
     def lambda5(x: Int) = x + 1
 
-    val result           = lambda(3)
-    val `result1andhalf` = lambda.apply(3)
+    val result         = lambda(3)
+    val result1andhalf = lambda.apply(3)
 
     val result2 = lambda2(3)
     val result3 = lambda3(3)
@@ -54,28 +66,28 @@ object HigherOrderFunctions
     result5 should be(res5)
   }
 
-  /** An anonymous function can also take on a different look by taking out the brackets:
+  /**
+   * An anonymous function can also take on a different look by taking out the brackets:
    */
-  def differentLookHigherOrderFunctions(res0: Int) {
-    def lambda = (x: Int) ⇒ x + 1
+  def differentLookHigherOrderFunctions(res0: Int) = {
+    def lambda = (x: Int) => x + 1
     def result = lambda(5)
     result should be(res0)
   }
 
-  /** Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a parameter to the function.
+  /**
+   * Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a parameter to the function.
    *
-   *{{{
+   * {{{
    * val multiplier = (i:Int) => i * 10
    * }}}
    *
    * A closure is a function which maintains a reference to one or more variables outside of the function scope (it "closes over" the variables).  Scala will detect that you are using variables outside of scope and create an object instance to hold the shared variables.
    */
-  def meetClosureHigherOrderFunctions(res0: Int, res1: Int) {
+  def meetClosureHigherOrderFunctions(res0: Int, res1: Int) = {
     var incrementer = 1
 
-    def closure = { x: Int ⇒
-      x + incrementer
-    }
+    def closure = { x: Int => x + incrementer }
 
     val result1 = closure(10)
     result1 should be(res0)
@@ -86,16 +98,17 @@ object HigherOrderFunctions
     result2 should be(res1)
   }
 
-  /** And then we get to Higher Order Functions:
-    * Higher Order Functions are functions that take functions as arguments and/or return functions.
-    *
-    *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
+  /**
+   * And then we get to Higher Order Functions:
+   * Higher Order Functions are functions that take functions as arguments and/or return functions.
+   *
+   *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
    */
-  def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) {
-    def summation(x: Int, y: Int ⇒ Int) = y(x)
+  def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) = {
+    def summation(x: Int, y: Int => Int) = y(x)
 
     var incrementer = 3
-    def closure     = (x: Int) ⇒ x + incrementer
+    def closure     = (x: Int) => x + incrementer
 
     val result = summation(10, closure)
     result should be(res0)
@@ -105,9 +118,10 @@ object HigherOrderFunctions
     result2 should be(res1)
   }
 
-  /** Higher Order Function returning another function:
+  /**
+   * Higher Order Function returning another function:
    */
-  def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
+  def returningFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) = {
     def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
       new Function1[Int, Int]() {
         def apply(y: Int): Int = x + y
@@ -121,10 +135,11 @@ object HigherOrderFunctions
     fiveAdder(5) should be(res2)
   }
 
-  /** Function returning another function using an anonymous function:
+  /**
+   * Function returning another function using an anonymous function:
    */
-  def returningAnonymousFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) {
-    def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
+  def returningAnonymousFunctionHigherOrderFunctions(res0: Boolean, res1: Int, res2: Int) = {
+    def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
     addWithSyntaxSugar(1).isInstanceOf[Function1[Int, Int]] should be(res0)
     addWithSyntaxSugar(2)(3) should be(res1)
@@ -133,15 +148,17 @@ object HigherOrderFunctions
     fiveAdder(5) should be(res2)
   }
 
-  /** `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
+  /**
+   * `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
    */
-  def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) {
-    def addWithSyntaxSugar(x: Int) = (y: Int) ⇒ x + y
+  def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) = {
+    def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
     addWithSyntaxSugar(1).isInstanceOf[Function1[_, _]] should be(res0)
   }
 
-  /** Function taking another function as a parameter. Helps in composing functions.
+  /**
+   * Function taking another function as a parameter. Helps in composing functions.
    *
    * Hint: a map method applies the function to each element of a list.
    */
@@ -149,19 +166,19 @@ object HigherOrderFunctions
       res0: List[String],
       res1: List[String],
       res2: List[String],
-      res3: List[Int]) {
-    def makeUpper(xs: List[String]) = xs map {
-      _.toUpperCase
-    }
+      res3: List[Int]
+  ) = {
+    def makeUpper(xs: List[String]) =
+      xs map {
+        _.toUpperCase
+      }
 
-    def makeWhatEverYouLike(xs: List[String], sideEffect: String ⇒ String) =
+    def makeWhatEverYouLike(xs: List[String], sideEffect: String => String) =
       xs map sideEffect
 
     makeUpper(List("abc", "xyz", "123")) should be(res0)
 
-    makeWhatEverYouLike(List("ABC", "XYZ", "123"), { x ⇒
-      x.toLowerCase
-    }) should be(res1)
+    makeWhatEverYouLike(List("ABC", "XYZ", "123"), x => x.toLowerCase) should be(res1)
 
     //using it inline
     val myName = (name: String) => s"My name is $name"

@@ -1,27 +1,41 @@
 /*
- * scala-exercises - exercises-stdlib
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package stdlib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-/** @param name formatting
- *
+/**
+ * @param name formatting
  */
-object Formatting extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
-  /** String can be placed in format:
+  /**
+   * String can be placed in format:
    */
-  def placedInFormatFormatting(res0: String) {
+  def placedInFormatFormatting(res0: String) = {
     val s = "Hello World"
     "Application %s".format(s) should be(res0)
   }
 
-  /** Character Literals can be a single character:
+  /**
+   * Character Literals can be a single character:
    */
-  def characterFormatting(res0: String, res1: String) {
+  def characterFormatting(res0: String, res1: String) = {
     val a = 'a'
     val b = 'B'
 
@@ -32,30 +46,31 @@ object Formatting extends FlatSpec with Matchers with org.scalaexercises.definit
     "%c".format(b) should be(res1)
   }
 
-  /** Character Literals can be an escape sequence, including octal or hexidecimal:
+  /**
+   * Character Literals can be an escape sequence, including hexidecimal:
    */
-  def escapeSequenceFormatting(res0: String, res1: String, res2: String, res3: String) {
+  def escapeSequenceFormatting(res0: String, res1: String, res2: String) = {
     val c = '\u0061' //unicode for a
-    val d = '\141' //octal for a
     val e = '\"'
     val f = '\\'
 
     "%c".format(c) should be(res0)
-    "%c".format(d) should be(res1)
-    "%c".format(e) should be(res2)
-    "%c".format(f) should be(res3)
+    "%c".format(e) should be(res1)
+    "%c".format(f) should be(res2)
   }
 
-  /** Formatting can also include numbers:
+  /**
+   * Formatting can also include numbers:
    */
-  def includingNumbersFormatting(res0: String) {
+  def includingNumbersFormatting(res0: String) = {
     val j = 190
     "%d bottles of beer on the wall" format j - 100 should be(res0)
   }
 
-  /** Formatting can be used for any number of items, like a string and a number:
+  /**
+   * Formatting can be used for any number of items, like a string and a number:
    */
-  def anyNumberOfItemsFormatting(res0: String) {
+  def anyNumberOfItemsFormatting(res0: String) = {
     val j = 190
     val k = "vodka"
 
