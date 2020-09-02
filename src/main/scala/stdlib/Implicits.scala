@@ -31,7 +31,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    *  - First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter.
    *  - Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
    *
-   * In the following example we define a method `sum` which computes the sum of a list of elements using the monoid's `add` and `unit` operations. Please note that implicit values can not be top-level, they have to be members of a template.
+   * In the following example we define a method `sum` which computes the sum of a list of elements using the monoids `add` and `unit` operations. Please note that implicit values can not be top-level, they have to be members of a template.
    *
    * {{{
    * abstract class SemiGroup[A] {
