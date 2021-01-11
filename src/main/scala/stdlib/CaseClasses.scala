@@ -71,8 +71,8 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
    * It only makes sense to define case classes if pattern matching is used to decompose data structures. The following object defines a pretty printer function for our lambda calculus representation:
    *
    * {{{
-   * object TermTest extends Application {
-   * def printTerm(term: Term) = {
+   * object TermTest extends App {
+   * def printTerm(term: Term) : Unit = {
    * term match {
    * case Var(n) =>
    * print(n)
@@ -94,7 +94,7 @@ object CaseClasses extends AnyFlatSpec with Matchers with org.scalaexercises.def
    * val id = Fun("x", Var("x"))
    * val t = Fun("x", Fun("y", App(Var("x"), Var("y"))))
    * printTerm(t)
-   * println
+   * println()
    * println(isIdentityFun(id))
    * println(isIdentityFun(t))
    * }
