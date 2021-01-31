@@ -53,7 +53,7 @@ object NamedandDefaultArguments
    * Given the classes below:
    *
    * {{{
-   * class WithoutClassParameters() = {
+   * class WithoutClassParameters() {
    * def addColors(red: Int, green: Int, blue: Int) = {
    * (red, green, blue)
    * }
@@ -63,7 +63,7 @@ object NamedandDefaultArguments
    * }
    * }
    *
-   * class WithClassParameters(val defaultRed: Int, val defaultGreen: Int, val defaultBlue: Int) = {
+   * class WithClassParameters(val defaultRed: Int, val defaultGreen: Int, val defaultBlue: Int) {
    * def addColors(red: Int, green: Int, blue: Int) = {
    * (red + defaultRed, green + defaultGreen, blue + defaultBlue)
    * }
