@@ -97,8 +97,7 @@ object LiteralNumbers
       res4: Double,
       res5: Double,
       res6: Double,
-      res7: Double,
-      res8: Double
+      res7: Double
   ) = {
     val a = 3.0
     val b = 3.00
@@ -106,9 +105,8 @@ object LiteralNumbers
     val d = 3f
     val e = 3.22d
     val f = 93e-9
-    val g = 93e-9
-    val h = 0.0
-    val i = 9.23e-9d
+    val g = 0.0
+    val h = 9.23e-9d
 
     a should be(res0)
     b should be(res1)
@@ -118,7 +116,6 @@ object LiteralNumbers
     f should be(res5)
     g should be(res6)
     h should be(res7)
-    i should be(res8)
   }
 
 }
