@@ -113,7 +113,7 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /**
-   * Another operation is `fold`. This operation will extract the value from the option, or provide a default if the value is `None`
+   * Another operation is `fold`. This operation will extract the value from the option and run the input function, or provide a default if the value is `None`
    */
   def foldOptions(res0: Int, res1: Int) = {
     val number: Option[Int]   = Some(3)
