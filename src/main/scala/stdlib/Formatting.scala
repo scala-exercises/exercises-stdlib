@@ -46,6 +46,18 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     "%c".format(b) should be(res1)
   }
 
+/**
+   * Character Literals can be an escape sequence, including hexidecimal:
+   */
+  def escapeSequenceFormatting(res0: String, res1: String, res2: String) = {
+    val c = '\u0061' //unicode for a
+    val e = '\"'
+    val f = '\\'
+
+    "%c".format(c) should be(res0) //your ANSWER should have form of: "ANSWER"
+    "%c".format(e) should be(res1) //your ANSWER should have form of: "\ANSWER"
+    "%c".format(f) should be(res2) //your ANSWER should have form of: "\ANSWER"
+  }
 
   /**
    * Formatting can also include numbers:
