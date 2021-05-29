@@ -28,7 +28,7 @@ object PartiallyAppliedFunctions
     with org.scalaexercises.definitions.Section {
 
   /**
-   * A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
+   * A partially applied function is the result of applying only a subset (or none) of a function's expected arguments and returning a new function that takes the remaining expected function arguments. In the example below, the partially applied function hasn't had apply any arguments applied to it.
    */
   def partiallyAppliedPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
