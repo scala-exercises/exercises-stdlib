@@ -20,20 +20,35 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name maps
+ * @param name
+ *   maps
  */
 object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * A `Map` is an `Iterable` consisting of pairs of keys and values (also named mappings or associations). Scala's Predef class offers an implicit conversion that lets you write `key -> value` as an alternate syntax for the pair `(key, value)`. For instance `Map("x" -> 24, "y" -> 25, "z" -> 26)` means exactly the same as `Map(("x", 24), ("y", 25), ("z", 26))`, but reads better.
+   * A `Map` is an `Iterable` consisting of pairs of keys and values (also named mappings or
+   * associations). Scala's Predef class offers an implicit conversion that lets you write `key ->
+   * value` as an alternate syntax for the pair `(key, value)`. For instance `Map("x" -> 24, "y" ->
+   * 25, "z" -> 26)` means exactly the same as `Map(("x", 24), ("y", 25), ("z", 26))`, but reads
+   * better.
    *
-   * The fundamental operations on maps are similar to those on sets. They are summarized in the following table and fall into the following categories:
+   * The fundamental operations on maps are similar to those on sets. They are summarized in the
+   * following table and fall into the following categories:
    *
-   *  - Lookup operations `apply`, `get`, `getOrElse`, `contains`, and `isDefinedAt`. These turn maps into partial functions from keys to values. The fundamental lookup method for a map is: `def get(key): Option[Value]`. The operation "`m get key`" tests whether the map contains an association for the given key. If so, it returns the associated value in a `Some`. If no key is defined in the map, get returns `None`. Maps also define an `apply` method that returns the value associated with a given key directly, without wrapping it in an `Option`. If the key is not defined in the map, an exception is raised.
-   *  - Additions and updates `+`, `++`, `updated`, which let you add new bindings to a map or change existing bindings.
-   *  - Removals `-`, `--`, which remove bindings from a map.
-   *  - Subcollection producers `keys`, `keySet`, `keysIterator`, `values`, `valuesIterator`, which return a map's keys and values separately in various forms.
-   *  - Transformations `filterKeys` and `mapValues`, which produce a new map by filtering and transforming bindings of an existing map.
+   *   - Lookup operations `apply`, `get`, `getOrElse`, `contains`, and `isDefinedAt`. These turn
+   *     maps into partial functions from keys to values. The fundamental lookup method for a map
+   *     is: `def get(key): Option[Value]`. The operation "`m get key`" tests whether the map
+   *     contains an association for the given key. If so, it returns the associated value in a
+   *     `Some`. If no key is defined in the map, get returns `None`. Maps also define an `apply`
+   *     method that returns the value associated with a given key directly, without wrapping it in
+   *     an `Option`. If the key is not defined in the map, an exception is raised.
+   *   - Additions and updates `+`, `++`, `updated`, which let you add new bindings to a map or
+   *     change existing bindings.
+   *   - Removals `-`, `--`, which remove bindings from a map.
+   *   - Subcollection producers `keys`, `keySet`, `keysIterator`, `values`, `valuesIterator`, which
+   *     return a map's keys and values separately in various forms.
+   *   - Transformations `filterKeys` and `mapValues`, which produce a new map by filtering and
+   *     transforming bindings of an existing map.
    *
    * Maps can be created easily:
    */
@@ -89,7 +104,7 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
    * Maps insertion with duplicate key updates previous entry with subsequent value:
    */
   def duplicatedKeyInsertionMaps(res0: Int, res1: String) = {
-    val myMap     = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
+    val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
     val mapValues = myMap.values
     mapValues.size should be(res0)
     myMap("MI") should be(res1)
@@ -106,8 +121,9 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
   }
 
   /**
-   * If a nonexistent map key is requested using `myMap(missingKey)`, a `NoSuchElementException` will be thrown.
-   * Default values may be provided using either `getOrElse` or `withDefaultValue` for the entire map:
+   * If a nonexistent map key is requested using `myMap(missingKey)`, a `NoSuchElementException`
+   * will be thrown. Default values may be provided using either `getOrElse` or `withDefaultValue`
+   * for the entire map:
    */
   def defaultValuesMayBeProvidedMaps(res0: String, res1: String) = {
     val myMap =

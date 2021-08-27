@@ -20,17 +20,27 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name sets
+ * @param name
+ *   sets
  */
 object Sets extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * `Set`s are `Iterable`s that contain no duplicate elements. The operations on sets are summarized in the following table for general sets and in the table after that for mutable sets. They fall into the following categories:
+   * `Set`s are `Iterable`s that contain no duplicate elements. The operations on sets are
+   * summarized in the following table for general sets and in the table after that for mutable
+   * sets. They fall into the following categories:
    *
-   *  - **Tests**: `contains`, `apply`, `subsetOf`. The `contains` method asks whether a set contains a given element. The `apply` method for a set is the same as `contains`, so `set(elem)` is the same as `set contains elem`. That means sets can also be used as test functions that return true for the elements they contain.
-   *  - **Additions**: `+` and `++`, which add one or more elements to a set, yielding a new set.
-   *  - **Removals**: `-`, `--`, which remove one or more elements from a set, yielding a new set.
-   *  - **Set operations**: union, intersection, and set difference. Each of these operations exists in two forms: alphabetic and symbolic. The alphabetic versions are `intersect`, `union`, and `diff`, whereas the symbolic versions are `&`, `|`, and `&~`. In fact, the `++` that Set inherits from `Traversable` can be seen as yet another alias of `union` or `|`, except that `++` takes a `Traversable` argument whereas `union` and `|` take sets.
+   *   - **Tests**: `contains`, `apply`, `subsetOf`. The `contains` method asks whether a set
+   *     contains a given element. The `apply` method for a set is the same as `contains`, so
+   *     `set(elem)` is the same as `set contains elem`. That means sets can also be used as test
+   *     functions that return true for the elements they contain.
+   *   - **Additions**: `+` and `++`, which add one or more elements to a set, yielding a new set.
+   *   - **Removals**: `-`, `--`, which remove one or more elements from a set, yielding a new set.
+   *   - **Set operations**: union, intersection, and set difference. Each of these operations
+   *     exists in two forms: alphabetic and symbolic. The alphabetic versions are `intersect`,
+   *     `union`, and `diff`, whereas the symbolic versions are `&`, `|`, and `&~`. In fact, the
+   *     `++` that Set inherits from `Traversable` can be seen as yet another alias of `union` or
+   *     `|`, except that `++` takes a `Traversable` argument whereas `union` and `|` take sets.
    *
    * Sets can be created easily:
    */

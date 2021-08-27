@@ -20,12 +20,16 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name iterables
+ * @param name
+ *   iterables
  */
 object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * The next trait from the top in the collections hierarchy is `Iterable`. All methods in this trait are defined in terms of an abstract method, `iterator`, which yields the collection's elements one by one. The `foreach` method from trait `Traversable` is implemented in `Iterable` in terms of `iterator`. Here is the actual implementation:
+   * The next trait from the top in the collections hierarchy is `Iterable`. All methods in this
+   * trait are defined in terms of an abstract method, `iterator`, which yields the collection's
+   * elements one by one. The `foreach` method from trait `Traversable` is implemented in `Iterable`
+   * in terms of `iterator`. Here is the actual implementation:
    *
    * {{{
    * def foreach[U](f: Elem => U): Unit = {
@@ -34,9 +38,14 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    * }
    * }}}
    *
-   * Quite a few subclasses of `Iterable` override this standard implementation of `foreach` in `Iterable`, because they can provide a more efficient implementation. Remember that `foreach` is the basis of the implementation of all operations in `Traversable`, so its performance matters.
+   * Quite a few subclasses of `Iterable` override this standard implementation of `foreach` in
+   * `Iterable`, because they can provide a more efficient implementation. Remember that `foreach`
+   * is the basis of the implementation of all operations in `Traversable`, so its performance
+   * matters.
    *
-   * Some common iterables are `Set`, `List`, `Vector`, `Stack` and `Stream`. Iterator has two important methods: `hasNext`, which answers whether the iterator has another element available, and `next` which returns the next element in the iterator.
+   * Some common iterables are `Set`, `List`, `Vector`, `Stack` and `Stream`. Iterator has two
+   * important methods: `hasNext`, which answers whether the iterator has another element available,
+   * and `next` which returns the next element in the iterator.
    */
   def collectionIterablesIterables(res0: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21)
@@ -109,7 +118,8 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * `takeRight` is the opposite of 'take' in `Traversable`. It retrieves the last elements of an `Iterable`:
+   * `takeRight` is the opposite of 'take' in `Traversable`. It retrieves the last elements of an
+   * `Iterable`:
    */
   def takeRightIterables(res0: Int, res1: Int, res2: Int) = {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
@@ -125,9 +135,11 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * `zip` will stitch two iterables into an iterable of pairs of corresponding elements from both iterables.
+   * `zip` will stitch two iterables into an iterable of pairs of corresponding elements from both
+   * iterables.
    *
-   * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2, y3)` will return `((x1, y1), (x2, y2), (x3, y3))`:
+   * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2, y3)` will return `((x1, y1), (x2, y2), (x3,
+   * y3))`:
    */
   def zipIterables(res0: Int, res1: String, res2: Int, res3: String, res4: Int, res5: String) = {
     val xs = List(3, 5, 9)
@@ -136,7 +148,7 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * If two Iterables aren't the same size, then `zip` will only zip what can  be paired.
+   * If two Iterables aren't the same size, then `zip` will only zip what can be paired.
    *
    * e.g. `Iterable(x1, x2, x3) zip Iterable(y1, y2)` will return `((x1, y1), (x2, y2))`:
    */
@@ -147,9 +159,11 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * If two `Iterables` aren't the same size, then `zipAll` can provide fillers for what it couldn't find a complement for.
+   * If two `Iterables` aren't the same size, then `zipAll` can provide fillers for what it couldn't
+   * find a complement for.
    *
-   * e.g. `Iterable(x1, x2, x3) zipAll (Iterable(y1, y2), x, y)` will return `((x1,y1), (x2, y2), (x3, y)))`:
+   * e.g. `Iterable(x1, x2, x3) zipAll (Iterable(y1, y2), x, y)` will return `((x1,y1), (x2, y2),
+   * (x3, y)))`:
    */
   def zipAllIterables(
       res0: Int,
@@ -182,7 +196,10 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * `sameElements` will return true if the two `Iterables` produce the same elements in the same order. The iterator for a set created with less than 5 values will return elements in the order in which they were added, rather than the consistent, hash-based ordering used by iterators for larger Sets:
+   * `sameElements` will return true if the two `Iterables` produce the same elements in the same
+   * order. The iterator for a set created with less than 5 values will return elements in the order
+   * in which they were added, rather than the consistent, hash-based ordering used by iterators for
+   * larger Sets:
    */
   def sameElementsIterables(res0: Boolean, res1: Boolean, res2: Boolean, res3: Boolean) = {
     val xs = List("Manny", "Moe", "Jack")
@@ -201,7 +218,10 @@ object Iterables extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     val yt1 = Set(3, 2, 1)
     xt1.iterator.sameElements(yt1) should be(res3) // Caution - see below!
     /**
-     * Note that very small Sets (containing up to 4 elements) are implemented differently to larger Sets; as a result, their iterators produce the elements in the order that they were originally added. This causes the surprising (and arguably incorrect) behaviour in the final example above.
+     * Note that very small Sets (containing up to 4 elements) are implemented differently to larger
+     * Sets; as a result, their iterators produce the elements in the order that they were
+     * originally added. This causes the surprising (and arguably incorrect) behaviour in the final
+     * example above.
      */
   }
 

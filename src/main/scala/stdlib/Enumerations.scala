@@ -20,12 +20,14 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name enumerations
+ * @param name
+ *   enumerations
  */
 object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * To create an enumeration, create an object that extends the abstract class `Enumeration`, and set a `val` variable to the method `Value`.  This is a trick to give values to each `val`.
+   * To create an enumeration, create an object that extends the abstract class `Enumeration`, and
+   * set a `val` variable to the method `Value`. This is a trick to give values to each `val`.
    *
    * `Value` assigns a numerical value to fields, indexed from 0:
    */
@@ -60,7 +62,8 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * You can create an enumeration with your own index and your own Strings, in this exercise we will start with an index of one and use Greek names instead of Roman:
+   * You can create an enumeration with your own index and your own Strings, in this exercise we
+   * will start with an index of one and use Greek names instead of Roman:
    */
   def ownIndexEnumerations(
       res0: Int,

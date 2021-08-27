@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name literal_numbers
+ * @param name
+ *   literal_numbers
  */
 object LiteralNumbers
     extends AnyFlatSpec
@@ -85,9 +86,10 @@ object LiteralNumbers
   }
 
   /**
-   * Float and Double literals conform to [[https://en.wikipedia.org/wiki/IEEE_floating_point IEEE-754]]. Floats are 32-bit, while doubles are 64-bit.
-   * Floats can be defined using a f or F suffix, while doubles use a d or D suffix.
-   * Exponents are specified using e or E.
+   * Float and Double literals conform to
+   * [[https://en.wikipedia.org/wiki/IEEE_floating_point IEEE-754]]. Floats are 32-bit, while
+   * doubles are 64-bit. Floats can be defined using a f or F suffix, while doubles use a d or D
+   * suffix. Exponents are specified using e or E.
    */
   def floatsAndDoublesLiteralNumbers(
       res0: Double,

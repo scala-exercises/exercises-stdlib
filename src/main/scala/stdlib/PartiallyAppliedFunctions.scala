@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name partially_applied_functions
+ * @param name
+ *   partially_applied_functions
  */
 object PartiallyAppliedFunctions
     extends AnyFlatSpec
@@ -28,7 +29,8 @@ object PartiallyAppliedFunctions
     with org.scalaexercises.definitions.Section {
 
   /**
-   * A partially applied function is a function that you do not apply any or all the arguments, creating another function. This partially applied function doesn't apply any arguments.
+   * A partially applied function is a function that you do not apply any or all the arguments,
+   * creating another function. This partially applied function doesn't apply any arguments.
    */
   def partiallyAppliedPartiallyAppliedFunctions(res0: Int, res1: Int) = {
     def sum(a: Int, b: Int, c: Int) = a + b + c
@@ -48,7 +50,8 @@ object PartiallyAppliedFunctions
   }
 
   /**
-   * Currying is a technique to transform a function with multiple parameters into multiple functions which each take one parameter:
+   * Currying is a technique to transform a function with multiple parameters into multiple
+   * functions which each take one parameter:
    */
   def curryingPartiallyAppliedFunctions(
       res0: Boolean,

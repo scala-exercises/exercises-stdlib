@@ -23,23 +23,30 @@ import scala.language.postfixOps
 import LazyList.cons
 
 /**
- * @param name traversables
+ * @param name
+ *   traversables
  */
 object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * At the top of the collection hierarchy is the trait `Traversable`. Its only abstract operation is `foreach`:
+   * At the top of the collection hierarchy is the trait `Traversable`. Its only abstract operation
+   * is `foreach`:
    *
    * {{{
    * def foreach[U](f: Elem => U)
    * }}}
    *
-   * Collection classes that implement `Traversable` just need to define this method; all other methods can be inherited from `Traversable`.
+   * Collection classes that implement `Traversable` just need to define this method; all other
+   * methods can be inherited from `Traversable`.
    *
-   * The `foreach` method is meant to traverse all elements of the collection, and apply the given operation, `f`, to each element. The type of the operation is `Elem => U`, where `Elem` is the type of the collection's elements and `U` is an arbitrary result type. The invocation of `f` is done for its side effect only; in fact any function result of `f` is discarded by `foreach`.
+   * The `foreach` method is meant to traverse all elements of the collection, and apply the given
+   * operation, `f`, to each element. The type of the operation is `Elem => U`, where `Elem` is the
+   * type of the collection's elements and `U` is an arbitrary result type. The invocation of `f` is
+   * done for its side effect only; in fact any function result of `f` is discarded by `foreach`.
    *
-   * Traversables are the superclass of `List`, `Array`, `Map`, `Set`, `Stream` and more.  The methods involved can be applied to each other in a different type.
-   *   `++` appends two `Traversable`s together. The resulting `Traversable` is the same type of the first element.
+   * Traversables are the superclass of `List`, `Array`, `Map`, `Set`, `Stream` and more. The
+   * methods involved can be applied to each other in a different type. `++` appends two
+   * `Traversable`s together. The resulting `Traversable` is the same type of the first element.
    */
   def topOfCollectionTraversables(res0: Int, res1: Int) = {
     val set    = Set(1, 9, 10, 22)
@@ -52,7 +59,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `map` will apply the given function on all elements of a `Traversable` and return a new collection of the result:
+   * `map` will apply the given function on all elements of a `Traversable` and return a new
+   * collection of the result:
    */
   def mapFunctionTraversables(res0: Option[Int]) = {
     val set    = Set(1, 3, 4, 6)
@@ -69,7 +77,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `flatMap` will not only apply the given function on all elements of a `Traversable`, but all elements within the elements and `flatten` the results:
+   * `flatMap` will not only apply the given function on all elements of a `Traversable`, but all
+   * elements within the elements and `flatten` the results:
    */
   def flatMapFunctionTraversables(res0: List[Int]) = {
     val list   = List(List(1), List(2, 3, 4), List(5, 6, 7), List(8, 9, 10))
@@ -87,7 +96,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `collect` will apply a partial function to all elements of a `Traversable` and return a different collection. In this exercise, a case fragment is a partial function:
+   * `collect` will apply a partial function to all elements of a `Traversable` and return a
+   * different collection. In this exercise, a case fragment is a partial function:
    */
   def collectFunctionTraversables(res0: List[Int]) = {
     val list = List(4, 6, 7, 8, 9, 13, 14)
@@ -113,7 +123,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `foreach` will apply a function to all elements of a `Traversable`, but unlike the `map` function, it will not return anything since the return type is `Unit` - an equivalent to a `void` return type in Java/C++:
+   * `foreach` will apply a function to all elements of a `Traversable`, but unlike the `map`
+   * function, it will not return anything since the return type is `Unit` - an equivalent to a
+   * `void` return type in Java/C++:
    */
   def foreachFunctionTraversables(res0: List[Int]) = {
     val list = List(4, 6, 7, 8, 9, 13, 14)
@@ -122,7 +134,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toArray` will convert any `Traversable` to an `Array`, which is a special wrapper around a primitive Java array:
+   * `toArray` will convert any `Traversable` to an `Array`, which is a special wrapper around a
+   * primitive Java array:
    */
   def toArrayFunctionTraversables(res0: Boolean) = {
     val set    = Set(4, 6, 7, 8, 9, 13, 14)
@@ -141,7 +154,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toList`, as well as other conversion methods such as `toSet` and `toArray`, will not convert if the collection type is the same:
+   * `toList`, as well as other conversion methods such as `toSet` and `toArray`, will not convert
+   * if the collection type is the same:
    */
   def toListFunctionIITraversables(res0: Boolean) = {
     val list   = List(5, 6, 7, 8, 9)
@@ -150,7 +164,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toIterable` will convert any `Traversable` to an `Iterable`. This is a base `trait` for all Scala collections that define an iterator method to iterate through the collection's elements:
+   * `toIterable` will convert any `Traversable` to an `Iterable`. This is a base `trait` for all
+   * Scala collections that define an iterator method to iterate through the collection's elements:
    */
   def toIterableFunctionTraversables(res0: Boolean) = {
     val set    = Set(4, 6, 7, 8, 9, 13, 14)
@@ -159,7 +174,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toSeq` will convert any `Traversable` to a `Seq` which is an ordered `Iterable` and the superclass to `List`, `Queue`, and `Vector`. `Sequences` provide a method apply for indexing. Indices range from 0 up to the length of a sequence:
+   * `toSeq` will convert any `Traversable` to a `Seq` which is an ordered `Iterable` and the
+   * superclass to `List`, `Queue`, and `Vector`. `Sequences` provide a method apply for indexing.
+   * Indices range from 0 up to the length of a sequence:
    */
   def toSeqFunctionTraversables(res0: Boolean) = {
     val set    = Set(4, 6, 7, 8, 9, 13, 14)
@@ -168,7 +185,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toIndexedSeq` will convert any `Traversable` to an `IndexedSeq` which is an indexed sequence used in `Vectors` and `Strings`:
+   * `toIndexedSeq` will convert any `Traversable` to an `IndexedSeq` which is an indexed sequence
+   * used in `Vectors` and `Strings`:
    */
   def toIndexedSeqFunctionTraversables(res0: Boolean) = {
     val set    = Set(4, 6, 7, 8, 9, 13, 14)
@@ -177,7 +195,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toStream` will convert any `Traversable` to a `LazyList` where elements are evaluated as they are needed:
+   * `toStream` will convert any `Traversable` to a `LazyList` where elements are evaluated as they
+   * are needed:
    */
   def toLazyListFunctionTraversables(res0: Boolean, res1: LazyList[Int]) = {
     val list   = List(4, 6, 7, 8, 9, 13, 14)
@@ -187,7 +206,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toSet` will convert any `Traversable` to a `Set` which is a collection of unordered, unique values:
+   * `toSet` will convert any `Traversable` to a `Set` which is a collection of unordered, unique
+   * values:
    */
   def toSetFunctionTraversables(res0: Boolean) = {
     val list   = List(4, 6, 7, 8, 9, 13, 14)
@@ -196,7 +216,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `toMap` will convert any `Traversable` to a `Map`. How it's used depends on the original collection; if it's a `List` or `Seq`, it should be of parameterized type `Tuple2`:
+   * `toMap` will convert any `Traversable` to a `Map`. How it's used depends on the original
+   * collection; if it's a `List` or `Seq`, it should be of parameterized type `Tuple2`:
    */
   def toMapFunctionTraversables(res0: Boolean) = {
     val list   = List("Phoenix" -> "Arizona", "Austin" -> "Texas")
@@ -244,7 +265,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `knownSize` will return the number of elements if the traversable has a finite end, otherwise `-1`:
+   * `knownSize` will return the number of elements if the traversable has a finite end, otherwise
+   * `-1`:
    */
   def knownSizeFunctionTraversables(res0: Int, res1: Int) = {
     val map = Map("Phoenix" -> "Arizona", "Austin" -> "Texas")
@@ -255,7 +277,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `head` will return the first element of an ordered collection, or some random element if order is not defined like in a `Set` or `Map`:
+   * `head` will return the first element of an ordered collection, or some random element if order
+   * is not defined like in a `Set` or `Map`:
    */
   def headFunctionTraversables(res0: Int) = {
     val list = List(10, 19, 45, 1, 22)
@@ -263,7 +286,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `headOption` will return the first element as an `Option` of an ordered collection, or some random element if order is not defined. If a first element is not available, then `None` is returned:
+   * `headOption` will return the first element as an `Option` of an ordered collection, or some
+   * random element if order is not defined. If a first element is not available, then `None` is
+   * returned:
    */
   def headOptionFunctionTraversables(res0: Option[Int], res1: Option[Int]) = {
     val list = List(10, 19, 45, 1, 22)
@@ -274,7 +299,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `last` will return the last element of an ordered collection, or some random element if order is not defined:
+   * `last` will return the last element of an ordered collection, or some random element if order
+   * is not defined:
    */
   def lastFunctionTraversables(res0: Int) = {
     val list = List(10, 19, 45, 1, 22)
@@ -282,7 +308,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `lastOption` will return the last element as an `Option` of an ordered collection, or some random element if order is not defined. If a last element is not available, then `None` is returned:
+   * `lastOption` will return the last element as an `Option` of an ordered collection, or some
+   * random element if order is not defined. If a last element is not available, then `None` is
+   * returned:
    */
   def lastOptionFunctionTraversables(res0: Option[Int], res1: Option[Int]) = {
     val list = List(10, 19, 45, 1, 22)
@@ -293,7 +321,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `find` will locate the first item that matches the predicate `p` as `Some`, or `None` if an element is not found:
+   * `find` will locate the first item that matches the predicate `p` as `Some`, or `None` if an
+   * element is not found:
    */
   def findFunctionTraversables(res0: Option[Int], res1: Option[Int]) = {
     val list = List(10, 19, 45, 1, 22)
@@ -320,7 +349,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * Given a `from` index, and a `to` index, `slice` will return the part of the collection including `from`, and excluding `to`:
+   * Given a `from` index, and a `to` index, `slice` will return the part of the collection
+   * including `from`, and excluding `to`:
    */
   def sliceFunctionTraversables(res0: List[Int]) = {
     val list = List(10, 19, 45, 1, 22)
@@ -370,7 +400,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `filter` will take out all elements that don't satisfy a predicate. (An `Array` is also `Traversable`.)
+   * `filter` will take out all elements that don't satisfy a predicate. (An `Array` is also
+   * `Traversable`.)
    */
   def filterFunctionTraversables(res0: Array[Int]) = {
     val array = Array(87, 44, 5, 4, 200, 10, 39, 100)
@@ -386,7 +417,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `splitAt` will split a `Traversable` at a position, returning a 2 product `Tuple`. `splitAt` is also defined as `(xs take n, xs drop n)`
+   * `splitAt` will split a `Traversable` at a position, returning a 2 product `Tuple`. `splitAt` is
+   * also defined as `(xs take n, xs drop n)`
    */
   def splitAtFunctionTraversables(res0: Array[Int], res1: Array[Int]) = {
     val array  = Array(87, 44, 5, 4, 200, 10, 39, 100)
@@ -396,7 +428,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `span` will split a `Traversable` according to a predicate, returning a 2 product `Tuple`.  `span` is also defined as `(xs takeWhile p, xs dropWhile p)`
+   * `span` will split a `Traversable` according to a predicate, returning a 2 product `Tuple`.
+   * `span` is also defined as `(xs takeWhile p, xs dropWhile p)`
    */
   def spanFunctionTraversables(res0: Array[Int], res1: Array[Int]) = {
     val array  = Array(87, 44, 5, 4, 200, 10, 39, 100)
@@ -406,7 +439,10 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `partition` will split a `Traversable` according to a predicate, returning a 2 product `Tuple`. The left-hand side contains the elements satisfied by the predicate whereas the right hand side contains the rest of the elements. `partition` is also defined as `(xs filter p, xs filterNot p)`
+   * `partition` will split a `Traversable` according to a predicate, returning a 2 product `Tuple`.
+   * The left-hand side contains the elements satisfied by the predicate whereas the right hand side
+   * contains the rest of the elements. `partition` is also defined as `(xs filter p, xs filterNot
+   * p)`
    */
   def partitionFunctionTraversables(res0: Array[Int], res1: Array[Int]) = {
     val array  = Array(87, 44, 5, 4, 200, 10, 39, 100)
@@ -416,7 +452,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `groupBy` will categorize a `Traversable` according to a given function and return a map with the results.  This exercise uses partial function chaining:
+   * `groupBy` will categorize a `Traversable` according to a given function and return a map with
+   * the results. This exercise uses partial function chaining:
    */
   def groupByFunctionTraversables(res0: Int, res1: Int) = {
     val array = Array(87, 44, 5, 4, 200, 10, 39, 100)
@@ -481,9 +518,13 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `foldLeft` will combine an operation starting with a seed and combining from the left.  `foldLeft` takes as a first parameter the initial value of the fold.  Once the fold is established, you provide a function that takes two arguments.  The first argument is the running total of the operation, and the second element is the next element of the list.
+   * `foldLeft` will combine an operation starting with a seed and combining from the left.
+   * `foldLeft` takes as a first parameter the initial value of the fold. Once the fold is
+   * established, you provide a function that takes two arguments. The first argument is the running
+   * total of the operation, and the second element is the next element of the list.
    *
-   * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`, `foldLeft` is defined as: `(((init op x1) op x2) op x3) op x4)`
+   * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`,
+   * `foldLeft` is defined as: `(((init op x1) op x2) op x3) op x4)`
    */
   def foldLeftFunctionTraversables(res0: Int, res1: Int, res2: Int) = {
     val list = List(5, 4, 3, 2, 1)
@@ -499,9 +540,13 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `foldRight` will combine an operation starting with a seed and combining from the right.  `foldRight` takes as a first parameter the initial value of the fold.  Once the fold is established, you  provide a function that takes two elements.  The first is the next element of the list, and the second element is the running total of the operation.
+   * `foldRight` will combine an operation starting with a seed and combining from the right.
+   * `foldRight` takes as a first parameter the initial value of the fold. Once the fold is
+   * established, you provide a function that takes two elements. The first is the next element of
+   * the list, and the second element is the running total of the operation.
    *
-   * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`, `foldRight` is defined as: `x1 op (x2 op (x3 op (x4 op init)))`
+   * Given a `Traversable (x1, x2, x3, x4)`, an initial value of `init`, an operation `op`,
+   * `foldRight` is defined as: `x1 op (x2 op (x3 op (x4 op init)))`
    */
   def foldRightFunctionTraversables(res0: Int, res1: Int, res2: Int) = {
     val list = List(5, 4, 3, 2, 1)
@@ -547,7 +592,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * There are some methods that take much of the folding work out by providing basic functionality. `sum` will add all the elements, `product` will multiply, `min` would determine the smallest element, and `max` the largest:
+   * There are some methods that take much of the folding work out by providing basic functionality.
+   * `sum` will add all the elements, `product` will multiply, `min` would determine the smallest
+   * element, and `max` the largest:
    */
   def sumFunctionTraversables(res0: Int, res1: Int, res2: Int, res3: Int) = {
     val intList = List(5, 4, 3, 2, 1)
@@ -558,13 +605,17 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * The naive recursive implementation of `reduceRight` is not tail recursive and would lead to a stack overflow if used on larger traversables.
-   * However, `reduceLeft` can be implemented with tail recursion.
+   * The naive recursive implementation of `reduceRight` is not tail recursive and would lead to a
+   * stack overflow if used on larger traversables. However, `reduceLeft` can be implemented with
+   * tail recursion.
    *
-   * To avoid the potential stack overflow with the naive implementation of `reduceRight` we can easily implement it based on `reduceLeft` by reversing the list and the inverting the reduce function.
-   * The same applies for folding operations.
+   * To avoid the potential stack overflow with the naive implementation of `reduceRight` we can
+   * easily implement it based on `reduceLeft` by reversing the list and the inverting the reduce
+   * function. The same applies for folding operations.
    *
-   * There is also a `reduce` (and `fold`) available, which works exactly like `reduceLeft` (and `foldLeft`) and it should be the prefered method to call unless there is a strong reason to use `reduceRight` (or `foldRight`).
+   * There is also a `reduce` (and `fold`) available, which works exactly like `reduceLeft` (and
+   * `foldLeft`) and it should be the prefered method to call unless there is a strong reason to use
+   * `reduceRight` (or `foldRight`).
    */
   def reduceRightAsReduceLeft(res0: Int, res1: Int, res2: Int) = {
     val intList = List(5, 4, 3, 2, 1)
@@ -574,9 +625,9 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `transpose` will take a traversable of traversables and group them by their position in it's own traversable, e.g.:
-   * `((x1, x2),(y1, y2)).transpose = (x1, y1), (x2, y2)` or
-   * `((x1, x2, x3),(y1, y2, y3),(z1, z2, z3)).transpose = ((x1, y1, z1), (x2, y2, z2), (x3, y3, z3))`
+   * `transpose` will take a traversable of traversables and group them by their position in it's
+   * own traversable, e.g.: `((x1, x2),(y1, y2)).transpose = (x1, y1), (x2, y2)` or `((x1, x2,
+   * x3),(y1, y2, y3),(z1, z2, z3)).transpose = ((x1, y1, z1), (x2, y2, z2), (x3, y3, z3))`
    */
   def transposeFunctionTraversables(
       res0: List[Int],

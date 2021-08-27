@@ -20,12 +20,14 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name objects
+ * @param name
+ *   objects
  */
 object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * An object is a singleton. One object, that's it. This object is a replacement of static in Java, and is called upon much in the same way:
+   * An object is a singleton. One object, that's it. This object is a replacement of static in
+   * Java, and is called upon much in the same way:
    */
   def singletonObjects(res0: String, res1: String) = {
     object Greeting {
@@ -60,7 +62,8 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /**
-   * An object that has the same name as a class is called a companion object of the class, and it is often used to contain factory methods for the class that it complements:
+   * An object that has the same name as a class is called a companion object of the class, and it
+   * is often used to contain factory methods for the class that it complements:
    */
   def companionObjectObjects(res0: String) = {
     class Movie(val name: String, val year: Short)
@@ -81,7 +84,8 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /**
-   * A companion object can also see private values and variables of the corresponding classes' instantiated objects:
+   * A companion object can also see private values and variables of the corresponding classes'
+   * instantiated objects:
    */
   def privateValuesObjects(res0: String, res1: String) = {
     class Person(

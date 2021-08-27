@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name higher_order_functions
+ * @param name
+ *   higher_order_functions
  */
 object HigherOrderFunctions
     extends AnyFlatSpec
@@ -28,9 +29,13 @@ object HigherOrderFunctions
     with org.scalaexercises.definitions.Section {
 
   /**
-   * Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions. Anonymous functions in source code are called function literals and at run time, function literals are instantiated into objects called function values.
+   * Meet lambda. Scala provides a relatively lightweight syntax for defining anonymous functions.
+   * Anonymous functions in source code are called function literals and at run time, function
+   * literals are instantiated into objects called function values.
    *
-   * Scala supports first-class functions, which means you can express functions in function literal syntax, i.e. ` (x: Int) => x + 1`, and those functions can be represented by objects, which are called function values.
+   * Scala supports first-class functions, which means you can express functions in function literal
+   * syntax, i.e. ` (x: Int) => x + 1`, and those functions can be represented by objects, which are
+   * called function values.
    */
   def meetLambdaHigherOrderFunctions(
       res0: Int,
@@ -76,13 +81,16 @@ object HigherOrderFunctions
   }
 
   /**
-   * Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a parameter to the function.
+   * Here the only variable used in the function body, `i * 10`, is `i`, which is defined as a
+   * parameter to the function.
    *
    * {{{
    * val multiplier = (i:Int) => i * 10
    * }}}
    *
-   * A closure is a function which maintains a reference to one or more variables outside of the function scope (it "closes over" the variables).  Scala will detect that you are using variables outside of scope and create an object instance to hold the shared variables.
+   * A closure is a function which maintains a reference to one or more variables outside of the
+   * function scope (it "closes over" the variables). Scala will detect that you are using variables
+   * outside of scope and create an object instance to hold the shared variables.
    */
   def meetClosureHigherOrderFunctions(res0: Int, res1: Int) = {
     var incrementer = 1
@@ -99,10 +107,11 @@ object HigherOrderFunctions
   }
 
   /**
-   * And then we get to Higher Order Functions:
-   * Higher Order Functions are functions that take functions as arguments and/or return functions.
+   * And then we get to Higher Order Functions: Higher Order Functions are functions that take
+   * functions as arguments and/or return functions.
    *
-   *  We can take that closure and throw it into a Higher Order Function and it will still hold the environment:
+   * We can take that closure and throw it into a Higher Order Function and it will still hold the
+   * environment:
    */
   def holdEnvironmentHigherOrderFunctions(res0: Int, res1: Int) = {
     def summation(x: Int, y: Int => Int) = y(x)
@@ -149,7 +158,9 @@ object HigherOrderFunctions
   }
 
   /**
-   * `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be *blanked out* using existential types with a single underline, since parameter types are unknown at runtime.
+   * `isInstanceOf` is the same as `instanceof` in java, but in this case the parameter types can be
+   * *blanked out* using existential types with a single underline, since parameter types are
+   * unknown at runtime.
    */
   def isInstanceOfMethodHigherOrderFunctions(res0: Boolean) = {
     def addWithSyntaxSugar(x: Int) = (y: Int) => x + y

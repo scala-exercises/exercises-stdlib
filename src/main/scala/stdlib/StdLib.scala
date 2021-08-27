@@ -17,9 +17,11 @@
 package stdlib
 
 /**
- * Scala fuses object-oriented and functional programming in a statically typed programming language.
+ * Scala fuses object-oriented and functional programming in a statically typed programming
+ * language.
  *
- * @param name std_lib
+ * @param name
+ *   std_lib
  */
 object StdLib extends org.scalaexercises.definitions.Library {
   override def owner      = "scala-exercises"

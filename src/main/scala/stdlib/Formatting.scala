@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name formatting
+ * @param name
+ *   formatting
  */
 object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 

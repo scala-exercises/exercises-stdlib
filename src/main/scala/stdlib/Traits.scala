@@ -20,12 +20,15 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name traits
+ * @param name
+ *   traits
  */
 object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * Similar to interfaces in Java, traits are used to define object types by specifying the signature of the supported methods. In traits methods can have default implementations. In contrast to classes, traits may not have constructor parameters.
+   * Similar to interfaces in Java, traits are used to define object types by specifying the
+   * signature of the supported methods. In traits methods can have default implementations. In
+   * contrast to classes, traits may not have constructor parameters.
    *
    * Here is an example:
    *
@@ -36,9 +39,14 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
    * }
    * }}}
    *
-   * This trait consists of two methods `isSimilar` and `isNotSimilar`. While `isSimilar` does not provide a concrete method implementation (it is abstract in the terminology of Java), method `isNotSimilar` defines a concrete implementation. Consequently, classes that integrate this trait only have to provide a concrete implementation for `isSimilar`. The behavior for `isNotSimilar` gets inherited directly from the trait.
+   * This trait consists of two methods `isSimilar` and `isNotSimilar`. While `isSimilar` does not
+   * provide a concrete method implementation (it is abstract in the terminology of Java), method
+   * `isNotSimilar` defines a concrete implementation. Consequently, classes that integrate this
+   * trait only have to provide a concrete implementation for `isSimilar`. The behavior for
+   * `isNotSimilar` gets inherited directly from the trait.
    *
-   * A class uses the `extends` keyword to mixin a trait if it is the only relationship the class inherits:
+   * A class uses the `extends` keyword to mixin a trait if it is the only relationship the class
+   * inherits:
    */
   def similarToInterfacesTraits(res0: String) = {
     case class Event(name: String)
@@ -63,7 +71,8 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
   }
 
   /**
-   * A class can only extend from one class or trait, any subsequent extension should use the keyword `with`:
+   * A class can only extend from one class or trait, any subsequent extension should use the
+   * keyword `with`:
    */
   def extendsFromOneTraits(res0: String) = {
     case class Event(name: String)
@@ -118,9 +127,12 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
   }
 
   /**
-   * Traits also can use self-types.  A self-type lists the required dependencies for mixing in the trait.  When mixing in the main trait, all self-type dependencies of that trait must also be mixed in, otherwise a compile-time error is thrown.
+   * Traits also can use self-types. A self-type lists the required dependencies for mixing in the
+   * trait. When mixing in the main trait, all self-type dependencies of that trait must also be
+   * mixed in, otherwise a compile-time error is thrown.
    *
-   * Also, the dependencies can't have identical method/property names or else you'll get an `illegal inheritance` error.
+   * Also, the dependencies can't have identical method/property names or else you'll get an
+   * `illegal inheritance` error.
    */
   def selfTypeTraits(res0: Int) = {
     trait B {

@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name type_signatures
+ * @param name
+ *   type_signatures
  */
 object TypeSignatures
     extends AnyFlatSpec
@@ -28,7 +29,10 @@ object TypeSignatures
     with org.scalaexercises.definitions.Section {
 
   /**
-   * A method's type signature comprises its name; the number, order, and types of its parameters, if any; and its result type. The type signature of a class, trait, or singleton object comprises its name, the type signatures of all of its members and constructors, and its declared inheritance and mixin relations.
+   * A method's type signature comprises its name; the number, order, and types of its parameters,
+   * if any; and its result type. The type signature of a class, trait, or singleton object
+   * comprises its name, the type signatures of all of its members and constructors, and its
+   * declared inheritance and mixin relations.
    *
    * In Java you declare a generic type within a `<>`, in Scala `[]` is used:
    *
@@ -79,7 +83,8 @@ object TypeSignatures
   }
 
   /**
-   * `isInstanceOf[className]` is used to determine if an object reference is an instance of a given class:
+   * `isInstanceOf[className]` is used to determine if an object reference is an instance of a given
+   * class:
    */
   def isInstanceOfFunctionTypeSignatures(res0: Boolean, res1: Boolean, res2: Boolean) = {
     trait Randomizer[A] {

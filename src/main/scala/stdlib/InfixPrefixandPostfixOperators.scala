@@ -21,7 +21,8 @@ import org.scalatest.matchers.should.Matchers
 import scala.language.postfixOps
 
 /**
- * @param name infix_prefix_and_postfix_operators
+ * @param name
+ *   infix_prefix_and_postfix_operators
  */
 object InfixPrefixandPostfixOperators
     extends AnyFlatSpec
@@ -29,7 +30,8 @@ object InfixPrefixandPostfixOperators
     with org.scalaexercises.definitions.Section {
 
   /**
-   * Any method which takes a single parameter can be used as an infix operator: `a.m(b)` can also be written as `a m b`.
+   * Any method which takes a single parameter can be used as an infix operator: `a.m(b)` can also
+   * be written as `a m b`.
    */
   def singleParameterInfixPrefixandPostfixOperators(res0: Int, res1: Int) = {
     val g: Int = 3
@@ -51,14 +53,15 @@ object InfixPrefixandPostfixOperators
   }
 
   /**
-   * Any method which does not require a parameter can be used as a postfix operator: `a.m` can be written as `a m`.
+   * Any method which does not require a parameter can be used as a postfix operator: `a.m` can be
+   * written as `a m`.
    *
    * For instance, `a.+(b)` is equivalent to `a + b` and `a.!` is the same as `a!`.
    *
    * Postfix operators have lower precedence than infix operators, so:
-   *  - `foo bar baz` means `foo.bar(baz)`.
-   *  - `foo bar baz bam` means `(foo.bar(baz)).bam`
-   *  - `foo bar baz bam bim` means `(foo.bar(baz)).bam(bim)`.
+   *   - `foo bar baz` means `foo.bar(baz)`.
+   *   - `foo bar baz bam` means `(foo.bar(baz)).bam`
+   *   - `foo bar baz bam bim` means `(foo.bar(baz)).bam(bim)`.
    */
   def postfixOperatorInfixPrefixandPostfixOperators(res0: String) = {
     val g: Int = 31
@@ -77,7 +80,8 @@ object InfixPrefixandPostfixOperators
   }
 
   /**
-   * Here's how to create a prefix operator for our own class. The only identifiers that can be used as prefix operators are `+`, `-`, `!`, and `~`:
+   * Here's how to create a prefix operator for our own class. The only identifiers that can be used
+   * as prefix operators are `+`, `-`, `!`, and `~`:
    */
   def ourOwnOperatorInfixPrefixandPostfixOperators(res0: String, res1: String) = {
     class Stereo {

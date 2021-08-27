@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name literal_strings
+ * @param name
+ *   literal_strings
  */
 object LiteralStrings
     extends AnyFlatSpec

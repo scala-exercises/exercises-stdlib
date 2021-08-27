@@ -21,7 +21,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name repeated_parameters
+ * @param name
+ *   repeated_parameters
  */
 object RepeatedParameters
     extends AnyFlatSpec
@@ -29,7 +30,8 @@ object RepeatedParameters
     with org.scalaexercises.definitions.Section {
 
   /**
-   * A repeated parameter must be the last parameter and this will let you add as many extra parameters as needed.
+   * A repeated parameter must be the last parameter and this will let you add as many extra
+   * parameters as needed.
    *
    * Given:
    *
@@ -52,7 +54,8 @@ object RepeatedParameters
     )
 
   /**
-   * A repeated parameter can accept a collection as the last parameter but will be considered a single object:
+   * A repeated parameter can accept a collection as the last parameter but will be considered a
+   * single object:
    */
   def acceptCollectionRepeatedParameters(res0: String) =
     repeatedParameterMethod(

@@ -20,12 +20,14 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name extractors
+ * @param name
+ *   extractors
  */
 object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * In Scala, patterns can be defined independently of case classes. To this end, a method named `unapply` is defined to yield a so-called extractor.
+   * In Scala, patterns can be defined independently of case classes. To this end, a method named
+   * `unapply` is defined to yield a so-called extractor.
    *
    * For instance, the following code defines an extractor object `Twice`.
    *
@@ -43,8 +45,12 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    *
    * There are two syntactic conventions at work here:
    *
-   *  - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to match even number; the return value of the `unapply` signals whether the argument has matched or not, and any sub-values that can be used for further matching. Here, the sub-value is `z/2`
-   *  - The `apply` method is not necessary for pattern matching. It is only used to mimick a constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
+   *   - The pattern `case Twice(n)` will cause an invocation of `Twice.unapply`, which is used to
+   *     match even number; the return value of the `unapply` signals whether the argument has
+   *     matched or not, and any sub-values that can be used for further matching. Here, the
+   *     sub-value is `z/2`
+   *   - The `apply` method is not necessary for pattern matching. It is only used to mimick a
+   *     constructor. `val x = Twice(21)` expands to `val x = Twice.apply(21)`.
    *
    * The code in the preceding example would be expanded as follows:
    *
@@ -56,13 +62,17 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
    * }}}
    * The return type of an `unapply` should be chosen as follows:
    *
-   *  - If it is just a test, return a `Boolean`. For instance `case even()`
-   *  - If it returns a single sub-value of type `T`, return a `Option[T]`
-   *  - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple `Option[(T1,...,Tn)]`.
+   *   - If it is just a test, return a `Boolean`. For instance `case even()`
+   *   - If it returns a single sub-value of type `T`, return a `Option[T]`
+   *   - If you want to return several sub-values `T1,...,Tn`, group them in an optional tuple
+   *     `Option[(T1,...,Tn)]`.
    *
-   * Sometimes, the number of sub-values isn't fixed and we would like to return a sequence. For this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn` has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
+   * Sometimes, the number of sub-values isn't fixed and we would like to return a sequence. For
+   * this reason, you can also define patterns through `unapplySeq`. The last sub-value type `Tn`
+   * has to be `Seq[S]`. This mechanism is used for instance in pattern `case List(x1, ..., xn)`.
    *
-   * When you create a case class, it automatically can be used with pattern matching since it has an extractor:
+   * When you create a case class, it automatically can be used with pattern matching since it has
+   * an extractor:
    */
   def extractorsExtractors(res0: String) = {
     case class Employee(firstName: String, lastName: String)
@@ -77,7 +87,9 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   * What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method is used to disassemble the object given by returning a tuple wrapped in an option. Extractors can be used to assign values:
+   * What's an extractor? In Scala it's a method in any `object` called `unapply`, and that method
+   * is used to disassemble the object given by returning a tuple wrapped in an option. Extractors
+   * can be used to assign values:
    */
   def calledUnapplyExtractors(res0: String, res1: String, res2: Int, res3: Int) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -114,7 +126,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   * Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced with `_`:
+   * Since we aren't really using `u` and `v` in the previous pattern matching, they can be replaced
+   * with `_`:
    */
   def withWildcardExtractors(res0: String, res1: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -133,7 +146,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   * As long as the method signatures aren't the same, you can have as many unapply methods as you want:
+   * As long as the method signatures aren't the same, you can have as many unapply methods as you
+   * want:
    */
   def multipleUnapplyExtractors(res0: String) = {
     class Car(val make: String, val model: String, val year: Short, val topSpeed: Short)
@@ -172,7 +186,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   * A custom extractor is typically created in the companion object of the class. In this exercise, we use it as an assignment:
+   * A custom extractor is typically created in the companion object of the class. In this exercise,
+   * we use it as an assignment:
    */
   def asAssignmentExtractors(res0: String, res1: Option[String], res2: String) = {
     class Employee(
