@@ -21,17 +21,23 @@ import org.scalatest.matchers.should.Matchers
 import scala.language.implicitConversions
 
 /**
- * @param name implicits
+ * @param name
+ *   implicits
  */
 object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * The actual arguments that are eligible to be passed to an implicit parameter fall into two categories:
+   * The actual arguments that are eligible to be passed to an implicit parameter fall into two
+   * categories:
    *
-   *  - First, eligible are all identifiers x that can be accessed at the point of the method call without a prefix and that denote an implicit definition or an implicit parameter.
-   *  - Second, eligible are also all members of companion modules of the implicit parameter's type that are labeled implicit.
+   *   - First, eligible are all identifiers x that can be accessed at the point of the method call
+   *     without a prefix and that denote an implicit definition or an implicit parameter.
+   *   - Second, eligible are also all members of companion modules of the implicit parameter's type
+   *     that are labeled implicit.
    *
-   * In the following example we define a method `sum` which computes the sum of a list of elements using the monoid's `add` and `unit` operations. Please note that implicit values can not be top-level, they have to be members of a template.
+   * In the following example we define a method `sum` which computes the sum of a list of elements
+   * using the monoid's `add` and `unit` operations. Please note that implicit values can not be
+   * top-level, they have to be members of a template.
    *
    * {{{
    * abstract class SemiGroup[A] {
@@ -64,7 +70,8 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
    * abc
    * }}}
    *
-   * Implicits wrap around existing classes to provide extra functionality. This is similar to monkey patching in Ruby and meta-programming in Groovy.
+   * Implicits wrap around existing classes to provide extra functionality. This is similar to
+   * monkey patching in Ruby and meta-programming in Groovy.
    *
    * Creating a method `isOdd` for `Int`, which doesn't exist:
    */
@@ -130,7 +137,8 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
   }
 
   /**
-   * Implicits can be used to declare a value to be provided as a default as long as an implicit value is set with in the scope.  These are called Implicit Function Parameters:
+   * Implicits can be used to declare a value to be provided as a default as long as an implicit
+   * value is set with in the scope. These are called Implicit Function Parameters:
    */
   def asDefaultImplicits(res0: BigDecimal) = {
     def howMuchCanIMake_?(hours: Int)(implicit dollarsPerHour: BigDecimal) =

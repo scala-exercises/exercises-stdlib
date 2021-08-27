@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name uniform_access_principle
+ * @param name
+ *   uniform_access_principle
  */
 object UniformAccessPrinciple
     extends AnyFlatSpec
@@ -28,9 +29,14 @@ object UniformAccessPrinciple
     with org.scalaexercises.definitions.Section {
 
   /**
-   * The Scala language implements a programming concept known as the [[http://en.wikipedia.org/wiki/Uniform_access_principle Uniform Access Principle]], which was first put forth by Bertrand Meyer, the inventor of the Eiffel programming language.
+   * The Scala language implements a programming concept known as the
+   * [[http://en.wikipedia.org/wiki/Uniform_access_principle Uniform Access Principle]], which was
+   * first put forth by Bertrand Meyer, the inventor of the Eiffel programming language.
    *
-   * This principle states that variables and parameterless functions should be accessed using the same syntax. Scala supports this principle by allowing parentheses to not be placed at call sites of parameterless functions. As a result, a parameterless function definition can be changed to a `val`, or vice versa, without affecting client code:
+   * This principle states that variables and parameterless functions should be accessed using the
+   * same syntax. Scala supports this principle by allowing parentheses to not be placed at call
+   * sites of parameterless functions. As a result, a parameterless function definition can be
+   * changed to a `val`, or vice versa, without affecting client code:
    */
   def uniformAccessPrincipleUniformAccessPrinciple(res0: Int, res1: Int) = {
     class Test1(val age: Int = 10)

@@ -20,18 +20,20 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name asserts
+ * @param name
+ *   asserts
  */
 object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
    * ScalaTest makes three assertions available by default in any style trait. You can use:
    *
-   *  - `assert` for general assertions;
-   *  - `assertResult` to differentiate expected from actual values;
-   *  - `intercept` to ensure a bit of code throws an expected exception.
+   *   - `assert` for general assertions;
+   *   - `assertResult` to differentiate expected from actual values;
+   *   - `intercept` to ensure a bit of code throws an expected exception.
    *
-   * In any Scala program, you can write assertions by invoking `assert` and passing in a `Boolean` expression:
+   * In any Scala program, you can write assertions by invoking `assert` and passing in a `Boolean`
+   * expression:
    *
    * {{{
    * val left = 2
@@ -39,12 +41,14 @@ object Asserts extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * assert(left == right)
    * }}}
    *
-   * If the passed expression is `true`, `assert` will return normally. If `false`,
-   * Scala's `assert` will complete abruptly with an `AssertionError`. This behavior is provided by
-   * the `assert` method defined in object `Predef`, whose members are implicitly imported into every Scala source file.
+   * If the passed expression is `true`, `assert` will return normally. If `false`, Scala's `assert`
+   * will complete abruptly with an `AssertionError`. This behavior is provided by the `assert`
+   * method defined in object `Predef`, whose members are implicitly imported into every Scala
+   * source file.
    *
-   * ScalaTest provides a domain specific language (DSL) for expressing assertions in tests
-   * using the word `should`. ScalaTest matchers provides five different ways to check equality, each designed to address a different need. They are:
+   * ScalaTest provides a domain specific language (DSL) for expressing assertions in tests using
+   * the word `should`. ScalaTest matchers provides five different ways to check equality, each
+   * designed to address a different need. They are:
    *
    * {{{
    * result should equal (3) // can customize equality

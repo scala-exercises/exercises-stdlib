@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name partial_functions
+ * @param name
+ *   partial_functions
  */
 object PartialFunctions
     extends AnyFlatSpec
@@ -28,7 +29,9 @@ object PartialFunctions
     with org.scalaexercises.definitions.Section {
 
   /**
-   * A partial function is a `trait` that when implemented can be used as building blocks to determine a solution.  The trait `PartialFunction` requires that the method `isDefinedAt` and `apply` be implemented:
+   * A partial function is a `trait` that when implemented can be used as building blocks to
+   * determine a solution. The trait `PartialFunction` requires that the method `isDefinedAt` and
+   * `apply` be implemented:
    */
   def partialFunctionPartialFunctions(res0: Int, res1: Int) = {
     val doubleEvens: PartialFunction[Int, Int] =
@@ -53,7 +56,8 @@ object PartialFunctions
   }
 
   /**
-   * Case statements are a quick way to create partial functions. When you create a case statement, the `apply` and `isDefinedAt` methods are created automatically.
+   * Case statements are a quick way to create partial functions. When you create a case statement,
+   * the `apply` and `isDefinedAt` methods are created automatically.
    */
   def caseStatementsPartialFunctions(res0: Int, res1: Int) = {
     //These case statements are called case statements with guards

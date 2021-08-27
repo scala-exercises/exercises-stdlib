@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name pattern_matching
+ * @param name
+ *   pattern_matching
  */
 object PatternMatching
     extends AnyFlatSpec
@@ -28,8 +29,9 @@ object PatternMatching
     with org.scalaexercises.definitions.Section {
 
   /**
-   * Scala has a built-in general pattern matching mechanism. It allows to match on any sort of data with a first-match policy.
-   * Here is a small example which shows how to match against an integer value:
+   * Scala has a built-in general pattern matching mechanism. It allows to match on any sort of data
+   * with a first-match policy. Here is a small example which shows how to match against an integer
+   * value:
    *
    * {{{
    * object MatchTest1 extends App {
@@ -42,10 +44,13 @@ object PatternMatching
    * }
    * }}}
    *
-   * The block with the `case` statements defines a function which maps integers to strings. The `match` keyword provides a convenient way of applying a function (like the pattern matching function above) to an object.
+   * The block with the `case` statements defines a function which maps integers to strings. The
+   * `match` keyword provides a convenient way of applying a function (like the pattern matching
+   * function above) to an object.
    *
-   * Scala's pattern matching statement is most useful for matching on algebraic types expressed via `case classes`.
-   * Scala also allows the definition of patterns independently of case classes, using `unapply` methods in extractor objects.
+   * Scala's pattern matching statement is most useful for matching on algebraic types expressed via
+   * `case classes`. Scala also allows the definition of patterns independently of case classes,
+   * using `unapply` methods in extractor objects.
    *
    * Pattern matching returns something:
    */
@@ -153,7 +158,8 @@ object PatternMatching
   //  }
 
   /**
-   * A backquote can be used to refer to a stable variable in scope to create a case statement - this prevents "variable shadowing":
+   * A backquote can be used to refer to a stable variable in scope to create a case statement -
+   * this prevents "variable shadowing":
    */
   def createCaseStatementPatternMatching(res0: String, res1: String, res2: String, res3: String) = {
     val foodItem = "porridge"
@@ -173,7 +179,8 @@ object PatternMatching
   }
 
   /**
-   * A backquote can be used to refer to a method parameter as a stable variable to create a case statement:
+   * A backquote can be used to refer to a method parameter as a stable variable to create a case
+   * statement:
    */
   def stableVariablePatternMatching(res0: Boolean, res1: Boolean, res2: Boolean) = {
     def patternEquals(i: Int, j: Int) =
@@ -187,7 +194,9 @@ object PatternMatching
   }
 
   /**
-   * To pattern match against a `List`, the list can be split into parts, in this case the head `x` and the tail `xs`. Since the case doesn't terminate in `Nil`, `xs` is interpreted as the rest of the list:
+   * To pattern match against a `List`, the list can be split into parts, in this case the head `x`
+   * and the tail `xs`. Since the case doesn't terminate in `Nil`, `xs` is interpreted as the rest
+   * of the list:
    */
   def againstListsPatternMatching(res0: Int) = {
     val secondElement = List(1, 2, 3) match {
@@ -199,7 +208,8 @@ object PatternMatching
   }
 
   /**
-   * To obtain the second element you can expand on the pattern. Where `x` is the first element, `y` is the second element, and `xs` is the rest:
+   * To obtain the second element you can expand on the pattern. Where `x` is the first element, `y`
+   * is the second element, and `xs` is the rest:
    */
   def againstListsIIPatternMatching(res0: Int) = {
     val secondElement = List(1, 2, 3) match {
@@ -223,7 +233,8 @@ object PatternMatching
   }
 
   /**
-   * To pattern match against `List`, you can also establish a pattern match if you know the exact number of elements in a `List`:
+   * To pattern match against `List`, you can also establish a pattern match if you know the exact
+   * number of elements in a `List`:
    */
   def againstListsIVPatternMatching(res0: Int) = {
     val r = List(1, 2, 3) match {

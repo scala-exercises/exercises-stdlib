@@ -21,16 +21,25 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name options
+ * @param name
+ *   options
  */
 object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * If you have worked with Java at all in the past, it is very likely that you have come across a `NullPointerException` at some time (other languages will throw similarly named errors in such a case). Usually this happens because some method returns null when you were not expecting it and thus not dealing with that possibility in your client code. A value of `null` is often abused to represent an absent optional value.
+   * If you have worked with Java at all in the past, it is very likely that you have come across a
+   * `NullPointerException` at some time (other languages will throw similarly named errors in such
+   * a case). Usually this happens because some method returns null when you were not expecting it
+   * and thus not dealing with that possibility in your client code. A value of `null` is often
+   * abused to represent an absent optional value.
    *
-   * Scala tries to solve the problem by getting rid of `null` values altogether and providing its own type for representing optional values, i.e. values that may be present or not: the `Option[A]` trait.
+   * Scala tries to solve the problem by getting rid of `null` values altogether and providing its
+   * own type for representing optional values, i.e. values that may be present or not: the
+   * `Option[A]` trait.
    *
-   * `Option[A]` is a container for an optional value of type `A`. If the value of type `A` is present, the `Option[A]` is an instance of `Some[A]`, containing the present value of type `A.` If the value is absent, the `Option[A]` is the object `None`.
+   * `Option[A]` is a container for an optional value of type `A`. If the value of type `A` is
+   * present, the `Option[A]` is an instance of `Some[A]`, containing the present value of type `A.`
+   * If the value is absent, the `Option[A]` is the object `None`.
    */
   def conceptOptions(res0: Option[String], res1: Option[String]) = {
     val someValue: Option[String] = Some("I am wrapped in something")
@@ -49,7 +58,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    * }
    * }}}
    *
-   * Using `getOrElse`, we can extract the value if it exists, or return a provided default value. If we have a `Some(x)` we return `x`, and for `None` we return the default value.
+   * Using `getOrElse`, we can extract the value if it exists, or return a provided default value.
+   * If we have a `Some(x)` we return `x`, and for `None` we return the default value.
    */
   def getOrElseOptions(res0: String, res1: String, res2: String) = {
     val value1 = maybeItWillReturnSomething(true)
@@ -93,10 +103,11 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /**
-   * An alternative for pattern matching is performing collection style operations.
-   * This is possible because an option could be looked at as a collection with either one or zero elements.
+   * An alternative for pattern matching is performing collection style operations. This is possible
+   * because an option could be looked at as a collection with either one or zero elements.
    *
-   * One of these operations is `map`. This operation allows us to map the inner value to a different type while preserving the option:
+   * One of these operations is `map`. This operation allows us to map the inner value to a
+   * different type while preserving the option:
    */
   def mapOptions(res0: Option[Double], res1: Option[Double]) = {
     val number: Option[Int]   = Some(3)
@@ -113,7 +124,8 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
   }
 
   /**
-   * Another operation is `fold`. This operation will extract the value from the option and run the input function, or provide a default if the value is `None`
+   * Another operation is `fold`. This operation will extract the value from the option and run the
+   * input function, or provide a default if the value is `None`
    */
   def foldOptions(res0: Int, res1: Int) = {
     val number: Option[Int]   = Some(3)

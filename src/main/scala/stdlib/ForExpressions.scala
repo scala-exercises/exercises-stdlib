@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name for_expressions
+ * @param name
+ *   for_expressions
  */
 object ForExpressions
     extends AnyFlatSpec

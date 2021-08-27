@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name sequences_and_arrays
+ * @param name
+ *   sequences_and_arrays
  */
 object SequencesandArrays
     extends AnyFlatSpec
@@ -28,7 +29,9 @@ object SequencesandArrays
     with org.scalaexercises.definitions.Section {
 
   /**
-   * Scala provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.
+   * Scala provides a data structure, the array, which stores a fixed-size sequential collection of
+   * elements of the same type. An array is used to store a collection of data, but it is often more
+   * useful to think of an array as a collection of variables of the same type.
    *
    * A list can be converted to an array:
    */
@@ -39,7 +42,8 @@ object SequencesandArrays
   }
 
   /**
-   * Sequences are special cases of iterable collections of class `Iterable`. Unlike iterables, sequences always have a defined order of elements.
+   * Sequences are special cases of iterable collections of class `Iterable`. Unlike iterables,
+   * sequences always have a defined order of elements.
    *
    * Any sequence can be converted to a list:
    */

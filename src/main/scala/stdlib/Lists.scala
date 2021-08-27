@@ -20,12 +20,17 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name lists
+ * @param name
+ *   lists
  */
 object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   /**
-   * Scala Lists are quite similar to arrays, which means all the elements of a list have the same type - but there are two important differences. First, lists are immutable, which means elements of a list cannot be changed by assignment. Second, lists represent a linked list whereas arrays are flat. The type of a list that has elements of type `T` is written as `List[T]`.
+   * Scala Lists are quite similar to arrays, which means all the elements of a list have the same
+   * type - but there are two important differences. First, lists are immutable, which means
+   * elements of a list cannot be changed by assignment. Second, lists represent a linked list
+   * whereas arrays are flat. The type of a list that has elements of type `T` is written as
+   * `List[T]`.
    *
    * `eq` tests identity (same object):
    */
@@ -77,7 +82,8 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
   }
 
   /**
-   * Lists can be accessed via `head`, `headOption` and `tail`. Accessing a list via `head` is unsafe and may result in a `IndexOutOfBoundsException`.
+   * Lists can be accessed via `head`, `headOption` and `tail`. Accessing a list via `head` is
+   * unsafe and may result in a `IndexOutOfBoundsException`.
    */
   def headAndTailLists(res0: Int, res1: Int, res2: Int) = {
     val a = List(1, 2, 3)

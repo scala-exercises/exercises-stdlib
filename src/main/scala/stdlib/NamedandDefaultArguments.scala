@@ -21,7 +21,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name named_and_default_arguments
+ * @param name
+ *   named_and_default_arguments
  */
 object NamedandDefaultArguments
     extends AnyFlatSpec
@@ -29,7 +30,8 @@ object NamedandDefaultArguments
     with org.scalaexercises.definitions.Section {
 
   /**
-   * When calling methods and functions, you can use the name of the variables explicitly in the call, like so:
+   * When calling methods and functions, you can use the name of the variables explicitly in the
+   * call, like so:
    *
    * {{{
    * def printName(first:String, last:String) = {
@@ -41,7 +43,8 @@ object NamedandDefaultArguments
    * printName(last = "Smith",first = "John") // Prints "John Smith"
    * }}}
    *
-   * Note that once you are using parameter names in your calls, the order doesn't matter, so long as all parameters are named. This feature works well with default parameter values:
+   * Note that once you are using parameter names in your calls, the order doesn't matter, so long
+   * as all parameters are named. This feature works well with default parameter values:
    *
    * {{{
    * def printName(first:String = "John", last:String = "Smith") = {

@@ -20,7 +20,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 /**
- * @param name byname_parameter
+ * @param name
+ *   byname_parameter
  */
 object ByNameParameter
     extends AnyFlatSpec
@@ -28,7 +29,9 @@ object ByNameParameter
     with org.scalaexercises.definitions.Section {
 
   /**
-   * `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java programmer. The function returns an `Int`. You can place this as a method parameter so that you can you use it as a block, but still it doesn't look quite right:
+   * `() => Int` is a Function type that takes a `Unit` type. `Unit` is known as `void` to a Java
+   * programmer. The function returns an `Int`. You can place this as a method parameter so that you
+   * can you use it as a block, but still it doesn't look quite right:
    */
   def takesUnitByNameParameter(res0: Either[Throwable, Int]) = {
     def calc(x: () => Int): Either[Throwable, Int] = {
@@ -46,7 +49,8 @@ object ByNameParameter
   }
 
   /**
-   * A by-name parameter does the same thing as the previous koan but there is no need to explicitly handle `Unit` or `()`. This is used extensively in Scala to create blocks:
+   * A by-name parameter does the same thing as the previous koan but there is no need to explicitly
+   * handle `Unit` or `()`. This is used extensively in Scala to create blocks:
    */
   def byNameParameter(res0: Either[Throwable, Int]) = {
     def calc(x: => Int): Either[Throwable, Int] = {
@@ -68,7 +72,8 @@ object ByNameParameter
   }
 
   /**
-   * By-name parameters can also be used with `object` and `apply` to make interesting block-like calls:
+   * By-name parameters can also be used with `object` and `apply` to make interesting block-like
+   * calls:
    */
   def withApplyByNameParameter(res0: String) = {
     object PigLatinizer {
