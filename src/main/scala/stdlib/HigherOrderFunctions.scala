@@ -45,7 +45,7 @@ object HigherOrderFunctions
       res4: Int,
       res5: Int
   ) = {
-    def lambda = { x: Int => x + 1 }
+    def lambda  = { x: Int => x + 1 }
     def lambda2 = (x: Int) => x + 2
     val lambda3 = (x: Int) => x + 3
 
