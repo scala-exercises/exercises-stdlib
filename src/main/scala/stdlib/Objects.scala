@@ -89,19 +89,19 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    */
   def privateValuesObjects(res0: String, res1: String) = {
     class Person(
-        val name: String,
-        private val superheroName: String
+        private val name: String,
+        val superheroName: String
     ) //The superhero name is private!
 
     object Person {
-      def showMeInnerSecret(x: Person) = x.superheroName
+      def showMeInnerSecret(x: Person) = x.name
     }
 
-    val clark = new Person("Clark Kent", "Superman")
-    val peter = new Person("Peter Parker", "Spider-Man")
+    val supes = new Person("Clark Kent", "Superman")
+    val spidey = new Person("Peter Parker", "Spider-Man")
 
-    Person.showMeInnerSecret(clark) should be(res0)
-    Person.showMeInnerSecret(peter) should be(res1)
+    Person.showMeInnerSecret(supes) should be(res0)
+    Person.showMeInnerSecret(spidey) should be(res1)
   }
 
 }
