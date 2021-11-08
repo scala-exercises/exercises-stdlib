@@ -40,7 +40,7 @@ object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     class Loves[A, B](val a: A, val b: B)
 
     def announceCouple(couple: Person Loves Person) =
-      //Notice our type: Person loves Person!
+      // Notice our type: Person loves Person!
       couple.a.name + " is in love with " + couple.b.name
 
     val romeo  = new Person("Romeo")
@@ -61,7 +61,7 @@ object InfixTypes extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     class Loves[A, B](val a: A, val b: B)
 
     def announceCouple(couple: Person Loves Person) =
-      //Notice our type: Person loves Person!
+      // Notice our type: Person loves Person!
       couple.a.name + " is in love with " + couple.b.name
 
     val romeo  = new Person("Romeo")

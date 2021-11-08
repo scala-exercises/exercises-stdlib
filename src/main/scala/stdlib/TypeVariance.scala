@@ -129,9 +129,9 @@ object TypeVariance extends AnyFlatSpec with Matchers with org.scalaexercises.de
     val fruitBasket: MyContainer[Fruit] = new MyContainer[Orange](new Orange())
     fruitBasket.contents should be(res0)
 
-    class NavelOrange extends Orange //Creating a subtype to prove a point
-    //val navelOrangeBasket: MyContainer[NavelOrange] = new MyContainer[Orange](new Orange()) //Bad!
-    //val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Orange](new Orange()) //Bad!
+    class NavelOrange extends Orange // Creating a subtype to prove a point
+    // val navelOrangeBasket: MyContainer[NavelOrange] = new MyContainer[Orange](new Orange()) //Bad!
+    // val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Orange](new Orange()) //Bad!
   }
 
   /**
@@ -141,7 +141,7 @@ object TypeVariance extends AnyFlatSpec with Matchers with org.scalaexercises.de
    * tangelo basket are a citrus basket. Contravariance is the opposite of covariance:
    */
   def contravarianceVarianceTypeVariance(res0: String, res1: String, res2: String, res3: String) = {
-    class MyContainer[-A](a: A)(implicit manifest: scala.reflect.Manifest[A]) { //Can't receive a val because it would be in a covariant position
+    class MyContainer[-A](a: A)(implicit manifest: scala.reflect.Manifest[A]) { // Can't receive a val because it would be in a covariant position
       def contents = manifest.runtimeClass.getSimpleName
     }
 
@@ -156,8 +156,8 @@ object TypeVariance extends AnyFlatSpec with Matchers with org.scalaexercises.de
     val bananaBasket: MyContainer[Banana] = new MyContainer[Fruit](new Apple)
     bananaBasket.contents should be(res3)
 
-    //val fruitBasket: MyContainer[Fruit] = new MyContainer[Citrus](new Orange) //Bad!
-    //val wrongCitrusBasket: MyContainer[Citrus] = new MyContainer[Orange](new Orange) //Bad!
+    // val fruitBasket: MyContainer[Fruit] = new MyContainer[Citrus](new Orange) //Bad!
+    // val wrongCitrusBasket: MyContainer[Citrus] = new MyContainer[Orange](new Orange) //Bad!
   }
 
   /**

@@ -54,7 +54,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
     Planets.Mercury.id should be(res0)
     Planets.Venus.id should be(res1)
 
-    Planets.Mercury.toString should be(res2) //How does it get the name? by Reflection.
+    Planets.Mercury.toString should be(res2) // How does it get the name? by Reflection.
     Planets.Venus.toString should be(res3)
 
     (Planets.Earth == Planets.Earth) should be(res4)
@@ -77,7 +77,7 @@ object Enumerations extends AnyFlatSpec with Matchers with org.scalaexercises.de
 
       val Mercury = Value(1, "Hermes")
       val Venus   = Value(2, "Aphrodite")
-      //Fun Fact: Tellus is Roman for (Mother) Earth
+      // Fun Fact: Tellus is Roman for (Mother) Earth
       val Earth   = Value(3, "Gaia")
       val Mars    = Value(4, "Ares")
       val Jupiter = Value(5, "Zeus")

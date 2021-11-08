@@ -80,7 +80,7 @@ object ParentClasses extends AnyFlatSpec with Matchers with org.scalaexercises.d
 
     val pilot = new Pilot("John", "Yossarian", 256)
     val catchNo =
-      new pilot.Catch(22) //using the pilot instance's path, create an catch object for it.
+      new pilot.Catch(22) // using the pilot instance's path, create an catch object for it.
     catchNo.number should be(res0)
   }
 

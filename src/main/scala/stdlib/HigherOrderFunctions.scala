@@ -191,7 +191,7 @@ object HigherOrderFunctions
 
     makeWhatEverYouLike(List("ABC", "XYZ", "123"), x => x.toLowerCase) should be(res1)
 
-    //using it inline
+    // using it inline
     val myName = (name: String) => s"My name is $name"
     makeWhatEverYouLike(List("John", "Mark"), myName) should be(res2)
 

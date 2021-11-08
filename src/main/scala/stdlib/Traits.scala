@@ -144,7 +144,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
       def aId = 1
     }
 
-    //val a = new A  //***does not compile!!!***
+    // val a = new A  //***does not compile!!!***
     val obj = new A with B
     (obj.aId + obj.bId) should be(res0)
   }
