@@ -36,10 +36,10 @@ object PartialFunctions
   def partialFunctionPartialFunctions(res0: Int, res1: Int) = {
     val doubleEvens: PartialFunction[Int, Int] =
       new PartialFunction[Int, Int] {
-        //States that this partial function will take on the task
+        // States that this partial function will take on the task
         def isDefinedAt(x: Int) = x % 2 == 0
 
-        //What we do if this partial function matches
+        // What we do if this partial function matches
         def apply(v1: Int) = v1 * 2
       }
 
@@ -49,7 +49,7 @@ object PartialFunctions
       def apply(v1: Int) = v1 * 3
     }
 
-    val whatToDo = doubleEvens orElse tripleOdds //Here we chain the partial functions together
+    val whatToDo = doubleEvens orElse tripleOdds // Here we chain the partial functions together
 
     whatToDo(3) should be(res0)
     whatToDo(4) should be(res1)
@@ -60,7 +60,7 @@ object PartialFunctions
    * the `apply` and `isDefinedAt` methods are created automatically.
    */
   def caseStatementsPartialFunctions(res0: Int, res1: Int) = {
-    //These case statements are called case statements with guards
+    // These case statements are called case statements with guards
     val doubleEvens: PartialFunction[Int, Int] = {
       case x if (x % 2) == 0 => x * 2
     }
@@ -68,7 +68,7 @@ object PartialFunctions
       case x if (x % 2) != 0 => x * 3
     }
 
-    val whatToDo = doubleEvens orElse tripleOdds //Here we chain the partial functions together
+    val whatToDo = doubleEvens orElse tripleOdds // Here we chain the partial functions together
     whatToDo(3) should be(res0)
     whatToDo(4) should be(res1)
   }
@@ -77,7 +77,7 @@ object PartialFunctions
    * The result of partial functions can have an `andThen` function added to the end of the chain:
    */
   def andThenPartialFunctions(res0: Int, res1: Int) = {
-    //These are called case statements with guards
+    // These are called case statements with guards
     val doubleEvens: PartialFunction[Int, Int] = {
       case x if (x % 2) == 0 => x * 2
     }
@@ -87,7 +87,7 @@ object PartialFunctions
 
     val addFive = (x: Int) => x + 5
     val whatToDo =
-      doubleEvens orElse tripleOdds andThen addFive //Here we chain the partial functions together
+      doubleEvens orElse tripleOdds andThen addFive // Here we chain the partial functions together
     whatToDo(3) should be(res0)
     whatToDo(4) should be(res1)
   }

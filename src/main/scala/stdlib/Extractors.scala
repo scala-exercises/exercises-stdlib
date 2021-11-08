@@ -197,8 +197,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     )
 
     object Employee {
-      //factory methods, extractors, apply
-      //Extractor: Create tokens that represent your object
+      // factory methods, extractors, apply
+      // Extractor: Create tokens that represent your object
       def unapply(x: Employee) =
         Some((x.lastName, x.middleName, x.firstName))
     }
@@ -223,8 +223,8 @@ object Extractors extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     )
 
     object Employee {
-      //factory methods, extractors, apply
-      //Extractor: Create tokens that represent your object
+      // factory methods, extractors, apply
+      // Extractor: Create tokens that represent your object
       def unapply(x: Employee) =
         Some((x.lastName, x.middleName, x.firstName))
     }

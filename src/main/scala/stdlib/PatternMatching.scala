@@ -135,7 +135,7 @@ object PatternMatching
     goldilocks(("chair", "Mama")) should be(res1)
   }
 
-  //TODO: Improve compiler to ignore regular expressions in the body of the exercise
+  // TODO: Improve compiler to ignore regular expressions in the body of the exercise
   //  /** regularExpressionsPatternMatching
   //    *
   //    * Pattern matching can be done on regular expression groups:

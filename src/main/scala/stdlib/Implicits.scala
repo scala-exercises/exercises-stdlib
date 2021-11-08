@@ -104,7 +104,7 @@ object Implicits extends AnyFlatSpec with Matchers with org.scalaexercises.defin
     }
 
     import MyPredef._
-    //imported implicits come into effect within this scope
+    // imported implicits come into effect within this scope
     19.isOdd should be(res0)
     20.isOdd should be(res1)
   }

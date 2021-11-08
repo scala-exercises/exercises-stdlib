@@ -83,7 +83,7 @@ object ByNameParameter
     val result = PigLatinizer {
       val x = "pret"
       val z = "zel"
-      x ++ z //concatenate the strings
+      x ++ z // concatenate the strings
     }
 
     result should be(res0)

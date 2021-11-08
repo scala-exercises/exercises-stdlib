@@ -40,8 +40,8 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     val a = 'a'
     val b = 'B'
 
-    //format(a) is a string format, meaning the "%c".format(x)
-    //will return the string representation of the char.
+    // format(a) is a string format, meaning the "%c".format(x)
+    // will return the string representation of the char.
 
     "%c".format(a) should be(res0)
     "%c".format(b) should be(res1)
@@ -55,9 +55,9 @@ object Formatting extends AnyFlatSpec with Matchers with org.scalaexercises.defi
     val e = '\"'
     val f = '\\'
 
-    "%c".format(c) should be(res0) //your ANSWER should have form: "ANSWER"
-    "%c".format(e) should be(res1) //your ANSWER should have form: "\ANSWER"
-    "%c".format(f) should be(res2) //your ANSWER should have form: "\ANSWER"
+    "%c".format(c) should be(res0) // your ANSWER should have form: "ANSWER"
+    "%c".format(e) should be(res1) // your ANSWER should have form: "\ANSWER"
+    "%c".format(f) should be(res2) // your ANSWER should have form: "\ANSWER"
   }
 
   /**

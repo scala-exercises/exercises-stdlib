@@ -49,11 +49,11 @@ object LiteralNumbers
     val h = -0x30f
     a should be(res0)
     b should be(res1)
-    c should be(res2) //Hint: 30F = 783
+    c should be(res2) // Hint: 30F = 783
     e should be(res3)
     f should be(res4)
     g should be(res5)
-    h should be(res6) //Hint: 30F = 783
+    h should be(res6) // Hint: 30F = 783
   }
 
   /**
@@ -78,11 +78,11 @@ object LiteralNumbers
 
     a should be(res0)
     b should be(res1)
-    c should be(res2) //Hint: 30F = 783
+    c should be(res2) // Hint: 30F = 783
     e should be(res3)
     f should be(res4)
     g should be(res5)
-    h should be(res6) //Hint: 30F = 783
+    h should be(res6) // Hint: 30F = 783
   }
 
   /**

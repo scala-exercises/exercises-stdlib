@@ -43,7 +43,7 @@ object LiteralStrings
    * Character literals can use hexadecimal Unicode:
    */
   def characterLiteralsUnicodeLiteralStrings(res0: String) = {
-    val c = '\u0061' //unicode for a
+    val c = '\u0061' // unicode for a
 
     c.toString should be(res0)
   }

@@ -45,11 +45,11 @@ object InfixPrefixandPostfixOperators
   def notWithTwoInfixPrefixandPostfixOperators(res0: Int, res1: Int) = {
     val g: String = "Check out the big brains on Brad!"
 
-    g indexOf 'o' should be(res0) //indexOf(Char) can be used as an infix operator
+    g indexOf 'o' should be(res0) // indexOf(Char) can be used as an infix operator
 
     // g indexOf 'o', 4 should be (6) //indexOf(Char, Int) cannot be used as an infix operator
 
-    g.indexOf('o', 7) should be(res1) //indexOf(Char, Int) must use standard java/scala calls
+    g.indexOf('o', 7) should be(res1) // indexOf(Char, Int) must use standard java/scala calls
   }
 
   /**
@@ -67,8 +67,8 @@ object InfixPrefixandPostfixOperators
     val g: Int = 31
     (g toHexString) should be(
       res0
-    ) //toHexString takes no params therefore can be called as a postfix operator.
-    //Hint: The answer is "1f"
+    ) // toHexString takes no params therefore can be called as a postfix operator.
+    // Hint: The answer is "1f"
   }
 
   /**

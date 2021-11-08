@@ -83,10 +83,10 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
     val mapValues = myMap.values
     mapValues.size should be(res0)
-    mapValues.head should be(res1) //Failed presumption: The order in maps is not guaranteed
+    mapValues.head should be(res1) // Failed presumption: The order in maps is not guaranteed
 
     val lastElement = mapValues.last
-    lastElement should be(res2) //Failed presumption: The order in maps is not guaranteed
+    lastElement should be(res2) // Failed presumption: The order in maps is not guaranteed
 
   }
 

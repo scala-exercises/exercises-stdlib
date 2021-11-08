@@ -54,7 +54,7 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     val x = Greeting
     val y = x
 
-    x eq y should be(res0) //Reminder: eq checks for reference
+    x eq y should be(res0) // Reminder: eq checks for reference
 
     val z = Greeting
 
@@ -70,7 +70,7 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
 
     object Movie {
       def academyAwardBestMoviesForYear(x: Short) = {
-        //This is a match statement, more powerful than a Java switch statement!
+        // This is a match statement, more powerful than a Java switch statement!
         x match {
           case 1930 => Some(new Movie("All Quiet On the Western Front", 1930))
           case 1931 => Some(new Movie("Cimarron", 1931))
@@ -91,7 +91,7 @@ object Objects extends AnyFlatSpec with Matchers with org.scalaexercises.definit
     class Person(
         val name: String,
         private val superheroName: String
-    ) //The superhero name is private!
+    ) // The superhero name is private!
 
     object Person {
       def showMeInnerSecret(x: Person) = x.superheroName

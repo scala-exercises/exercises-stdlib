@@ -533,7 +533,7 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
     }
     result should be(res0)
 
-    val result2 = list.foldLeft(0)(_ - _) //Short hand
+    val result2 = list.foldLeft(0)(_ - _) // Short hand
     result2 should be(res1)
 
     (((((0 - 5) - 4) - 3) - 2) - 1) should be(res2)
@@ -555,7 +555,7 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
     }
     result should be(res0)
 
-    val result2 = list.foldRight(0)(_ - _) //Short hand
+    val result2 = list.foldRight(0)(_ - _) // Short hand
     result2 should be(res1)
 
     (5 - (4 - (3 - (2 - (1 - 0))))) should be(res2)
