@@ -16,8 +16,8 @@ lazy val exercises = (project in file("."))
   .settings(name := "exercises-stdlib")
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.7",
-      "org.scala-exercises"        %% "definitions"               % "0.6.7",
+      "org.scala-exercises"        %% "exercise-compiler"         % "0.7.1",
+      "org.scala-exercises"        %% "definitions"               % "0.7.1",
       "com.chuusai"                %% "shapeless"                 % "2.3.8",
       "org.scalatest"              %% "scalatest"                 % "3.2.10",
       "org.scalacheck"             %% "scalacheck"                % "1.15.4",
