@@ -2,7 +2,7 @@ import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
 ThisBuild / organization       := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
-ThisBuild / scalaVersion       := "2.13.9"
+ThisBuild / scalaVersion       := "2.13.10"
 
 // This is required by the exercises compiler:
 publishLocal  := (publishLocal dependsOn compile).value
