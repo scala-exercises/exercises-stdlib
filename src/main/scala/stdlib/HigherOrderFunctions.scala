@@ -171,7 +171,8 @@ object HigherOrderFunctions
   /**
    * Function taking another function as a parameter. Helps in composing functions.
    *
-   * Hint: a map method applies the function to each element of a list.
+   * Hint 1: a map method applies the function to each element of a list.
+   * Hint 2: if you assume your solution has syntax issues, consider applying functions to lists using the Scala command line.
    */
   def functionAsParameterHigherOrderFunctions(
       res0: List[String],
