@@ -192,5 +192,17 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
 
     myMap1.equals(myMap2) should be(res0)
   }
+  
+  /** Map access elements with .get(missingKey) handles nonexistent element gracefully returning Option, instead of throwing `NoSuchElementException` when using `myMap(missingKey)`:
+   */
+  def accessMissingElements(res0: Option[String], res1: Option[String]) {
+    val myMap =
+      Map("MI" → "Michigan", "OH" → "Ohio", "WI" → "Wisconsin", "IA" → "Iowa")
+    intercept[NoSuchElementException] {
+      myMap("TX")
+    }
+    myMap.get("MI") should be(res0)
+    myMap.get("TX") should be(res1)
+  }
 
 }
