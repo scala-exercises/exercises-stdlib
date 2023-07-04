@@ -89,17 +89,18 @@ object Options extends AnyFlatSpec with Matchers with org.scalaexercises.definit
    */
   def matchOptions(res0: Double, res1: Double) = {
     val someValue: Option[Double] = Some(20.0)
-    val value = someValue match {
+    val value1 = someValue match {
       case Some(v) => v
       case None    => 0.0
     }
-    value should be(res0)
+    value1 should be(res0)
+    
     val noValue: Option[Double] = None
-    val value1 = noValue match {
+    val value2 = noValue match {
       case Some(v) => v
       case None    => 0.0
     }
-    value1 should be(res1)
+    value2 should be(res1)
   }
 
   /**
