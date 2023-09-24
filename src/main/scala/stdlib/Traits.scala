@@ -81,7 +81,7 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
       def listen(event: Event): String
     }
 
-    class OurListener
+    trait OurListener
 
     class MyListener extends OurListener with EventListener {
       def listen(event: Event): String = {
