@@ -71,8 +71,8 @@ object Traits extends AnyFlatSpec with Matchers with org.scalaexercises.definiti
   }
 
   /**
-   * A class can only extend from one class or trait, any subsequent extension should use the
-   * keyword `with`:
+   * A class can mixin from several traits, but only the first one uses the `extend` keyword. 
+   * Any subsequent mixed-in trait should use the keyword `with`:
    */
   def extendsFromOneTraits(res0: String) = {
     case class Event(name: String)
