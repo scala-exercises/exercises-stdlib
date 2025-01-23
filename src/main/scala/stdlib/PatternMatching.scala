@@ -257,4 +257,23 @@ object PatternMatching
     r == Nil should be(res0)
   }
 
+  
+  /** Pattern matching allows complex parsing and assigning an alias(using @) to each part of the parsed type:
+   */
+  def patmatComplexType(res0: String, res1:String, res2: String) {
+    case class Person(name: String, age: Int) {
+      def me = "I'm person"
+    }
+
+    case class Employee(person: Person, job: String) {
+      def me = "I'm employee"
+    }
+
+    val res = Employee(Person("John", 23), "Janitor") match {
+      case e@Employee(p@Person(_, _), job) =>
+        (e.me, p.me, job)
+      case _ =>
+    }
+    res should be ((res0,res1,res2))
+  }
 }
