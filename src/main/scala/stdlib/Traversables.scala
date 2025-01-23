@@ -195,8 +195,8 @@ object Traversables extends AnyFlatSpec with Matchers with org.scalaexercises.de
   }
 
   /**
-   * `.to(LazyList)` will convert any `Traversable` to a `LazyList` where elements are evaluated as they
-   * are needed:
+   * `.to(LazyList)` will convert any `Traversable` to a `LazyList` where elements are evaluated as
+   * they are needed:
    */
   def toLazyListFunctionTraversables(res0: Boolean, res1: LazyList[Int]) = {
     val list   = List(4, 6, 7, 8, 9, 13, 14)
