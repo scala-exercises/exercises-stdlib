@@ -140,7 +140,7 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
   }
 
   /**
-   * Functions over lists can use _ as shorthand:
+   * Functions over lists can use `()` instead of `{}`:
    */
   def wildcardAsShorthandLists(res0: Int, res1: Int, res2: Int, res3: Int) = {
     val a = List(1, 2, 3)
@@ -155,7 +155,7 @@ object Lists extends AnyFlatSpec with Matchers with org.scalaexercises.definitio
   }
 
   /**
-   * Functions over lists can use `()` instead of `{}`:
+   * Functions over lists can use _ as shorthand:
    */
   def functionsOverListsLists(res0: Int, res1: Int, res2: Int, res3: Int, res4: Int) = {
     val a = List(1, 2, 3)
