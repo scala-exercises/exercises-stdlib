@@ -190,7 +190,7 @@ object Maps extends AnyFlatSpec with Matchers with org.scalaexercises.definition
     val myMap2 =
       Map("WI" -> "Wisconsin", "MI" -> "Michigan", "IA" -> "Iowa", "OH" -> "Ohio")
 
-    myMap1.equals(myMap2) should be(res0)
+    myMap1 == myMap2 should be(res0)
   }
 
 }
